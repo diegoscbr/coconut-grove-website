@@ -220,6 +220,7 @@ button { font: inherit; cursor: pointer; }
 .hero {
   position: relative;
   min-height: calc(100vh - var(--nav-h));
+  /* fallback color while video loads / if it fails */
   background:
     radial-gradient(ellipse at 70% 85%, rgba(255, 139, 94, 0.18) 0%, transparent 55%),
     linear-gradient(180deg, #B5C7E8 0%, #4A8FCF 38%, #1A3A8A 78%, #142A66 100%);
@@ -227,21 +228,35 @@ button { font: inherit; cursor: pointer; }
   overflow: hidden;
   isolation: isolate;
 }
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+  pointer-events: none;
+}
 .hero::before {
-  /* faint sail dots — placeholder for drone footage */
+  /* darkening + brand-tinted overlay for headline legibility on the video */
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(circle 2px at 22% 76%, rgba(255,255,255,0.85), transparent 70%),
-    radial-gradient(circle 1.5px at 38% 82%, rgba(255,255,255,0.7), transparent 70%),
-    radial-gradient(circle 2px at 56% 78%, rgba(255,255,255,0.85), transparent 70%),
-    radial-gradient(circle 1.5px at 72% 84%, rgba(255,255,255,0.7), transparent 70%),
-    radial-gradient(circle 1.5px at 86% 79%, rgba(255,255,255,0.7), transparent 70%);
+  background:
+    linear-gradient(180deg,
+      rgba(20, 42, 102, 0.30) 0%,
+      rgba(26, 58, 138, 0.25) 35%,
+      rgba(20, 42, 102, 0.65) 90%,
+      rgba(20, 42, 102, 0.85) 100%),
+    linear-gradient(90deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.10) 50%,
+      rgba(0, 0, 0, 0.00) 100%);
   z-index: -1;
 }
 .hero::after {
-  /* subtle scanline grain to give the gradient texture */
+  /* subtle scanline grain so type sits cleanly on the footage */
   content: "";
   position: absolute;
   inset: 0;
@@ -250,11 +265,14 @@ button { font: inherit; cursor: pointer; }
       0deg,
       transparent 0,
       transparent 3px,
-      rgba(0, 0, 0, 0.025) 3px,
-      rgba(0, 0, 0, 0.025) 4px
+      rgba(0, 0, 0, 0.04) 3px,
+      rgba(0, 0, 0, 0.04) 4px
     );
   pointer-events: none;
   z-index: -1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
 }
 .hero-inner {
   max-width: var(--max);
