@@ -1,0 +1,686 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<h2 style="font-family:'Inter Tight','Inter',sans-serif;">Visit &amp; Contact · section 8 (final)</h2>
+<p class="subtitle" style="font-family:'Inter',sans-serif;">The page closer. After 7 sections of "what" and "why," this is "what's next." Critical conversion moment — the section that turns a homepage visit into a phone call, a registration, or a Saturday open-house drop-in. Four cuts.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1A3A8A;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 28px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+    font-family: 'Inter', sans-serif;
+  }
+  .locked-stack-row strong {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .vc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 8px;
+  }
+  .vc-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .vc-card:hover {
+    border-color: #1A3A8A;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .vc-card.selected {
+    border-color: #1A3A8A;
+    border-width: 2px;
+  }
+  .vc-stage {
+    background: #f4f6fa;
+    padding: 26px 26px 24px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .vc-eyebrow {
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 10px;
+  }
+  .vc-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+
+  /* === A · Single big CTA === */
+  .layout-a {
+    aspect-ratio: 16 / 7;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.55) 100%),
+      linear-gradient(180deg, #B5C7E8 0%, #88a5c0 25%, #4a7898 55%, #1A3A8A 100%);
+  }
+  .layout-a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle 2px at 24% 70%, #fff, transparent 70%),
+      radial-gradient(circle 2px at 38% 78%, #fff, transparent 70%),
+      radial-gradient(circle 2px at 56% 72%, #fff, transparent 70%),
+      radial-gradient(circle 2px at 72% 80%, #fff, transparent 70%);
+  }
+  .a-overlay {
+    position: absolute;
+    bottom: 36px; left: 36px; right: 36px;
+    z-index: 2;
+    color: #fff;
+  }
+  .a-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin-bottom: 10px;
+  }
+  .a-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    max-width: 65%;
+  }
+  .a-headline .em { color: #FF8B5E; }
+  .a-sub {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 22px;
+    max-width: 60%;
+  }
+  .a-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  .a-btn {
+    padding: 12px 22px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    text-decoration: none;
+  }
+  .a-btn.primary {
+    background: #fff;
+    color: #1A3A8A;
+  }
+  .a-btn.secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.7);
+  }
+
+  /* === B · Multi-path doors === */
+  .layout-b {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .b-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.015em;
+    margin-bottom: 16px;
+  }
+  .b-doors {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 800px) { .b-doors { grid-template-columns: 1fr 1fr; } }
+  .b-door {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.12s;
+  }
+  .b-door:hover { border-color: #1A3A8A; transform: translateY(-2px); }
+  .b-door .b-num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: #FF8B5E;
+    margin-bottom: 12px;
+  }
+  .b-door .b-q {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  .b-door .b-line {
+    font-size: 11.5px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .b-door .b-cta {
+    margin-top: auto;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+  }
+
+  /* === C · Inline inquiry form === */
+  .layout-c {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 22px;
+  }
+  @media (max-width: 800px) { .layout-c { grid-template-columns: 1fr; } }
+  .c-form-side .c-eyebrow-form {
+    font-weight: 700;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin-bottom: 6px;
+  }
+  .c-form-side h3 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 1.15;
+    color: #111;
+    letter-spacing: -0.015em;
+    margin: 0 0 6px;
+  }
+  .c-form-side h3 em { font-style: italic; color: #FF8B5E; font-weight: 500; }
+  .c-form-side .c-helper {
+    font-size: 12.5px;
+    color: #555;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+  .c-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .c-form .full { grid-column: 1 / -1; }
+  .c-form input, .c-form select, .c-form textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    padding: 10px 12px;
+    border: 1px solid #d1d1d6;
+    border-radius: 3px;
+    background: #fff;
+    color: #111;
+    width: 100%;
+  }
+  .c-form textarea { min-height: 70px; resize: vertical; }
+  .c-form input::placeholder, .c-form textarea::placeholder { color: #aaa; }
+  .c-form button {
+    grid-column: 1 / -1;
+    background: #1A3A8A;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+
+  .c-info-side {
+    background: #1A3A8A;
+    color: #fff;
+    border-radius: 4px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .c-info-side h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin: 0 0 14px;
+  }
+  .c-info-block {
+    margin-bottom: 14px;
+  }
+  .c-info-block .lbl {
+    font-size: 9.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .c-info-block .val {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: -0.005em;
+  }
+  .c-info-block .val small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.8);
+    margin-top: 2px;
+  }
+  .c-info-foot {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 14px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+  }
+
+  /* === D · Map + practical info === */
+  .layout-d {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 800px) { .layout-d { grid-template-columns: 1fr; } }
+  .d-map {
+    aspect-ratio: 16 / 11;
+    border-radius: 3px;
+    background:
+      linear-gradient(180deg, #B5C7E8 0%, #88a5c0 35%, #4A8FCF 65%, #1A3A8A 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .d-map .coast {
+    position: absolute;
+    top: 18%; left: 0;
+    width: 32%; height: 64%;
+    background: rgba(212, 200, 165, 0.6);
+    clip-path: polygon(0 10%, 80% 0%, 100% 22%, 95% 50%, 88% 78%, 100% 90%, 60% 100%, 0 100%);
+  }
+  .d-map .grid-streets {
+    position: absolute;
+    top: 18%; left: 0;
+    width: 32%; height: 64%;
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0, transparent 8px, rgba(255,255,255,0.2) 8px, rgba(255,255,255,0.2) 9px),
+      repeating-linear-gradient(90deg, transparent 0, transparent 12px, rgba(255,255,255,0.2) 12px, rgba(255,255,255,0.2) 13px);
+    clip-path: polygon(0 10%, 80% 0%, 100% 22%, 95% 50%, 88% 78%, 100% 90%, 60% 100%, 0 100%);
+  }
+  .d-map .pin {
+    position: absolute;
+    top: 42%; left: 24%;
+    z-index: 2;
+  }
+  .d-map .pin .dot {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: #FF8B5E;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px rgba(255,139,94,0.4);
+  }
+  .d-map .pin .label {
+    position: absolute;
+    top: 26px; left: -30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(26,58,138,0.85);
+    padding: 4px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .d-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .d-info h3 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+  }
+  .d-row {
+    padding: 10px 0;
+    border-bottom: 1px dashed #cfdbe6;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .d-row:last-child { border-bottom: none; }
+  .d-row b {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 3px;
+  }
+  .d-row .val {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #111;
+    letter-spacing: -0.005em;
+  }
+  .d-row .val small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+  }
+  .d-cta {
+    margin-top: 14px;
+    background: #1A3A8A;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    border-radius: 2px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+  }
+
+  .vc-meta {
+    padding: 22px 26px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+  }
+  .vc-meta strong {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .vc-meta .why-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .vc-meta .why-row { grid-template-columns: 1fr; } }
+  .vc-meta .why-row b {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <strong>Locked through section 7</strong>
+  Hero · Spine · Pillars · Visual · Brand ID · Wordmarks · Programs (B+rotation) · Pathway (C) · Coaching (D · numbers) · Heritage (B · wall) · Bay (A · year-round) · Stories (C · split with full views)
+</div>
+
+<div class="vc-grid">
+
+  <!-- A · Big single CTA -->
+  <div class="vc-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="vc-stage">
+      <div class="vc-eyebrow">A · Single big CTA</div>
+      <div class="vc-title">One image. One claim. Two buttons.</div>
+      <div class="layout-a">
+        <div class="a-overlay">
+          <div class="a-eyebrow">Visit</div>
+          <div class="a-headline">Come sail with <span class="em">us.</span></div>
+          <div class="a-sub">Open houses every other Saturday. Free demo sails for new sailors. The dock's twenty minutes from downtown Miami.</div>
+          <div class="a-buttons">
+            <a class="a-btn primary" href="#">Schedule a visit</a>
+            <a class="a-btn secondary" href="#">View programs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vc-meta">
+      <strong>A · Single big CTA</strong>
+      Full-bleed photo. One headline. One short proof line. Two buttons (primary: Schedule a visit / secondary: View programs). The most confident close.
+      <div class="why-row">
+        <div><b>Why this</b>Closes the page on a single, focused action. Most cinematic. Pairs with the hero — same visual register, bookend feeling.</div>
+        <div><b>Risk</b>Only serves one visitor type at a time. Visitors who don't want to "schedule a visit" right now bounce off without a path.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B · Multi-path doors -->
+  <div class="vc-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="vc-stage">
+      <div class="vc-eyebrow">B · Multi-path doors</div>
+      <div class="vc-title">Different visitors, different doors</div>
+      <div class="layout-b">
+        <div class="b-headline">What brought you here?</div>
+        <div class="b-doors">
+          <div class="b-door">
+            <div class="b-num">01</div>
+            <div class="b-q">My kid wants to learn to sail.</div>
+            <div class="b-line">Junior Academy + summer camp tracks for first-time sailors, ages 6–18.</div>
+            <div class="b-cta">Junior programs →</div>
+          </div>
+          <div class="b-door">
+            <div class="b-num">02</div>
+            <div class="b-q">I want to learn to sail.</div>
+            <div class="b-line">Adult learn-to-sail and recreational programs, weeknights and weekends.</div>
+            <div class="b-cta">Adult programs →</div>
+          </div>
+          <div class="b-door">
+            <div class="b-num">03</div>
+            <div class="b-q">I want to compete.</div>
+            <div class="b-line">Race team and HPC pathways for serious junior and adult sailors.</div>
+            <div class="b-cta">Race + HPC →</div>
+          </div>
+          <div class="b-door">
+            <div class="b-num">04</div>
+            <div class="b-q">I'm here for something else.</div>
+            <div class="b-line">Press, partnerships, sponsorships, instructor inquiries, alumni.</div>
+            <div class="b-cta">Contact admin →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vc-meta">
+      <strong>B · Multi-path doors</strong>
+      Four doors framed as visitor questions. Each leads to the right deeper page. Most useful when visitors have wildly different intents — which is true here (parents, adult learners, racers, press).
+      <div class="why-row">
+        <div><b>Why this</b>Routes every visitor type to the right next step. Acts as a self-service triage layer. Flexible — doors can rotate (e.g., add "I want to coach" door during instructor recruitment).</div>
+        <div><b>Risk</b>Less brand-dramatic than a single-CTA close. Reads more like a sitemap than a moment.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C · Inline inquiry form -->
+  <div class="vc-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="vc-stage">
+      <div class="vc-eyebrow">C · Inline inquiry form</div>
+      <div class="vc-title">Conversion machine — form embedded</div>
+      <div class="layout-c">
+        <div class="c-form-side">
+          <div class="c-eyebrow-form">Tell us about your sailor</div>
+          <h3>The fastest way to get on the <em>water.</em></h3>
+          <p class="c-helper">Send us a few details and a coach will get back within two days with the right next step — a class, a clinic, or a Saturday demo sail.</p>
+          <form class="c-form" onsubmit="event.preventDefault();">
+            <input type="text" placeholder="Your name" />
+            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Sailor's name" />
+            <input type="text" placeholder="Sailor's age" />
+            <select>
+              <option>Experience: brand new</option>
+              <option>Sailed once or twice</option>
+              <option>Some experience</option>
+              <option>Racing already</option>
+            </select>
+            <select>
+              <option>Interest: not sure yet</option>
+              <option>Junior Academy</option>
+              <option>Summer Camp</option>
+              <option>Adult Sailing</option>
+              <option>Race Team</option>
+              <option>High Performance</option>
+            </select>
+            <textarea class="full" placeholder="Anything else?"></textarea>
+            <button type="submit">Send inquiry →</button>
+          </form>
+        </div>
+        <div class="c-info-side">
+          <div>
+            <h4>Or reach us directly</h4>
+            <div class="c-info-block">
+              <div class="lbl">Phone</div>
+              <div class="val">(305) 555-0146<small>9am–6pm, M–F</small></div>
+            </div>
+            <div class="c-info-block">
+              <div class="lbl">Email</div>
+              <div class="val">academy@cgscic.org</div>
+            </div>
+            <div class="c-info-block">
+              <div class="lbl">Visit</div>
+              <div class="val">2990 S. Bayshore Drive<small>Coconut Grove, FL 33133</small></div>
+            </div>
+          </div>
+          <div class="c-info-foot">
+            Open house every other Saturday — 10am to 2pm. Free demo sails for kids who've never been on a boat.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vc-meta">
+      <strong>C · Inline inquiry form</strong>
+      Form on the left ("Tell us about your sailor" — name, age, experience, interest), contact info panel on the right (phone, email, address). Most actionable, most conversion-optimized.
+      <div class="why-row">
+        <div><b>Why this</b>Removes friction — visitors take action without leaving the page. Form fields qualify the lead automatically (age, experience, interest). Coach can route the inquiry without back-and-forth.</div>
+        <div><b>Risk</b>Most "lead-gen funnel" energy — can feel transactional next to the rest of the page. Needs a real backend (form submission, routing, response SLA).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D · Map + practical info -->
+  <div class="vc-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="vc-stage">
+      <div class="vc-eyebrow">D · Map + practical info</div>
+      <div class="vc-title">"Where to find us" — the place-grounded close</div>
+      <div class="layout-d">
+        <div class="d-map">
+          <div class="coast"></div>
+          <div class="grid-streets"></div>
+          <div class="pin"><div class="dot"></div><span class="label">CGSC Dock</span></div>
+        </div>
+        <div class="d-info">
+          <h3>Find us on the Bay</h3>
+          <div class="d-row">
+            <b>Address</b>
+            <span class="val">2990 S. Bayshore Drive<small>Coconut Grove, FL 33133</small></span>
+          </div>
+          <div class="d-row">
+            <b>Hours</b>
+            <span class="val">Tue–Sun · 9am–6pm<small>Closed Mondays</small></span>
+          </div>
+          <div class="d-row">
+            <b>Phone</b>
+            <span class="val">(305) 555-0146</span>
+          </div>
+          <div class="d-row">
+            <b>Open house</b>
+            <span class="val">Every other Saturday<small>Free demo sails · 10am–2pm</small></span>
+          </div>
+          <a class="d-cta" href="#">Plan your visit →</a>
+        </div>
+      </div>
+    </div>
+    <div class="vc-meta">
+      <strong>D · Map + practical info</strong>
+      Stylized map of the dock location, info panel with address, hours, phone, open-house schedule. Closes on the geography — "this is where we are."
+      <div class="why-row">
+        <div><b>Why this</b>Most place-grounded. Pairs the territory thesis (the Bay) with the practical "where to come." Best for local visitors deciding whether to drop in.</div>
+        <div><b>Risk</b>Less brand-aspirational. Reads as the practical/utility close — not the dramatic one. Closer in spirit to a footer than a section 8 moment.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1A3A8A; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a treatment. <strong>A</strong> is the most cinematic close. <strong>B</strong> serves the most visitor types at once. <strong>C</strong> is the conversion-optimized choice. <strong>D</strong> is the place-grounded close.
+    <br><br>
+    Note: this is the section <em>above</em> the footer. Site footer (nav, social, legal) is a separate decision after this.
+  </p>
+</div>

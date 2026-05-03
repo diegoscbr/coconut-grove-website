@@ -1,0 +1,532 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<h2 style="font-family:'Inter Tight','Inter',sans-serif;">Programs grid · section 2 (the spine)</h2>
+<p class="subtitle" style="font-family:'Inter',sans-serif;">Five pillars, one screen. The treatment determines whether the page reads as <em>"here's a menu"</em> or <em>"here's a story."</em> Four approaches below — each rendered in the locked brand system at preview scale.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1A3A8A;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 28px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+    font-family: 'Inter', sans-serif;
+  }
+  .locked-stack-row strong {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .pg-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 8px;
+  }
+  .pg-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .pg-card:hover {
+    border-color: #1A3A8A;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .pg-card.selected {
+    border-color: #1A3A8A;
+    border-width: 2px;
+  }
+  .pg-stage {
+    background: #f4f6fa;
+    padding: 28px 28px 24px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .pg-stage-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 10px;
+  }
+  .pg-stage-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+
+  /* Reusable mini-card piece */
+  .mini {
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+    display: flex;
+    flex-direction: column;
+  }
+  .mini-img {
+    aspect-ratio: 4 / 3;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  /* Placeholder gradients per pillar */
+  .img-junior { background: linear-gradient(135deg, #4A8FCF 0%, #1A3A8A 70%, #142A66 100%); }
+  .img-adult { background: linear-gradient(135deg, #6EA3C5 0%, #2A5179 60%, #1A3A8A 100%); }
+  .img-race { background: linear-gradient(135deg, #1A3A8A 0%, #0F2660 60%, #050B22 100%); }
+  .img-hpc { background: linear-gradient(135deg, #1A3A8A 0%, #142A66 50%, #FF8B5E 200%), linear-gradient(180deg, transparent 0%, rgba(255,139,94,0.18) 100%); }
+  .img-camps { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #1A3A8A 110%); }
+  .mini-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 80%, rgba(255,255,255,0.18) 0%, transparent 50%);
+  }
+  .mini-body {
+    padding: 14px 14px 14px;
+  }
+  .mini-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: -0.005em;
+    color: #111;
+    margin-bottom: 4px;
+    line-height: 1.15;
+  }
+  .mini-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  .mini-cta {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+  }
+
+  /* === Approach A: Uniform 3+2 grid === */
+  .layout-a {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .layout-a > .mini:nth-child(4) { grid-column: 1 / 2; margin-left: 16.5%; }
+  .layout-a > .mini:nth-child(5) { grid-column: 3 / 4; margin-right: -16.5%; }
+  /* simpler: all 5 in a 3-col grid, last 2 cells just sit */
+  @supports (display: grid) {
+    .layout-a > .mini:nth-child(4) { margin-left: 0; grid-column: auto; }
+    .layout-a > .mini:nth-child(5) { margin-right: 0; grid-column: auto; }
+  }
+
+  /* === Approach B: Featured HPC + 4 below === */
+  .layout-b { display: flex; flex-direction: column; gap: 12px; }
+  .layout-b .feature {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+  }
+  .layout-b .feature .img-hpc {
+    aspect-ratio: 16 / 7;
+    position: relative;
+  }
+  .layout-b .feature .feature-body {
+    padding: 22px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .layout-b .feature .feature-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin-bottom: 8px;
+  }
+  .layout-b .feature .feature-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 1.05;
+    color: #111;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+  .layout-b .feature .feature-desc {
+    font-size: 12px;
+    line-height: 1.55;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  .layout-b .row-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  /* === Approach C: Image-as-bg, name-only === */
+  .layout-c {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  @media (max-width: 900px) {
+    .layout-c { grid-template-columns: repeat(2, 1fr); }
+  }
+  .layout-c .tile {
+    aspect-ratio: 3 / 4;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 14px 14px;
+  }
+  .layout-c .tile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+  }
+  .layout-c .tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.65) 100%);
+    z-index: 1;
+  }
+  .layout-c .tile > * { position: relative; z-index: 2; }
+  .layout-c .tile-num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 6px;
+  }
+  .layout-c .tile-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+  }
+
+  /* === Approach D: Editorial split + horizontal cards === */
+  .layout-d {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+  }
+  @media (max-width: 900px) {
+    .layout-d { grid-template-columns: 1fr; }
+  }
+  .layout-d .left h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 10px;
+  }
+  .layout-d .left h3 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 1.1;
+    color: #111;
+    margin-bottom: 12px;
+    letter-spacing: -0.015em;
+  }
+  .layout-d .left p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #555;
+    margin-bottom: 14px;
+  }
+  .layout-d .left .anchors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .layout-d .left .anchors a {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #1A3A8A;
+    font-weight: 600;
+    border-bottom: 1px solid #cfdbe6;
+    padding: 4px 0;
+    text-decoration: none;
+  }
+  .layout-d .right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .layout-d .row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    overflow: hidden;
+    align-items: center;
+  }
+  .layout-d .row .row-img { aspect-ratio: 1; height: 100%; }
+  .layout-d .row .row-body { padding: 10px 12px 10px 0; }
+  .layout-d .row .row-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: #111;
+    letter-spacing: -0.005em;
+    margin-bottom: 2px;
+  }
+  .layout-d .row .row-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #666;
+    line-height: 1.4;
+  }
+
+  .pg-meta {
+    padding: 22px 26px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+  }
+  .pg-meta strong {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .pg-meta .why-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) {
+    .pg-meta .why-row { grid-template-columns: 1fr; }
+  }
+  .pg-meta .why-row b {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <strong>Locked so far</strong>
+  Hero copy · Page spine · 5 pillars (Junior Academy, Adult Sailing, Race Team, High Performance Center, Camps &amp; Coaching) · Brand system D (CGSC navy + light blue + rust accent, Inter) · Wordmark B (header) / C (footer)
+</div>
+
+<div class="pg-grid">
+
+  <!-- A · Uniform 3+2 grid -->
+  <div class="pg-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="pg-stage">
+      <div class="pg-stage-eyebrow">A · Uniform 3+2 grid</div>
+      <div class="pg-stage-title">Five equal pillars, image-on-top cards</div>
+      <div class="layout-a">
+        <div class="mini">
+          <div class="mini-img img-junior"></div>
+          <div class="mini-body"><div class="mini-title">Junior Academy</div><div class="mini-line">Year-round, ages 6–18</div><div class="mini-cta">Explore →</div></div>
+        </div>
+        <div class="mini">
+          <div class="mini-img img-adult"></div>
+          <div class="mini-body"><div class="mini-title">Adult Sailing</div><div class="mini-line">Learn-to-sail + recreational</div><div class="mini-cta">Explore →</div></div>
+        </div>
+        <div class="mini">
+          <div class="mini-img img-race"></div>
+          <div class="mini-body"><div class="mini-title">Race Team</div><div class="mini-line">Competitive squad, junior + adult</div><div class="mini-cta">Explore →</div></div>
+        </div>
+        <div class="mini">
+          <div class="mini-img img-hpc"></div>
+          <div class="mini-body"><div class="mini-title">High Performance Center</div><div class="mini-line">Maru-led, international + Olympic</div><div class="mini-cta">Explore →</div></div>
+        </div>
+        <div class="mini">
+          <div class="mini-img img-camps"></div>
+          <div class="mini-body"><div class="mini-title">Camps &amp; Coaching</div><div class="mini-line">Seasonal intensives + instructor pathway</div><div class="mini-cta">Explore →</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-meta">
+      <strong>A · Uniform 3+2 grid</strong>
+      Five same-size cards. Photo on top, name + 1-liner + arrow CTA. Standard practice — Mouratoglou's exact treatment, every modern academy site, every product grid you've ever seen.
+      <div class="why-row">
+        <div><b>Why this</b>Most predictable. Lowest cognitive load. Every pillar reads as equally important — accessibility-first signal.</div>
+        <div><b>Risk</b>Reads as a menu, not a brand statement. The new HPC arm gets visually equal billing with summer camps.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B · Featured HPC + 4 below -->
+  <div class="pg-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="pg-stage">
+      <div class="pg-stage-eyebrow">B · Featured HPC + 4-grid</div>
+      <div class="pg-stage-title">The new arm gets the spotlight</div>
+      <div class="layout-b">
+        <div class="feature">
+          <div class="img-hpc"></div>
+          <div class="feature-body">
+            <div class="feature-eyebrow">The new chapter</div>
+            <div class="feature-title">High Performance Center</div>
+            <div class="feature-desc">Maru Urban — Director of Sailing Performance. World-class coaching, an international and Olympic pathway built into the academy.</div>
+            <div class="mini-cta">Explore the program →</div>
+          </div>
+        </div>
+        <div class="row-4">
+          <div class="mini">
+            <div class="mini-img img-junior"></div>
+            <div class="mini-body"><div class="mini-title">Junior Academy</div><div class="mini-line">Ages 6–18, year-round</div></div>
+          </div>
+          <div class="mini">
+            <div class="mini-img img-adult"></div>
+            <div class="mini-body"><div class="mini-title">Adult Sailing</div><div class="mini-line">Learn-to-sail + rec</div></div>
+          </div>
+          <div class="mini">
+            <div class="mini-img img-race"></div>
+            <div class="mini-body"><div class="mini-title">Race Team</div><div class="mini-line">Competitive squad</div></div>
+          </div>
+          <div class="mini">
+            <div class="mini-img img-camps"></div>
+            <div class="mini-body"><div class="mini-title">Camps &amp; Coaching</div><div class="mini-line">Seasonal + instructor</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-meta">
+      <strong>B · Featured HPC + 4-grid</strong>
+      High Performance Center as a wide hero card on top — image, eyebrow ("The new chapter"), longer description, Maru's name. Other four pillars in a uniform row below.
+      <div class="why-row">
+        <div><b>Why this</b>Visually announces the new arm without burying it in a uniform grid. Section 2 doubles as both program menu and "what's new here" statement.</div>
+        <div><b>Risk</b>Tells visitors HPC is the most important program — which clashes with "for sailors at every level." Foregrounding the elite arm is a bet about brand priority.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C · Image-as-bg, name-only -->
+  <div class="pg-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="pg-stage">
+      <div class="pg-stage-eyebrow">C · Image-as-background, name-only</div>
+      <div class="pg-stage-title">Cinematic — the photos do the talking</div>
+      <div class="layout-c">
+        <div class="tile img-junior">
+          <div class="tile-num">01</div>
+          <div class="tile-title">Junior<br>Academy</div>
+        </div>
+        <div class="tile img-adult">
+          <div class="tile-num">02</div>
+          <div class="tile-title">Adult<br>Sailing</div>
+        </div>
+        <div class="tile img-race">
+          <div class="tile-num">03</div>
+          <div class="tile-title">Race<br>Team</div>
+        </div>
+        <div class="tile img-hpc">
+          <div class="tile-num">04</div>
+          <div class="tile-title">High<br>Performance</div>
+        </div>
+        <div class="tile img-camps">
+          <div class="tile-num">05</div>
+          <div class="tile-title">Camps &amp;<br>Coaching</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-meta">
+      <strong>C · Image-as-background, name-only</strong>
+      Five vertical tiles, all same size. Each is a full-bleed photograph with a numbered counter (01–05) and the pillar name overlaid bottom-left in display weight. No description on the card — hover or tap reveals more.
+      <div class="why-row">
+        <div><b>Why this</b>Most cinematic and most distinctive. Lets the photography carry the meaning — which works because you're already cutting a custom video for the hero. Mouratoglou's most modern variant.</div>
+        <div><b>Risk</b>Demands five strong photographs (one per pillar). Until those exist, this approach is fragile. Also less explanatory — first-time visitors might not know what "Camps &amp; Coaching" actually offers.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D · Editorial split -->
+  <div class="pg-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="pg-stage">
+      <div class="pg-stage-eyebrow">D · Editorial split</div>
+      <div class="pg-stage-title">Section title left, programs as a vertical list right</div>
+      <div class="layout-d">
+        <div class="left">
+          <h4>The Programs</h4>
+          <h3>Five programs, one Bay.</h3>
+          <p>From a child's first sail to elite international competition — every level of the pathway, taught on the same waters by the same standards.</p>
+          <div class="anchors">
+            <a href="#">→ Junior Academy</a>
+            <a href="#">→ Adult Sailing</a>
+            <a href="#">→ Race Team</a>
+            <a href="#">→ High Performance</a>
+            <a href="#">→ Camps &amp; Coaching</a>
+          </div>
+        </div>
+        <div class="right">
+          <div class="row"><div class="row-img img-junior"></div><div class="row-body"><div class="row-title">Junior Academy</div><div class="row-line">Year-round program for sailors ages 6–18</div></div></div>
+          <div class="row"><div class="row-img img-adult"></div><div class="row-body"><div class="row-title">Adult Sailing</div><div class="row-line">Learn-to-sail and recreational programs for adults</div></div></div>
+          <div class="row"><div class="row-img img-race"></div><div class="row-body"><div class="row-title">Race Team</div><div class="row-line">Competitive squad for juniors and adults</div></div></div>
+          <div class="row"><div class="row-img img-hpc"></div><div class="row-body"><div class="row-title">High Performance Center</div><div class="row-line">Maru-led, international and Olympic pathway</div></div></div>
+          <div class="row"><div class="row-img img-camps"></div><div class="row-body"><div class="row-title">Camps &amp; Coaching</div><div class="row-line">Seasonal intensives plus instructor &amp; coach development</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-meta">
+      <strong>D · Editorial split</strong>
+      Section title and intro paragraph live in a left column; programs are a vertical stack of horizontal rows on the right (small image + title + 1-liner). Reads like a magazine spread.
+      <div class="why-row">
+        <div><b>Why this</b>Most editorial / magazine-feeling. Lets you actually <em>tell</em> visitors what's here in the section intro. More room for meaningful descriptions per program.</div>
+        <div><b>Risk</b>Less visual energy — the programs themselves get smaller real estate. Mobile collapses the split, which loses the editorial effect.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1A3A8A; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a treatment. The image gradients above are placeholders — actual photography will be sourced from the cut-together video footage you're producing. Mouratoglou's site uses C; the most "accessible-first" choice is A; B foregrounds the new arm.
+  </p>
+</div>

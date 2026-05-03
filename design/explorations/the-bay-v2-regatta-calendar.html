@@ -1,0 +1,552 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<h2 style="font-family:'Inter Tight','Inter',sans-serif;">The Bay · v2 — high-performance racing, year-round</h2>
+<p class="subtitle" style="font-family:'Inter',sans-serif;">v1 framed The Bay generically. v2 anchors the section on the actual youth regatta calendar — the proof that "premier" isn't a slogan but a schedule. Every season has a marquee youth event on this water. Two layouts of the same data below.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1A3A8A;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 18px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+    font-family: 'Inter', sans-serif;
+  }
+  .locked-stack-row strong {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .retire {
+    margin: 0 0 22px;
+    padding: 12px 16px;
+    background: #fff5f5;
+    border-left: 3px solid #c45656;
+    font-size: 12px;
+    color: #6b3636;
+    line-height: 1.55;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .by-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 8px;
+  }
+  .by-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .by-card:hover {
+    border-color: #1A3A8A;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .by-card.selected {
+    border-color: #1A3A8A;
+    border-width: 2px;
+  }
+  .by-stage {
+    background: #f4f6fa;
+    padding: 26px 26px 24px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .by-eyebrow {
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 10px;
+  }
+  .by-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+
+  /* Season palettes */
+  .winter { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #1A3A8A 110%); }
+  .spring { background: linear-gradient(135deg, #88a5c0 0%, #2A5179 60%, #1A3A8A 100%); }
+  .summer { background: linear-gradient(135deg, #f5d090 0%, #FF8B5E 60%, #c46b3a 100%); }
+  .fall    { background: linear-gradient(135deg, #6EA3C5 0%, #1A3A8A 60%, #142A66 100%); }
+
+  /* === Layout A — 4-season grid === */
+  .layout-a {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .a-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .a-headline em { color: #FF8B5E; font-style: italic; font-weight: 500; }
+  .a-sub {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 22px;
+    max-width: 600px;
+    line-height: 1.55;
+  }
+  .a-seasons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 800px) { .a-seasons { grid-template-columns: 1fr 1fr; } }
+  .a-season {
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .a-season-img {
+    aspect-ratio: 16 / 9;
+    position: relative;
+  }
+  .a-season-img .label {
+    position: absolute;
+    top: 10px; left: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(0,0,0,0.4);
+    padding: 4px 8px;
+    border-radius: 2px;
+  }
+  .a-season-img .months {
+    position: absolute;
+    bottom: 10px; right: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+  }
+  .a-season-body {
+    padding: 14px 14px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .a-feature-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #FF8B5E;
+    margin-bottom: 4px;
+  }
+  .a-feature-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    color: #111;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .a-feature-meta {
+    font-size: 11px;
+    color: #1A3A8A;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+  .a-feature-line {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  .a-also {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px dashed #cfdbe6;
+    font-size: 10px;
+    color: #777;
+    line-height: 1.5;
+  }
+  .a-also b {
+    font-weight: 700;
+    color: #1A3A8A;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .a-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 18px;
+  }
+  @media (max-width: 800px) { .a-stats { grid-template-columns: 1fr 1fr; } }
+  .a-stat {
+    border-top: 2px solid #1A3A8A;
+    padding-top: 10px;
+  }
+  .a-stat .num {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    color: #1A3A8A;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .a-stat:last-child .num { color: #FF8B5E; }
+  .a-stat .lbl {
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+
+  /* === Layout B — Horizontal year strip === */
+  .layout-b {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .b-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .b-headline em { color: #FF8B5E; font-style: italic; font-weight: 500; }
+  .b-sub {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 22px;
+    max-width: 600px;
+    line-height: 1.55;
+  }
+  .year-strip {
+    position: relative;
+    margin-top: 18px;
+    padding-top: 24px;
+  }
+  .year-months {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    border-bottom: 2px solid #cfdbe6;
+    margin-bottom: 28px;
+  }
+  .year-months .ym {
+    text-align: center;
+    padding: 8px 4px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .year-months .ym::after {
+    content: "";
+    position: absolute;
+    bottom: -3px; left: 50%;
+    width: 4px; height: 4px;
+    background: #cfdbe6;
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
+  .year-pins {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 14px;
+  }
+  .year-pin {
+    grid-column: var(--col, 1);
+    position: relative;
+    padding-top: 14px;
+  }
+  .year-pin::before {
+    content: "";
+    position: absolute;
+    top: -38px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px; height: 12px;
+    background: #FF8B5E;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(255,139,94,0.3);
+  }
+  .year-pin.std::before {
+    background: #1A3A8A;
+    box-shadow: 0 0 0 3px rgba(26,58,138,0.3);
+  }
+  .year-pin .pin-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-left: 3px solid #FF8B5E;
+    border-radius: 3px;
+    padding: 10px 12px;
+    width: 200%;
+    transform: translateX(-25%);
+  }
+  .year-pin.std .pin-card { border-left-color: #1A3A8A; }
+  .year-pin .pin-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #FF8B5E;
+    margin-bottom: 3px;
+  }
+  .year-pin.std .pin-eyebrow { color: #1A3A8A; }
+  .year-pin .pin-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: #111;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    margin-bottom: 3px;
+  }
+  .year-pin .pin-meta {
+    font-size: 10px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .by-meta {
+    padding: 22px 26px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+  }
+  .by-meta strong {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .by-meta .why-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .by-meta .why-row { grid-template-columns: 1fr; } }
+  .by-meta .why-row b {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <strong>Section angle (steered)</strong>
+  Anchor The Bay on the youth regatta calendar — Open Orange Bowl (Dec), Don Q Snipe (March/April), Miami Sail Week Youth (Spring), Summer Sailing Camp + clinics (June–Aug), Optimist RWB Championship Series (Fall). Frames Biscayne Bay as a year-round high-performance training venue for kids — the IC's actual brief.
+</div>
+
+<div class="retire">
+  v1 retired (annotated map / cinematic / generic calendar / day-in-the-life) — too venue-tour, didn't carry the IC's actual story. v2 makes the regatta calendar the section.
+</div>
+
+<div class="by-grid">
+
+  <!-- Layout A — 4-season grid -->
+  <div class="by-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="by-stage">
+      <div class="by-eyebrow">A · 4-season grid</div>
+      <div class="by-title">Four cards. Four seasons. Four regattas.</div>
+      <div class="layout-a">
+        <div class="a-headline">High-performance racing, <em>every season.</em></div>
+        <div class="a-sub">From the green fleet to the Opti world stage — Biscayne Bay runs a youth regatta calendar with no off-season.</div>
+        <div class="a-seasons">
+          <div class="a-season">
+            <div class="a-season-img winter">
+              <span class="label">Winter</span>
+              <span class="months">Dec — Feb</span>
+            </div>
+            <div class="a-season-body">
+              <div class="a-feature-eyebrow">Marquee event</div>
+              <div class="a-feature-name">Open Orange Bowl Regatta</div>
+              <div class="a-feature-meta">Dec 27–30 · CGSC</div>
+              <div class="a-feature-line">600+ youth sailors. Optis, ILCAs, C420s. The crown jewel of CGSC's calendar.</div>
+              <div class="a-also">
+                <b>Also this season</b>
+                Junior winter clinics · holiday regatta series
+              </div>
+            </div>
+          </div>
+          <div class="a-season">
+            <div class="a-season-img spring">
+              <span class="label">Spring</span>
+              <span class="months">Mar — May</span>
+            </div>
+            <div class="a-season-body">
+              <div class="a-feature-eyebrow">Marquee event</div>
+              <div class="a-feature-name">Don Q Snipe Regatta</div>
+              <div class="a-feature-meta">60th annual · April 10–12, 2026</div>
+              <div class="a-feature-line">CGSC's longest-running regatta. International field. Spring season culmination for Snipe sailors.</div>
+              <div class="a-also">
+                <b>Also this season</b>
+                Miami Sail Week Youth · Spring Series
+              </div>
+            </div>
+          </div>
+          <div class="a-season">
+            <div class="a-season-img summer">
+              <span class="label">Summer</span>
+              <span class="months">Jun — Aug</span>
+            </div>
+            <div class="a-season-body">
+              <div class="a-feature-eyebrow">Marquee program</div>
+              <div class="a-feature-name">Summer Sailing Camp &amp; Racing Clinics</div>
+              <div class="a-feature-meta">Weekly · Ages 6–17</div>
+              <div class="a-feature-line">Opti, ILCA, and C420 racing clinics — tactical decision-making, advanced starts, boat handling.</div>
+              <div class="a-also">
+                <b>Also this season</b>
+                Summer Series racing · regional camps
+              </div>
+            </div>
+          </div>
+          <div class="a-season">
+            <div class="a-season-img fall">
+              <span class="label">Fall</span>
+              <span class="months">Sep — Nov</span>
+            </div>
+            <div class="a-season-body">
+              <div class="a-feature-eyebrow">Marquee program</div>
+              <div class="a-feature-name">Optimist RWB Championship Series</div>
+              <div class="a-feature-meta">Red · White · Blue fleets</div>
+              <div class="a-feature-line">The highest level of Optimist racing — championship fleet for sailors who've earned the rules and tactics.</div>
+              <div class="a-also">
+                <b>Also this season</b>
+                Green Fleet program · Fall Series
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="a-stats">
+          <div class="a-stat"><div class="num">365</div><div class="lbl">Sailable days</div></div>
+          <div class="a-stat"><div class="num">76°F</div><div class="lbl">Avg water temp</div></div>
+          <div class="a-stat"><div class="num">600+</div><div class="lbl">Sailors at Orange Bowl</div></div>
+          <div class="a-stat"><div class="num">No</div><div class="lbl">Off-season</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="by-meta">
+      <strong>A · 4-season grid</strong>
+      Four square cards. Each = a season + season image + featured regatta with date + 1-line context + secondary events. Stats anchor below.
+      <div class="why-row">
+        <div><b>Why this</b>Most scannable — visitors know what's happening every season in one screen. Each card stands on its own; cards survive missing photography (the season gradient does work). Mobile-friendly (collapses to 2-up cleanly).</div>
+        <div><b>Risk</b>Reads slightly as "events page" if not paired with strong photography. Each card is small — less room for the big-moment feel a peak regatta deserves.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Layout B — Horizontal year strip -->
+  <div class="by-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="by-stage">
+      <div class="by-eyebrow">B · Horizontal year strip</div>
+      <div class="by-title">A literal calendar — pinned regattas across the year</div>
+      <div class="layout-b">
+        <div class="b-headline">Twelve months. <em>A regatta in every one.</em></div>
+        <div class="b-sub">Every marquee youth event on Biscayne Bay, plotted on the year.</div>
+        <div class="year-strip">
+          <div class="year-months">
+            <div class="ym">Jan</div><div class="ym">Feb</div><div class="ym">Mar</div><div class="ym">Apr</div><div class="ym">May</div><div class="ym">Jun</div><div class="ym">Jul</div><div class="ym">Aug</div><div class="ym">Sep</div><div class="ym">Oct</div><div class="ym">Nov</div><div class="ym">Dec</div>
+          </div>
+          <div class="year-pins">
+            <div class="year-pin" style="--col: 4;">
+              <div class="pin-card">
+                <div class="pin-eyebrow">Marquee · April</div>
+                <div class="pin-name">Don Q Snipe Regatta</div>
+                <div class="pin-meta">60th annual · International field · CGSC</div>
+              </div>
+            </div>
+            <div class="year-pin std" style="--col: 7;">
+              <div class="pin-card">
+                <div class="pin-eyebrow">Summer · June–Aug</div>
+                <div class="pin-name">Summer Camp + Racing Clinics</div>
+                <div class="pin-meta">Opti / ILCA / C420 · Ages 6–17</div>
+              </div>
+            </div>
+            <div class="year-pin std" style="--col: 10;">
+              <div class="pin-card">
+                <div class="pin-eyebrow">Fall · Sep–Nov</div>
+                <div class="pin-name">Optimist RWB Championship</div>
+                <div class="pin-meta">Red, White &amp; Blue fleets — the highest tier</div>
+              </div>
+            </div>
+            <div class="year-pin" style="--col: 12;">
+              <div class="pin-card">
+                <div class="pin-eyebrow">Marquee · Dec 27–30</div>
+                <div class="pin-name">Open Orange Bowl Regatta</div>
+                <div class="pin-meta">600+ kids · multi-class · CGSC's crown jewel</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="by-meta">
+      <strong>B · Horizontal year strip</strong>
+      A literal year axis with regattas pinned at their actual dates. Marquee events (Orange Bowl, Don Q) get rust pins; programs (Summer, Fall RWB) get navy. Each pin has a card with name + dates + 1-line context.
+      <div class="why-row">
+        <div><b>Why this</b>Most distinctive — actual calendar shape carries the "every season" claim visually. Pin colors create instant hierarchy (peak events vs. ongoing programs). Works as an anchor for "what's next?" CTA at the bottom.</div>
+        <div><b>Risk</b>More design-fragile than the grid; if pin spacing isn't tuned right it looks crowded. Mobile collapse is harder — strip needs horizontal scroll on small screens.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1A3A8A; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a layout. Both use the same regatta data — the choice is whether the section reads as "four season cards" (A) or "an actual year on a line" (B). Regatta names and dates are real, sourced from CGSC's published calendar.
+  </p>
+</div>

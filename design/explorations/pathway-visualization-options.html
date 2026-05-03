@@ -1,0 +1,596 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<h2 style="font-family:'Inter Tight','Inter',sans-serif;">The Pathway · section 3</h2>
+<p class="subtitle" style="font-family:'Inter',sans-serif;">The most distinctive moment on the page — the through-line that turns five separate programs into one continuous story. <em>"From a child's first tack to the Olympic podium, on the same water."</em> Four ways to render it.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1A3A8A;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 18px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+    font-family: 'Inter', sans-serif;
+  }
+  .locked-stack-row strong {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Rotation demo strip */
+  .rotation-demo {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    padding: 14px 16px 12px;
+    margin: 0 0 28px;
+    font-family: 'Inter', sans-serif;
+  }
+  .rotation-demo h5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin: 0 0 8px;
+  }
+  .rotation-states {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  @media (max-width: 800px) { .rotation-states { grid-template-columns: 1fr; } }
+  .rot-state {
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .rot-bar {
+    background: #1A3A8A;
+    color: #fff;
+    padding: 8px 10px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .rot-bar .eb {
+    color: #FF8B5E;
+  }
+  .rot-img {
+    aspect-ratio: 16 / 6;
+  }
+  .rot-img.hpc { background: linear-gradient(135deg, #1A3A8A 0%, #142A66 50%, rgba(255,139,94,0.45) 200%); }
+  .rot-img.camps { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #1A3A8A 110%); }
+  .rot-img.race { background: linear-gradient(135deg, #1A3A8A 0%, #0F2660 60%, #050B22 100%); }
+  .rot-name {
+    padding: 8px 10px;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    color: #111;
+  }
+
+  .pa-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 14px;
+  }
+  .pa-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .pa-card:hover {
+    border-color: #1A3A8A;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .pa-card.selected {
+    border-color: #1A3A8A;
+    border-width: 2px;
+  }
+  .pa-stage {
+    background: #f4f6fa;
+    padding: 26px 26px 24px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .pa-eyebrow {
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 10px;
+  }
+  .pa-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+
+  /* === A: Horizontal stepped ladder === */
+  .ladder-h {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 36px 22px 28px;
+    position: relative;
+  }
+  .ladder-h-track {
+    position: relative;
+    height: 80px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: end;
+  }
+  .ladder-h-track::before {
+    content: "";
+    position: absolute;
+    bottom: 28px;
+    left: 0; right: 0;
+    height: 2px;
+    background: #cfdbe6;
+    z-index: 0;
+  }
+  .ladder-step {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    transform: translateY(0);
+  }
+  .ladder-step:nth-child(1) { transform: translateY(40px); }
+  .ladder-step:nth-child(2) { transform: translateY(28px); }
+  .ladder-step:nth-child(3) { transform: translateY(16px); }
+  .ladder-step:nth-child(4) { transform: translateY(6px); }
+  .ladder-step:nth-child(5) { transform: translateY(-4px); }
+  .ladder-dot {
+    width: 12px; height: 12px;
+    background: #1A3A8A;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    box-shadow: 0 0 0 3px #cfdbe6;
+  }
+  .ladder-step:last-child .ladder-dot {
+    background: #FF8B5E;
+    box-shadow: 0 0 0 3px rgba(255,139,94,0.25);
+  }
+  .ladder-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 2px;
+  }
+  .ladder-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: #777;
+  }
+  .ladder-h-axis {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    padding: 0 4px;
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* === B: Vertical scroll journey === */
+  .journey {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .journey-step {
+    display: grid;
+    grid-template-columns: 80px 1fr 2fr;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px dashed #cfdbe6;
+    align-items: center;
+  }
+  .journey-step:last-child { border-bottom: none; }
+  .journey-num {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: #cfdbe6;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .journey-step.hl .journey-num { color: #FF8B5E; }
+  .journey-img {
+    aspect-ratio: 4 / 3;
+    border-radius: 4px;
+  }
+  .journey-text .journey-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 4px;
+  }
+  .journey-text .journey-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .journey-text .journey-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  /* === C: Interactive selector === */
+  .selector {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 18px;
+  }
+  @media (max-width: 800px) { .selector { grid-template-columns: 1fr; } }
+  .selector-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .selector-item {
+    padding: 10px 12px;
+    border-radius: 3px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #444;
+    cursor: default;
+    border-left: 2px solid transparent;
+  }
+  .selector-item.active {
+    background: #f6faff;
+    border-left-color: #FF8B5E;
+    color: #111;
+  }
+  .selector-item span {
+    font-size: 9px;
+    color: #999;
+    font-weight: 500;
+    margin-left: 6px;
+  }
+  .selector-detail {
+    border-left: 1px solid #ececec;
+    padding-left: 16px;
+  }
+  .selector-detail .det-img {
+    aspect-ratio: 16 / 6;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #1A3A8A 0%, #0F2660 60%, #050B22 100%);
+  }
+  .selector-detail h6 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    margin: 0 0 6px;
+  }
+  .selector-detail p {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.55;
+    margin: 0 0 10px;
+  }
+  .selector-detail .det-meta {
+    display: flex;
+    gap: 14px;
+    font-size: 10px;
+    color: #1A3A8A;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* === D: Ladder + named alumni === */
+  .alumni-ladder {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .alumni-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 1.5fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px dashed #cfdbe6;
+    align-items: center;
+  }
+  .alumni-row:last-child { border-bottom: none; }
+  .alumni-rung {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    text-align: right;
+    border-right: 2px solid #cfdbe6;
+    padding-right: 14px;
+  }
+  .alumni-row.peak .alumni-rung { color: #FF8B5E; border-right-color: #FF8B5E; }
+  .alumni-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    color: #111;
+    letter-spacing: -0.005em;
+  }
+  .alumni-name small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    color: #888;
+    margin-top: 2px;
+  }
+  .alumni-quote {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #555;
+    font-style: italic;
+  }
+  .alumni-disclaimer {
+    margin-top: 10px;
+    font-size: 10px;
+    color: #999;
+    font-style: italic;
+  }
+
+  .pa-meta {
+    padding: 22px 26px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+  }
+  .pa-meta strong {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .pa-meta .why-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .pa-meta .why-row { grid-template-columns: 1fr; } }
+  .pa-meta .why-row b {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <strong>Programs grid · LOCKED</strong>
+  Approach B (featured pillar + 4 below) · spotlight slot is rotatable — eyebrow + image + featured pillar are config-driven, swappable seasonally or by enrollment cycle.
+</div>
+
+<div class="rotation-demo">
+  <h5>Rotation in action — same layout, different featured pillar</h5>
+  <div class="rotation-states">
+    <div class="rot-state">
+      <div class="rot-bar"><span class="eb">The new chapter</span><span>Default</span></div>
+      <div class="rot-img hpc"></div>
+      <div class="rot-name">High Performance Center</div>
+    </div>
+    <div class="rot-state">
+      <div class="rot-bar"><span class="eb">Summer enrollment open</span><span>Jun–Aug</span></div>
+      <div class="rot-img camps"></div>
+      <div class="rot-name">Camps &amp; Coaching</div>
+    </div>
+    <div class="rot-state">
+      <div class="rot-bar"><span class="eb">Regatta season</span><span>Mar–May</span></div>
+      <div class="rot-img race"></div>
+      <div class="rot-name">Race Team</div>
+    </div>
+  </div>
+</div>
+
+<div class="pa-grid">
+
+  <!-- A · Horizontal stepped ladder -->
+  <div class="pa-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="pa-stage">
+      <div class="pa-eyebrow">A · Horizontal stepped ladder</div>
+      <div class="pa-title">Diagrammatic — first sail to Olympic podium, in one image</div>
+      <div class="ladder-h">
+        <div class="ladder-h-track">
+          <div class="ladder-step"><div class="ladder-dot"></div><div class="ladder-label">Discover</div><div class="ladder-meta">Age 6–9</div></div>
+          <div class="ladder-step"><div class="ladder-dot"></div><div class="ladder-label">Develop</div><div class="ladder-meta">Age 10–13</div></div>
+          <div class="ladder-step"><div class="ladder-dot"></div><div class="ladder-label">Race</div><div class="ladder-meta">Age 14–18</div></div>
+          <div class="ladder-step"><div class="ladder-dot"></div><div class="ladder-label">Compete</div><div class="ladder-meta">College / National</div></div>
+          <div class="ladder-step"><div class="ladder-dot"></div><div class="ladder-label">Perform</div><div class="ladder-meta">Olympic / Pro</div></div>
+        </div>
+        <div class="ladder-h-axis"><span>FIRST SAIL</span><span>OLYMPIC PODIUM</span></div>
+      </div>
+    </div>
+    <div class="pa-meta">
+      <strong>A · Horizontal stepped ladder</strong>
+      A literal staircase. Five labeled rungs from "First sail" to "Olympic podium," each annotated with age range or competitive level. The peak rung uses the rust accent. Static, diagrammatic, scannable in a glance.
+      <div class="why-row">
+        <div><b>Why this</b>Most communicative in the least space. Reads as a credential — "this academy has thought about every rung." Pairs naturally with section 2's pillar grid (each pillar maps to rungs).</div>
+        <div><b>Risk</b>Diagrams can read as corporate / brochure-y. Won't carry emotional weight on its own — needs photography or a voiceover to make it feel earned.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B · Vertical scroll journey -->
+  <div class="pa-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="pa-stage">
+      <div class="pa-eyebrow">B · Vertical scroll journey</div>
+      <div class="pa-title">Cinematic — each rung gets its own moment</div>
+      <div class="journey">
+        <div class="journey-step">
+          <div class="journey-num">01</div>
+          <div class="journey-img" style="background:linear-gradient(135deg,#4A8FCF 0%,#1A3A8A 70%);"></div>
+          <div class="journey-text"><div class="journey-label">Age 6–9</div><div class="journey-name">Discover</div><div class="journey-line">First time on the water. Optimist dinghies, calm Bay days, learning by playing.</div></div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-num">02</div>
+          <div class="journey-img" style="background:linear-gradient(135deg,#6EA3C5 0%,#2A5179 60%);"></div>
+          <div class="journey-text"><div class="journey-label">Age 10–13</div><div class="journey-name">Develop</div><div class="journey-line">Sailors take ownership of the boat. Tactics, weather, first overnight regattas.</div></div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-num">03</div>
+          <div class="journey-img" style="background:linear-gradient(135deg,#1A3A8A 0%,#0F2660 60%);"></div>
+          <div class="journey-text"><div class="journey-label">Age 14–18</div><div class="journey-name">Race</div><div class="journey-line">Local and regional racing. 420s, Lasers, the CGSC Race Team.</div></div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-num">04</div>
+          <div class="journey-img" style="background:linear-gradient(135deg,#1A3A8A 0%,#0F2660 60%);"></div>
+          <div class="journey-text"><div class="journey-label">College / National</div><div class="journey-name">Compete</div><div class="journey-line">High school sailing, college recruitment, national championships.</div></div>
+        </div>
+        <div class="journey-step hl">
+          <div class="journey-num">05</div>
+          <div class="journey-img" style="background:linear-gradient(135deg,#1A3A8A 0%,#142A66 50%,rgba(255,139,94,0.4));"></div>
+          <div class="journey-text"><div class="journey-label">Olympic / Pro</div><div class="journey-name">Perform</div><div class="journey-line">High Performance Center — international competition, Olympic pathway.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="pa-meta">
+      <strong>B · Vertical scroll journey</strong>
+      Five numbered moments stacked vertically, each with its own photograph and short description. Reads top-to-bottom as the visitor scrolls. Most editorial, most cinematic.
+      <div class="why-row">
+        <div><b>Why this</b>Each rung gets enough room to feel real — photography does most of the work, copy fills in. Builds emotional momentum down the page; the final rung lands as a payoff.</div>
+        <div><b>Risk</b>Takes vertical real estate. Ladder is harder to grasp at a glance — visitors who skim will see "five photos," not "the through-line."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C · Interactive selector -->
+  <div class="pa-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="pa-stage">
+      <div class="pa-eyebrow">C · Interactive selector</div>
+      <div class="pa-title">Click a rung — see it unfold</div>
+      <div class="selector">
+        <div class="selector-list">
+          <div class="selector-item">Discover<span>· age 6–9</span></div>
+          <div class="selector-item">Develop<span>· age 10–13</span></div>
+          <div class="selector-item active">Race<span>· age 14–18</span></div>
+          <div class="selector-item">Compete<span>· college / national</span></div>
+          <div class="selector-item">Perform<span>· Olympic / pro</span></div>
+        </div>
+        <div class="selector-detail">
+          <div class="det-img"></div>
+          <h6>Race</h6>
+          <p>Local and regional racing on 420s and Lasers. The CGSC Race Team competes in 30+ regattas a season — Miami, the Keys, the Bahamas.</p>
+          <div class="det-meta">
+            <span>3× / Week</span>
+            <span>Coach-led</span>
+            <span>Year-round</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pa-meta">
+      <strong>C · Interactive selector</strong>
+      Compact. Five rungs as a vertical list on the left; click one and the right panel updates with a photograph + description + meta (frequency, coach ratio, season). Most informational density per pixel.
+      <div class="why-row">
+        <div><b>Why this</b>Visitors who care about a specific rung can dig in. Stays on one screen — no scrolling required. Most "useful" of the four; closest to a real product configurator.</div>
+        <div><b>Risk</b>Requires interaction to get the story. Visitors who don't click see only the default rung. Mobile collapse loses the cleverness.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D · Named alumni ladder -->
+  <div class="pa-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="pa-stage">
+      <div class="pa-eyebrow">D · Named alumni at each rung</div>
+      <div class="pa-title">Receipts — the pathway, in real names</div>
+      <div class="alumni-ladder">
+        <div class="alumni-row">
+          <div class="alumni-rung">DISCOVER<br><small>2018</small></div>
+          <div class="alumni-name">Maya Castillo<small>Age 7, first Optimist season</small></div>
+          <div class="alumni-quote">"My first race I capsized. The coach laughed and so did I."</div>
+        </div>
+        <div class="alumni-row">
+          <div class="alumni-rung">DEVELOP<br><small>2020</small></div>
+          <div class="alumni-name">Maya Castillo<small>Optimist Nationals qualifier</small></div>
+          <div class="alumni-quote">"Three years later I knew the wind on the Bay better than my own backyard."</div>
+        </div>
+        <div class="alumni-row">
+          <div class="alumni-rung">RACE<br><small>2023</small></div>
+          <div class="alumni-name">Maya Castillo<small>CGSC Race Team, 420 crew</small></div>
+          <div class="alumni-quote">"The Race Team was where I learned to lose well. That's when I started winning."</div>
+        </div>
+        <div class="alumni-row peak">
+          <div class="alumni-rung">PERFORM<br><small>2025</small></div>
+          <div class="alumni-name">Maya Castillo<small>US Sailing Youth World Team</small></div>
+          <div class="alumni-quote">"Same Bay. Same coaches. Just deeper."</div>
+        </div>
+      </div>
+      <p class="alumni-disclaimer">Placeholder names — real CGSC alumni / current students would be sourced.</p>
+    </div>
+    <div class="pa-meta">
+      <strong>D · Named alumni at each rung</strong>
+      The ladder is a real person. Same sailor's name walked up four rungs over four years, with quotes at each stage. Closes with their current achievement. Most credibility-driven and most emotional.
+      <div class="why-row">
+        <div><b>Why this</b>The pathway becomes evidence, not aspiration. "We've done this for them — we can do it for your kid." Strongest possible answer to "is this academy real?" Pairs perfectly with the heritage section.</div>
+        <div><b>Risk</b>Requires a real alumnus willing to be the named example. If you can name 3-4 actual sailors, this is the strongest option in the deck. If not, it's a writing exercise.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1A3A8A; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a treatment. <strong>D</strong> is the strongest if real alumni are sourceable — turns the academy claim into receipts. <strong>B</strong> is the safest cinematic option. <strong>A</strong> is a good "explanatory" base that could be paired with B (diagram up top, journey below).
+  </p>
+</div>

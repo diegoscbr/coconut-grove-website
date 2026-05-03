@@ -1,0 +1,131 @@
+<h2>Positioning headline · v2</h2>
+<p class="subtitle">3-line declarative statement (not action verbs). Plus a value-modifier line baking in <em>accessible · historic · performance-focused</em>. Brand color shown in placeholder navy — palette TBD.</p>
+
+<style>
+  .pos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 24px;
+  }
+  @media (max-width: 1100px) {
+    .pos-grid { grid-template-columns: 1fr; }
+  }
+  .pos-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 36px 28px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .pos-card:hover {
+    border-color: #1a3d5c;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .pos-card.selected {
+    border-color: #1a3d5c;
+    border-width: 2px;
+    background: #f6faff;
+  }
+  .pos-line {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px 0;
+    border-top: 1px solid #e2e2e2;
+    color: #111;
+  }
+  .pos-line:first-of-type { border-top: none; }
+  .pos-line.accent { color: #1a3d5c; }
+  .pos-mod {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #444;
+    font-weight: 500;
+  }
+  .pos-meta {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px dashed #d0d0d0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #555;
+  }
+  .pos-meta strong {
+    color: #111;
+    display: block;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .superscript {
+    font-size: 0.55em;
+    vertical-align: top;
+    line-height: 1;
+    margin-left: 1px;
+    font-weight: 700;
+  }
+</style>
+
+<div class="pos-grid">
+
+  <div class="pos-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="pos-line">THE N<span class="superscript">o</span>1</div>
+    <div class="pos-line accent">SAILING ACADEMY</div>
+    <div class="pos-line">IN BISCAYNE BAY</div>
+    <div class="pos-mod">Accessible · Historic · World-Class</div>
+    <div class="pos-meta">
+      <strong>A · Direct Mouratoglou move</strong>
+      Boldest claim. Maps 1:1 to "THE N°1 TENNIS ACADEMY IN EUROPE." Asserts the position outright. Risk: needs proof points immediately below or it reads as bluster — but Maru's resume + the World Cup leg + the alumni list provide that proof.
+    </div>
+  </div>
+
+  <div class="pos-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="pos-line">MIAMI'S</div>
+    <div class="pos-line accent">PREMIER</div>
+    <div class="pos-line">SAILING ACADEMY</div>
+    <div class="pos-mod">Since 1946 · Accessible to All · World-Stage Trained</div>
+    <div class="pos-meta">
+      <strong>B · City-led, premier-claim</strong>
+      Owns Miami as the territory rather than just the Bay (broader geographic claim, fewer competitors named). "Premier" is softer than "N°1" but still assertive. Heritage stat lives in the modifier.
+    </div>
+  </div>
+
+  <div class="pos-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="pos-line">80 YEARS.</div>
+    <div class="pos-line accent">ONE BAY.</div>
+    <div class="pos-line">ONE ACADEMY.</div>
+    <div class="pos-mod">Accessible · Historic · Performance-Focused</div>
+    <div class="pos-meta">
+      <strong>C · Stat-baked, terse</strong>
+      Mimics Mouratoglou's "stats baked into prose" credibility move. Implies premier-ness without claiming it. Most ownable headline of the four — no other Bay program can say "80 years." Risk: doesn't explicitly name the category ("sailing").
+    </div>
+  </div>
+
+  <div class="pos-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="pos-line">BISCAYNE BAY'S</div>
+    <div class="pos-line accent">PREMIER SAILING</div>
+    <div class="pos-line">ACADEMY</div>
+    <div class="pos-mod">Founded 1946 · Open to All Ages · Coached at the World Stage</div>
+    <div class="pos-meta">
+      <strong>D · Place-first, three values explicit</strong>
+      Place leads, claim follows, three values explicitly stated in the modifier (accessibility / heritage / performance). Most balanced of the four — doesn't oversell, doesn't undersell. Closest to a literal answer to your brief.
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1a3d5c; border-radius: 0 4px 4px 0;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Click your pick, or in the terminal: <strong>(1)</strong> tell me which lines/fragments to combine, <strong>(2)</strong> rewrite a line in your own words, or <strong>(3)</strong> say "still not it" and I'll redraft. We're not locked in — this is the lever everything else hangs off, so it's worth getting right.
+  </p>
+</div>

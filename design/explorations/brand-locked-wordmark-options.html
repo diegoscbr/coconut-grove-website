@@ -1,0 +1,462 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;900&display=swap" rel="stylesheet">
+
+<h2 style="font-family:'Inter Tight','Inter',sans-serif;">Brand identity · LOCKED + wordmark lockup</h2>
+<p class="subtitle" style="font-family:'Inter',sans-serif;">Direction D locked. Type system: <strong>Inter</strong> throughout — no serifs. Below: the locked hero rendered in the actual system, then three wordmark lockup options to choose between for the site header.</p>
+
+<style>
+  .hero-locked {
+    background: linear-gradient(180deg, rgba(26,58,138,0.05) 0%, rgba(26,58,138,0.0) 100%);
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1A3A8A;
+    border-radius: 4px;
+    padding: 0;
+    margin: 22px 0 32px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+  .hero-locked-tag {
+    background: #1A3A8A;
+    color: #fff;
+    padding: 8px 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-locked-tag::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.25);
+  }
+  .hero-locked-stage {
+    background: #1A3A8A;
+    color: #fff;
+    padding: 48px 40px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-locked-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.35) 100%),
+      radial-gradient(ellipse 70% 60% at 75% 30%, rgba(74,143,207,0.4) 0%, rgba(74,143,207,0) 70%),
+      linear-gradient(180deg, #1A3A8A 0%, #142A66 100%);
+    z-index: 0;
+  }
+  .hero-locked-stage > * { position: relative; z-index: 1; }
+  .hero-locked-mark {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 38px;
+  }
+  .hero-locked-mark .pen {
+    width: 44px; height: 26px; flex-shrink: 0;
+  }
+  .hero-locked-mark .name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .hero-locked-mark .name small {
+    display: block;
+    font-weight: 500;
+    font-size: 9.5px;
+    letter-spacing: 0.34em;
+    color: #B5C7E8;
+    margin-top: 4px;
+  }
+  .hero-locked-stack {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 0.94;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .hero-locked-sub {
+    margin-top: 22px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.85);
+    max-width: 640px;
+  }
+  .hero-locked-sub .em {
+    color: #FF8B5E;
+    font-weight: 500;
+    font-style: italic;
+  }
+  .hero-locked-cta {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 12px 22px;
+    background: #fff;
+    color: #1A3A8A;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  .spec-strip {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid #e5e5e5;
+    background: #fafafa;
+  }
+  @media (max-width: 900px) {
+    .spec-strip { grid-template-columns: 1fr; }
+  }
+  .spec-block {
+    padding: 20px 22px;
+    border-right: 1px solid #ececec;
+    font-family: 'Inter', sans-serif;
+  }
+  .spec-block:last-child { border-right: none; }
+  .spec-block h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin: 0 0 12px;
+  }
+  .spec-swatches {
+    display: flex;
+    gap: 4px;
+  }
+  .spec-swatches .sw {
+    flex: 1;
+    height: 32px;
+    border-radius: 3px;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .spec-swatches .sw span {
+    position: absolute;
+    bottom: 2px; left: 4px;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .spec-swatches .sw.dark span { color: rgba(255,255,255,0.9); }
+  .spec-swatches .sw.light span { color: rgba(0,0,0,0.7); }
+  .spec-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #333;
+  }
+  .spec-block ul li b {
+    font-weight: 700;
+    color: #111;
+  }
+  .spec-block ul li code {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+  }
+
+  /* WORDMARK SECTION */
+  .wm-section-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.015em;
+    color: #111;
+    margin: 8px 0 6px;
+  }
+  .wm-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 22px;
+    line-height: 1.55;
+  }
+  .wm-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .wm-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    font-family: 'Inter', sans-serif;
+  }
+  @media (max-width: 800px) {
+    .wm-card { grid-template-columns: 1fr; }
+  }
+  .wm-card:hover {
+    border-color: #1A3A8A;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .wm-card.selected {
+    border-color: #1A3A8A;
+    border-width: 2px;
+  }
+  .wm-stage {
+    background: #1A3A8A;
+    padding: 36px 32px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    min-height: 140px;
+    position: relative;
+  }
+  .wm-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(74,143,207,0.18) 0%, rgba(74,143,207,0) 60%);
+    pointer-events: none;
+  }
+  .wm-stage > * { position: relative; z-index: 1; }
+
+  /* Wordmark variant 1 — single deckline */
+  .wm-1 .wm-pen { width: 36px; height: 22px; flex-shrink: 0; }
+  .wm-1 .wm-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-left: 14px;
+    padding-left: 14px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+  }
+
+  /* Wordmark variant 2 — stacked two-line */
+  .wm-2 .wm-pen { width: 44px; height: 26px; flex-shrink: 0; }
+  .wm-2 .wm-text {
+    margin-left: 14px;
+    padding-left: 14px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+  }
+  .wm-2 .wm-text .top {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1;
+  }
+  .wm-2 .wm-text .bot {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 9.5px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #B5C7E8;
+    margin-top: 5px;
+  }
+
+  /* Wordmark variant 3 — centered institutional */
+  .wm-3 { flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+  .wm-3 .wm-pen { width: 52px; height: 30px; }
+  .wm-3 .wm-text { text-align: center; }
+  .wm-3 .wm-text .top {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1;
+  }
+  .wm-3 .wm-text .bot {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 9px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: #B5C7E8;
+    margin-top: 6px;
+  }
+
+  .wm-meta {
+    padding: 22px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #555;
+    border-left: 1px solid #ececec;
+  }
+  @media (max-width: 800px) {
+    .wm-meta { border-left: none; border-top: 1px solid #ececec; }
+  }
+  .wm-meta strong {
+    display: block;
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 14px;
+    color: #111;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .wm-meta em {
+    display: block;
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: #888;
+    font-style: normal;
+  }
+
+  /* shared pennant SVG sizing override */
+  .wm-stage svg { display: block; }
+</style>
+
+<!-- LOCKED SPECIMEN -->
+<div class="hero-locked">
+  <div class="hero-locked-tag">
+    <span>Locked · Brand system D — modernized</span>
+  </div>
+  <div class="hero-locked-stage">
+    <div class="hero-locked-mark">
+      <svg class="pen" viewBox="0 0 56 32">
+        <polygon points="0,0 56,16 0,32" fill="#FFFFFF"/>
+        <polygon points="3,4 49,16 3,28" fill="#1A3A8A"/>
+        <text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#FFFFFF" letter-spacing="1">CGSC</text>
+      </svg>
+      <div class="name">INSTRUCTIONAL CENTER<small>COCONUT GROVE · 1946</small></div>
+    </div>
+    <div class="hero-locked-stack">
+      The Premier<br>Sailing Academy<br>in Biscayne Bay
+    </div>
+    <div class="hero-locked-sub">
+      For 80 years, the Bay's training ground for sailors at every level. <span class="em">Now, taking it to the next — international wins and Olympic podiums.</span>
+    </div>
+    <a class="hero-locked-cta" href="#">Explore the academy →</a>
+  </div>
+
+  <div class="spec-strip">
+    <div class="spec-block">
+      <h4>Palette</h4>
+      <div class="spec-swatches">
+        <div class="sw dark" style="background:#1A3A8A"><span>1A3A8A</span></div>
+        <div class="sw dark" style="background:#4A8FCF"><span>4A8FCF</span></div>
+        <div class="sw light" style="background:#FFFFFF"><span>FFFFFF</span></div>
+        <div class="sw light" style="background:#FF8B5E"><span>FF8B5E</span></div>
+        <div class="sw dark" style="background:#111"><span>111</span></div>
+      </div>
+      <ul style="margin-top:10px; font-size:11px; color:#666; line-height:1.5;">
+        <li>Navy primary · Light blue secondary · Warm rust accent (italic only) · White · Charcoal text</li>
+      </ul>
+    </div>
+    <div class="spec-block">
+      <h4>Typography</h4>
+      <ul>
+        <li><b>Display</b> Inter Tight 900 · uppercase · <code>-0.035em</code></li>
+        <li><b>Body</b> Inter 400 · sentence case</li>
+        <li><b>UI labels</b> Inter 700 · uppercase · <code>0.18em</code></li>
+        <li><b>Accent beat</b> Inter 500 italic · rust</li>
+      </ul>
+    </div>
+    <div class="spec-block">
+      <h4>Photography</h4>
+      <ul>
+        <li>Mix of archival B&amp;W weave</li>
+        <li>Modern color action — kids racing</li>
+        <li>Bay-as-territory establishing shots</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- WORDMARK LOCKUP DECISION -->
+<h3 class="wm-section-title">Wordmark lockup · pick a layout</h3>
+<p class="wm-sub">All three use the locked system. The difference: how the pennant + "Instructional Center · Coconut Grove · 1946" are arranged in the site header. This is the lockup that lives in the nav of every page.</p>
+
+<div class="wm-grid">
+
+  <div class="wm-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="wm-stage wm-1">
+      <svg class="wm-pen" viewBox="0 0 56 32">
+        <polygon points="0,0 56,16 0,32" fill="#FFFFFF"/>
+        <polygon points="3,4 49,16 3,28" fill="#1A3A8A"/>
+        <text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#FFFFFF" letter-spacing="1">CGSC</text>
+      </svg>
+      <div class="wm-text">INSTRUCTIONAL CENTER · COCONUT GROVE · 1946</div>
+    </div>
+    <div class="wm-meta">
+      <strong>A · Single deckline</strong>
+      Pennant + one horizontal line of letterspaced caps. Most minimal. Reads like a stadium plate or a yacht-club deck inscription.
+      <em>Best for slim, fixed-position headers. Scales narrow on mobile (truncate to "INSTRUCTIONAL CENTER").</em>
+    </div>
+  </div>
+
+  <div class="wm-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="wm-stage wm-2">
+      <svg class="wm-pen" viewBox="0 0 56 32">
+        <polygon points="0,0 56,16 0,32" fill="#FFFFFF"/>
+        <polygon points="3,4 49,16 3,28" fill="#1A3A8A"/>
+        <text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#FFFFFF" letter-spacing="1">CGSC</text>
+      </svg>
+      <div class="wm-text">
+        <div class="top">Instructional Center</div>
+        <div class="bot">Coconut Grove · 1946</div>
+      </div>
+    </div>
+    <div class="wm-meta">
+      <strong>B · Stacked two-line</strong>
+      Pennant left, name in display weight on top, location and year as a small kicker below. Most legible. Closest to how Sperry, Patagonia, J. Crew lock up brand+kicker.
+      <em>Best general-purpose lockup. Works at any size, mobile-friendly without truncation.</em>
+    </div>
+  </div>
+
+  <div class="wm-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="wm-stage wm-3">
+      <svg class="wm-pen" viewBox="0 0 56 32">
+        <polygon points="0,0 56,16 0,32" fill="#FFFFFF"/>
+        <polygon points="3,4 49,16 3,28" fill="#1A3A8A"/>
+        <text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#FFFFFF" letter-spacing="1">CGSC</text>
+      </svg>
+      <div class="wm-text">
+        <div class="top">Instructional Center</div>
+        <div class="bot">Coconut Grove · 1946</div>
+      </div>
+    </div>
+    <div class="wm-meta">
+      <strong>C · Centered institutional</strong>
+      Pennant on top, two centered lines below. Most formal — reads like a crest. Closer to a museum or a club masthead than a modern brand header.
+      <em>Risk: takes more vertical space. Best as a footer mark or splash-page lockup, less so a sticky header.</em>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1A3A8A; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a wordmark lockup. Recommended default: <strong>B · Stacked two-line</strong> — most usable across contexts, doesn't strain at small sizes, and the kicker reads naturally as a sub-mark. After this, next decision is the Programs grid card design (section 2 of the page).
+  </p>
+</div>

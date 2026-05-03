@@ -1,0 +1,244 @@
+<h2>Homepage section structure · what comes after the hero</h2>
+<p class="subtitle">Hero is locked. Now the spine of the page: what sections appear, in what order. The order itself is a thesis — the second section is what you most want a first-time visitor to understand. Four structures below, each making a different bet on what that is.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1a3d5c;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 22px 0 28px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #333;
+  }
+  .locked-stack-row strong {
+    color: #1a3d5c;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .locked-stack-row em {
+    color: #555;
+    font-style: italic;
+  }
+
+  .struct-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 22px;
+  }
+  @media (max-width: 1100px) {
+    .struct-grid { grid-template-columns: 1fr; }
+  }
+  .struct-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 28px 28px 24px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    flex-direction: column;
+  }
+  .struct-card:hover {
+    border-color: #1a3d5c;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .struct-card.selected {
+    border-color: #1a3d5c;
+    border-width: 2px;
+    background: #f6faff;
+  }
+  .struct-title {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .struct-thesis {
+    font-size: 13px;
+    color: #1a3d5c;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+  }
+  .struct-list {
+    counter-reset: section;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+    border-top: 1px solid #ececec;
+  }
+  .struct-list li {
+    counter-increment: section;
+    padding: 10px 0 10px 36px;
+    position: relative;
+    border-bottom: 1px solid #ececec;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #222;
+  }
+  .struct-list li::before {
+    content: counter(section, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: #1a3d5c;
+    letter-spacing: 0.08em;
+  }
+  .struct-list li.hero { color: #888; font-style: italic; }
+  .struct-list li.spine {
+    background: #f6faff;
+    margin: 0 -10px;
+    padding-left: 46px;
+    padding-right: 10px;
+    border-bottom-color: #cfdbe6;
+  }
+  .struct-list li.spine::before { left: 10px; color: #1a3d5c; font-weight: 900; }
+  .struct-list li small {
+    display: block;
+    color: #777;
+    font-size: 12px;
+    margin-top: 2px;
+    font-weight: 400;
+  }
+  .struct-meta {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px dashed #d0d0d0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #555;
+  }
+  .struct-meta strong {
+    color: #111;
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .struct-legend {
+    font-size: 11px;
+    color: #888;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .struct-legend .dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <strong>Locked so far</strong>
+  <strong style="color:#888; font-size:10px;">Headline</strong>
+  THE PREMIER / SAILING ACADEMY / IN BISCAYNE BAY · <em>Since 1946 · Accessible · World-Class</em><br>
+  <strong style="color:#888; font-size:10px; margin-top:8px;">Subhead</strong>
+  For 80 years, the Bay's training ground for sailors at every level. <em>Now, taking it to the next — international wins and Olympic podiums.</em>
+</div>
+
+<div class="struct-legend"><span class="dot"></span> Highlighted row = the <em>spine</em> — the section that defines the page's center of gravity.</div>
+
+<div class="struct-grid">
+
+  <div class="struct-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="struct-title">A · Programs-as-spine</div>
+    <div class="struct-thesis">Mouratoglou mirror</div>
+    <ol class="struct-list">
+      <li class="hero">Hero <small>headline + subhead + visual</small></li>
+      <li class="spine">Programs grid <small>5–6 pillar cards (Junior Academy, Adult Sailing, Race Team, High Performance, Camps, Coaching Education)</small></li>
+      <li>The Pathway <small>visual ladder, first sail → Olympics</small></li>
+      <li>The Coaching <small>Maru-led, staff, methodology</small></li>
+      <li>Heritage + Champions <small>1946 anchor, alumni results</small></li>
+      <li>The Bay <small>territory advantage</small></li>
+      <li>Stories / Calendar <small>news + upcoming events</small></li>
+      <li>Visit / Contact</li>
+    </ol>
+    <div class="struct-meta">
+      <strong>Why this</strong>
+      Mouratoglou's exact spine: programs first because the visitor's first question is "what do you offer?" Pathway in second position turns the grid into a story — these aren't separate boxes, they're rungs. Safest, most familiar shape.
+    </div>
+  </div>
+
+  <div class="struct-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="struct-title">B · Pathway-as-spine</div>
+    <div class="struct-thesis">The ladder is the page</div>
+    <ol class="struct-list">
+      <li class="hero">Hero</li>
+      <li class="spine">The Pathway <small>full-bleed visual ladder, first sail → Olympic podium, with rungs labeled by age/level</small></li>
+      <li>Programs grid <small>cards drilling into each rung</small></li>
+      <li>The Coaching</li>
+      <li>Heritage + Champions</li>
+      <li>The Bay</li>
+      <li>Stories / Calendar</li>
+      <li>Visit / Contact</li>
+    </ol>
+    <div class="struct-meta">
+      <strong>Why this</strong>
+      Bets that CGSC IC's most distinctive claim is the through-line. Visitor sees a single ladder before any program details — turns "we offer juniors and adults" into "we move sailors from here to here." Most aspirational. Risk: a parent looking for a Saturday class has to scroll past it.
+    </div>
+  </div>
+
+  <div class="struct-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="struct-title">C · Coaching-as-spine</div>
+    <div class="struct-thesis">The Maru era, foregrounded</div>
+    <ol class="struct-list">
+      <li class="hero">Hero</li>
+      <li class="spine">The Coaching <small>Maru + staff bios, methodology, "what world-class coaching looks like"</small></li>
+      <li>The Pathway</li>
+      <li>Programs grid</li>
+      <li>Heritage + Champions</li>
+      <li>The Bay</li>
+      <li>Stories / Calendar</li>
+      <li>Visit / Contact</li>
+    </ol>
+    <div class="struct-meta">
+      <strong>Why this</strong>
+      Bets that the new chapter <em>is</em> the coaching upgrade — and that visitors will judge "premier" by the people, not the brochure. Mouratoglou himself was the spine of his own academy's site for years. Risk: makes the page feel personality-driven; if Maru leaves, the site needs a rewrite.
+    </div>
+  </div>
+
+  <div class="struct-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="struct-title">D · Heritage-as-spine</div>
+    <div class="struct-thesis">Earn the ambition before claiming it</div>
+    <ol class="struct-list">
+      <li class="hero">Hero</li>
+      <li class="spine">Heritage moment <small>1946 → today: photo essay, anchor numbers (alumni, Olympians, decades), then the pivot to "now"</small></li>
+      <li>The Pathway</li>
+      <li>Programs grid</li>
+      <li>The Coaching</li>
+      <li>The Bay</li>
+      <li>Stories / Calendar</li>
+      <li>Visit / Contact</li>
+    </ol>
+    <div class="struct-meta">
+      <strong>Why this</strong>
+      Bets that the strongest move against "we just claimed to be premier" is to walk visitors through 80 years of receipts before showing them the program. Most credible / least-aspirational-feeling. Closer to a museum or institution's site than a tennis academy's. Risk: backwards-looking energy in section 2.
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1a3d5c; border-radius: 0 4px 4px 0;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick the spine — section 2 is the bet. Order of sections 3+ is fungible. If you want to combine (e.g., "B's pathway second + C's coaching third"), say so.
+  </p>
+</div>

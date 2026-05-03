@@ -1,0 +1,412 @@
+<h2>Hero visual treatment · what's behind the headline</h2>
+<p class="subtitle">The hero image makes the "premier" claim land — or makes it look like a brochure. Four directions below, each setting a different tone for the entire site. The headline + subhead stay locked; this picks the visual idea behind them.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1a3d5c;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 28px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+  }
+  .locked-stack-row strong {
+    color: #1a3d5c;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .locked-row { margin-bottom: 8px; }
+  .locked-row:last-child { margin-bottom: 0; }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 22px;
+  }
+  @media (max-width: 1100px) {
+    .hero-grid { grid-template-columns: 1fr; }
+  }
+  .hero-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-card:hover {
+    border-color: #1a3d5c;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .hero-card.selected {
+    border-color: #1a3d5c;
+    border-width: 2px;
+  }
+  .hero-mock {
+    aspect-ratio: 16 / 9;
+    background: #1a3d5c;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+  }
+  .hero-mock::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-mock .label {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: rgba(255,255,255,0.92);
+    color: #1a3d5c;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+    z-index: 2;
+  }
+  .hero-mock .stack {
+    position: relative;
+    z-index: 2;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    font-size: 22px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+  }
+  .hero-mock .stack .accent { color: #f7c948; }
+  .hero-mock .sub {
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.4;
+    max-width: 70%;
+    font-style: italic;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+  }
+
+  /* A — fleet on the bay */
+  .hero-mock.a::before {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.55) 100%),
+      linear-gradient(180deg, #5b8bb0 0%, #2c5d82 70%, #1a3d5c 100%);
+  }
+  .hero-mock.a .sails {
+    position: absolute;
+    bottom: 38%;
+    left: 0; right: 0;
+    z-index: 1;
+    height: 30%;
+    background-image:
+      radial-gradient(ellipse 18px 26px at 22% 60%, #fff 60%, transparent 62%),
+      radial-gradient(ellipse 14px 22px at 38% 70%, #f3f3f3 60%, transparent 62%),
+      radial-gradient(ellipse 22px 32px at 55% 55%, #fff 60%, transparent 62%),
+      radial-gradient(ellipse 12px 18px at 70% 75%, #ececec 60%, transparent 62%),
+      radial-gradient(ellipse 16px 24px at 85% 65%, #fff 60%, transparent 62%);
+    opacity: 0.85;
+  }
+  .hero-mock.a .horizon {
+    position: absolute;
+    top: 38%; left: 0; right: 0; height: 1px;
+    background: rgba(255,255,255,0.25);
+    z-index: 1;
+  }
+
+  /* B — single sailor close-up */
+  .hero-mock.b::before {
+    background:
+      linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 100%),
+      radial-gradient(ellipse at 70% 50%, #6a98bf 0%, #2c5d82 60%, #122a3f 100%);
+  }
+  .hero-mock.b .silhouette {
+    position: absolute;
+    right: 8%;
+    bottom: 0;
+    width: 38%;
+    height: 80%;
+    background:
+      radial-gradient(ellipse 50% 60% at 50% 30%, #1a2a3a 60%, transparent 65%),
+      linear-gradient(180deg, transparent 30%, #0c1a28 50%, #0c1a28 100%);
+    z-index: 1;
+    border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+  }
+
+  /* C — heritage / now diptych */
+  .hero-mock.c {
+    padding: 0;
+    align-items: stretch;
+    flex-direction: row;
+  }
+  .hero-mock.c .half {
+    flex: 1;
+    position: relative;
+    padding: 24px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .hero-mock.c .half.then {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%),
+      linear-gradient(135deg, #d8d2c3 0%, #9a9080 60%, #5e574a 100%);
+    filter: grayscale(1) sepia(0.15);
+  }
+  .hero-mock.c .half.now {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%),
+      linear-gradient(135deg, #6aa2c7 0%, #2c5d82 60%, #1a3d5c 100%);
+  }
+  .hero-mock.c .half-label {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    z-index: 2;
+  }
+  .hero-mock.c .stack {
+    font-size: 16px;
+  }
+  .hero-mock.c .label {
+    z-index: 3;
+  }
+
+  /* D — bay drone shot */
+  .hero-mock.d::before {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 100%),
+      linear-gradient(180deg, #b6cad9 0%, #88a5c0 30%, #4a7898 60%, #2c5d82 100%);
+  }
+  .hero-mock.d .skyline {
+    position: absolute;
+    top: 22%;
+    left: 0; right: 0;
+    height: 12%;
+    z-index: 1;
+    background:
+      linear-gradient(90deg, transparent 0%, #1a3d5c 8%, #1a3d5c 9%, transparent 10%,
+                              transparent 14%, #1a3d5c 16%, #1a3d5c 18%, transparent 19%,
+                              transparent 24%, #1a3d5c 26%, #1a3d5c 30%, transparent 31%,
+                              transparent 38%, #1a3d5c 40%, #1a3d5c 44%, transparent 45%,
+                              transparent 50%, #1a3d5c 53%, #1a3d5c 56%, transparent 57%,
+                              transparent 65%, #1a3d5c 67%, #1a3d5c 70%, transparent 71%,
+                              transparent 78%, #1a3d5c 80%, #1a3d5c 82%, transparent 83%,
+                              transparent 100%);
+    opacity: 0.7;
+  }
+  .hero-mock.d .dots {
+    position: absolute;
+    bottom: 18%;
+    left: 0; right: 0;
+    height: 30%;
+    z-index: 1;
+    background-image:
+      radial-gradient(circle 2px at 18% 40%, #fff, transparent 60%),
+      radial-gradient(circle 2px at 32% 70%, #fff, transparent 60%),
+      radial-gradient(circle 1.5px at 48% 50%, #fff, transparent 60%),
+      radial-gradient(circle 2px at 62% 80%, #fff, transparent 60%),
+      radial-gradient(circle 1.5px at 76% 45%, #fff, transparent 60%),
+      radial-gradient(circle 2px at 88% 65%, #fff, transparent 60%);
+    opacity: 0.8;
+  }
+
+  .hero-body {
+    padding: 24px 26px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .hero-title {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .hero-thesis {
+    font-size: 12px;
+    color: #1a3d5c;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+  .hero-spec {
+    font-size: 13px;
+    line-height: 1.55;
+    color: #333;
+    margin-bottom: 14px;
+  }
+  .hero-spec b {
+    color: #1a3d5c;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 11px;
+    font-weight: 700;
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 2px;
+  }
+  .hero-meta {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px dashed #d0d0d0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #555;
+  }
+  .hero-meta strong {
+    color: #111;
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <div class="locked-row">
+    <strong>Hero copy (locked)</strong>
+    THE PREMIER / SAILING ACADEMY / IN BISCAYNE BAY — <em>For 80 years, the Bay's training ground for sailors at every level. Now, taking it to the next — international wins and Olympic podiums.</em>
+  </div>
+  <div class="locked-row">
+    <strong>Pillars (locked)</strong>
+    Junior Academy · Adult Sailing · Race Team · High Performance Center · Camps &amp; Coaching
+  </div>
+</div>
+
+<div class="hero-grid">
+
+  <div class="hero-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="hero-mock a">
+      <div class="label">A · Fleet on the bay</div>
+      <div class="horizon"></div>
+      <div class="sails"></div>
+      <div>
+        <div class="stack">THE PREMIER<br><span class="accent">SAILING ACADEMY</span><br>IN BISCAYNE BAY</div>
+        <div class="sub">For 80 years, the Bay's training ground for sailors at every level…</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <div class="hero-title">A · Fleet on the bay</div>
+      <div class="hero-thesis">Wide action, performance energy</div>
+      <div class="hero-spec">
+        Full-bleed wide shot of a fleet — Optimists, 420s, or college boats — racing on Biscayne Bay. Real conditions, real heel angle, spray. Headline anchored bottom-left, subhead beneath.
+        <b>Media</b>Looping 6–8s video preferred; high-res still as fallback.
+        <b>Tone</b>Aspirational, performance, Mouratoglou-direct.
+      </div>
+      <div class="hero-meta">
+        <strong>Why this</strong>
+        The "premier" claim is most credible against a real pro-tier action shot. The fleet (vs. a single boat) signals breadth — multiple sailors, multiple programs — without saying it. Easiest to source from existing club race photography.
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="hero-mock b">
+      <div class="label">B · Sailor close-up</div>
+      <div class="silhouette"></div>
+      <div>
+        <div class="stack">THE PREMIER<br><span class="accent">SAILING ACADEMY</span><br>IN BISCAYNE BAY</div>
+        <div class="sub">For 80 years, the Bay's training ground for sailors at every level…</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <div class="hero-title">B · Sailor close-up</div>
+      <div class="hero-thesis">Personal, aspirational, named</div>
+      <div class="hero-spec">
+        Tight portrait — a young sailor at the helm, focused expression, water spray, gear visible. Headline overlaid on the dark side of the frame, subject pushed to opposite third.
+        <b>Media</b>High-res still; hold for 4s, then cycle through 3–4 sailor portraits at different ages.
+        <b>Tone</b>Athlete-as-protagonist, the "next generation" made tangible.
+      </div>
+      <div class="hero-meta">
+        <strong>Why this</strong>
+        Mouratoglou's later sites do this — a single face, not a brochure shot. Makes the academy feel about <em>people</em>, which is exactly the new chapter's claim. Best paired with rotating subjects so it doesn't lock to one sailor's story.
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="hero-mock c">
+      <div class="label">C · Heritage / Now diptych</div>
+      <div class="half then">
+        <div class="half-label">1946</div>
+      </div>
+      <div class="half now">
+        <div class="half-label">Today</div>
+        <div>
+          <div class="stack">THE PREMIER<br><span class="accent">SAILING ACADEMY</span><br>IN BISCAYNE BAY</div>
+          <div class="sub" style="font-size:9.5px;">For 80 years, the Bay's training ground…</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <div class="hero-title">C · Heritage / Now diptych</div>
+      <div class="hero-thesis">The 80-year arc, in one frame</div>
+      <div class="hero-spec">
+        Split hero, 50/50. Left: black-and-white archival photo of CGSC sailors (1950s–60s). Right: full-color modern sailor on the same boat type. Headline lives on the right (the "now" half), label "1946" on the left.
+        <b>Media</b>Two stills, no video. Subtle parallax on scroll — the seam slowly opens.
+        <b>Tone</b>Most distinctive. Tells the whole brand thesis above the fold.
+      </div>
+      <div class="hero-meta">
+        <strong>Why this</strong>
+        The subhead's heritage→ambition shape becomes the visual itself. Most ownable — no other sailing academy has this shot. Risk: needs a specific archival photo to exist, and both halves have to be perfect or it falls flat.
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="hero-mock d">
+      <div class="label">D · Bay-as-territory</div>
+      <div class="skyline"></div>
+      <div class="dots"></div>
+      <div>
+        <div class="stack">THE PREMIER<br><span class="accent">SAILING ACADEMY</span><br>IN BISCAYNE BAY</div>
+        <div class="sub">For 80 years, the Bay's training ground for sailors at every level…</div>
+      </div>
+    </div>
+    <div class="hero-body">
+      <div class="hero-title">D · Bay-as-territory</div>
+      <div class="hero-thesis">The place itself is the hero</div>
+      <div class="hero-spec">
+        Drone shot of Biscayne Bay — Miami skyline in the upper third, white sails dotted across the water below. Slow horizontal pan or static. Headline bottom-left.
+        <b>Media</b>Drone video, 8–12s loop. Cinematic.
+        <b>Tone</b>Institutional, territorial, "this is the place."
+      </div>
+      <div class="hero-meta">
+        <strong>Why this</strong>
+        Makes "in Biscayne Bay" the proof of "premier" — the territory carries the claim. Most cinematic. Risk: human-energy is low; the academy could feel like a backdrop to real estate. Best if paired with a strong human shot in section 2.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1a3d5c; border-radius: 0 4px 4px 0;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Mocks above are schematic — placeholder gradients, not the final imagery. Pick the direction; we'll source real photography after. Hybrid welcome (e.g., "open with D, then transition to A on scroll").
+  </p>
+</div>

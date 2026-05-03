@@ -1,0 +1,747 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<h2 style="font-family:'Inter Tight','Inter',sans-serif;">Stories &amp; Calendar · section 7</h2>
+<p class="subtitle" style="font-family:'Inter',sans-serif;">The "is this place active?" section. Serves three audiences in one beat — parents (calendar + sign-up), sailors (results + news), and the press (recent moments worth covering). Four cuts, each with a different center of gravity.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1A3A8A;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 28px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+    font-family: 'Inter', sans-serif;
+  }
+  .locked-stack-row strong {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .sc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 8px;
+  }
+  .sc-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .sc-card:hover {
+    border-color: #1A3A8A;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .sc-card.selected {
+    border-color: #1A3A8A;
+    border-width: 2px;
+  }
+  .sc-stage {
+    background: #f4f6fa;
+    padding: 26px 26px 24px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .sc-eyebrow {
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 10px;
+  }
+  .sc-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+
+  /* Image gradient placeholders */
+  .img-1 { background: linear-gradient(135deg, #4A8FCF 0%, #1A3A8A 60%, #142A66 100%); }
+  .img-2 { background: linear-gradient(135deg, #6EA3C5 0%, #2A5179 60%, #1A3A8A 100%); }
+  .img-3 { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #1A3A8A 110%); }
+  .img-4 { background: linear-gradient(135deg, #f5d090 0%, #FF8B5E 60%, #c46b3a 100%); }
+
+  /* === A · Editorial story grid === */
+  .layout-a {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .a-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.015em;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .a-sub {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 18px;
+  }
+  .a-stories {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 800px) { .a-stories { grid-template-columns: 1fr; } }
+  .a-story {
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .a-story.hero { grid-row: span 1; }
+  .a-story-img {
+    aspect-ratio: 16 / 10;
+  }
+  .a-story.hero .a-story-img { aspect-ratio: 16 / 11; }
+  .a-story-body {
+    padding: 14px 14px 16px;
+  }
+  .a-story-cat {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin-bottom: 6px;
+  }
+  .a-story-cat.race { color: #1A3A8A; }
+  .a-story-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .a-story.hero .a-story-headline { font-size: 17px; }
+  .a-story-excerpt {
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  .a-story-meta {
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .a-cta {
+    margin-top: 16px;
+    text-align: right;
+  }
+  .a-cta a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    text-decoration: none;
+  }
+
+  /* === B · Calendar-first === */
+  .layout-b {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .b-head-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .b-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.015em;
+    color: #111;
+  }
+  .b-filter {
+    display: flex;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .b-filter span {
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid #d1d1d6;
+    color: #666;
+  }
+  .b-filter span.active {
+    border-color: #1A3A8A;
+    background: #1A3A8A;
+    color: #fff;
+  }
+  .b-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .b-event {
+    display: grid;
+    grid-template-columns: 84px 1fr 110px;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #ececec;
+    align-items: center;
+  }
+  @media (max-width: 800px) {
+    .b-event { grid-template-columns: 70px 1fr; }
+    .b-event .b-cta { grid-column: 1 / -1; text-align: left; padding-left: 86px; }
+  }
+  .b-date {
+    text-align: center;
+    border-right: 1px solid #ececec;
+    padding-right: 10px;
+  }
+  .b-date .day {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    color: #1A3A8A;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .b-date.peak .day { color: #FF8B5E; }
+  .b-date .mo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #666;
+    margin-top: 4px;
+  }
+  .b-info .b-cat {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .b-info .b-cat.peak { color: #FF8B5E; }
+  .b-info .b-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    color: #111;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    margin-bottom: 3px;
+  }
+  .b-info .b-meta {
+    font-size: 11px;
+    color: #666;
+  }
+  .b-cta {
+    text-align: right;
+  }
+  .b-cta a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    border: 1px solid #1A3A8A;
+    padding: 6px 10px;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  /* === C · Split (stories + calendar) === */
+  .layout-c {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 800px) { .layout-c { grid-template-columns: 1fr; } }
+  .c-section h5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin: 0 0 10px;
+  }
+  .c-stories {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .c-story {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+    align-items: center;
+  }
+  .c-story-img {
+    aspect-ratio: 4 / 3;
+    border-radius: 3px;
+  }
+  .c-story-cat {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #FF8B5E;
+    margin-bottom: 3px;
+  }
+  .c-story-cat.race { color: #1A3A8A; }
+  .c-story-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #111;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .c-story-meta {
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .c-cal {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .c-cal-row {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px dashed #cfdbe6;
+    align-items: center;
+  }
+  .c-cal-row:last-child { border-bottom: none; }
+  .c-cal-date {
+    text-align: center;
+    background: #f6faff;
+    border-radius: 3px;
+    padding: 6px 0;
+  }
+  .c-cal-date .day {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: #1A3A8A;
+    line-height: 1;
+  }
+  .c-cal-date.peak .day { color: #FF8B5E; }
+  .c-cal-date .mo {
+    font-size: 9px;
+    color: #888;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .c-cal-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #111;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+  .c-cal-meta {
+    font-size: 10px;
+    color: #666;
+  }
+
+  /* === D · Stream feed === */
+  .layout-d {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .d-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.015em;
+    color: #111;
+    margin-bottom: 18px;
+  }
+  .d-feed {
+    display: flex;
+    flex-direction: column;
+  }
+  .d-item {
+    display: grid;
+    grid-template-columns: 90px 1fr 100px;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #ececec;
+    align-items: center;
+  }
+  @media (max-width: 800px) {
+    .d-item { grid-template-columns: 90px 1fr; }
+    .d-item .d-tag { grid-column: 1 / -1; padding-left: 104px; }
+  }
+  .d-item:last-child { border-bottom: none; }
+  .d-img {
+    aspect-ratio: 4 / 3;
+    border-radius: 3px;
+  }
+  .d-text .d-cat {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #1A3A8A;
+    margin-bottom: 4px;
+  }
+  .d-text .d-cat.event { color: #FF8B5E; }
+  .d-text .d-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: #111;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .d-text .d-line {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.45;
+  }
+  .d-tag {
+    text-align: right;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #888;
+  }
+  .d-tag .pill {
+    background: #f0f3f8;
+    color: #1A3A8A;
+    padding: 3px 8px;
+    border-radius: 999px;
+  }
+  .d-tag .pill.event {
+    background: #FF8B5E;
+    color: #fff;
+  }
+
+  .sc-meta {
+    padding: 22px 26px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+  }
+  .sc-meta strong {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .sc-meta .why-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .sc-meta .why-row { grid-template-columns: 1fr; } }
+  .sc-meta .why-row b {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <strong>Locked through section 6</strong>
+  Hero · Spine · Pillars · Visual · Brand ID · Wordmarks · Programs (B+rotation) · Pathway (C) · Coaching (D · numbers) · Heritage (B · champions wall) · The Bay (A · "Sailing, year-round" 4-season grid)
+</div>
+
+<div class="sc-grid">
+
+  <!-- A · Editorial story grid -->
+  <div class="sc-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="sc-stage">
+      <div class="sc-eyebrow">A · Editorial story grid</div>
+      <div class="sc-title">3 stories. Magazine-style. News-first.</div>
+      <div class="layout-a">
+        <div class="a-headline">From the dock</div>
+        <div class="a-sub">Recent stories, results, and people from the academy.</div>
+        <div class="a-stories">
+          <div class="a-story hero">
+            <div class="a-story-img img-1"></div>
+            <div class="a-story-body">
+              <div class="a-story-cat">Feature</div>
+              <div class="a-story-headline">"Same Bay, deeper": Maya Castillo on her Youth Worlds qualification</div>
+              <div class="a-story-excerpt">From a first capsize at age 7 to the US Sailing Youth World Team — Maya talks about the years between.</div>
+              <div class="a-story-meta">Apr 22, 2026 · 4 min read</div>
+            </div>
+          </div>
+          <div class="a-story">
+            <div class="a-story-img img-2"></div>
+            <div class="a-story-body">
+              <div class="a-story-cat race">Race result</div>
+              <div class="a-story-headline">CGSC RWB takes 2nd at Spring Series</div>
+              <div class="a-story-excerpt">The championship Optimist fleet posted top-3 finishes across both weekends.</div>
+              <div class="a-story-meta">Apr 14, 2026</div>
+            </div>
+          </div>
+          <div class="a-story">
+            <div class="a-story-img img-3"></div>
+            <div class="a-story-body">
+              <div class="a-story-cat">Program news</div>
+              <div class="a-story-headline">Summer Camp 2026 enrollment opens May 6</div>
+              <div class="a-story-excerpt">Eight weeks of camp, ages 6–17, with new C420 racing clinic for advanced sailors.</div>
+              <div class="a-story-meta">Apr 30, 2026</div>
+            </div>
+          </div>
+        </div>
+        <div class="a-cta"><a href="#">All stories →</a></div>
+      </div>
+    </div>
+    <div class="sc-meta">
+      <strong>A · Editorial story grid</strong>
+      Three story cards: one hero (60% width) plus two supporting. Each with image, category, headline, excerpt, date. Magazine-spread feel.
+      <div class="why-row">
+        <div><b>Why this</b>Most editorial / brand-feeling. Lets the academy <em>tell</em> stories — about sailors, results, programs. Builds personality across visits as content rotates.</div>
+        <div><b>Risk</b>Demands a content engine. If three stories sit dated for two months, the section makes the academy look quiet. Needs ongoing editorial commitment.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B · Calendar-first -->
+  <div class="sc-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="sc-stage">
+      <div class="sc-eyebrow">B · Calendar-first</div>
+      <div class="sc-title">Practical. Date-driven. Sign-up oriented.</div>
+      <div class="layout-b">
+        <div class="b-head-row">
+          <div class="b-headline">What's next on the Bay</div>
+          <div class="b-filter">
+            <span class="active">All</span>
+            <span>Junior</span>
+            <span>Race team</span>
+            <span>Adult</span>
+            <span>HPC</span>
+          </div>
+        </div>
+        <div class="b-list">
+          <div class="b-event">
+            <div class="b-date"><div class="day">06</div><div class="mo">May</div></div>
+            <div class="b-info"><div class="b-cat">Enrollment opens</div><div class="b-name">Summer Sailing Camp 2026</div><div class="b-meta">Ages 6–17 · Weekly sessions June–August</div></div>
+            <div class="b-cta"><a href="#">Register</a></div>
+          </div>
+          <div class="b-event">
+            <div class="b-date"><div class="day">17</div><div class="mo">May</div></div>
+            <div class="b-info"><div class="b-cat">Open house</div><div class="b-name">Junior Academy Open House</div><div class="b-meta">Free demo sails · meet the coaches · 10am–2pm</div></div>
+            <div class="b-cta"><a href="#">RSVP</a></div>
+          </div>
+          <div class="b-event">
+            <div class="b-date peak"><div class="day">06</div><div class="mo">Jun</div></div>
+            <div class="b-info"><div class="b-cat peak">Race weekend</div><div class="b-name">Spring Series Final</div><div class="b-meta">Race team · Optimist + 420 fleets</div></div>
+            <div class="b-cta"><a href="#">Watch</a></div>
+          </div>
+          <div class="b-event">
+            <div class="b-date"><div class="day">22</div><div class="mo">Jun</div></div>
+            <div class="b-info"><div class="b-cat">Clinic</div><div class="b-name">C420 Tactics Clinic</div><div class="b-meta">3 days · Advanced racers · Maru Urban + race team coaches</div></div>
+            <div class="b-cta"><a href="#">Register</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc-meta">
+      <strong>B · Calendar-first</strong>
+      Filterable upcoming events list. Each row: date stamp + category + name + meta + CTA (Register / RSVP / Watch). Big rust dates for race weekends; navy for programs.
+      <div class="why-row">
+        <div><b>Why this</b>Most useful for the actual conversion goal — parents and sailors signing up for things. Acts like a real product surface. Survives a week without new content because dates auto-progress.</div>
+        <div><b>Risk</b>Less brand-statement. No editorial voice. The section is a feature, not a story.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C · Split: stories + calendar -->
+  <div class="sc-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="sc-stage">
+      <div class="sc-eyebrow">C · Split — stories + calendar</div>
+      <div class="sc-title">Both surfaces, side by side</div>
+      <div class="layout-c">
+        <div class="c-section">
+          <h5>Latest stories</h5>
+          <div class="c-stories">
+            <div class="c-story">
+              <div class="c-story-img img-1"></div>
+              <div>
+                <div class="c-story-cat">Feature</div>
+                <div class="c-story-name">Maya Castillo qualifies for Youth Worlds</div>
+                <div class="c-story-meta">Apr 22 · 4 min</div>
+              </div>
+            </div>
+            <div class="c-story">
+              <div class="c-story-img img-2"></div>
+              <div>
+                <div class="c-story-cat race">Race result</div>
+                <div class="c-story-name">RWB takes 2nd at Spring Series</div>
+                <div class="c-story-meta">Apr 14</div>
+              </div>
+            </div>
+            <div class="c-story">
+              <div class="c-story-img img-3"></div>
+              <div>
+                <div class="c-story-cat">Program news</div>
+                <div class="c-story-name">Summer Camp 2026 enrollment opens May 6</div>
+                <div class="c-story-meta">Apr 30</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c-section">
+          <h5>What's next</h5>
+          <div class="c-cal">
+            <div class="c-cal-row">
+              <div class="c-cal-date"><div class="day">06</div><div class="mo">May</div></div>
+              <div><div class="c-cal-name">Summer Camp 2026 enrollment opens</div><div class="c-cal-meta">Ages 6–17 · weekly sessions</div></div>
+            </div>
+            <div class="c-cal-row">
+              <div class="c-cal-date"><div class="day">17</div><div class="mo">May</div></div>
+              <div><div class="c-cal-name">Junior Academy Open House</div><div class="c-cal-meta">Free demo sails · 10am–2pm</div></div>
+            </div>
+            <div class="c-cal-row">
+              <div class="c-cal-date peak"><div class="day">06</div><div class="mo">Jun</div></div>
+              <div><div class="c-cal-name">Spring Series Final</div><div class="c-cal-meta">Race team · Opti + 420 fleets</div></div>
+            </div>
+            <div class="c-cal-row">
+              <div class="c-cal-date"><div class="day">22</div><div class="mo">Jun</div></div>
+              <div><div class="c-cal-name">C420 Tactics Clinic</div><div class="c-cal-meta">3 days · advanced</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc-meta">
+      <strong>C · Split — stories + calendar</strong>
+      Two columns: latest 3 stories on the left, upcoming 4 events on the right. Both surfaces visible without scrolling.
+      <div class="why-row">
+        <div><b>Why this</b>Serves both audiences (browsers + buyers) without making them choose. Section reads as both editorial AND practical.</div>
+        <div><b>Risk</b>Each surface gets less room — stories smaller, calendar more compressed. Mobile collapses to stacked which loses the "both" effect. More pieces to keep updated.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D · Stream feed -->
+  <div class="sc-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="sc-stage">
+      <div class="sc-eyebrow">D · Mixed stream feed</div>
+      <div class="sc-title">Stories AND events, chronologically — like a coach's running diary</div>
+      <div class="layout-d">
+        <div class="d-headline">From the academy</div>
+        <div class="d-feed">
+          <div class="d-item">
+            <div class="d-img img-3"></div>
+            <div class="d-text">
+              <div class="d-cat">Program news</div>
+              <div class="d-name">Summer Camp 2026 enrollment opens May 6</div>
+              <div class="d-line">Eight weeks. Ages 6–17. New C420 racing clinic this year.</div>
+            </div>
+            <div class="d-tag"><span class="pill">News</span><br>Apr 30</div>
+          </div>
+          <div class="d-item">
+            <div class="d-img img-1"></div>
+            <div class="d-text">
+              <div class="d-cat">Profile</div>
+              <div class="d-name">Maya Castillo qualifies for Youth Worlds</div>
+              <div class="d-line">"Same Bay, deeper" — Maya on the years between her first capsize and the US Sailing team.</div>
+            </div>
+            <div class="d-tag"><span class="pill">Story</span><br>Apr 22</div>
+          </div>
+          <div class="d-item">
+            <div class="d-img img-2"></div>
+            <div class="d-text">
+              <div class="d-cat event">Upcoming</div>
+              <div class="d-name">Junior Academy Open House — May 17</div>
+              <div class="d-line">Free demo sails, meet the coaches, 10am–2pm. RSVP suggested.</div>
+            </div>
+            <div class="d-tag"><span class="pill event">Event</span><br>May 17</div>
+          </div>
+          <div class="d-item">
+            <div class="d-img img-2"></div>
+            <div class="d-text">
+              <div class="d-cat">Race result</div>
+              <div class="d-name">RWB takes 2nd at Spring Series</div>
+              <div class="d-line">Top-3 finishes across both weekends in the championship fleet.</div>
+            </div>
+            <div class="d-tag"><span class="pill">Result</span><br>Apr 14</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc-meta">
+      <strong>D · Mixed stream feed</strong>
+      One vertical feed. Stories + events + race results all in chronological order, with category pills (Story / Event / Result / News). Reads like a coach's running diary or social feed.
+      <div class="why-row">
+        <div><b>Why this</b>Most "alive" feeling — section reads as a continuous activity stream. Easiest to populate (anything you publish goes in the feed). Pills create instant scannability.</div>
+        <div><b>Risk</b>Less editorial weight — no single story "stars." Risks reading as social-media-on-website, which can feel low-effort if not curated.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1A3A8A; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a treatment. <strong>A</strong> if the academy will commit to ongoing editorial. <strong>B</strong> if conversion (registrations) is the priority. <strong>C</strong> if you want both. <strong>D</strong> if you want the section to feel like a living stream with low content-per-update overhead.
+  </p>
+</div>

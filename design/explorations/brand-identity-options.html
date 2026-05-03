@@ -1,0 +1,397 @@
+<h2>Brand identity · color + typography</h2>
+<p class="subtitle">The visual system. Color anchors the page, typography sets the voice. Four directions below — each is a complete palette + display + body specimen so you can read them as systems, not swatches. The brainstorm screens themselves have been using direction A as a placeholder; that's not a decision yet.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1a3d5c;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 28px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+  }
+  .locked-stack-row strong {
+    color: #1a3d5c;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .locked-row { margin-bottom: 8px; }
+  .locked-row:last-child { margin-bottom: 0; }
+
+  .id-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 22px;
+  }
+  @media (max-width: 1200px) {
+    .id-grid { grid-template-columns: 1fr; }
+  }
+  .id-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    flex-direction: column;
+  }
+  .id-card:hover {
+    border-color: #111;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .id-card.selected {
+    border-color: #111;
+    border-width: 2px;
+  }
+
+  /* The "specimen" hero — fills color, shows wordmark + headline + subhead in this system */
+  .specimen {
+    padding: 32px 28px 28px;
+    position: relative;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .specimen .id-label {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .specimen .wordmark {
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    opacity: 0.85;
+  }
+  .specimen .display-stack {
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+  .specimen .display-stack .accent {}
+  .specimen .body-line {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 14px;
+    max-width: 90%;
+    opacity: 0.85;
+  }
+
+  /* A — Mouratoglou-direct */
+  .specimen.a {
+    background: #1a3d5c;
+    color: #f6faff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .specimen.a .id-label { background: #f7c948; color: #1a3d5c; }
+  .specimen.a .wordmark { color: #f7c948; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .specimen.a .display-stack {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: -0.025em;
+  }
+  .specimen.a .display-stack .accent { color: #f7c948; }
+  .specimen.a .body-line { font-family: Georgia, 'Times New Roman', serif; font-style: italic; }
+
+  /* B — Naval / institutional */
+  .specimen.b {
+    background: #0d2840;
+    color: #f4ede1;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .specimen.b .id-label { background: #f4ede1; color: #0d2840; }
+  .specimen.b .wordmark {
+    color: #b34a32;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+  }
+  .specimen.b .display-stack {
+    font-family: 'Trajan Pro', Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+  }
+  .specimen.b .display-stack .accent { color: #b34a32; }
+  .specimen.b .body-line { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; letter-spacing: 0.02em; }
+
+  /* C — Performance / minimalist */
+  .specimen.c {
+    background: #0c0c0c;
+    color: #fafafa;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .specimen.c .id-label { background: #f5d000; color: #0c0c0c; }
+  .specimen.c .wordmark {
+    color: #f5d000;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.36em;
+    font-size: 10px;
+  }
+  .specimen.c .display-stack {
+    font-family: 'Helvetica Neue', 'Arial Black', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    letter-spacing: -0.04em;
+  }
+  .specimen.c .display-stack .accent { color: #f5d000; }
+  .specimen.c .body-line { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; opacity: 0.7; }
+
+  /* D — Coastal / Miami modern */
+  .specimen.d {
+    background: #0a4a52;
+    color: #fefdfb;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .specimen.d .id-label { background: #ffc34a; color: #0a4a52; }
+  .specimen.d .wordmark {
+    color: #e8d9b5;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    font-size: 10px;
+  }
+  .specimen.d .display-stack {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: -0.01em;
+  }
+  .specimen.d .display-stack .accent { color: #ffc34a; font-weight: 700; font-style: italic; }
+  .specimen.d .body-line { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; }
+
+  /* Body of card — palette swatches + spec rows */
+  .id-body {
+    padding: 22px 24px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .id-title {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .id-thesis {
+    font-size: 12px;
+    color: #555;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+  .swatches {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .swatch {
+    flex: 1;
+    height: 40px;
+    border-radius: 4px;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  .swatch span {
+    position: absolute;
+    bottom: 3px; left: 5px;
+    font-size: 9px;
+    font-family: 'Helvetica Neue', monospace;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .swatch.dark span { color: rgba(255,255,255,0.85); }
+  .swatch.light span { color: rgba(0,0,0,0.7); }
+
+  .spec-row {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #333;
+    padding: 6px 0;
+    border-bottom: 1px dotted #e2e2e2;
+    display: flex;
+    gap: 10px;
+  }
+  .spec-row:last-of-type { border-bottom: none; }
+  .spec-row b {
+    color: #111;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    flex: 0 0 70px;
+    padding-top: 1px;
+  }
+
+  .id-meta {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed #d0d0d0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #555;
+  }
+  .id-meta strong {
+    color: #111;
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <div class="locked-row">
+    <strong>Locked so far</strong>
+    Headline · Subhead · Spine (Programs-as-spine) · Pillars (5: Junior / Adult / Race / High Performance / Camps &amp; Coaching) · Hero visual (Bay-as-territory + heritage video weave)
+  </div>
+</div>
+
+<div class="id-grid">
+
+  <div class="id-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="specimen a">
+      <span class="id-label">A</span>
+      <div class="wordmark">CGSC · Sailing Academy</div>
+      <div>
+        <div class="display-stack">THE PREMIER<br><span class="accent">SAILING ACADEMY</span><br>IN BISCAYNE BAY</div>
+        <div class="body-line">For 80 years, the Bay's training ground for sailors at every level.</div>
+      </div>
+    </div>
+    <div class="id-body">
+      <div class="id-title">A · Mouratoglou-direct</div>
+      <div class="id-thesis">Navy &amp; gold, ultra-bold sans + serif body</div>
+      <div class="swatches">
+        <div class="swatch dark" style="background:#1a3d5c"><span>1A3D5C</span></div>
+        <div class="swatch light" style="background:#f7c948"><span>F7C948</span></div>
+        <div class="swatch light" style="background:#f6faff"><span>F6FAFF</span></div>
+        <div class="swatch dark" style="background:#111"><span>111</span></div>
+        <div class="swatch light" style="background:#e5e5e5"><span>E5E5E5</span></div>
+      </div>
+      <div class="spec-row"><b>Display</b>Helvetica Neue 900 / Söhne Breit Black — heavy, condensed-feeling all-caps</div>
+      <div class="spec-row"><b>Body</b>Georgia / Tiempos Text — italic for emphasis</div>
+      <div class="spec-row"><b>Accent</b>Gold (#F7C948) used sparingly — middle-line of headline, link underlines</div>
+      <div class="id-meta">
+        <strong>Why this</strong>
+        Direct mirror of Mouratoglou's visual system — ultra-heavy sans display, navy authority, single warm accent. The placeholder we've been using because it's the safest read of the strategic reference. Risk: looks borrowed.
+      </div>
+    </div>
+  </div>
+
+  <div class="id-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="specimen b">
+      <span class="id-label">B</span>
+      <div class="wordmark">Coconut Grove · Est. 1946</div>
+      <div>
+        <div class="display-stack">THE PREMIER<br><span class="accent">SAILING ACADEMY</span><br>IN BISCAYNE BAY</div>
+        <div class="body-line">For 80 years, the Bay's training ground for sailors at every level.</div>
+      </div>
+    </div>
+    <div class="id-body">
+      <div class="id-title">B · Naval / institutional</div>
+      <div class="id-thesis">Roman serif display, signal-flag rust accent</div>
+      <div class="swatches">
+        <div class="swatch dark" style="background:#0d2840"><span>0D2840</span></div>
+        <div class="swatch light" style="background:#f4ede1"><span>F4EDE1</span></div>
+        <div class="swatch dark" style="background:#b34a32"><span>B34A32</span></div>
+        <div class="swatch dark" style="background:#111"><span>111</span></div>
+        <div class="swatch light" style="background:#cfc7b6"><span>CFC7B6</span></div>
+      </div>
+      <div class="spec-row"><b>Display</b>Trajan Pro / Cormorant Garamond Bold — Roman, monumental</div>
+      <div class="spec-row"><b>Body</b>Inter / Söhne — clean sans for tension against display</div>
+      <div class="spec-row"><b>Accent</b>Rust red (#B34A32) — signal-flag heritage, used for kickers and accents</div>
+      <div class="id-meta">
+        <strong>Why this</strong>
+        The opposite of Mouratoglou: leans into the 80-year heritage and yacht-club tradition without the country-club tweeness. Reads like a maritime institution — Naval Academy, RNLI, an actual 1946 club that's been operating continuously. Risk: serif display can read as backwards-looking against a high-performance ambition.
+      </div>
+    </div>
+  </div>
+
+  <div class="id-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="specimen c">
+      <span class="id-label">C</span>
+      <div class="wordmark">CGSC ACADEMY</div>
+      <div>
+        <div class="display-stack">THE PREMIER<br><span class="accent">SAILING ACADEMY</span><br>IN BISCAYNE BAY</div>
+        <div class="body-line">For 80 years, the Bay's training ground for sailors at every level.</div>
+      </div>
+    </div>
+    <div class="id-body">
+      <div class="id-title">C · Performance / minimalist</div>
+      <div class="id-thesis">Black + signal yellow, contemporary geometric sans</div>
+      <div class="swatches">
+        <div class="swatch dark" style="background:#0c0c0c"><span>0C0C0C</span></div>
+        <div class="swatch light" style="background:#fafafa"><span>FAFAFA</span></div>
+        <div class="swatch light" style="background:#f5d000"><span>F5D000</span></div>
+        <div class="swatch dark" style="background:#5c5c5c"><span>5C5C5C</span></div>
+        <div class="swatch dark" style="background:#1a1a1a"><span>1A1A1A</span></div>
+      </div>
+      <div class="spec-row"><b>Display</b>Neue Haas Grotesk Display 95 Black / GT America Black — tight tracking</div>
+      <div class="spec-row"><b>Body</b>Inter / Söhne — same family as display, lighter weight</div>
+      <div class="spec-row"><b>Accent</b>Signal yellow (#F5D000) — high-vis safety/race callout</div>
+      <div class="id-meta">
+        <strong>Why this</strong>
+        Reads like a modern Olympic training brand or a high-end auto racing team — INEOS, Red Bull Sailing, Mercedes AMG. Most directly signals "performance." Yellow is a real signal-flag color (warning/race start). Risk: zero heritage warmth — could feel cold against the 80-year story.
+      </div>
+    </div>
+  </div>
+
+  <div class="id-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="specimen d">
+      <span class="id-label">D</span>
+      <div class="wordmark">Coconut Grove Sailing Academy</div>
+      <div>
+        <div class="display-stack">THE PREMIER<br><span class="accent">SAILING ACADEMY</span><br>IN BISCAYNE BAY</div>
+        <div class="body-line">For 80 years, the Bay's training ground for sailors at every level.</div>
+      </div>
+    </div>
+    <div class="id-body">
+      <div class="id-title">D · Coastal / Miami modern</div>
+      <div class="id-thesis">Deep teal, sand, sun yellow — refined editorial type</div>
+      <div class="swatches">
+        <div class="swatch dark" style="background:#0a4a52"><span>0A4A52</span></div>
+        <div class="swatch light" style="background:#e8d9b5"><span>E8D9B5</span></div>
+        <div class="swatch light" style="background:#ffc34a"><span>FFC34A</span></div>
+        <div class="swatch light" style="background:#fefdfb"><span>FEFDFB</span></div>
+        <div class="swatch dark" style="background:#1a1a1a"><span>1A1A1A</span></div>
+      </div>
+      <div class="spec-row"><b>Display</b>PP Editorial New / Söhne Light — refined, editorial weight (not heavy)</div>
+      <div class="spec-row"><b>Body</b>Söhne / Inter — same family, regular</div>
+      <div class="spec-row"><b>Accent</b>Sun yellow (#FFC34A) — italicized + bold, used for the "now" beat</div>
+      <div class="id-meta">
+        <strong>Why this</strong>
+        Acknowledges the Miami/Bay setting without going touristic. Deep teal reads water-and-tradition; sand reads beach-without-the-cliché; sun yellow is the optimistic "next chapter" accent. Lightest display weight of the four — confident enough to not need to shout. Most distinctive from Mouratoglou.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1a3d5c; border-radius: 0 4px 4px 0;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a system. Hybrid welcome (e.g., "D's palette with C's heavy display"). After this, real type/photography starts being procurable.
+  </p>
+</div>

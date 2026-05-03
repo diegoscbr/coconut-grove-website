@@ -1,0 +1,562 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<h2 style="font-family:'Inter Tight','Inter',sans-serif;">Heritage + Champions · section 5</h2>
+<p class="subtitle" style="font-family:'Inter',sans-serif;">80 years of receipts. Coaching just did the stats — this section needs to do <em>faces and stories</em>. The challenge: honor both the Olympic alumni <em>and</em> the thousands of regular kids who learned to sail here. Four cuts.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1A3A8A;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 28px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+    font-family: 'Inter', sans-serif;
+  }
+  .locked-stack-row strong {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .he-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 8px;
+  }
+  .he-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .he-card:hover {
+    border-color: #1A3A8A;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .he-card.selected {
+    border-color: #1A3A8A;
+    border-width: 2px;
+  }
+  .he-stage {
+    background: #f4f6fa;
+    padding: 26px 26px 24px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .he-eyebrow {
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 10px;
+  }
+  .he-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+
+  /* Archival gradient palette */
+  .archival { background: linear-gradient(135deg, #d8d2c3 0%, #9a9080 60%, #5e574a 100%); filter: grayscale(1) sepia(0.15); }
+  .archival-2 { background: linear-gradient(135deg, #c8c2b3 0%, #8a8070 60%, #4e473a 100%); filter: grayscale(1) sepia(0.2); }
+  .archival-3 { background: linear-gradient(135deg, #b8b2a3 0%, #7a7060 60%, #3e372a 100%); filter: grayscale(1) sepia(0.18); }
+  .modern { background: linear-gradient(135deg, #4A8FCF 0%, #1A3A8A 70%, #142A66 100%); }
+  .modern-2 { background: linear-gradient(135deg, #6EA3C5 0%, #2A5179 60%, #1A3A8A 100%); }
+  .modern-3 { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #1A3A8A 110%); }
+
+  /* === A · Horizontal milestone timeline === */
+  .timeline {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px 18px;
+    overflow-x: auto;
+  }
+  .timeline-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(140px, 1fr));
+    gap: 14px;
+    padding-top: 14px;
+  }
+  .timeline-track::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%; right: 5%;
+    height: 2px;
+    background: linear-gradient(90deg, #cfdbe6 0%, #cfdbe6 80%, #FF8B5E 100%);
+  }
+  .ms {
+    position: relative;
+    padding-top: 16px;
+  }
+  .ms::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px; height: 12px;
+    background: #1A3A8A;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #cfdbe6;
+  }
+  .ms.peak::before { background: #FF8B5E; box-shadow: 0 0 0 3px rgba(255,139,94,0.25); }
+  .ms-img {
+    aspect-ratio: 4 / 3;
+    border-radius: 3px;
+    margin-bottom: 8px;
+  }
+  .ms-year {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    color: #1A3A8A;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .ms.peak .ms-year { color: #FF8B5E; }
+  .ms-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: #111;
+    margin-bottom: 2px;
+    line-height: 1.2;
+  }
+  .ms-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: #666;
+    line-height: 1.4;
+  }
+
+  /* === B · Champions wall === */
+  .wall {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 18px;
+  }
+  .wall-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+  }
+  @media (max-width: 800px) { .wall-grid { grid-template-columns: repeat(3, 1fr); } }
+  .champ {
+    aspect-ratio: 3 / 4;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+  .champ::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%);
+  }
+  .champ.olympian {
+    box-shadow: 0 0 0 2px #FF8B5E inset;
+  }
+  .champ-text {
+    position: absolute;
+    bottom: 6px; left: 8px; right: 8px;
+    z-index: 1;
+  }
+  .champ-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+  }
+  .champ-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 8.5px;
+    color: rgba(255,255,255,0.85);
+    margin-top: 2px;
+  }
+  .champ.olympian .champ-meta { color: #FF8B5E; font-weight: 600; }
+
+  /* === C · Magazine opener + champions strip === */
+  .mag {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .mag-opener {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 22px;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+  @media (max-width: 800px) { .mag-opener { grid-template-columns: 1fr; } }
+  .mag-img {
+    aspect-ratio: 4 / 3;
+    border-radius: 3px;
+  }
+  .mag-eyebrow {
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 6px;
+  }
+  .mag-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 1.15;
+    color: #111;
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+  }
+  .mag-headline em { font-style: italic; color: #FF8B5E; font-weight: 500; }
+  .mag-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #444;
+  }
+  .mag-strip {
+    border-top: 1px dashed #cfdbe6;
+    padding-top: 16px;
+  }
+  .mag-strip h5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin: 0 0 10px;
+  }
+  .mag-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  @media (max-width: 800px) { .mag-row { grid-template-columns: 1fr 1fr; } }
+  .mag-thumb {
+    aspect-ratio: 4 / 5;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+  .mag-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.7) 100%);
+  }
+  .mag-thumb-text {
+    position: absolute;
+    bottom: 6px; left: 7px; right: 7px;
+    z-index: 1;
+  }
+  .mag-thumb-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  .mag-thumb-meta {
+    font-size: 8px;
+    color: rgba(255,255,255,0.8);
+    margin-top: 2px;
+  }
+
+  /* === D · Then/now diptychs === */
+  .diptych-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 800px) { .diptych-grid { grid-template-columns: 1fr; } }
+  .diptych {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .dip-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+  .dip-half {
+    aspect-ratio: 4 / 3;
+    position: relative;
+  }
+  .dip-half .label {
+    position: absolute;
+    top: 8px; left: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(0,0,0,0.45);
+    padding: 3px 7px;
+    border-radius: 2px;
+  }
+  .dip-pair::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #fff;
+    transform: translateX(-1px);
+  }
+  .dip-caption {
+    padding: 12px 14px;
+    background: #fff;
+    border-top: 1px solid #ececec;
+  }
+  .dip-cap-eyebrow {
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 4px;
+  }
+  .dip-cap-line {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #111;
+    line-height: 1.3;
+  }
+  .dip-cap-meta {
+    font-size: 11px;
+    color: #666;
+    margin-top: 3px;
+  }
+
+  .he-meta {
+    padding: 22px 26px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+  }
+  .he-meta strong {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .he-meta .why-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .he-meta .why-row { grid-template-columns: 1fr; } }
+  .he-meta .why-row b {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <strong>Locked so far</strong>
+  Hero · Spine · 5 pillars · Hero visual · Brand identity · Wordmarks · Programs grid (B + rotation) · Pathway (C) · Coaching (D · Numbers + names)
+</div>
+
+<div class="he-grid">
+
+  <!-- A · Timeline -->
+  <div class="he-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="he-stage">
+      <div class="he-eyebrow">A · Horizontal milestone timeline</div>
+      <div class="he-title">1946 → today, in dots and dates</div>
+      <div class="timeline">
+        <div class="timeline-track">
+          <div class="ms"><div class="ms-img archival"></div><div class="ms-year">1946</div><div class="ms-name">Founded</div><div class="ms-line">Three sailors, one rented dock.</div></div>
+          <div class="ms"><div class="ms-img archival-2"></div><div class="ms-year">1962</div><div class="ms-name">First Junior Olympics</div><div class="ms-line">Optimist sailor places top-10 nationally.</div></div>
+          <div class="ms"><div class="ms-img archival-3"></div><div class="ms-year">1976</div><div class="ms-name">Women's Program</div><div class="ms-line">First all-women race team in S. Florida.</div></div>
+          <div class="ms"><div class="ms-img modern-3"></div><div class="ms-year">1996</div><div class="ms-name">Olympics</div><div class="ms-line">First CGSC alumna to the Games.</div></div>
+          <div class="ms"><div class="ms-img modern-2"></div><div class="ms-year">2018</div><div class="ms-name">Race Team formalized</div><div class="ms-line">Year-round competitive squad.</div></div>
+          <div class="ms peak"><div class="ms-img modern"></div><div class="ms-year">2026</div><div class="ms-name">Instructional Center</div><div class="ms-line">Maru Urban joins; HPC opens.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="he-meta">
+      <strong>A · Horizontal milestone timeline</strong>
+      Six dots across the screen — founding to today. Each is a year + small archival/modern photo + 1-line caption. The final dot uses the rust accent (the new chapter). Scrollable on narrow screens.
+      <div class="why-row">
+        <div><b>Why this</b>Most museum-like. Lets visitors scan 80 years in 5 seconds and zoom into any moment. Pairs with the hero video — both anchor the heritage→now arc.</div>
+        <div><b>Risk</b>Generic timeline format — every nonprofit and law firm has one. Risks reading as "about us page filler" unless the photos and copy are specific.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B · Champions wall -->
+  <div class="he-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="he-stage">
+      <div class="he-eyebrow">B · Champions wall (face grid)</div>
+      <div class="he-title">A wall of CGSC sailors — Olympians accent-ringed</div>
+      <div class="wall">
+        <div class="wall-grid">
+          <div class="champ olympian"><div class="modern" style="position:absolute;inset:0;"></div><div class="champ-text"><div class="champ-name">Sarah Lopez</div><div class="champ-meta">Olympic '96 · 470</div></div></div>
+          <div class="champ"><div class="modern-2" style="position:absolute;inset:0;"></div><div class="champ-text"><div class="champ-name">Daniel Cruz</div><div class="champ-meta">College Nat'l '14</div></div></div>
+          <div class="champ olympian"><div class="modern-3" style="position:absolute;inset:0;"></div><div class="champ-text"><div class="champ-name">Iris Martinez</div><div class="champ-meta">Olympic '08 · Laser</div></div></div>
+          <div class="champ"><div class="archival" style="position:absolute;inset:0;"></div><div class="champ-text"><div class="champ-name">Bob Henley</div><div class="champ-meta">CGSC '62 · Founder</div></div></div>
+          <div class="champ"><div class="modern" style="position:absolute;inset:0;"></div><div class="champ-text"><div class="champ-name">Maya Castillo</div><div class="champ-meta">Youth Worlds '25</div></div></div>
+          <div class="champ olympian"><div class="modern-2" style="position:absolute;inset:0;"></div><div class="champ-text"><div class="champ-name">Andrés Soto</div><div class="champ-meta">Olympic '20 · 49er</div></div></div>
+          <div class="champ"><div class="archival-2" style="position:absolute;inset:0;"></div><div class="champ-text"><div class="champ-name">Carlos Reyes</div><div class="champ-meta">CGSC '78</div></div></div>
+          <div class="champ"><div class="modern-3" style="position:absolute;inset:0;"></div><div class="champ-text"><div class="champ-name">Lila Park</div><div class="champ-meta">College '22</div></div></div>
+          <div class="champ"><div class="modern" style="position:absolute;inset:0;"></div><div class="champ-text"><div class="champ-name">Jamal Ross</div><div class="champ-meta">Race Team '24</div></div></div>
+          <div class="champ"><div class="archival-3" style="position:absolute;inset:0;"></div><div class="champ-text"><div class="champ-name">Ann Holt</div><div class="champ-meta">Women's Lead '76</div></div></div>
+          <div class="champ"><div class="modern-2" style="position:absolute;inset:0;"></div><div class="champ-text"><div class="champ-name">Tomás Vega</div><div class="champ-meta">Junior '23</div></div></div>
+          <div class="champ"><div class="modern-3" style="position:absolute;inset:0;"></div><div class="champ-text"><div class="champ-name">Sofía Park</div><div class="champ-meta">High School '24</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="he-meta">
+      <strong>B · Champions wall</strong>
+      A grid of 12+ alumni faces with name + year + brief achievement. Olympians get an accent ring; everyone else equal weight. Mix of archival and modern photos. Hover/click for fuller story.
+      <div class="why-row">
+        <div><b>Why this</b>Most "Mouratoglou parallel" — his coaching page does this exact thing for pro players. Honors both Olympic and regular alumni in the same grid. Most credible answer to "who has come through here?"</div>
+        <div><b>Risk</b>Requires real photos and verified facts for ~12 people. If only Olympians get rings, the section reads as "elite pipeline" instead of "every level." Need at least 8 named alumni up-front to feel real.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C · Magazine opener -->
+  <div class="he-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="he-stage">
+      <div class="he-eyebrow">C · Magazine opener + champions strip</div>
+      <div class="he-title">Tell one founding story, then the strip of receipts</div>
+      <div class="mag">
+        <div class="mag-opener">
+          <div class="mag-img archival"></div>
+          <div>
+            <div class="mag-eyebrow">Since 1946</div>
+            <div class="mag-headline">Three sailors, one rented dock, a borrowed Snipe — <em>and 80 years later, an academy.</em></div>
+            <div class="mag-body">Bob Henley, Carl Webb, and Frances Tomlinson founded the Coconut Grove Sailing Club in the spring of 1946 with one borrowed boat and a stretch of the Bay no one else was using. Within five years they had 40 members; within twenty, the Bay's first all-women race team. Eighty years later, the academy that grew from that dock has trained six Olympians, three world champions, and roughly fifteen thousand kids who just learned to love sailing.</div>
+          </div>
+        </div>
+        <div class="mag-strip">
+          <h5>The receipts — a sample of CGSC alumni</h5>
+          <div class="mag-row">
+            <div class="mag-thumb"><div class="modern" style="position:absolute;inset:0;"></div><div class="mag-thumb-text"><div class="mag-thumb-name">Sarah Lopez</div><div class="mag-thumb-meta">Olympic '96</div></div></div>
+            <div class="mag-thumb"><div class="modern-3" style="position:absolute;inset:0;"></div><div class="mag-thumb-text"><div class="mag-thumb-name">Iris Martinez</div><div class="mag-thumb-meta">Olympic '08</div></div></div>
+            <div class="mag-thumb"><div class="modern-2" style="position:absolute;inset:0;"></div><div class="mag-thumb-text"><div class="mag-thumb-name">Andrés Soto</div><div class="mag-thumb-meta">Olympic '20</div></div></div>
+            <div class="mag-thumb"><div class="modern" style="position:absolute;inset:0;"></div><div class="mag-thumb-text"><div class="mag-thumb-name">Maya Castillo</div><div class="mag-thumb-meta">Youth Worlds '25</div></div></div>
+            <div class="mag-thumb"><div class="modern-2" style="position:absolute;inset:0;"></div><div class="mag-thumb-text"><div class="mag-thumb-name">Daniel Cruz</div><div class="mag-thumb-meta">College Nat'l '14</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="he-meta">
+      <strong>C · Magazine opener + champions strip</strong>
+      A long-form opener (archival photo + headline + paragraph telling the founding story), followed by a horizontal scrolling strip of named alumni. Most editorial / narrative.
+      <div class="why-row">
+        <div><b>Why this</b>The story does what stats can't — turns 80 years into a moment. The strip below provides receipts without dominating. Best if there's a strong founding-story to tell with named characters.</div>
+        <div><b>Risk</b>Needs real research — three founder names, dates, the actual story arc. If the narrative is generic ("a group of sailing enthusiasts..."), it reads as filler.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D · Diptychs -->
+  <div class="he-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="he-stage">
+      <div class="he-eyebrow">D · Then/now diptych pairs</div>
+      <div class="he-title">Echoes of the same Bay, generations apart</div>
+      <div class="diptych-grid">
+        <div class="diptych">
+          <div class="dip-pair">
+            <div class="dip-half archival"><span class="label">1962</span></div>
+            <div class="dip-half modern-2"><span class="label">2024</span></div>
+          </div>
+          <div class="dip-caption">
+            <div class="dip-cap-eyebrow">Junior Regatta — same dock, same week</div>
+            <div class="dip-cap-line">Bob Henley's first Optimist class →<br>this year's intake of 40 kids.</div>
+          </div>
+        </div>
+        <div class="diptych">
+          <div class="dip-pair">
+            <div class="dip-half archival-2"><span class="label">1976</span></div>
+            <div class="dip-half modern-3"><span class="label">2025</span></div>
+          </div>
+          <div class="dip-caption">
+            <div class="dip-cap-eyebrow">Women's Race Team launch — and now</div>
+            <div class="dip-cap-line">Ann Holt's six-sailor crew →<br>the 30+ women on the squad today.</div>
+          </div>
+        </div>
+        <div class="diptych">
+          <div class="dip-pair">
+            <div class="dip-half archival-3"><span class="label">1996</span></div>
+            <div class="dip-half modern"><span class="label">2026</span></div>
+          </div>
+          <div class="dip-caption">
+            <div class="dip-cap-eyebrow">First Olympic sailor → first HPC class</div>
+            <div class="dip-cap-line">Sarah Lopez, Atlanta '96 →<br>this year's HPC inaugural cohort.</div>
+          </div>
+        </div>
+        <div class="diptych">
+          <div class="dip-pair">
+            <div class="dip-half archival"><span class="label">1946</span></div>
+            <div class="dip-half modern-2"><span class="label">2026</span></div>
+          </div>
+          <div class="dip-caption">
+            <div class="dip-cap-eyebrow">The original dock — and today's</div>
+            <div class="dip-cap-line">A rented slip on the Bay →<br>the academy's home base.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="he-meta">
+      <strong>D · Then/now diptych pairs</strong>
+      Four split-image pairs, each linking an archival moment to its modern equivalent. Caption tells the through-line ("first Optimist class → 40 kids today"). Visually echoes the hero video weave.
+      <div class="why-row">
+        <div><b>Why this</b>Most distinctive — no other sailing academy on earth uses this cut. Honors heritage and present in the same beat. Visually echoes the hero treatment so the page reads coherently end to end.</div>
+        <div><b>Risk</b>Requires curated archival photos AND modern equivalents shot in matching framings. Most production-intensive option. Each pairing needs to be earned, not invented.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1A3A8A; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a treatment. <strong>D</strong> is the most distinctive and pairs visually with the hero video weave. <strong>B</strong> is the safest "Mouratoglou parallel." <strong>C</strong> requires the strongest writing. <strong>A</strong> is the most production-light if archival assets are limited.
+  </p>
+</div>

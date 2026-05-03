@@ -1,0 +1,597 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<h2 style="font-family:'Inter Tight','Inter',sans-serif;">The Bay · section 6</h2>
+<p class="subtitle" style="font-family:'Inter',sans-serif;">The territorial advantage. The hero already establishes Biscayne Bay as the place — this section makes "warmest training waters in North America" feel <em>specific</em>. Four cuts, each with a different center of gravity.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1A3A8A;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 28px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+    font-family: 'Inter', sans-serif;
+  }
+  .locked-stack-row strong {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .bay-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 8px;
+  }
+  .bay-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .bay-card:hover {
+    border-color: #1A3A8A;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .bay-card.selected {
+    border-color: #1A3A8A;
+    border-width: 2px;
+  }
+  .bay-stage {
+    background: #f4f6fa;
+    padding: 26px 26px 24px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .bay-eyebrow {
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 10px;
+  }
+  .bay-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+
+  /* === A · Annotated map === */
+  .layout-a {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  @media (max-width: 800px) { .layout-a { grid-template-columns: 1fr; } }
+  .map-canvas {
+    aspect-ratio: 16 / 11;
+    background:
+      linear-gradient(180deg, #B5C7E8 0%, #88a5c0 35%, #4A8FCF 65%, #1A3A8A 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .map-coast {
+    position: absolute;
+    top: 18%; left: 0;
+    width: 28%; height: 64%;
+    background: rgba(212, 200, 165, 0.6);
+    clip-path: polygon(0 10%, 80% 0%, 100% 22%, 95% 50%, 88% 78%, 100% 90%, 60% 100%, 0 100%);
+  }
+  .map-skyline {
+    position: absolute;
+    top: 12%;
+    left: 4%;
+    width: 24%;
+    height: 8%;
+    background: linear-gradient(90deg,
+      transparent 0%, #1A3A8A 6%, #1A3A8A 9%, transparent 11%,
+      transparent 16%, #1A3A8A 19%, #1A3A8A 24%, transparent 26%,
+      transparent 32%, #1A3A8A 35%, #1A3A8A 42%, transparent 44%,
+      transparent 52%, #1A3A8A 56%, #1A3A8A 60%, transparent 62%,
+      transparent 70%, #1A3A8A 73%, #1A3A8A 80%, transparent 82%,
+      transparent 100%);
+  }
+  .map-pin {
+    position: absolute;
+    z-index: 2;
+  }
+  .map-pin .dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #FF8B5E;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px rgba(255,139,94,0.4);
+    margin-bottom: 4px;
+  }
+  .map-pin .dot.std {
+    background: #fff;
+    box-shadow: 0 0 0 2px rgba(26,58,138,0.4);
+  }
+  .map-pin .label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(26,58,138,0.7);
+    padding: 2px 6px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .map-pin.dock { top: 28%; left: 22%; }
+  .map-pin.race { top: 50%; left: 48%; }
+  .map-pin.training { top: 38%; left: 60%; }
+  .map-pin.regatta { top: 65%; left: 38%; }
+  .map-side {
+    padding: 22px;
+    background: #fff;
+    border-left: 1px solid #ececec;
+  }
+  .map-side h5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin: 0 0 12px;
+  }
+  .map-list { list-style: none; padding: 0; margin: 0; }
+  .map-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #cfdbe6;
+    font-size: 12px;
+    color: #444;
+    line-height: 1.5;
+  }
+  .map-list li:last-child { border-bottom: none; }
+  .map-list li b {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #111;
+    margin-bottom: 2px;
+  }
+
+  /* === B · Cinematic full-bleed === */
+  .layout-b {
+    aspect-ratio: 16 / 8;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.45) 100%),
+      linear-gradient(180deg, #B5C7E8 0%, #88a5c0 25%, #4a7898 55%, #2c5d82 100%);
+  }
+  .layout-b::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 180px 24px at 30% 78%, rgba(255,255,255,0.4), transparent 70%),
+      radial-gradient(ellipse 140px 18px at 60% 82%, rgba(255,255,255,0.35), transparent 70%),
+      radial-gradient(circle 2px at 18% 70%, #fff, transparent 70%),
+      radial-gradient(circle 2px at 32% 76%, #fff, transparent 70%),
+      radial-gradient(circle 2px at 48% 72%, #fff, transparent 70%),
+      radial-gradient(circle 2px at 62% 80%, #fff, transparent 70%),
+      radial-gradient(circle 2px at 76% 75%, #fff, transparent 70%);
+  }
+  .b-overlay {
+    position: absolute;
+    bottom: 36px; left: 36px; right: 36px;
+    z-index: 2;
+    color: #fff;
+  }
+  .b-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin-bottom: 10px;
+  }
+  .b-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    max-width: 70%;
+  }
+  .b-headline span { color: #FF8B5E; }
+  .b-stats {
+    display: flex;
+    gap: 28px;
+    margin-top: 14px;
+    font-family: 'Inter', sans-serif;
+  }
+  .b-stat .num {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .b-stat .lbl {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    margin-top: 4px;
+  }
+
+  /* === C · Conditions calendar === */
+  .layout-c {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .c-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: #111;
+    letter-spacing: -0.015em;
+    margin-bottom: 4px;
+  }
+  .c-headline em { font-style: italic; color: #FF8B5E; font-weight: 500; }
+  .c-sub {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 18px;
+  }
+  .calendar {
+    display: grid;
+    grid-template-columns: 80px repeat(12, 1fr);
+    gap: 4px;
+    margin-bottom: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+  }
+  .cal-row-label {
+    text-align: right;
+    padding: 6px 8px 6px 0;
+    color: #666;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 9px;
+  }
+  .cal-cell {
+    height: 22px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+  }
+  .cal-cell.h0 { background: #cfdbe6; color: #888; }
+  .cal-cell.h1 { background: #88a5c0; }
+  .cal-cell.h2 { background: #4A8FCF; }
+  .cal-cell.h3 { background: #1A3A8A; }
+  .cal-cell.peak { background: #FF8B5E; color: #fff; }
+  .cal-month {
+    text-align: center;
+    color: #888;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 9px;
+    padding: 4px 0;
+  }
+  .c-legend {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+    font-size: 10px;
+    color: #666;
+    font-family: 'Inter', sans-serif;
+    align-items: center;
+  }
+  .c-legend .ll {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .c-legend .lc {
+    width: 12px; height: 12px;
+    border-radius: 2px;
+  }
+
+  /* === D · Day in the life === */
+  .layout-d {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .d-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: #111;
+    letter-spacing: -0.015em;
+    margin-bottom: 16px;
+  }
+  .d-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  @media (max-width: 800px) { .d-row { grid-template-columns: 1fr 1fr; } }
+  .d-tile {
+    aspect-ratio: 4 / 5;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+  .d-tile.t1 { background: linear-gradient(180deg, #f5d090 0%, #FF8B5E 70%, #c46b3a 100%); }
+  .d-tile.t2 { background: linear-gradient(180deg, #B5C7E8 0%, #4A8FCF 70%, #1A3A8A 100%); }
+  .d-tile.t3 { background: linear-gradient(135deg, #1A3A8A 0%, #0F2660 60%, #050B22 100%); }
+  .d-tile.t4 { background: linear-gradient(135deg, #4A8FCF 0%, #1A3A8A 50%, #142A66 100%); }
+  .d-tile.t5 { background: linear-gradient(180deg, #FF8B5E 0%, #c46b3a 50%, #1A3A8A 100%); }
+  .d-tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.65) 100%);
+  }
+  .d-tile-text {
+    position: absolute;
+    bottom: 10px; left: 10px; right: 10px;
+    z-index: 1;
+  }
+  .d-tile-time {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 4px;
+  }
+  .d-tile-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+  .d-tile-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .bay-meta {
+    padding: 22px 26px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+  }
+  .bay-meta strong {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .bay-meta .why-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .bay-meta .why-row { grid-template-columns: 1fr; } }
+  .bay-meta .why-row b {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <strong>Locked so far</strong>
+  Hero · Spine · Pillars · Visual · Brand ID · Wordmarks · Programs (B+rotation) · Pathway (C) · Coaching (D · numbers) · Heritage (B · champions wall)
+</div>
+
+<div class="bay-grid">
+
+  <!-- A · Annotated map -->
+  <div class="bay-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="bay-stage">
+      <div class="bay-eyebrow">A · Annotated map</div>
+      <div class="bay-title">"Where exactly are we?" — the Bay, marked</div>
+      <div class="layout-a">
+        <div class="map-canvas">
+          <div class="map-coast"></div>
+          <div class="map-skyline"></div>
+          <div class="map-pin dock"><div class="dot"></div><span class="label">CGSC Dock</span></div>
+          <div class="map-pin race"><div class="dot std"></div><span class="label">Race Course</span></div>
+          <div class="map-pin training"><div class="dot std"></div><span class="label">Training Zone</span></div>
+          <div class="map-pin regatta"><div class="dot std"></div><span class="label">Regatta Marks</span></div>
+        </div>
+        <div class="map-side">
+          <h5>The geography</h5>
+          <ul class="map-list">
+            <li><b>CGSC Dock</b>2990 S. Bayshore Drive — 8 minutes from downtown Miami.</li>
+            <li><b>Race Course</b>Open-water 1.2 mi offshore — same lines used since '62.</li>
+            <li><b>Training Zone</b>Sheltered shallows for first-sail and learn-to-sail.</li>
+            <li><b>Regatta Marks</b>SORC, Orange Bowl, college regattas all run here.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bay-meta">
+      <strong>A · Annotated map</strong>
+      Stylized map of the Bay with Miami coastline, downtown skyline, and four pinned locations: dock, race course, training zone, regatta marks. Side panel explains each pin.
+      <div class="why-row">
+        <div><b>Why this</b>Most concrete answer to "where is this?" Pulls the section out of brand-language abstraction and into geography. Pairs naturally with the Visit/Contact section that follows.</div>
+        <div><b>Risk</b>Reads more "facilities page" than "brand statement." Doesn't sell the <em>feeling</em> of being on the Bay — just locates it.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B · Cinematic full-bleed -->
+  <div class="bay-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="bay-stage">
+      <div class="bay-eyebrow">B · Cinematic full-bleed</div>
+      <div class="bay-title">One image. One claim. The Bay does the rest.</div>
+      <div class="layout-b">
+        <div class="b-overlay">
+          <div class="b-eyebrow">The territory</div>
+          <div class="b-headline">365 days of sail, on the warmest <span>training waters</span> in North America.</div>
+          <div class="b-stats">
+            <div class="b-stat"><div class="num">76°F</div><div class="lbl">Avg water temp</div></div>
+            <div class="b-stat"><div class="num">12 kt</div><div class="lbl">Avg wind</div></div>
+            <div class="b-stat"><div class="num">365</div><div class="lbl">Sailable days</div></div>
+            <div class="b-stat"><div class="num">8 min</div><div class="lbl">From downtown Miami</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bay-meta">
+      <strong>B · Cinematic full-bleed</strong>
+      One full-bleed photograph or drone video (sails on the Bay, Miami skyline behind, evening light). Single overlay: eyebrow, big claim, four anchor stats. No second visual.
+      <div class="why-row">
+        <div><b>Why this</b>Most cinematic, most immediate. Lets the photography do what the page so far has only described. The four stats land harder than a paragraph would. Easiest to source — one strong image, not a tour.</div>
+        <div><b>Risk</b>Section depends entirely on the image. If the photo isn't world-class, the claim doesn't land. Less informational than other options.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C · Conditions calendar -->
+  <div class="bay-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="bay-stage">
+      <div class="bay-eyebrow">C · Conditions calendar</div>
+      <div class="bay-title">A year on the Bay, by the data</div>
+      <div class="layout-c">
+        <div class="c-headline">Twelve months of training. <em>No off-season.</em></div>
+        <div class="c-sub">Every cell = a week. Color = sailable conditions.</div>
+        <div class="calendar">
+          <div></div>
+          <div class="cal-month">Jan</div><div class="cal-month">Feb</div><div class="cal-month">Mar</div><div class="cal-month">Apr</div><div class="cal-month">May</div><div class="cal-month">Jun</div><div class="cal-month">Jul</div><div class="cal-month">Aug</div><div class="cal-month">Sep</div><div class="cal-month">Oct</div><div class="cal-month">Nov</div><div class="cal-month">Dec</div>
+          <div class="cal-row-label">Wk 1</div>
+          <div class="cal-cell h2"></div><div class="cal-cell h2"></div><div class="cal-cell h3"></div><div class="cal-cell peak"></div><div class="cal-cell peak"></div><div class="cal-cell h2"></div><div class="cal-cell h1"></div><div class="cal-cell h1"></div><div class="cal-cell h2"></div><div class="cal-cell h3"></div><div class="cal-cell h3"></div><div class="cal-cell h2"></div>
+          <div class="cal-row-label">Wk 2</div>
+          <div class="cal-cell h2"></div><div class="cal-cell h3"></div><div class="cal-cell peak"></div><div class="cal-cell peak"></div><div class="cal-cell h3"></div><div class="cal-cell h2"></div><div class="cal-cell h1"></div><div class="cal-cell h2"></div><div class="cal-cell h2"></div><div class="cal-cell h3"></div><div class="cal-cell peak"></div><div class="cal-cell h2"></div>
+          <div class="cal-row-label">Wk 3</div>
+          <div class="cal-cell h3"></div><div class="cal-cell h3"></div><div class="cal-cell peak"></div><div class="cal-cell h3"></div><div class="cal-cell h3"></div><div class="cal-cell h2"></div><div class="cal-cell h2"></div><div class="cal-cell h2"></div><div class="cal-cell h3"></div><div class="cal-cell peak"></div><div class="cal-cell peak"></div><div class="cal-cell h3"></div>
+          <div class="cal-row-label">Wk 4</div>
+          <div class="cal-cell h3"></div><div class="cal-cell peak"></div><div class="cal-cell peak"></div><div class="cal-cell h3"></div><div class="cal-cell h2"></div><div class="cal-cell h1"></div><div class="cal-cell h2"></div><div class="cal-cell h2"></div><div class="cal-cell h3"></div><div class="cal-cell peak"></div><div class="cal-cell h3"></div><div class="cal-cell h2"></div>
+        </div>
+        <div class="c-legend">
+          <span class="ll"><span class="lc" style="background:#88a5c0"></span> Light wind</span>
+          <span class="ll"><span class="lc" style="background:#4A8FCF"></span> Steady</span>
+          <span class="ll"><span class="lc" style="background:#1A3A8A"></span> Strong training</span>
+          <span class="ll"><span class="lc" style="background:#FF8B5E"></span> Peak race conditions</span>
+        </div>
+      </div>
+    </div>
+    <div class="bay-meta">
+      <strong>C · Conditions calendar</strong>
+      A 12-month heatmap visualizing sailable conditions every week of the year. Cool blues for steady, dark navy for strong training, rust for peak race weeks. Closes the "no off-season" claim with evidence.
+      <div class="why-row">
+        <div><b>Why this</b>Most rigorous proof for "warmest training waters." Looks like a serious training program's data sheet, not a tourism brochure. Distinctive — no other sailing club site does this.</div>
+        <div><b>Risk</b>Requires real climate / wind data sourced and verified. If the cells are decorative-only, sophisticated visitors will spot it. Production cost: a real chart needs real numbers.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D · Day in the life -->
+  <div class="bay-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="bay-stage">
+      <div class="bay-eyebrow">D · Day in the life</div>
+      <div class="bay-title">One sailing day, dawn to dusk</div>
+      <div class="layout-d">
+        <div class="d-headline">Sunrise to sunset on the Bay</div>
+        <div class="d-row">
+          <div class="d-tile t1">
+            <div class="d-tile-text">
+              <div class="d-tile-time">06:30</div>
+              <div class="d-tile-name">Dawn rigging</div>
+              <div class="d-tile-line">Race team prep — sails out, lines run, coffee on the dock.</div>
+            </div>
+          </div>
+          <div class="d-tile t2">
+            <div class="d-tile-text">
+              <div class="d-tile-time">09:00</div>
+              <div class="d-tile-name">Junior class</div>
+              <div class="d-tile-line">Optimists out for first light wind. Coach in chase boat.</div>
+            </div>
+          </div>
+          <div class="d-tile t3">
+            <div class="d-tile-text">
+              <div class="d-tile-time">13:00</div>
+              <div class="d-tile-name">Race practice</div>
+              <div class="d-tile-line">Steady 12-knot trade, race team running courses.</div>
+            </div>
+          </div>
+          <div class="d-tile t4">
+            <div class="d-tile-text">
+              <div class="d-tile-time">16:00</div>
+              <div class="d-tile-name">High Performance</div>
+              <div class="d-tile-line">HPC squad on 49ers, drone tracking, coach radio in.</div>
+            </div>
+          </div>
+          <div class="d-tile t5">
+            <div class="d-tile-text">
+              <div class="d-tile-time">18:30</div>
+              <div class="d-tile-name">Sunset return</div>
+              <div class="d-tile-line">Boats back, debrief on the dock, the Bay goes orange.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bay-meta">
+      <strong>D · Day in the life</strong>
+      Five timestamped photos in a row: dawn rigging → junior class → race practice → HPC squad → sunset return. Time stamps in the corner of each tile. Visual narrative of a single sailing day.
+      <div class="why-row">
+        <div><b>Why this</b>Most experiential — sells the <em>feeling</em> of being there. Naturally features all five pillars across the day. Pairs perfectly with the cut-together video you're producing.</div>
+        <div><b>Risk</b>Most production-intensive — needs five matching photos shot the same day with the same vibe. Mobile collapses to 2-up which loses the narrative arc.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1A3A8A; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a treatment. <strong>B</strong> is the safest cinematic option (one image does the work). <strong>C</strong> is the most distinctive ("no off-season" with receipts). <strong>D</strong> is the most experiential. <strong>A</strong> is the most utilitarian — best if Visit/Contact is going to lean on the geography too.
+  </p>
+</div>

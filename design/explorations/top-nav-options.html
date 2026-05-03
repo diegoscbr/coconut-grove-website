@@ -1,0 +1,453 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<h2 style="font-family:'Inter Tight','Inter',sans-serif;">Top nav · the sticky header</h2>
+<p class="subtitle" style="font-family:'Inter',sans-serif;">Lives on every page. First thing visitors see, last thing they touch. Critical to feel light enough to fade out, prominent enough to navigate. Four cuts — same nav structure (5 pillars + utility), different visual treatments.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1A3A8A;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 28px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+    font-family: 'Inter', sans-serif;
+  }
+  .locked-stack-row strong {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .nv-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 8px;
+  }
+  .nv-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .nv-card:hover {
+    border-color: #1A3A8A;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .nv-card.selected {
+    border-color: #1A3A8A;
+    border-width: 2px;
+  }
+  .nv-stage {
+    background: #f4f6fa;
+    padding: 26px 26px 24px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .nv-eyebrow {
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 10px;
+  }
+  .nv-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+
+  .preview-frame {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .preview-page {
+    height: 220px;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.45) 100%),
+      linear-gradient(180deg, #B5C7E8 0%, #4A8FCF 50%, #1A3A8A 100%);
+    position: relative;
+  }
+  .preview-page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle 1.5px at 24% 75%, #fff, transparent 70%),
+      radial-gradient(circle 1.5px at 38% 80%, #fff, transparent 70%),
+      radial-gradient(circle 1.5px at 56% 78%, #fff, transparent 70%),
+      radial-gradient(circle 1.5px at 72% 82%, #fff, transparent 70%);
+  }
+  .preview-page .pp-text {
+    position: absolute;
+    bottom: 22px; left: 22px;
+    color: #fff;
+    z-index: 2;
+  }
+  .preview-page .pp-text .stack {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+  }
+
+  /* Reusable wordmark for nav previews */
+  .nav-mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .nav-mark .pen {
+    width: 30px; height: 18px;
+    flex-shrink: 0;
+  }
+  .nav-mark .text {
+    line-height: 1;
+  }
+  .nav-mark .top {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .nav-mark .bot {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 7.5px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .nav-link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-cta {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 2px;
+  }
+
+  /* === A · Solid navy bar === */
+  .nav-a {
+    background: #1A3A8A;
+    color: #fff;
+    padding: 14px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+  }
+  .nav-a .nav-mark .top { color: #fff; }
+  .nav-a .nav-mark .bot { color: #B5C7E8; }
+  .nav-a nav { display: flex; gap: 22px; }
+  .nav-a .nav-link { color: #fff; opacity: 0.85; }
+  .nav-a .nav-link.active { opacity: 1; border-bottom: 2px solid #FF8B5E; padding-bottom: 4px; margin-bottom: -6px; }
+  .nav-a .nav-cta { background: #FF8B5E; color: #1A3A8A; }
+
+  /* === B · Translucent over hero === */
+  .nav-b {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 5;
+    padding: 18px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%);
+    color: #fff;
+  }
+  .nav-b .nav-mark .top { color: #fff; }
+  .nav-b .nav-mark .bot { color: rgba(255,255,255,0.75); }
+  .nav-b nav { display: flex; gap: 22px; }
+  .nav-b .nav-link { color: #fff; opacity: 0.9; }
+  .nav-b .nav-cta { background: #fff; color: #1A3A8A; }
+
+  /* === C · White rail with navy text === */
+  .nav-c {
+    background: #fff;
+    color: #1A3A8A;
+    padding: 14px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .nav-c .nav-mark .top { color: #111; }
+  .nav-c .nav-mark .bot { color: #777; }
+  .nav-c nav { display: flex; gap: 22px; }
+  .nav-c .nav-link { color: #1A3A8A; }
+  .nav-c .nav-link.active { color: #FF8B5E; }
+  .nav-c .nav-cta { background: #1A3A8A; color: #fff; }
+
+  /* === D · Two-tier (utility on top, primary below) === */
+  .nav-d-utility {
+    background: #142A66;
+    color: #fff;
+    padding: 6px 26px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .nav-d-utility a { color: rgba(255,255,255,0.8); text-decoration: none; }
+  .nav-d-utility .sep { color: rgba(255,255,255,0.4); }
+  .nav-d-primary {
+    background: #1A3A8A;
+    color: #fff;
+    padding: 14px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+  }
+  .nav-d-primary .nav-mark .top { color: #fff; }
+  .nav-d-primary .nav-mark .bot { color: #B5C7E8; }
+  .nav-d-primary nav { display: flex; gap: 22px; }
+  .nav-d-primary .nav-link { color: #fff; opacity: 0.85; }
+  .nav-d-primary .nav-link.active { opacity: 1; border-bottom: 2px solid #FF8B5E; padding-bottom: 4px; margin-bottom: -6px; }
+  .nav-d-primary .nav-cta { background: #FF8B5E; color: #1A3A8A; }
+
+  .nv-meta {
+    padding: 22px 26px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+  }
+  .nv-meta strong {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .nv-meta .why-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .nv-meta .why-row { grid-template-columns: 1fr; } }
+  .nv-meta .why-row b {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <strong>Naming corrected</strong>
+  Wordmark sub-mark: <strong style="color:#FF8B5E;font-size:11px;letter-spacing:0.06em;text-transform:none;display:inline;">INSTRUCTIONAL CENTER · Coconut Grove · 1946</strong>. "Sailing Academy" stays in the hero positioning headline only.
+</div>
+
+<div class="nv-grid">
+
+  <!-- A · Solid navy -->
+  <div class="nv-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="nv-stage">
+      <div class="nv-eyebrow">A · Solid navy bar</div>
+      <div class="nv-title">Always navy. Always present.</div>
+      <div class="preview-frame">
+        <div class="nav-a">
+          <div class="nav-mark">
+            <svg class="pen" viewBox="0 0 56 32"><polygon points="0,0 56,16 0,32" fill="#fff"/><polygon points="3,4 49,16 3,28" fill="#1A3A8A"/><text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">CGSC</text></svg>
+            <div class="text"><div class="top">Instructional Center</div><div class="bot">Coconut Grove · 1946</div></div>
+          </div>
+          <nav>
+            <a class="nav-link active" href="#">Programs</a>
+            <a class="nav-link" href="#">Pathway</a>
+            <a class="nav-link" href="#">Coaching</a>
+            <a class="nav-link" href="#">Calendar</a>
+            <a class="nav-link" href="#">Stories</a>
+          </nav>
+          <a class="nav-cta" href="#">Visit / Inquire →</a>
+        </div>
+        <div class="preview-page">
+          <div class="pp-text">
+            <div class="stack">The Premier<br>Sailing Academy<br>in Biscayne Bay</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nv-meta">
+      <strong>A · Solid navy bar</strong>
+      Always-on solid navy bar. Wordmark left, 5 nav links center, rust CTA right. Active link gets a rust underline. Same treatment on every page.
+      <div class="why-row">
+        <div><b>Why this</b>Most consistent — visitors always know they're on the academy site. Clear hierarchy. The brand is always announcing itself. Easiest to design across deep pages.</div>
+        <div><b>Risk</b>Competes with the hero on the homepage. Visitors arrive to two navy zones stacked — the bar and the hero — which can feel heavy. Best paired with the hero gradient blending into the bar's navy.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B · Translucent over hero -->
+  <div class="nv-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="nv-stage">
+      <div class="nv-eyebrow">B · Translucent over hero</div>
+      <div class="nv-title">Disappears into the hero on landing</div>
+      <div class="preview-frame" style="position:relative;">
+        <nav class="nav-b">
+          <div class="nav-mark">
+            <svg class="pen" viewBox="0 0 56 32"><polygon points="0,0 56,16 0,32" fill="#fff"/><polygon points="3,4 49,16 3,28" fill="#1A3A8A"/><text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">CGSC</text></svg>
+            <div class="text"><div class="top">Instructional Center</div><div class="bot">Coconut Grove · 1946</div></div>
+          </div>
+          <nav style="display:flex;gap:22px;">
+            <a class="nav-link" href="#">Programs</a>
+            <a class="nav-link" href="#">Pathway</a>
+            <a class="nav-link" href="#">Coaching</a>
+            <a class="nav-link" href="#">Calendar</a>
+            <a class="nav-link" href="#">Stories</a>
+          </nav>
+          <a class="nav-cta" href="#">Visit / Inquire →</a>
+        </nav>
+        <div class="preview-page">
+          <div class="pp-text">
+            <div class="stack">The Premier<br>Sailing Academy<br>in Biscayne Bay</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nv-meta">
+      <strong>B · Translucent over hero</strong>
+      Nav floats over the hero with a soft top gradient (no solid bar). On scroll past the hero, the nav transitions to solid navy (= treatment A). On deeper pages without a hero, defaults to solid navy.
+      <div class="why-row">
+        <div><b>Why this</b>Maximizes hero impact on landing. Most cinematic. Mouratoglou's pattern. Lets the bay-as-territory video carry the full screen.</div>
+        <div><b>Risk</b>Slightly more complex implementation (scroll listener, transition state). Translucent state needs to maintain WCAG contrast — test against worst-case hero footage.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C · White rail -->
+  <div class="nv-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="nv-stage">
+      <div class="nv-eyebrow">C · White rail with navy text</div>
+      <div class="nv-title">Light, editorial — the navy lives below</div>
+      <div class="preview-frame">
+        <nav class="nav-c">
+          <div class="nav-mark">
+            <svg class="pen" viewBox="0 0 56 32"><polygon points="0,0 56,16 0,32" fill="#1A3A8A"/><polygon points="3,4 49,16 3,28" fill="#fff"/><text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#1A3A8A" letter-spacing="1">CGSC</text></svg>
+            <div class="text"><div class="top">Instructional Center</div><div class="bot">Coconut Grove · 1946</div></div>
+          </div>
+          <nav style="display:flex;gap:22px;">
+            <a class="nav-link active" href="#">Programs</a>
+            <a class="nav-link" href="#">Pathway</a>
+            <a class="nav-link" href="#">Coaching</a>
+            <a class="nav-link" href="#">Calendar</a>
+            <a class="nav-link" href="#">Stories</a>
+          </nav>
+          <a class="nav-cta" href="#">Visit / Inquire →</a>
+        </nav>
+        <div class="preview-page">
+          <div class="pp-text">
+            <div class="stack">The Premier<br>Sailing Academy<br>in Biscayne Bay</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nv-meta">
+      <strong>C · White rail with navy text</strong>
+      White nav bar with navy text and icon. Pennant inverts to navy outline. Active link gets rust color. CTA is solid navy. Lets the navy live below the fold, in the hero.
+      <div class="why-row">
+        <div><b>Why this</b>Most editorial / magazine-feeling. Navy hero gets full visual weight when it lands. Reads as a quiet, confident header — premium without volume.</div>
+        <div><b>Risk</b>Less brand-presence at the top. On long scrolls past the hero, white bar over a white page section can feel weightless — needs a subtle border or shadow to anchor.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D · Two-tier -->
+  <div class="nv-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="nv-stage">
+      <div class="nv-eyebrow">D · Two-tier (utility + primary)</div>
+      <div class="nv-title">Top strip for utility, main bar for nav</div>
+      <div class="preview-frame">
+        <div class="nav-d-utility">
+          <a href="#">Member Login</a>
+          <span class="sep">·</span>
+          <a href="#">cgsc.org Parent Club</a>
+          <span class="sep">·</span>
+          <a href="#">Donate</a>
+          <span class="sep">·</span>
+          <a href="#">EN / ES</a>
+        </div>
+        <nav class="nav-d-primary">
+          <div class="nav-mark">
+            <svg class="pen" viewBox="0 0 56 32"><polygon points="0,0 56,16 0,32" fill="#fff"/><polygon points="3,4 49,16 3,28" fill="#1A3A8A"/><text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">CGSC</text></svg>
+            <div class="text"><div class="top">Instructional Center</div><div class="bot">Coconut Grove · 1946</div></div>
+          </div>
+          <nav style="display:flex;gap:22px;">
+            <a class="nav-link active" href="#">Programs</a>
+            <a class="nav-link" href="#">Pathway</a>
+            <a class="nav-link" href="#">Coaching</a>
+            <a class="nav-link" href="#">Calendar</a>
+            <a class="nav-link" href="#">Stories</a>
+          </nav>
+          <a class="nav-cta" href="#">Visit / Inquire →</a>
+        </nav>
+        <div class="preview-page">
+          <div class="pp-text">
+            <div class="stack">The Premier<br>Sailing Academy<br>in Biscayne Bay</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nv-meta">
+      <strong>D · Two-tier (utility + primary)</strong>
+      Top utility strip (deeper navy) for secondary links: Member Login, parent-club link to cgsc.org, Donate, language toggle. Main bar below = treatment A.
+      <div class="why-row">
+        <div><b>Why this</b>Solves the parent-club connection. The top strip lets visitors hop to cgsc.org and surfaces utility links (login, donate, language) without crowding the primary nav. Closer to how institutional sites handle multiple constituencies.</div>
+        <div><b>Risk</b>Two stacked bars take more vertical real estate. Reads more "institutional" than "modern academy" — could lose the lightness Inter brings.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1A3A8A; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a treatment. <strong>B</strong> is most cinematic (transitions to A on scroll). <strong>A</strong> is the safest. <strong>C</strong> is the most editorial. <strong>D</strong> solves the parent-club link if that matters.
+    <br><br>
+    All four use the same nav: <em>Programs · Pathway · Coaching · Calendar · Stories</em> + a "Visit / Inquire" CTA. (Nav items chosen as scrollable section anchors, not separate pages — fits a single-page homepage with deeper internal pages for /programs, /pathway, etc.)
+  </p>
+</div>

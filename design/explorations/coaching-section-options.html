@@ -1,0 +1,547 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<h2 style="font-family:'Inter Tight','Inter',sans-serif;">The Coaching · section 4</h2>
+<p class="subtitle" style="font-family:'Inter',sans-serif;">Where Maru enters the page. Tension to resolve: <em>foreground Maru</em> (real selling point now) vs. <em>build something that outlasts her tenure</em>. Four treatments below — same system, very different bets.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1A3A8A;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 28px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+    font-family: 'Inter', sans-serif;
+  }
+  .locked-stack-row strong {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .co-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 8px;
+  }
+  .co-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .co-card:hover {
+    border-color: #1A3A8A;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .co-card.selected {
+    border-color: #1A3A8A;
+    border-width: 2px;
+  }
+  .co-stage {
+    background: #f4f6fa;
+    padding: 26px 26px 24px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .co-eyebrow {
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 10px;
+  }
+  .co-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+
+  /* Shared portrait gradient */
+  .portrait {
+    background: linear-gradient(135deg, #4A8FCF 0%, #1A3A8A 60%, #142A66 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(74,143,207,0.5) 0%, transparent 60%);
+  }
+
+  /* === A · Director-led + staff grid === */
+  .layout-a {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 18px;
+  }
+  @media (max-width: 800px) { .layout-a { grid-template-columns: 1fr; } }
+  .a-feature .a-portrait {
+    aspect-ratio: 4 / 5;
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+  .a-feature .a-eyebrow {
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin-bottom: 6px;
+  }
+  .a-feature .a-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .a-feature .a-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .a-feature .a-bio {
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+  }
+  .a-staff {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .staff-card {
+    background: #fafbfd;
+    border: 1px solid #ececec;
+    border-radius: 3px;
+    padding: 10px;
+  }
+  .staff-card .staff-img {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    width: 36px;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #6EA3C5 0%, #1A3A8A 80%);
+  }
+  .staff-card .staff-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: #111;
+    margin-bottom: 1px;
+  }
+  .staff-card .staff-role {
+    font-size: 9px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+
+  /* === B · Methodology-first === */
+  .layout-b {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .b-headline {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: #111;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    max-width: 80%;
+  }
+  .b-headline em { color: #FF8B5E; font-style: italic; font-weight: 500; }
+  .b-principles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 800px) { .b-principles { grid-template-columns: 1fr 1fr; } }
+  .b-principle {
+    border-top: 2px solid #1A3A8A;
+    padding-top: 10px;
+  }
+  .b-principle .num {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: #1A3A8A;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .b-principle .pname {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .b-principle .pdesc {
+    font-size: 10.5px;
+    color: #666;
+    line-height: 1.4;
+  }
+  .b-credit {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed #cfdbe6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    color: #555;
+  }
+  .b-credit .b-cr-img {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4A8FCF 0%, #1A3A8A 80%);
+    flex-shrink: 0;
+  }
+  .b-credit b { color: #111; font-weight: 700; }
+
+  /* === C · Coach-per-pillar === */
+  .layout-c {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 14px 18px;
+  }
+  .c-row {
+    display: grid;
+    grid-template-columns: 1fr 50px 1.5fr;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #cfdbe6;
+  }
+  .c-row:last-child { border-bottom: none; }
+  .c-pillar {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: #1A3A8A;
+    letter-spacing: -0.005em;
+  }
+  .c-pillar small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .c-portrait {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6EA3C5 0%, #1A3A8A 80%);
+    margin: 0 auto;
+  }
+  .c-row.hpc .c-portrait { background: linear-gradient(135deg, #4A8FCF 0%, #1A3A8A 60%, #FF8B5E 200%); }
+  .c-coach {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #111;
+  }
+  .c-coach small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 10.5px;
+    color: #666;
+    margin-top: 2px;
+  }
+  .c-row.hpc .c-coach { color: #FF8B5E; }
+
+  /* === D · Numbers + names === */
+  .layout-d {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .d-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  @media (max-width: 800px) { .d-stats { grid-template-columns: 1fr 1fr; } }
+  .d-stat {
+    background: #1A3A8A;
+    color: #fff;
+    padding: 14px 12px;
+    border-radius: 3px;
+  }
+  .d-stat .num {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 4px;
+  }
+  .d-stat:last-child .num { color: #FF8B5E; }
+  .d-stat .label {
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #B5C7E8;
+    line-height: 1.3;
+  }
+  .d-team {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  @media (max-width: 800px) { .d-team { grid-template-columns: 1fr 1fr 1fr; } }
+  .d-team-card {
+    text-align: center;
+  }
+  .d-team-card .d-port {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    width: 70%;
+    margin: 0 auto 8px;
+    background: linear-gradient(135deg, #4A8FCF 0%, #1A3A8A 80%);
+  }
+  .d-team-card.lead .d-port {
+    background: linear-gradient(135deg, #4A8FCF 0%, #1A3A8A 60%, rgba(255,139,94,0.4));
+    box-shadow: 0 0 0 2px #FF8B5E;
+  }
+  .d-team-card .d-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: #111;
+    margin-bottom: 1px;
+  }
+  .d-team-card .d-role {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 9px;
+    color: #888;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .co-meta {
+    padding: 22px 26px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+  }
+  .co-meta strong {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .co-meta .why-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .co-meta .why-row { grid-template-columns: 1fr; } }
+  .co-meta .why-row b {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <strong>Locked so far</strong>
+  Hero · Spine · 5 pillars · Hero visual · Brand identity (D, Inter) · Wordmarks (B/C) · Programs grid (B + rotation) · Pathway (C · Interactive selector)
+</div>
+
+<div class="co-grid">
+
+  <!-- A · Director-led -->
+  <div class="co-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="co-stage">
+      <div class="co-eyebrow">A · Director-led portrait + staff grid</div>
+      <div class="co-title">Maru up front, team behind</div>
+      <div class="layout-a">
+        <div class="a-feature">
+          <div class="a-portrait portrait"></div>
+          <div class="a-eyebrow">Director of Sailing Performance</div>
+          <div class="a-name">Maru Urban</div>
+          <div class="a-role">Coach · Olympian · Bay-raised</div>
+          <div class="a-bio">Olympic sailor, three-time world championship coach, raised on Biscayne Bay. Maru leads the High Performance Center and shapes the academy's coaching standard end-to-end.</div>
+        </div>
+        <div class="a-staff">
+          <div class="staff-card"><div class="staff-img"></div><div class="staff-name">Coach 02</div><div class="staff-role">Junior Academy</div></div>
+          <div class="staff-card"><div class="staff-img"></div><div class="staff-name">Coach 03</div><div class="staff-role">Race Team</div></div>
+          <div class="staff-card"><div class="staff-img"></div><div class="staff-name">Coach 04</div><div class="staff-role">Adult Sailing</div></div>
+          <div class="staff-card"><div class="staff-img"></div><div class="staff-name">Coach 05</div><div class="staff-role">Camps</div></div>
+          <div class="staff-card"><div class="staff-img"></div><div class="staff-name">Coach 06</div><div class="staff-role">Coach Dev</div></div>
+          <div class="staff-card"><div class="staff-img"></div><div class="staff-name">Coach 07</div><div class="staff-role">HPC Asst.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="co-meta">
+      <strong>A · Director-led portrait + staff grid</strong>
+      Maru gets a hero portrait, name, title, short bio. Below or beside her, a grid of named staff with roles. Mouratoglou's exact treatment for his coaching page.
+      <div class="why-row">
+        <div><b>Why this</b>Most personality-driven. Establishes Maru as the face of the academy without ambiguity. Visitors get a clear "who's running this" answer in 3 seconds.</div>
+        <div><b>Risk</b>Personality-cult fragility — if Maru leaves, the section needs a rewrite. Also leans into a coach-as-celebrity register some sailing culture pushes back against.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B · Methodology-first -->
+  <div class="co-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="co-stage">
+      <div class="co-eyebrow">B · Methodology-first</div>
+      <div class="co-title">The philosophy is the headline; people are the proof</div>
+      <div class="layout-b">
+        <div class="b-headline">How we coach: <em>structure for the sailor's whole career, not just this season.</em></div>
+        <div class="b-principles">
+          <div class="b-principle"><div class="num">01</div><div class="pname">Pathway-aware</div><div class="pdesc">Every drill ladders into the next level — no orphan skills.</div></div>
+          <div class="b-principle"><div class="num">02</div><div class="pname">Coach-to-sailor</div><div class="pdesc">Low ratios. Named coach per group. Continuity year-over-year.</div></div>
+          <div class="b-principle"><div class="num">03</div><div class="pname">Bay-grounded</div><div class="pdesc">The conditions on this water are the curriculum.</div></div>
+          <div class="b-principle"><div class="num">04</div><div class="pname">Standards, not shortcuts</div><div class="pdesc">Premier means how we coach learn-to-sail, not just elite.</div></div>
+        </div>
+        <div class="b-credit">
+          <div class="b-cr-img"></div>
+          <div>Led by <b>Maru Urban</b> · Director of Sailing Performance &amp; Development. Team of <b>7 named coaches</b> across the five pillars.</div>
+        </div>
+      </div>
+    </div>
+    <div class="co-meta">
+      <strong>B · Methodology-first</strong>
+      Lead with the coaching philosophy as a headline + 4 numbered principles. People appear as a small named credit at the bottom. Most institutional / durable.
+      <div class="why-row">
+        <div><b>Why this</b>Bets that "premier" is proven by <em>how</em> we coach, not by who. Survives any staffing change. Makes the page about the academy, not the celebrity.</div>
+        <div><b>Risk</b>Buries Maru — the brand's strongest current asset. Reads as corporate / brochure-y if the principles aren't sharp.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C · Coach-per-pillar -->
+  <div class="co-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="co-stage">
+      <div class="co-eyebrow">C · Coach-per-pillar mapping</div>
+      <div class="co-title">"Who will my kid actually train with?"</div>
+      <div class="layout-c">
+        <div class="c-row">
+          <div class="c-pillar">Junior Academy<small>Age 6–18</small></div>
+          <div><div class="c-portrait"></div></div>
+          <div class="c-coach">Coach 02<small>Head Junior Coach · 12 yrs at CGSC</small></div>
+        </div>
+        <div class="c-row">
+          <div class="c-pillar">Adult Sailing<small>Learn-to-sail + rec</small></div>
+          <div><div class="c-portrait"></div></div>
+          <div class="c-coach">Coach 04<small>Adult Programs Lead</small></div>
+        </div>
+        <div class="c-row">
+          <div class="c-pillar">Race Team<small>Junior + adult</small></div>
+          <div><div class="c-portrait"></div></div>
+          <div class="c-coach">Coach 03<small>Head Coach, Race Team</small></div>
+        </div>
+        <div class="c-row hpc">
+          <div class="c-pillar">High Performance Center<small>Olympic / international</small></div>
+          <div><div class="c-portrait"></div></div>
+          <div class="c-coach">Maru Urban<small>Director of Sailing Performance</small></div>
+        </div>
+        <div class="c-row">
+          <div class="c-pillar">Camps &amp; Coaching<small>Seasonal + instructor</small></div>
+          <div><div class="c-portrait"></div></div>
+          <div class="c-coach">Coach 05<small>Camps Director</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="co-meta">
+      <strong>C · Coach-per-pillar mapping</strong>
+      Each of the 5 pillars maps to a named lead coach. One row per pillar: pillar name (left) + portrait + coach name and role. Maru sits on the HPC row, accent-highlighted.
+      <div class="why-row">
+        <div><b>Why this</b>Most useful for prospective families. Answers the actual question parents have. Maru gets a prominent spot without dominating; the team gets shared billing.</div>
+        <div><b>Risk</b>Less brand statement, more "staff directory." Reads as utilitarian — fine, but doesn't itself elevate the section.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D · Numbers + names -->
+  <div class="co-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="co-stage">
+      <div class="co-eyebrow">D · Numbers + named coaches</div>
+      <div class="co-title">Receipts up top, faces below</div>
+      <div class="layout-d">
+        <div class="d-stats">
+          <div class="d-stat"><div class="num">80</div><div class="label">Years coaching on the Bay</div></div>
+          <div class="d-stat"><div class="num">12</div><div class="label">Olympians in the lineage</div></div>
+          <div class="d-stat"><div class="num">7</div><div class="label">Full-time named coaches</div></div>
+          <div class="d-stat"><div class="num">1:6</div><div class="label">Coach-to-sailor ratio</div></div>
+        </div>
+        <div class="d-team">
+          <div class="d-team-card lead"><div class="d-port"></div><div class="d-name">Maru Urban</div><div class="d-role">Director · HPC</div></div>
+          <div class="d-team-card"><div class="d-port"></div><div class="d-name">Coach 02</div><div class="d-role">Junior Lead</div></div>
+          <div class="d-team-card"><div class="d-port"></div><div class="d-name">Coach 03</div><div class="d-role">Race Head</div></div>
+          <div class="d-team-card"><div class="d-port"></div><div class="d-name">Coach 04</div><div class="d-role">Adult Lead</div></div>
+          <div class="d-team-card"><div class="d-port"></div><div class="d-name">Coach 05</div><div class="d-role">Camps</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="co-meta">
+      <strong>D · Numbers + named coaches</strong>
+      Four headline stats up top — coaching years, Olympic lineage, staff count, ratio. Below: the team as a row of named portraits. Maru gets the accent ring; everyone else equal weight.
+      <div class="why-row">
+        <div><b>Why this</b>Builds credibility through evidence first. Maru is named and visually highlighted but not the only story. The numbers do the heavy lifting on "premier." Easiest to keep updated.</div>
+        <div><b>Risk</b>Stat-driven sections live or die by the stats themselves. If the numbers aren't real or aren't strong, the section reads weak. Need to verify each claim.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1A3A8A; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a treatment. <strong>A</strong> matches Mouratoglou directly. <strong>B</strong> is the most institutional / durable. <strong>C</strong> is the most useful for parents. <strong>D</strong> is the credibility play if real numbers are sourceable. Hybrids welcome — e.g., "A's portrait with B's principles below."
+  </p>
+</div>

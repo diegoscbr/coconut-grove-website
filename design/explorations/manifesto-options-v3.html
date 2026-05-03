@@ -1,0 +1,124 @@
+<h2>Positioning headline · v3 — Bay + Premier + 1946</h2>
+<p class="subtitle">Four close variants. All include Biscayne Bay in the headline, "Since 1946" as the heritage signal, and "Accessible" in the modifier. They differ in <em>where</em> each piece lives and what gets the most visual weight.</p>
+
+<style>
+  .pos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 24px;
+  }
+  @media (max-width: 1100px) {
+    .pos-grid { grid-template-columns: 1fr; }
+  }
+  .pos-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 36px 28px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .pos-card:hover {
+    border-color: #1a3d5c;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .pos-card.selected {
+    border-color: #1a3d5c;
+    border-width: 2px;
+    background: #f6faff;
+  }
+  .pos-line {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px 0;
+    border-top: 1px solid #e2e2e2;
+    color: #111;
+  }
+  .pos-line:first-of-type { border-top: none; }
+  .pos-line.accent { color: #1a3d5c; }
+  .pos-mod {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #444;
+    font-weight: 500;
+  }
+  .pos-meta {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px dashed #d0d0d0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #555;
+  }
+  .pos-meta strong {
+    color: #111;
+    display: block;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+</style>
+
+<div class="pos-grid">
+
+  <div class="pos-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="pos-line">BISCAYNE BAY'S</div>
+    <div class="pos-line accent">PREMIER</div>
+    <div class="pos-line">SAILING ACADEMY</div>
+    <div class="pos-mod">Since 1946 · Accessible · Performance-Focused</div>
+    <div class="pos-meta">
+      <strong>A · Premier in the spotlight</strong>
+      "PREMIER" gets the middle-line treatment in brand color — the strongest visual emphasis goes on the claim. Heritage and accessibility live in the modifier as proof points. Boldest variant.
+    </div>
+  </div>
+
+  <div class="pos-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="pos-line">BISCAYNE BAY</div>
+    <div class="pos-line accent">SAILING ACADEMY</div>
+    <div class="pos-line">SINCE 1946</div>
+    <div class="pos-mod">Premier · Accessible · Performance-Focused</div>
+    <div class="pos-meta">
+      <strong>B · Heritage in the spotlight</strong>
+      "SAILING ACADEMY" is the brand name in the middle, "SINCE 1946" as the closer. Premier moves to the modifier. Reads more like an institutional plate at the gate of the club. Quieter, more confident.
+    </div>
+  </div>
+
+  <div class="pos-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="pos-line">THE PREMIER</div>
+    <div class="pos-line accent">SAILING ACADEMY</div>
+    <div class="pos-line">IN BISCAYNE BAY</div>
+    <div class="pos-mod">Since 1946 · Accessible · World-Class</div>
+    <div class="pos-meta">
+      <strong>C · Direct Mouratoglou structure</strong>
+      Maps 1:1 to "THE N°1 / TENNIS ACADEMY / IN EUROPE." Most aspirational. "THE" up front asserts singularity, Bay closes as the territorial claim. Risk: feels almost too direct as a Mouratoglou copy — but if the parallel is the point, that's a feature.
+    </div>
+  </div>
+
+  <div class="pos-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="pos-line">PREMIER SAILING</div>
+    <div class="pos-line accent">ON BISCAYNE BAY</div>
+    <div class="pos-line">SINCE 1946</div>
+    <div class="pos-mod">Accessible · Performance-Focused · Coached at the World Stage</div>
+    <div class="pos-meta">
+      <strong>D · Bay in the spotlight</strong>
+      Bay gets the brand-color middle line — the territory itself becomes the visual hero. "PREMIER SAILING" + "SINCE 1946" frame it as the historic Biscayne Bay institution. Closest to a real estate / heritage feel. Modifier extends what "performance" means.
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1a3d5c; border-radius: 0 4px 4px 0;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Click your pick. We're locking in the <strong>direction</strong> here, not the final copy — exact words can be tuned later. If none lands, tell me which line of which option you'd swap and I'll iterate.
+  </p>
+</div>

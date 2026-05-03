@@ -1,0 +1,111 @@
+<h2>Manifesto direction</h2>
+<p class="subtitle">The 3-line giant headline that anchors the home page. Middle line shown in brand color (placeholder navy — palette decision is later).</p>
+
+<style>
+  .manifesto-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 40px 24px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .manifesto-card:hover {
+    border-color: #1a3d5c;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .manifesto-card.selected {
+    border-color: #1a3d5c;
+    border-width: 2px;
+    background: #f7faff;
+  }
+  .manifesto-line {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 6px 0;
+    border-top: 1px solid #ddd;
+  }
+  .manifesto-line:first-of-type {
+    border-top: none;
+  }
+  .manifesto-line.accent {
+    color: #1a3d5c;
+  }
+  .manifesto-meta {
+    margin-top: 24px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666;
+    text-align: center;
+  }
+  .manifesto-meta strong {
+    color: #222;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  @media (max-width: 900px) {
+    .manifesto-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="manifesto-grid">
+
+  <div class="manifesto-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="manifesto-line">PIPELINE</div>
+    <div class="manifesto-line accent">PERFORMANCE</div>
+    <div class="manifesto-line">INNOVATION</div>
+    <div class="manifesto-meta">
+      <strong>A · Maru's pillars, literal</strong>
+      Most legitimate / institutional. Reads as "we are a serious development engine." Maru-forward. Risk: feels corporate, less emotional pull for parents.
+    </div>
+  </div>
+
+  <div class="manifesto-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="manifesto-line">FIRST TACK</div>
+    <div class="manifesto-line accent">WORLD STAGE</div>
+    <div class="manifesto-line">HOME PORT</div>
+    <div class="manifesto-meta">
+      <strong>B · Emotional arc, sailing-native</strong>
+      Tells the journey in 6 words. Kid-first start, world-class ambition middle, belonging finish. Most emotional pull for parents. Risk: less explicit about Maru's program.
+    </div>
+  </div>
+
+  <div class="manifesto-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="manifesto-line">LEARN</div>
+    <div class="manifesto-line accent">RACE</div>
+    <div class="manifesto-line">LEAD</div>
+    <div class="manifesto-meta">
+      <strong>C · Action verbs, terse</strong>
+      Mouratoglou-rhythm exactly. Maps to programs (Learn-to-Sail · Race Development · Leadership). Easiest to remember. Risk: most generic of the four.
+    </div>
+  </div>
+
+  <div class="manifesto-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="manifesto-line">RAISED ON THE BAY</div>
+    <div class="manifesto-line accent">TESTED ON THE BAY</div>
+    <div class="manifesto-line">HOME ON THE BAY</div>
+    <div class="manifesto-meta">
+      <strong>D · Heritage-anchored, place-led</strong>
+      Leans heaviest on Biscayne Bay as ownable territory. 80-year credibility baked in. Risk: less explicit about Maru / performance / innovation.
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 32px; padding: 20px; background: #fafafa; border-left: 3px solid #1a3d5c;">
+  <p style="margin: 0; font-size: 14px;">Click to mark a favorite — or tell me in the terminal which fragments resonate (e.g. "B's first line + C's third line"), or pitch a different direction entirely.</p>
+</div>

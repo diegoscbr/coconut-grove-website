@@ -1,0 +1,431 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<h2 style="font-family:'Inter Tight','Inter',sans-serif;">Voice &amp; tone guide · the writing rules</h2>
+<p class="subtitle" style="font-family:'Inter',sans-serif;">The last decision. Every section ahead of this lives by these rules — body copy, button text, calendar entries, story headlines, error messages. Four voice systems below, each rendered against the same content (a featured pillar block + a CTA + a body paragraph) so you can read the difference.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1A3A8A;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 28px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+    font-family: 'Inter', sans-serif;
+  }
+  .locked-stack-row strong {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .vt-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 8px;
+  }
+  .vt-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .vt-card:hover {
+    border-color: #1A3A8A;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .vt-card.selected {
+    border-color: #1A3A8A;
+    border-width: 2px;
+  }
+  .vt-stage {
+    background: #f4f6fa;
+    padding: 26px 26px 22px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .vt-eyebrow {
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin-bottom: 10px;
+  }
+  .vt-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .vt-thesis {
+    font-size: 12px;
+    color: #1A3A8A;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 18px;
+  }
+
+  .vt-content {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 18px;
+  }
+  @media (max-width: 800px) { .vt-content { grid-template-columns: 1fr; } }
+
+  /* Sample render block */
+  .sample {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .sample .s-eb {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin-bottom: 6px;
+  }
+  .sample .s-h {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 1.15;
+    color: #111;
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+  }
+  .sample .s-h em { color: #FF8B5E; font-style: italic; font-weight: 500; }
+  .sample .s-body {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 14px;
+  }
+  .sample .s-cta {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #1A3A8A;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    text-decoration: none;
+  }
+  .sample .s-meta {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed #cfdbe6;
+    font-size: 11px;
+    color: #777;
+    line-height: 1.5;
+  }
+  .sample .s-meta b { color: #1A3A8A; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; display: block; margin-bottom: 3px; }
+
+  /* Rules side */
+  .rules {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .rules h5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A3A8A;
+    margin: 0 0 14px;
+  }
+  .rules ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .rules ul li {
+    padding: 9px 0 9px 18px;
+    border-bottom: 1px dotted #ececec;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #333;
+    position: relative;
+  }
+  .rules ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #FF8B5E;
+    font-weight: 700;
+  }
+  .rules ul li:last-child { border-bottom: none; }
+  .rules ul li b { color: #111; font-weight: 700; }
+  .rules .donts {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #e5e5e5;
+  }
+  .rules .donts h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #c45656;
+    margin: 0 0 10px;
+  }
+  .rules .donts ul li::before { content: "✕"; color: #c45656; }
+
+  .vt-meta {
+    padding: 22px 26px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+  }
+  .vt-meta strong {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .vt-meta .why-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .vt-meta .why-row { grid-template-columns: 1fr; } }
+  .vt-meta .why-row b {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <strong>Final open decision</strong>
+  This is the last lock. After this, the homepage spec is complete and the brand is ready for design execution + content writing.
+</div>
+
+<div class="vt-grid">
+
+  <!-- A · Coach voice -->
+  <div class="vt-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="vt-stage">
+      <div class="vt-eyebrow">A · Coach voice</div>
+      <div class="vt-title">Direct. Imperative. Like a coach on the dock.</div>
+      <div class="vt-thesis">Short sentences. Action verbs. No fluff.</div>
+      <div class="vt-content">
+        <div class="sample">
+          <div class="s-eb">The new chapter</div>
+          <div class="s-h">High Performance Center</div>
+          <div class="s-body">
+            Maru-led. Olympic pathway. Year-round. For sailors with national-class results who want international ones. Apply by July 15. We'll call you.
+          </div>
+          <a class="s-cta" href="#">Apply →</a>
+          <div class="s-meta"><b>Sample CTA</b>"Apply" · "Sign up" · "Show up" · "Sail with us"</div>
+        </div>
+        <div class="rules">
+          <h5>Voice rules</h5>
+          <ul>
+            <li><b>Short sentences.</b> 6-12 words average.</li>
+            <li><b>Imperative.</b> Tell, don't suggest.</li>
+            <li><b>Active verbs.</b> Sail, race, train, win.</li>
+            <li><b>Specific.</b> Name the regatta, the boat, the date.</li>
+            <li><b>Light contractions.</b> "We'll" not "we will."</li>
+          </ul>
+          <div class="donts">
+            <h6>Don't</h6>
+            <ul>
+              <li>Marketing fluff: "world-class," "passion-driven."</li>
+              <li>Hedging: "might consider," "potentially."</li>
+              <li>Long subordinate clauses.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vt-meta">
+      <strong>A · Coach voice</strong>
+      The way Maru actually talks on the water. Closest to how the academy operates day-to-day.
+      <div class="why-row">
+        <div><b>Why this</b>Most credible — voice matches the work. Distinctive against tourism-brochure sailing-club copy. Easy to maintain across writers (the rules are simple).</div>
+        <div><b>Risk</b>Can feel curt for the heritage section ("80 years. Twelve Olympians.") — heritage benefits from more breath. Too much imperative everywhere reads like commands.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B · Editorial voice -->
+  <div class="vt-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="vt-stage">
+      <div class="vt-eyebrow">B · Editorial voice</div>
+      <div class="vt-title">Crafted. Longer rhythm. Magazine-feature pace.</div>
+      <div class="vt-thesis">Sentences of unequal length. Subordinate clauses. Considered.</div>
+      <div class="vt-content">
+        <div class="sample">
+          <div class="s-eb">The new chapter</div>
+          <div class="s-h">High Performance Center</div>
+          <div class="s-body">
+            For sailors who've already shown they can win locally, the High Performance Center is what comes next — a year-round program led by Maru Urban, designed to take national-class results and turn them, over two or three seasons, into international ones. Applications close July 15.
+          </div>
+          <a class="s-cta" href="#">Read the program brief →</a>
+          <div class="s-meta"><b>Sample CTA</b>"Read the brief" · "Find your program" · "Walk through the pathway"</div>
+        </div>
+        <div class="rules">
+          <h5>Voice rules</h5>
+          <ul>
+            <li><b>Variable length.</b> Mix 8-word sentences with 30-word ones.</li>
+            <li><b>Subordinate clauses</b> for nuance.</li>
+            <li><b>Em dashes</b> for emphasis — like this.</li>
+            <li><b>Specific imagery.</b> "The dock" not "our facility."</li>
+            <li><b>Confident, not boastful.</b> State, don't sell.</li>
+          </ul>
+          <div class="donts">
+            <h6>Don't</h6>
+            <ul>
+              <li>Adverbs that prop up adjectives ("incredibly elite").</li>
+              <li>Passive voice for accountability ("mistakes were made").</li>
+              <li>Generic sailing-romance ("the call of the sea").</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vt-meta">
+      <strong>B · Editorial voice</strong>
+      The tone of a strong sailing magazine — Outside, The Atlantic's adventure cover stories, Patagonia's catalog.
+      <div class="why-row">
+        <div><b>Why this</b>Most brand-distinctive. Reads as crafted, not templated. Matches the heritage + ambition arc — both deserve real writing. Pairs well with the Inter type system.</div>
+        <div><b>Risk</b>Hardest to maintain across writers. One unedited paragraph can drag the whole site. Requires an editor on every piece.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C · Hybrid -->
+  <div class="vt-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="vt-stage">
+      <div class="vt-eyebrow">C · Hybrid — coach + editorial</div>
+      <div class="vt-title">Coach voice for headers/CTAs · editorial for body</div>
+      <div class="vt-thesis">Short and direct on the surface. Crafted underneath.</div>
+      <div class="vt-content">
+        <div class="sample">
+          <div class="s-eb">The new chapter</div>
+          <div class="s-h">High Performance Center</div>
+          <div class="s-body">
+            For sailors with national-class results who want international ones — a year-round program led by Maru Urban, built to take what already works and stretch it across two seasons of focused racing, off-water work, and international travel. Applications close July 15.
+          </div>
+          <a class="s-cta" href="#">Apply →</a>
+          <div class="s-meta"><b>Sample CTA</b>Coach voice always. "Apply." · "Sign up." · "Visit." · "Watch."</div>
+        </div>
+        <div class="rules">
+          <h5>Voice rules</h5>
+          <ul>
+            <li><b>Headers + CTAs:</b> coach voice (A's rules).</li>
+            <li><b>Body paragraphs:</b> editorial voice (B's rules).</li>
+            <li><b>UI labels:</b> coach. ("Calendar," "Programs," "Visit.")</li>
+            <li><b>Stories &amp; profiles:</b> editorial.</li>
+            <li><b>Calendar entries:</b> coach. (Date, name, age range.)</li>
+          </ul>
+          <div class="donts">
+            <h6>Don't</h6>
+            <ul>
+              <li>Mix the two within a single paragraph.</li>
+              <li>Use editorial voice on a button.</li>
+              <li>Use coach voice in a heritage essay.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vt-meta">
+      <strong>C · Hybrid — coach + editorial</strong>
+      Surface reads punchy and scannable; deep reading rewards the visitor with crafted prose. Matches how the page is actually consumed (skim → dive).
+      <div class="why-row">
+        <div><b>Why this</b>Best of both — fast surfaces for buyers, depth for readers. Lets calendar/CTAs stay terse while heritage/stories breathe. Most flexible across page types.</div>
+        <div><b>Risk</b>Two voices to maintain. Writers need to know which mode applies where. Needs a clear style guide, not just principles.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D · Receipts voice -->
+  <div class="vt-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="vt-stage">
+      <div class="vt-eyebrow">D · Receipts voice</div>
+      <div class="vt-title">Every claim backed by a number, a name, or a date</div>
+      <div class="vt-thesis">No adjective without evidence.</div>
+      <div class="vt-content">
+        <div class="sample">
+          <div class="s-eb">The new chapter</div>
+          <div class="s-h">High Performance Center</div>
+          <div class="s-body">
+            Led by Maru Urban — Olympic sailor, three-time world championship coach. Year-round program. 1:6 coach-to-sailor ratio. 12 Olympians in the CGSC lineage. For sailors with top-3 finishes at nationals. Applications close July 15. 8 spots in the inaugural cohort.
+          </div>
+          <a class="s-cta" href="#">Apply by July 15 →</a>
+          <div class="s-meta"><b>Sample CTA</b>Always specific: "Apply by July 15" not "Apply now."</div>
+        </div>
+        <div class="rules">
+          <h5>Voice rules</h5>
+          <ul>
+            <li><b>Number, name, or date</b> in every claim.</li>
+            <li><b>No "world-class"</b> — name the credentials.</li>
+            <li><b>No "many"</b> — give the count.</li>
+            <li><b>No "soon"</b> — give the date.</li>
+            <li><b>Receipts in CTAs.</b> "Apply by July 15," not "Apply now."</li>
+          </ul>
+          <div class="donts">
+            <h6>Don't</h6>
+            <ul>
+              <li>Vague intensifiers: "highly," "extremely."</li>
+              <li>Empty superlatives: "the best," "premier" (in body — headline is OK).</li>
+              <li>Adjectives without proof.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vt-meta">
+      <strong>D · Receipts voice</strong>
+      Every body sentence earns its place with a fact. Like reading a Patagonia field report or a Boeing spec sheet.
+      <div class="why-row">
+        <div><b>Why this</b>Most disciplined and most distinctive. Protects against marketing-speak drift over time. Builds credibility section-over-section as facts accumulate. Pairs naturally with Coaching D's stat board.</div>
+        <div><b>Risk</b>Reads cold if not warmed by photography and design. Heritage and personal stories struggle in this voice — needs editorial relief in profile pieces.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1A3A8A; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a voice. <strong>C</strong> is the most flexible across page types and matches how visitors actually consume the page (skim then dive). <strong>D</strong> is the most disciplined and self-protecting against drift. <strong>A</strong> and <strong>B</strong> are pure-form bets.
+    <br><br>
+    After this, the brand spec is complete. The homepage is ready for design execution and content writing.
+  </p>
+</div>

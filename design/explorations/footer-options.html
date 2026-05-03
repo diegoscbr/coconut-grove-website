@@ -1,0 +1,707 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<h2 style="font-family:'Inter Tight','Inter',sans-serif;">Site footer · the close-out</h2>
+<p class="subtitle" style="font-family:'Inter',sans-serif;">After section 8 (the inquiry form), the footer rounds the page out. Carries the centered institutional wordmark (C lockup, locked earlier). Decision: how much footer real estate to use, and what to feature. Four options.</p>
+
+<style>
+  .locked-stack-row {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1A3A8A;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 22px 0 28px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+    font-family: 'Inter', sans-serif;
+  }
+  .locked-stack-row strong {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .ft-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 8px;
+  }
+  .ft-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .ft-card:hover {
+    border-color: #1A3A8A;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .ft-card.selected {
+    border-color: #1A3A8A;
+    border-width: 2px;
+  }
+  .ft-stage {
+    padding: 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  /* Reusable wordmark + tag inside footer */
+  .footer-mark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .footer-mark .pen {
+    width: 56px; height: 32px;
+  }
+  .footer-mark .top {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1;
+    margin-top: 4px;
+  }
+  .footer-mark .bot {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 9px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: #B5C7E8;
+    margin-top: 4px;
+  }
+
+  /* === A · Minimal === */
+  .layout-a {
+    background: #1A3A8A;
+    color: #fff;
+    padding: 38px 32px 22px;
+  }
+  .a-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+    padding-bottom: 24px;
+    margin-bottom: 18px;
+  }
+  .a-mark { flex-shrink: 0; }
+  .a-nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .a-nav a { color: #fff; text-decoration: none; opacity: 0.85; }
+  .a-social {
+    display: flex;
+    gap: 10px;
+  }
+  .a-social .ic {
+    width: 32px; height: 32px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .a-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.7);
+  }
+  .a-bottom .legal-links {
+    display: flex;
+    gap: 16px;
+  }
+  .a-bottom a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+  /* === B · Full sitemap === */
+  .layout-b {
+    background: #1A3A8A;
+    color: #fff;
+    padding: 44px 32px 22px;
+  }
+  .b-top {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(4, 1fr);
+    gap: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    margin-bottom: 22px;
+  }
+  @media (max-width: 900px) { .b-top { grid-template-columns: 1fr 1fr; gap: 20px; } }
+  .b-mark-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .b-mark-block .footer-mark { align-items: flex-start; }
+  .b-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+    margin-top: 6px;
+  }
+  .b-col h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin: 0 0 14px;
+  }
+  .b-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .b-col ul li {
+    padding: 5px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+  }
+  .b-col ul li a { color: inherit; text-decoration: none; }
+  .b-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.65);
+  }
+  .b-bottom .legal-links { display: flex; gap: 14px; }
+  .b-bottom a { color: rgba(255,255,255,0.65); text-decoration: none; }
+  .b-bottom .social-mini { display: flex; gap: 8px; }
+  .b-bottom .social-mini .ic {
+    width: 24px; height: 24px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+  }
+
+  /* === C · Newsletter-led + sitemap === */
+  .layout-c {
+    background: #1A3A8A;
+    color: #fff;
+    padding: 0;
+  }
+  .c-newsletter {
+    background: linear-gradient(135deg, #1A3A8A 0%, #142A66 100%);
+    padding: 44px 32px 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    position: relative;
+  }
+  .c-newsletter::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #FF8B5E 0%, transparent 50%);
+  }
+  .c-news-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  @media (max-width: 800px) { .c-news-row { grid-template-columns: 1fr; } }
+  .c-news-eb {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin-bottom: 6px;
+  }
+  .c-news-h {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.1;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .c-news-h em { color: #FF8B5E; font-style: italic; font-weight: 500; }
+  .c-news-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.55;
+    max-width: 90%;
+  }
+  .c-news-form {
+    display: flex;
+    gap: 6px;
+  }
+  .c-news-form input {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border-radius: 2px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+  }
+  .c-news-form input::placeholder { color: rgba(255,255,255,0.55); }
+  .c-news-form button {
+    padding: 12px 22px;
+    background: #fff;
+    color: #1A3A8A;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .c-sitemap {
+    padding: 36px 32px 22px;
+  }
+  .c-sm-row {
+    display: grid;
+    grid-template-columns: 1fr repeat(4, 1fr);
+    gap: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    margin-bottom: 18px;
+  }
+  @media (max-width: 900px) { .c-sm-row { grid-template-columns: 1fr 1fr; gap: 18px; } }
+  .c-sm-row h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin: 0 0 12px;
+  }
+  .c-sm-row ul { list-style: none; padding: 0; margin: 0; }
+  .c-sm-row ul li {
+    padding: 4px 0;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.85);
+  }
+  .c-sm-row ul li a { color: inherit; text-decoration: none; }
+  .c-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.65);
+  }
+  .c-bottom-bar .legal-links { display: flex; gap: 14px; }
+  .c-bottom-bar a { color: rgba(255,255,255,0.65); text-decoration: none; }
+
+  /* === D · Editorial moment + sitemap === */
+  .layout-d {
+    background: #1A3A8A;
+    color: #fff;
+  }
+  .d-quote {
+    padding: 56px 36px 50px;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.35) 100%),
+      linear-gradient(135deg, #1A3A8A 0%, #142A66 60%, rgba(255,139,94,0.3) 200%);
+    position: relative;
+    text-align: center;
+  }
+  .d-quote-eb {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin-bottom: 14px;
+  }
+  .d-quote-text {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.25;
+    color: #fff;
+    max-width: 720px;
+    margin: 0 auto 18px;
+    font-style: italic;
+    letter-spacing: -0.01em;
+  }
+  .d-quote-attr {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+  }
+  .d-sitemap {
+    padding: 30px 32px 22px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    background: #142A66;
+  }
+  .d-sm-row {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 32px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 14px;
+    align-items: start;
+  }
+  @media (max-width: 800px) { .d-sm-row { grid-template-columns: 1fr; } }
+  .d-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  @media (max-width: 800px) { .d-cols { grid-template-columns: 1fr 1fr; } }
+  .d-cols h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FF8B5E;
+    margin: 0 0 10px;
+  }
+  .d-cols ul { list-style: none; padding: 0; margin: 0; }
+  .d-cols ul li { padding: 3px 0; font-size: 11.5px; color: rgba(255,255,255,0.85); }
+  .d-cols ul li a { color: inherit; text-decoration: none; }
+  .d-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .ft-meta {
+    padding: 22px 26px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+  }
+  .ft-meta strong {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .ft-meta .why-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .ft-meta .why-row { grid-template-columns: 1fr; } }
+  .ft-meta .why-row b {
+    color: #1A3A8A;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="locked-stack-row">
+  <strong>Locked stack</strong>
+  All 8 sections specced. Wordmark C (centered institutional) goes at the top of the footer in every option.
+</div>
+
+<div class="ft-grid">
+
+  <!-- A · Minimal -->
+  <div class="ft-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="ft-stage">
+      <div class="layout-a">
+        <div class="a-row">
+          <div class="a-mark">
+            <div class="footer-mark" style="align-items:flex-start;">
+              <svg class="pen" viewBox="0 0 56 32"><polygon points="0,0 56,16 0,32" fill="#fff"/><polygon points="3,4 49,16 3,28" fill="#1A3A8A"/><text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">CGSC</text></svg>
+              <div style="text-align:left;">
+                <div class="top">Instructional Center</div>
+                <div class="bot" style="letter-spacing: 0.28em;">Coconut Grove · 1946</div>
+              </div>
+            </div>
+          </div>
+          <nav class="a-nav">
+            <a href="#">Programs</a>
+            <a href="#">Pathway</a>
+            <a href="#">Coaching</a>
+            <a href="#">Calendar</a>
+            <a href="#">Stories</a>
+            <a href="#">Visit</a>
+          </nav>
+          <div class="a-social">
+            <span class="ic">IG</span>
+            <span class="ic">YT</span>
+            <span class="ic">FB</span>
+          </div>
+        </div>
+        <div class="a-bottom">
+          <span>© 2026 Coconut Grove Sailing Club Instructional Center · 2990 S. Bayshore Drive, Coconut Grove, FL 33133</span>
+          <div class="legal-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-meta">
+      <strong>A · Minimal</strong>
+      One row: wordmark left, horizontal nav center, social icons right. Bottom bar with copyright + legal links. The shortest possible footer.
+      <div class="why-row">
+        <div><b>Why this</b>Doesn't compete with section 8's inquiry form. Restrained — assumes the page above did the work. Most modern aesthetic.</div>
+        <div><b>Risk</b>Doesn't surface deep links to programs and resources — visitors who skim the page miss them. Less SEO-helpful (fewer indexed nav links).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B · Full sitemap -->
+  <div class="ft-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="ft-stage">
+      <div class="layout-b">
+        <div class="b-top">
+          <div class="b-mark-block">
+            <div class="footer-mark" style="align-items:flex-start;">
+              <svg class="pen" viewBox="0 0 56 32"><polygon points="0,0 56,16 0,32" fill="#fff"/><polygon points="3,4 49,16 3,28" fill="#1A3A8A"/><text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">CGSC</text></svg>
+              <div style="text-align:left;">
+                <div class="top">Instructional Center</div>
+                <div class="bot" style="letter-spacing: 0.28em;">Coconut Grove · 1946</div>
+              </div>
+            </div>
+            <p class="b-tagline">The premier sailing academy in Biscayne Bay. World-class coaching for sailors at every level — since 1946.</p>
+          </div>
+          <div class="b-col">
+            <h6>Programs</h6>
+            <ul>
+              <li><a href="#">Junior Academy</a></li>
+              <li><a href="#">Adult Sailing</a></li>
+              <li><a href="#">Race Team</a></li>
+              <li><a href="#">High Performance</a></li>
+              <li><a href="#">Camps &amp; Coaching</a></li>
+            </ul>
+          </div>
+          <div class="b-col">
+            <h6>The Academy</h6>
+            <ul>
+              <li><a href="#">The Pathway</a></li>
+              <li><a href="#">The Coaches</a></li>
+              <li><a href="#">Heritage</a></li>
+              <li><a href="#">The Bay</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="b-col">
+            <h6>Resources</h6>
+            <ul>
+              <li><a href="#">Stories</a></li>
+              <li><a href="#">Calendar</a></li>
+              <li><a href="#">Race results</a></li>
+              <li><a href="#">Press kit</a></li>
+              <li><a href="#">Sponsorship</a></li>
+            </ul>
+          </div>
+          <div class="b-col">
+            <h6>Connect</h6>
+            <ul>
+              <li><a href="#">Visit · Open house</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">YouTube</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="b-bottom">
+          <span>© 2026 Coconut Grove Sailing Club Instructional Center · 2990 S. Bayshore Drive, Coconut Grove, FL 33133</span>
+          <div class="social-mini">
+            <span class="ic">IG</span><span class="ic">YT</span><span class="ic">FB</span>
+          </div>
+          <div class="legal-links">
+            <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-meta">
+      <strong>B · Full sitemap</strong>
+      Wordmark + tagline left, four nav columns (Programs / The Academy / Resources / Connect). Bottom bar with copyright, social, legal.
+      <div class="why-row">
+        <div><b>Why this</b>Standard pattern — visitors expect it, search engines reward it. Surfaces every page the site needs without overthinking. Easy to extend (add more pages = add to a column).</div>
+        <div><b>Risk</b>Generic — every nonprofit and academy site uses this. Reads as "footer template" if not paired with the section 8 conversion moment carrying the brand drama.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C · Newsletter-led + sitemap -->
+  <div class="ft-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="ft-stage">
+      <div class="layout-c">
+        <div class="c-newsletter">
+          <div class="c-news-row">
+            <div>
+              <div class="c-news-eb">Stay on the dock</div>
+              <div class="c-news-h">Race results, stories, and <em>open-house dates</em> — once a month.</div>
+              <div class="c-news-sub">No fluff. Just what's happening on the Bay, written by the coaches.</div>
+            </div>
+            <form class="c-news-form" onsubmit="event.preventDefault();">
+              <input type="email" placeholder="Your email" />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="c-sitemap">
+          <div class="c-sm-row">
+            <div>
+              <div class="footer-mark" style="align-items:flex-start;">
+                <svg class="pen" viewBox="0 0 56 32"><polygon points="0,0 56,16 0,32" fill="#fff"/><polygon points="3,4 49,16 3,28" fill="#1A3A8A"/><text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">CGSC</text></svg>
+                <div style="text-align:left;">
+                  <div class="top" style="font-size:13px;">Instructional Center</div>
+                  <div class="bot" style="letter-spacing: 0.28em; font-size:8.5px;">Coconut Grove · 1946</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h6>Programs</h6>
+              <ul><li><a href="#">Junior Academy</a></li><li><a href="#">Adult Sailing</a></li><li><a href="#">Race Team</a></li><li><a href="#">High Performance</a></li><li><a href="#">Camps</a></li></ul>
+            </div>
+            <div>
+              <h6>The Academy</h6>
+              <ul><li><a href="#">The Pathway</a></li><li><a href="#">Coaches</a></li><li><a href="#">Heritage</a></li><li><a href="#">The Bay</a></li></ul>
+            </div>
+            <div>
+              <h6>Resources</h6>
+              <ul><li><a href="#">Stories</a></li><li><a href="#">Calendar</a></li><li><a href="#">Press kit</a></li><li><a href="#">Sponsorship</a></li></ul>
+            </div>
+            <div>
+              <h6>Connect</h6>
+              <ul><li><a href="#">Visit</a></li><li><a href="#">Contact</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul>
+            </div>
+          </div>
+          <div class="c-bottom-bar">
+            <span>© 2026 Coconut Grove Sailing Club Instructional Center</span>
+            <div class="legal-links">
+              <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Accessibility</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-meta">
+      <strong>C · Newsletter-led + sitemap</strong>
+      Top band: "Stay on the dock" — newsletter pitch + email form. Below: condensed sitemap (4 columns of links). Bottom bar with copyright + legal.
+      <div class="why-row">
+        <div><b>Why this</b>Captures email addresses from visitors who weren't ready to inquire. Sailing community thrives on monthly emails (regatta calendars, results, programs). Builds the long-term audience.</div>
+        <div><b>Risk</b>Newsletter requires real ongoing commitment — if the cadence slips, the promise fails. Two conversion moments in a row (form in section 8 + form in footer) can feel needy.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D · Editorial moment + sitemap -->
+  <div class="ft-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="ft-stage">
+      <div class="layout-d">
+        <div class="d-quote">
+          <div class="d-quote-eb">From the dock</div>
+          <div class="d-quote-text">"My first race I capsized. The coach laughed and so did I. Three years later I knew the wind on the Bay better than my own backyard."</div>
+          <div class="d-quote-attr">Maya Castillo · CGSC '23 · US Sailing Youth World Team</div>
+        </div>
+        <div class="d-sitemap">
+          <div class="d-sm-row">
+            <div class="footer-mark" style="align-items:flex-start;">
+              <svg class="pen" viewBox="0 0 56 32"><polygon points="0,0 56,16 0,32" fill="#fff"/><polygon points="3,4 49,16 3,28" fill="#1A3A8A"/><text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">CGSC</text></svg>
+              <div style="text-align:left;">
+                <div class="top" style="font-size:13px;">Instructional Center</div>
+                <div class="bot" style="letter-spacing: 0.28em; font-size:8.5px;">Coconut Grove · 1946</div>
+              </div>
+            </div>
+            <div class="d-cols">
+              <div><h6>Programs</h6><ul><li><a href="#">Junior</a></li><li><a href="#">Adult</a></li><li><a href="#">Race Team</a></li><li><a href="#">HPC</a></li><li><a href="#">Camps</a></li></ul></div>
+              <div><h6>Academy</h6><ul><li><a href="#">Pathway</a></li><li><a href="#">Coaches</a></li><li><a href="#">Heritage</a></li><li><a href="#">The Bay</a></li></ul></div>
+              <div><h6>Resources</h6><ul><li><a href="#">Stories</a></li><li><a href="#">Calendar</a></li><li><a href="#">Press kit</a></li></ul></div>
+              <div><h6>Connect</h6><ul><li><a href="#">Visit</a></li><li><a href="#">Contact</a></li><li><a href="#">IG · YT · FB</a></li></ul></div>
+            </div>
+          </div>
+          <div class="d-bottom-row">
+            <span>© 2026 Coconut Grove Sailing Club Instructional Center · 2990 S. Bayshore Drive</span>
+            <span><a href="#" style="color:inherit;text-decoration:none;">Privacy</a> · <a href="#" style="color:inherit;text-decoration:none;">Terms</a> · <a href="#" style="color:inherit;text-decoration:none;">Accessibility</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-meta">
+      <strong>D · Editorial moment + sitemap</strong>
+      Top band: a centered alumni quote — large, italicized — attributed to a real CGSC sailor. Below: condensed sitemap.
+      <div class="why-row">
+        <div><b>Why this</b>Closes the page on a human moment. Echoes the heritage / champions wall earlier — gives a single named voice the last word. Most brand-feeling.</div>
+        <div><b>Risk</b>Requires a real, attributable quote (Maya Castillo above is placeholder). Quote rotation needs editorial oversight. No conversion mechanism here — section 8 has to do all that work.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1A3A8A; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick a treatment. <strong>A</strong> is most restrained. <strong>B</strong> is the standard expected pattern. <strong>C</strong> captures email addresses (high long-term value). <strong>D</strong> closes on a human voice.
+    <br><br>
+    After this lock, the homepage is fully specced. Remaining open: top nav structure, mobile treatment, voice &amp; tone guide.
+  </p>
+</div>

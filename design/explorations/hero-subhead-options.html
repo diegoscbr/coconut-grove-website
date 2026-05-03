@@ -1,0 +1,159 @@
+<h2>Hero subhead · what goes under the headline</h2>
+<p class="subtitle">The headline is locked (option C below). Now we need the supporting line — the sentence that answers "what do they actually do?" Mouratoglou's equivalent: <em>"More than 100 nations. From beginners to top professionals."</em> Short, declarative, sets up the rest of the page.</p>
+
+<style>
+  .locked-headline {
+    background: #f6faff;
+    border: 1px solid #cfdbe6;
+    border-left: 3px solid #1a3d5c;
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin: 22px 0 28px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .locked-tag {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #1a3d5c;
+    background: #fff;
+    border: 1px solid #1a3d5c;
+    padding: 4px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .locked-stack {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #111;
+  }
+  .locked-stack .accent { color: #1a3d5c; }
+  .locked-mod {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  .sub-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 22px;
+  }
+  .sub-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 28px 30px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .sub-card:hover {
+    border-color: #1a3d5c;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .sub-card.selected {
+    border-color: #1a3d5c;
+    border-width: 2px;
+    background: #f6faff;
+  }
+  .sub-copy {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 22px;
+    line-height: 1.45;
+    color: #111;
+    font-weight: 400;
+  }
+  .sub-copy .em {
+    color: #1a3d5c;
+    font-style: italic;
+  }
+  .sub-meta {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed #d0d0d0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #555;
+  }
+  .sub-meta strong {
+    color: #111;
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+</style>
+
+<div class="locked-headline">
+  <span class="locked-tag">Locked · v3 / C</span>
+  <div>
+    <div class="locked-stack">
+      THE PREMIER<br>
+      <span class="accent">SAILING ACADEMY</span><br>
+      IN BISCAYNE BAY
+    </div>
+    <div class="locked-mod">Since 1946 · Accessible · World-Class</div>
+  </div>
+</div>
+
+<div class="sub-grid">
+
+  <div class="sub-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="sub-copy">
+      From a child's first tack to the Olympic podium — <span class="em">the full pathway, on the same water, with the same standards.</span>
+    </div>
+    <div class="sub-meta">
+      <strong>A · Pathway / progression</strong>
+      Leads with the through-line: one continuous ladder from learn-to-sail through elite racing. "Same water, same standards" is the promise — accessibility doesn't mean a watered-down version of the program. Strong if the homepage's main story is the pipeline.
+    </div>
+  </div>
+
+  <div class="sub-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="sub-copy">
+      Year-round programs for juniors, adults, and racing teams — <span class="em">from learn-to-sail to international competition.</span>
+    </div>
+    <div class="sub-meta">
+      <strong>B · Breadth / audiences</strong>
+      Most explicit. Names every audience and bookends the level range. Closest to how a club's "Programs" page would describe itself. Reads as a clear billboard but loses some poetry. Best if the goal is "no one wonders if this place is for them."
+    </div>
+  </div>
+
+  <div class="sub-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="sub-copy">
+      World-class coaching on the warmest training waters in North America — <span class="em">for sailors from age six to the Olympic podium.</span>
+    </div>
+    <div class="sub-meta">
+      <strong>C · Coaching + territory</strong>
+      Foregrounds the two non-negotiable assets: the people (Maru-tier coaching) and the place (Biscayne Bay's year-round sailable conditions). "Age six to Olympic podium" carries the breadth without listing every audience. Closest to Mouratoglou's voice.
+    </div>
+  </div>
+
+  <div class="sub-card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="sub-copy">
+      For 80 years, the Bay's training ground for sailors. <span class="em">Today, the academy where the next generation learns to win.</span>
+    </div>
+    <div class="sub-meta">
+      <strong>D · Heritage → future</strong>
+      Two-beat structure: heritage anchor, then the new ambition. Honors the 1946 fact already in the headline modifier and signals the Maru-era shift without naming her. Risk: "learns to win" leans hard on competition; might feel narrow next to the "accessible" claim above.
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 28px; padding: 18px 22px; background: #fafafa; border-left: 3px solid #1a3d5c; border-radius: 0 4px 4px 0;">
+  <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+    Pick the angle, not the exact words. If you want a hybrid (e.g., A's pathway language with C's territory anchor), say so and I'll write a v2 of just the favorites.
+  </p>
+</div>
