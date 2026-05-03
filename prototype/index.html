@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Coconut Grove Sailing Club Instructional Center · The premier sailing academy in Biscayne Bay</title>
+  <meta name="description" content="For 80 years, the Bay's training ground for sailors at every level. Junior Academy, Adult Sailing, Race Team, High Performance Center, and Camps & Coaching — on Biscayne Bay since 1946." />
+
+  <link rel="icon" href="assets/pennant.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="has-sticky-cta">
+
+  <!-- =====================================================================
+       0 · Top nav · §15 · A · Solid navy bar
+       ===================================================================== -->
+  <header class="topnav" role="banner">
+    <div class="topnav-inner">
+      <a href="#" class="wordmark" aria-label="Coconut Grove Sailing Club Instructional Center, founded 1946">
+        <svg class="pen" viewBox="0 0 56 32" aria-hidden="true">
+          <polygon points="0,0 56,16 0,32" fill="#fff"/>
+          <polygon points="3,4 49,16 3,28" fill="#1A3A8A"/>
+          <text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">CGSC</text>
+        </svg>
+        <span class="text">
+          <span class="top">Instructional Center</span>
+          <span class="bot">Coconut Grove · 1946</span>
+        </span>
+      </a>
+
+      <nav class="topnav-links" aria-label="Primary">
+        <a href="#programs" class="active">Programs</a>
+        <a href="#pathway">Pathway</a>
+        <a href="#coaching">Coaching</a>
+        <a href="#stories">Calendar</a>
+        <a href="#stories">Stories</a>
+      </nav>
+
+      <a href="#visit" class="topnav-cta">Visit / Inquire →</a>
+
+      <button class="topnav-burger" aria-label="Open menu" data-action="open-drawer" type="button">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       1 · Hero · §1, §4 · bay-as-territory + heritage→now arc
+       (Drone + archival video to be sourced; gradient placeholder for now)
+       ===================================================================== -->
+  <section class="hero" aria-labelledby="hero-h">
+    <!-- Phase 2 swap-in:
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
+    -->
+    <div class="hero-inner">
+      <div>
+        <p class="hero-eyebrow">Coconut Grove · Biscayne Bay · Since 1946</p>
+        <h1 class="hero-headline" id="hero-h">
+          <span>The Premier</span>
+          <span>Sailing Academy</span>
+          <span>in Biscayne Bay</span>
+        </h1>
+        <p class="hero-modifier">Since 1946 · Accessible · World-class</p>
+
+        <p class="hero-subhead">
+          For 80 years, the Bay's training ground for sailors at every level.
+          <em>Now, taking it to the next — international wins and Olympic podiums.</em>
+        </p>
+      </div>
+
+      <div class="hero-foot">
+        <a href="#visit" class="hero-cta">Sail with us →</a>
+        <div class="hero-scroll" aria-hidden="true">
+          <span class="line"></span>
+          <span>Scroll</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       2 · Programs grid · §7 · B · Featured HPC + 4 below
+       Spotlight slot is rotation-driven in production. Hardcoded HPC for v1.
+       ===================================================================== -->
+  <section class="section-programs" id="programs" aria-labelledby="programs-h">
+    <div class="container">
+      <p class="section-eyebrow">The Programs</p>
+      <h2 class="section-headline" id="programs-h">Five programs, one Bay.</h2>
+      <p class="section-sub">From a child's first sail to elite international competition — every level of the pathway, taught on the same waters by the same standards.</p>
+
+      <article class="programs-feature">
+        <div class="programs-feature-img" role="img" aria-label="High Performance Center — placeholder image"></div>
+        <div class="programs-feature-body">
+          <p class="programs-feature-eyebrow">The new chapter</p>
+          <h3 class="programs-feature-title">High Performance Center</h3>
+          <p class="programs-feature-desc">
+            Director-led, full-time coaching for sailors aiming at international and Olympic
+            competition. World-class standards, Bay-grounded methodology, an Olympic pathway built into the academy.
+          </p>
+          <a href="#" class="cta-link">Explore the program</a>
+        </div>
+      </article>
+
+      <div class="programs-grid">
+        <article class="program-card">
+          <div class="program-card-img img-junior" role="img" aria-label="Junior Academy"></div>
+          <div class="program-card-body">
+            <h4 class="program-card-title">Junior Academy</h4>
+            <p class="program-card-line">Year-round program for sailors ages 6–18.</p>
+          </div>
+        </article>
+        <article class="program-card">
+          <div class="program-card-img img-adult" role="img" aria-label="Adult Sailing"></div>
+          <div class="program-card-body">
+            <h4 class="program-card-title">Adult Sailing</h4>
+            <p class="program-card-line">Learn-to-sail and recreational programs.</p>
+          </div>
+        </article>
+        <article class="program-card">
+          <div class="program-card-img img-race" role="img" aria-label="Race Team"></div>
+          <div class="program-card-body">
+            <h4 class="program-card-title">Race Team</h4>
+            <p class="program-card-line">Competitive squad — junior and adult.</p>
+          </div>
+        </article>
+        <article class="program-card">
+          <div class="program-card-img img-camps" role="img" aria-label="Camps and Coaching"></div>
+          <div class="program-card-body">
+            <h4 class="program-card-title">Camps &amp; Coaching</h4>
+            <p class="program-card-line">Seasonal intensives plus instructor &amp; coach development.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       3 · The Pathway · §8 · C · Interactive selector
+       Default selection on page load: Race
+       ===================================================================== -->
+  <section class="section-pathway" id="pathway" aria-labelledby="pathway-h">
+    <div class="container">
+      <p class="section-eyebrow">The Pathway</p>
+      <h2 class="section-headline" id="pathway-h">First sail to Olympic podium.<br/><em>On the same water.</em></h2>
+      <p class="section-sub">Five rungs of the same ladder, taught by the same coaches, on the same Bay. Click a rung to see the program behind it.</p>
+
+      <div class="pathway-selector" data-pathway>
+        <div class="pathway-list" role="tablist" aria-label="Pathway rungs">
+          <button type="button" class="pathway-item" role="tab" data-rung="discover" id="rung-discover" aria-controls="rung-panel" aria-selected="false">
+            <span class="name">Discover</span>
+            <span class="age">Age 6–9</span>
+          </button>
+          <button type="button" class="pathway-item" role="tab" data-rung="develop" id="rung-develop" aria-controls="rung-panel" aria-selected="false">
+            <span class="name">Develop</span>
+            <span class="age">Age 10–13</span>
+          </button>
+          <button type="button" class="pathway-item active" role="tab" data-rung="race" id="rung-race" aria-controls="rung-panel" aria-selected="true">
+            <span class="name">Race</span>
+            <span class="age">Age 14–18</span>
+          </button>
+          <button type="button" class="pathway-item" role="tab" data-rung="compete" id="rung-compete" aria-controls="rung-panel" aria-selected="false">
+            <span class="name">Compete</span>
+            <span class="age">College / National</span>
+          </button>
+          <button type="button" class="pathway-item" role="tab" data-rung="perform" id="rung-perform" aria-controls="rung-panel" aria-selected="false">
+            <span class="name">Perform</span>
+            <span class="age">Olympic / Pro</span>
+          </button>
+        </div>
+
+        <div class="pathway-detail" role="tabpanel" id="rung-panel" aria-labelledby="rung-race">
+          <div class="pathway-detail-img" data-pathway-img></div>
+          <p class="pathway-detail-age" data-pathway-age>Age 14–18</p>
+          <h3 class="pathway-detail-name" data-pathway-name>Race</h3>
+          <p class="pathway-detail-desc" data-pathway-desc>
+            Local and regional racing on 420s and Lasers. The CGSC Race Team competes
+            in 30+ regattas a season — Miami, the Keys, the Bahamas.
+          </p>
+          <div class="pathway-meta" data-pathway-meta>
+            <span>3× / Week</span>
+            <span>Coach-led</span>
+            <span>Year-round</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       4 · The Coaching · §9 · D · Numbers + named coaches
+       Stat tiles: years on the Bay (real) · Olympians (TBD) · coaches (7) · ratio (TBD)
+       Maru gets the accent ring. Other coaches are placeholders awaiting Rosa.
+       ===================================================================== -->
+  <section class="section-coaching" id="coaching" aria-labelledby="coaching-h">
+    <div class="container">
+      <p class="section-eyebrow">The Coaching</p>
+      <h2 class="section-headline" id="coaching-h">Receipts up top. Faces below.</h2>
+      <p class="section-sub">Premier means how we coach learn-to-sail, not just elite. Low ratios, named coaches, continuity year over year.</p>
+
+      <div class="coaching-stats">
+        <div class="stat">
+          <div class="num">80</div>
+          <div class="label">Years coaching on the Bay</div>
+        </div>
+        <div class="stat tbd">
+          <div class="num">— <small>TBD</small></div>
+          <div class="label">Olympians in the lineage</div>
+        </div>
+        <div class="stat">
+          <div class="num">7</div>
+          <div class="label">Full-time named coaches</div>
+        </div>
+        <div class="stat tbd">
+          <div class="num">— <small>TBD</small></div>
+          <div class="label">Coach-to-sailor ratio</div>
+        </div>
+      </div>
+
+      <div class="coaching-team">
+        <div class="coach lead">
+          <div class="coach-portrait" aria-hidden="true"></div>
+          <p class="coach-name">Maru Urban</p>
+          <p class="coach-role">Director · HPC</p>
+        </div>
+        <div class="coach">
+          <div class="coach-portrait" aria-hidden="true"></div>
+          <p class="coach-name"><span class="tbd">Name TBD</span></p>
+          <p class="coach-role">Junior Lead</p>
+        </div>
+        <div class="coach">
+          <div class="coach-portrait" aria-hidden="true"></div>
+          <p class="coach-name"><span class="tbd">Name TBD</span></p>
+          <p class="coach-role">Race Head</p>
+        </div>
+        <div class="coach">
+          <div class="coach-portrait" aria-hidden="true"></div>
+          <p class="coach-name"><span class="tbd">Name TBD</span></p>
+          <p class="coach-role">Adult Lead</p>
+        </div>
+        <div class="coach">
+          <div class="coach-portrait" aria-hidden="true"></div>
+          <p class="coach-name"><span class="tbd">Name TBD</span></p>
+          <p class="coach-role">Camps</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       5 · Heritage + Champions · §10 · B · Champions wall
+       Founders confirmed: Marshall Pollard · Wirth Monroe · Frank Kerdyk · Jack Engle (PR #1)
+       Other alumni names await CGSC roster confirmation.
+       ===================================================================== -->
+  <section class="section-heritage" id="heritage" aria-labelledby="heritage-h">
+    <div class="container">
+      <p class="section-eyebrow">Heritage</p>
+      <h2 class="section-headline" id="heritage-h">Eighty years of sailors.</h2>
+      <p class="section-sub">From four founders on a borrowed Snipe to thousands of CGSC alumni — including the Olympians, the world champions, and the regular kids who just learned to love the Bay.</p>
+
+      <div class="heritage-meta">
+        <span>Founded <b>1946</b></span>
+        <span class="dot"></span>
+        <span>Founders <b>Pollard · Monroe · Kerdyk · Engle</b></span>
+        <span class="dot"></span>
+        <span>Olympians <b>TBD</b></span>
+      </div>
+
+      <div class="champions-grid" aria-label="Champions wall — placeholder roster pending CGSC confirmation">
+        <div class="champ b-modern olympian">
+          <div class="champ-text">
+            <p class="champ-name"><span class="tbd">Name TBD</span></p>
+            <p class="champ-meta">Olympic alumna · TBD</p>
+          </div>
+        </div>
+        <div class="champ b-archival">
+          <div class="champ-text">
+            <p class="champ-name">Marshall Pollard</p>
+            <p class="champ-meta">Co-founder · 1946</p>
+          </div>
+        </div>
+        <div class="champ b-modern-2">
+          <div class="champ-text">
+            <p class="champ-name"><span class="tbd">Name TBD</span></p>
+            <p class="champ-meta">Race team alum</p>
+          </div>
+        </div>
+        <div class="champ b-modern-3 olympian">
+          <div class="champ-text">
+            <p class="champ-name"><span class="tbd">Name TBD</span></p>
+            <p class="champ-meta">Olympic alum · TBD</p>
+          </div>
+        </div>
+        <div class="champ b-archival-2">
+          <div class="champ-text">
+            <p class="champ-name">Wirth Monroe</p>
+            <p class="champ-meta">Co-founder · 1946</p>
+          </div>
+        </div>
+        <div class="champ b-modern">
+          <div class="champ-text">
+            <p class="champ-name"><span class="tbd">Name TBD</span></p>
+            <p class="champ-meta">Junior Academy alum</p>
+          </div>
+        </div>
+        <div class="champ b-modern-2 olympian">
+          <div class="champ-text">
+            <p class="champ-name"><span class="tbd">Name TBD</span></p>
+            <p class="champ-meta">Olympic alum · TBD</p>
+          </div>
+        </div>
+        <div class="champ b-archival-3">
+          <div class="champ-text">
+            <p class="champ-name">Frank Kerdyk</p>
+            <p class="champ-meta">Co-founder · 1946</p>
+          </div>
+        </div>
+        <div class="champ b-modern-3">
+          <div class="champ-text">
+            <p class="champ-name"><span class="tbd">Name TBD</span></p>
+            <p class="champ-meta">College sailor</p>
+          </div>
+        </div>
+        <div class="champ b-modern">
+          <div class="champ-text">
+            <p class="champ-name"><span class="tbd">Name TBD</span></p>
+            <p class="champ-meta">Race team alum</p>
+          </div>
+        </div>
+        <div class="champ b-archival">
+          <div class="champ-text">
+            <p class="champ-name">Jack Engle</p>
+            <p class="champ-meta">Co-founder · 1946</p>
+          </div>
+        </div>
+        <div class="champ b-modern-2">
+          <div class="champ-text">
+            <p class="champ-name"><span class="tbd">Name TBD</span></p>
+            <p class="champ-meta">Youth sailor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       6 · The Bay · §11 · A · 4-season grid · "Sailing, year-round"
+       Don Q dates verified. Orange Bowl 600+ stat retired (Coral Reef YC, not CGSC).
+       ===================================================================== -->
+  <section class="section-bay" id="bay" aria-labelledby="bay-h">
+    <div class="container">
+      <p class="section-eyebrow">The Bay</p>
+      <h2 class="section-headline" id="bay-h">Sailing, <em>year-round.</em></h2>
+      <p class="section-sub">From a child's first sail to international championships — every season on Biscayne Bay has its program and its regatta. No off-season.</p>
+
+      <div class="bay-seasons">
+        <article class="season">
+          <div class="season-img winter">
+            <span class="label">Winter</span>
+            <span class="months">Dec — Feb</span>
+          </div>
+          <div class="season-body">
+            <p class="season-eyebrow">Marquee event</p>
+            <h3 class="season-name">Open Orange Bowl Regatta</h3>
+            <p class="season-meta">Dec 27–30 · CGSC</p>
+            <p class="season-line">Multi-class youth racing — Optis, ILCAs, C420s. CGSC's longest-running open winter regatta.</p>
+            <p class="season-also"><b>Also this season</b>Junior winter clinics · holiday regatta series</p>
+          </div>
+        </article>
+
+        <article class="season">
+          <div class="season-img spring">
+            <span class="label">Spring</span>
+            <span class="months">Mar — May</span>
+          </div>
+          <div class="season-body">
+            <p class="season-eyebrow">Marquee event</p>
+            <h3 class="season-name">Don Q Snipe Regatta</h3>
+            <p class="season-meta">60th annual · April 10–12, 2026</p>
+            <p class="season-line">CGSC's longest-running regatta. International Snipe field, spring season culmination.</p>
+            <p class="season-also"><b>Also this season</b>Miami Sail Week Youth · Spring Series</p>
+          </div>
+        </article>
+
+        <article class="season">
+          <div class="season-img summer">
+            <span class="label">Summer</span>
+            <span class="months">Jun — Aug</span>
+          </div>
+          <div class="season-body">
+            <p class="season-eyebrow">Marquee program</p>
+            <h3 class="season-name">Summer Sailing Camp + Racing Clinics</h3>
+            <p class="season-meta">Weekly · Ages 6–17</p>
+            <p class="season-line">Opti, ILCA, and C420 racing clinics — tactics, advanced starts, boat handling.</p>
+            <p class="season-also"><b>Also this season</b>Summer Series racing · regional camps</p>
+          </div>
+        </article>
+
+        <article class="season">
+          <div class="season-img fall">
+            <span class="label">Fall</span>
+            <span class="months">Sep — Nov</span>
+          </div>
+          <div class="season-body">
+            <p class="season-eyebrow">Marquee program</p>
+            <h3 class="season-name">Optimist RWB Championship Series</h3>
+            <p class="season-meta">Red · White · Blue fleets</p>
+            <p class="season-line">The highest level of Optimist racing — championship fleet for the rules-and-tactics tier.</p>
+            <p class="season-also"><b>Also this season</b>Green Fleet program · Fall Series</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="bay-anchor">
+        <div class="anchor-stat">
+          <p class="num">365</p>
+          <p class="lbl">Sailable days</p>
+        </div>
+        <div class="anchor-stat">
+          <p class="num">76°F</p>
+          <p class="lbl">Average water temp</p>
+        </div>
+        <div class="anchor-stat">
+          <p class="num">No</p>
+          <p class="lbl">Off-season</p>
+        </div>
+        <div class="anchor-stat tbd">
+          <p class="num">— <small style="display:block;font-size:11px;letter-spacing:0.18em;margin-top:6px;">TBD</small></p>
+          <p class="lbl">CGSC-specific stat</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       7 · Stories + Calendar · §12 · C · Split with per-side full views
+       ===================================================================== -->
+  <section class="section-stories" id="stories" aria-labelledby="stories-h">
+    <div class="container">
+      <p class="section-eyebrow">From the Dock</p>
+      <h2 class="section-headline" id="stories-h">What's happening on the Bay.</h2>
+
+      <div class="stories-split">
+        <div class="split-col">
+          <div class="split-col-head">
+            <h3>Latest stories</h3>
+            <a href="#" class="more">All stories →</a>
+          </div>
+          <div class="story-list">
+            <article class="story">
+              <div class="story-img bg-modern" role="img" aria-label="Youth Worlds qualifier"></div>
+              <div>
+                <p class="story-cat">Feature</p>
+                <h4 class="story-name">Same Bay, deeper: a profile in the Youth Worlds pipeline</h4>
+                <p class="story-meta">Apr 22, 2026 · 4 min read</p>
+              </div>
+            </article>
+            <article class="story">
+              <div class="story-img bg-modern-2" role="img" aria-label="Spring Series race"></div>
+              <div>
+                <p class="story-cat race">Race result</p>
+                <h4 class="story-name">CGSC RWB takes 2nd at Spring Series</h4>
+                <p class="story-meta">Apr 14, 2026</p>
+              </div>
+            </article>
+            <article class="story">
+              <div class="story-img bg-modern-3" role="img" aria-label="Summer Camp announcement"></div>
+              <div>
+                <p class="story-cat">Program news</p>
+                <h4 class="story-name">Summer Camp 2026 enrollment opens May 6</h4>
+                <p class="story-meta">Apr 30, 2026</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="split-col">
+          <div class="split-col-head">
+            <h3>What's next</h3>
+            <a href="#" class="more">Full calendar →</a>
+          </div>
+          <div class="cal-list">
+            <div class="cal-row">
+              <div class="cal-date"><div class="day">06</div><div class="mo">May</div></div>
+              <div>
+                <p class="cal-name">Summer Camp 2026 enrollment opens</p>
+                <p class="cal-meta">Ages 6–17 · weekly sessions June–August</p>
+              </div>
+            </div>
+            <div class="cal-row">
+              <div class="cal-date"><div class="day">17</div><div class="mo">May</div></div>
+              <div>
+                <p class="cal-name">Junior Academy Open House</p>
+                <p class="cal-meta">Free demo sails · meet the coaches</p>
+              </div>
+            </div>
+            <div class="cal-row">
+              <div class="cal-date peak"><div class="day">06</div><div class="mo">Jun</div></div>
+              <div>
+                <p class="cal-name">Spring Series Final</p>
+                <p class="cal-meta">Race team · Optimist + 420 fleets</p>
+              </div>
+            </div>
+            <div class="cal-row">
+              <div class="cal-date"><div class="day">22</div><div class="mo">Jun</div></div>
+              <div>
+                <p class="cal-name">C420 Tactics Clinic</p>
+                <p class="cal-meta">3 days · advanced racers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       8 · Visit + Contact · §13 · C · Inline inquiry form
+       Real phone, email, address (PR #1 corrections applied).
+       Form submits via JS to a no-op placeholder; Phase 2 wires the backend.
+       ===================================================================== -->
+  <section class="section-visit" id="visit" aria-labelledby="visit-h">
+    <div class="container">
+      <p class="section-eyebrow">Visit / Inquire</p>
+      <h2 class="section-headline" id="visit-h">Ready to sail?</h2>
+
+      <div class="visit-grid">
+        <div class="visit-form-side">
+          <p class="visit-form-eyebrow">Tell us about your sailor</p>
+          <h3 class="visit-form-headline">The fastest way to get on the <em>water.</em></h3>
+          <p class="visit-helper">Send us a few details and a coach will get back within two days with the right next step — a class, a clinic, or a Saturday demo sail.</p>
+
+          <form class="visit-form" data-form-inquiry novalidate>
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="text" name="sailorName" placeholder="Sailor's name" />
+            <input type="text" name="sailorAge" placeholder="Sailor's age" inputmode="numeric" />
+            <select name="experience">
+              <option>Experience: brand new</option>
+              <option>Sailed once or twice</option>
+              <option>Some experience</option>
+              <option>Racing already</option>
+            </select>
+            <select name="interest">
+              <option>Interest: not sure yet</option>
+              <option>Junior Academy</option>
+              <option>Summer Camp</option>
+              <option>Adult Sailing</option>
+              <option>Race Team</option>
+              <option>High Performance</option>
+            </select>
+            <textarea class="full" name="notes" placeholder="Anything else?"></textarea>
+            <button type="submit">Send inquiry →</button>
+          </form>
+        </div>
+
+        <aside class="visit-info-side">
+          <div>
+            <p class="visit-info-eyebrow">Or reach us directly</p>
+            <div class="visit-info-block">
+              <p class="lbl">Phone</p>
+              <p class="val">
+                <a href="tel:+13054444571">(305) 444-4571</a>
+                <small>9am–6pm, M–F</small>
+              </p>
+            </div>
+            <div class="visit-info-block">
+              <p class="lbl">Email</p>
+              <p class="val">
+                <a href="mailto:icmanager@cgsc.org">icmanager@cgsc.org</a>
+                <small>Escalation · <a href="mailto:icdirector@cgsc.org">icdirector@cgsc.org</a></small>
+              </p>
+            </div>
+            <div class="visit-info-block">
+              <p class="lbl">Visit</p>
+              <p class="val">
+                2990 S. Bayshore Drive
+                <small>Miami, FL 33133</small>
+              </p>
+            </div>
+          </div>
+          <div class="visit-info-foot">
+            Open-house cadence and free demo-sail schedule confirmed before launch — pending final confirmation from the IC team.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       9 · Footer · §14 · C · Newsletter-led + sitemap
+       ===================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="footer-newsletter-row">
+          <div>
+            <p class="footer-news-eyebrow">Stay on the dock</p>
+            <h2 class="footer-news-h">Race results, stories, and <em>open-house dates</em> — once a month.</h2>
+            <p class="footer-news-sub">No fluff. Just what's happening on the Bay, written by the coaches.</p>
+          </div>
+          <form class="footer-news-form" data-form-newsletter novalidate>
+            <input type="email" name="email" placeholder="Your email" aria-label="Email address" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-sitemap">
+      <div class="container">
+        <div class="footer-sitemap-row">
+          <div class="footer-mark">
+            <svg class="pen" viewBox="0 0 56 32" aria-hidden="true">
+              <polygon points="0,0 56,16 0,32" fill="#fff"/>
+              <polygon points="3,4 49,16 3,28" fill="#1A3A8A"/>
+              <text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">CGSC</text>
+            </svg>
+            <div>
+              <div class="top">Instructional Center</div>
+              <div class="bot">Coconut Grove · 1946</div>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h6>Programs</h6>
+            <ul>
+              <li><a href="#programs">Junior Academy</a></li>
+              <li><a href="#programs">Adult Sailing</a></li>
+              <li><a href="#programs">Race Team</a></li>
+              <li><a href="#programs">High Performance</a></li>
+              <li><a href="#programs">Camps &amp; Coaching</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h6>The Academy</h6>
+            <ul>
+              <li><a href="#pathway">The Pathway</a></li>
+              <li><a href="#coaching">Coaches</a></li>
+              <li><a href="#heritage">Heritage</a></li>
+              <li><a href="#bay">The Bay</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h6>Resources</h6>
+            <ul>
+              <li><a href="#stories">Stories</a></li>
+              <li><a href="#stories">Calendar</a></li>
+              <li><a href="#">Press kit</a></li>
+              <li><a href="#">Sponsorship</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h6>Connect</h6>
+            <ul>
+              <li><a href="#visit">Visit</a></li>
+              <li><a href="#visit">Contact</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">YouTube</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 Coconut Grove Sailing Club Instructional Center · 2990 S. Bayshore Drive, Miami, FL 33133</span>
+          <div class="legal">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       M · Mobile sticky CTA · §16 · rust pill, anchors to inquiry form
+       ===================================================================== -->
+  <a href="#visit" class="mobile-sticky-cta">Visit / Inquire →</a>
+
+  <!-- Mobile drawer (hamburger target) -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-head">
+      <div class="wordmark">
+        <svg class="pen" viewBox="0 0 56 32" aria-hidden="true">
+          <polygon points="0,0 56,16 0,32" fill="#fff"/>
+          <polygon points="3,4 49,16 3,28" fill="#1A3A8A"/>
+          <text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">CGSC</text>
+        </svg>
+        <span class="text">
+          <span class="top">Instructional Center</span>
+          <span class="bot">Coconut Grove · 1946</span>
+        </span>
+      </div>
+      <button class="mobile-drawer-close" data-action="close-drawer" aria-label="Close menu" type="button">×</button>
+    </div>
+    <nav aria-label="Mobile">
+      <a href="#programs" data-drawer-link>Programs</a>
+      <a href="#pathway" data-drawer-link>Pathway</a>
+      <a href="#coaching" data-drawer-link>Coaching</a>
+      <a href="#stories" data-drawer-link>Calendar</a>
+      <a href="#stories" data-drawer-link>Stories</a>
+    </nav>
+    <a href="#visit" class="drawer-cta" data-drawer-link>Visit / Inquire →</a>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
