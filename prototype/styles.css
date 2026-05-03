@@ -138,7 +138,11 @@ button { font: inherit; cursor: pointer; }
   flex-shrink: 0;
 }
 .wordmark .pen { width: 36px; height: 22px; }
-.wordmark .text { line-height: 1; }
+.wordmark .text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
 .wordmark .top {
   font-family: var(--display);
   font-weight: 800;
