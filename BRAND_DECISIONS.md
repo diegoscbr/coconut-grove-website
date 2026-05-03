@@ -204,12 +204,12 @@ Anchored on the youth regatta calendar — the proof that "premier" isn't a slog
 
 | Season | Months | Featured | Date / Detail | Also |
 |---|---|---|---|---|
-| **Winter** | Dec–Feb | Open Orange Bowl Regatta | Dec 27–30 · 600+ youth sailors · Opti, ILCA, C420 | Junior winter clinics, holiday series |
+| **Winter** | Dec–Feb | Open Orange Bowl Regatta | Dec 27–30 · multi-class youth (Opti, ILCA, C420) | Junior winter clinics, holiday series |
 | **Spring** | Mar–May | Don Q Snipe Regatta | 60th annual · April 10–12, 2026 · International field | Miami Sail Week Youth, Spring Series |
 | **Summer** | Jun–Aug | Summer Sailing Camp + Racing Clinics | Weekly · Ages 6–17 · Opti / ILCA / C420 | Summer Series, regional camps |
 | **Fall** | Sep–Nov | Optimist RWB Championship Series | Red / White / Blue fleets — top tier | Green Fleet program, Fall Series |
 
-**Anchor stats below the grid:** 365 sailable days · 76°F avg water · 600+ at Orange Bowl · No off-season.
+**Anchor stats below the grid:** 365 sailable days · 76°F avg water · No off-season. *(4th anchor stat TBD — original "600+ at Orange Bowl" retired; that count belongs to the Coral Reef YC International, not CGSC's Open. Replace with a real CGSC-specific number from Maru/Rosa.)*
 
 **Why "sailing" not just "racing"**: the IC's brief is end-to-end — learn-to-sail through international competition. Framing the section as "year-round sailing" captures the full pillar set; regattas are the proof points, not the only story.
 
@@ -245,9 +245,9 @@ Two-panel close, ~1.3:1 ratio:
 
 **Right panel — contact (navy bg)**
 - Eyebrow: "Or reach us directly" (rust)
-- Phone: `(305) 555-0146` · 9am–6pm M–F
-- Email: `academy@cgscic.org`
-- Visit: 2990 S. Bayshore Drive · Coconut Grove, FL 33133
+- Phone: `(305) 444-4571` · 9am–6pm M–F
+- Email: `icmanager@cgsc.org` (primary) · `icdirector@cgsc.org` (escalation)
+- Visit: 2990 S. Bayshore Drive · Miami, FL 33133 *(Coconut Grove is the neighborhood — postal city is Miami)*
 - Footer note: "Open house every other Saturday — 10am to 2pm. Free demo sails for kids who've never been on a boat."
 
 **Backend reqs:** form submission with routing logic (Junior → junior coach lead, HPC → Maru, etc.), 2-day response SLA, auto-acknowledgement email. Verify all phone/email placeholders before launch.
@@ -357,16 +357,16 @@ Most numbers, names, dates, and contact details in the spec above are **placehol
 |---|---|---|---|
 | Olympian count in lineage | "12 Olympians" | Coaching D · Bay stat block | CGSC archives / parent club records |
 | Olympian names | Sarah Lopez '96 · Iris Martinez '08 · Andrés Soto '20 | Champions wall · Heritage timeline | CGSC alumni records |
-| Founder names | Bob Henley · Carl Webb · Frances Tomlinson | Heritage magazine opener · Champions wall | CGSC founding records / club archives |
+| ~~Founder names~~ ✅ verified | ~~Bob Henley · Carl Webb · Frances Tomlinson~~ → **Marshall Pollard · Wirth Monroe · Frank Kerdyk · Jack Engle** | Heritage magazine opener · Champions wall | Verified 2026-05-02 (PR #1) — MEDIUM confidence |
 | Recent named alumni | Maya Castillo (Youth Worlds '25) · Daniel Cruz · Lila Park · Jamal Ross · etc. | Champions wall · Stories grid · Footer quote | Current CGSC roster / racing results |
 | Bay climate stats | 76°F water · 12kt wind · 365 sailable days | The Bay section A · stat anchor | NOAA Biscayne Bay station data |
-| Orange Bowl attendance | "600+ youth sailors" | The Bay winter card | Regatta entry counts (regattanetwork.com) |
+| ~~Orange Bowl attendance~~ ⚠ retired | ~~"600+ youth sailors"~~ — that count is Coral Reef YC's *International* event, not CGSC's *Open*. CGSC-specific count is unpublished. | The Bay winter card | Replace with a number sourced directly from CGSC IC, or omit |
 | 2026 regatta dates | Orange Bowl Dec 27–30 (estimated) · Don Q Apr 10–12 (confirmed) · Miami Sail Week Spring | The Bay 4-season grid · Stories calendar | Official regatta sites |
 | Coach names | Maru Urban (real, role pending verification) · "Coach 02–07" (placeholder) | Coaching D team row · Pillar mapping | CGSC IC current staff |
 | Coach-to-sailor ratio | "1:6" | Coaching stat block | CGSC IC published programs |
-| Phone | `(305) 555-0146` | Section 8 inquiry · Footer | CGSC IC official |
-| Email | `academy@cgscic.org` | Section 8 inquiry | CGSC IC official |
-| Address | 2990 S. Bayshore Drive, Coconut Grove FL 33133 | Section 8 · Footer · Map | Likely correct (parent club address) — confirm |
+| ~~Phone~~ ✅ corrected | ~~`(305) 555-0146`~~ → **`(305) 444-4571`** | Section 8 inquiry · Footer | Verified 2026-05-02 — HIGH confidence (PR #1) |
+| ~~Email~~ ✅ corrected | ~~`academy@cgscic.org`~~ → **`icmanager@cgsc.org`** (primary) | Section 8 inquiry | Verified 2026-05-02 — HIGH confidence (PR #1) |
+| ~~Address postal city~~ ✅ corrected | "Coconut Grove, FL 33133" → **"Miami, FL 33133"** (Coconut Grove is the neighborhood) | Section 8 · Footer · Map | Verified 2026-05-02 — HIGH confidence (PR #1) |
 | Hours | Tue–Sun 9am–6pm | Section 8 · Footer | CGSC IC official |
 | Open house cadence | "Every other Saturday, 10am–2pm" | Section 8 · Newsletter | CGSC IC official |
 | Maya Castillo quote | "Same Bay, deeper" / capsize anecdote | Pathway D (rejected) · Footer quote | Real alumnus, real quote, written consent |
