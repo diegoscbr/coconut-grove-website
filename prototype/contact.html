@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Contact · Coconut Grove Sailing Club Instructional Center</title>
-  <meta name="description" content="Visit, inquire, or sail with us. CGSC Instructional Center, 2990 S. Bayshore Drive, Miami FL. We answer within two days." />
+  <meta name="description" content="Visit, inquire, or sail with us. CGSC Instructional Center · 2990 S. Bayshore Drive, Miami FL 33133 · (305) 444-4571 · icmanager@cgsc.org" />
   <link rel="icon" href="/assets/pennant.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,15 +41,123 @@
     </div>
   </section>
 
-  <section class="phase-placeholder">
+  <!-- Inquiry -->
+  <section class="panel">
     <div class="container">
-      <p class="placeholder-tag">Phase A skeleton</p>
-      <h2 class="placeholder-h">Contact — Phase F</h2>
-      <p class="placeholder-sub">
-        Phase F lifts the existing v1 inquiry form into a dedicated Contact page, paired with the navy contact
-        panel: phone (305) 444-4571, email icmanager@cgsc.org, address, an embedded map placeholder,
-        hours <span class="tbd">TBD</span>, and open-house cadence <span class="tbd">TBD</span>.
-      </p>
+      <p class="section-eyebrow">Send a note</p>
+      <h2 class="section-headline">Tell us about the sailor.</h2>
+      <p class="section-sub">A coach reads every inquiry. We respond within two business days with a suggested entry point and the next available open practice or cohort start date.</p>
+
+      <div class="inquiry-block">
+        <div class="inquiry-form-side">
+          <p class="inquiry-form-eyebrow">General inquiry</p>
+          <h3 class="inquiry-form-headline">Sail with us — <em>where would you start?</em></h3>
+          <p class="inquiry-helper">No commitment, no fee. If you're not sure which program fits, mark "Help me figure it out" — we'll suggest one.</p>
+
+          <form class="inquiry-form" data-form-inquiry novalidate>
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="tel" name="phone" placeholder="Phone (optional)" />
+            <select name="program">
+              <option value="">Which program?</option>
+              <option>Adult Sailing</option>
+              <option>Race Team — Junior</option>
+              <option>Race Team — Senior / HPC</option>
+              <option>Camps &amp; Coaching</option>
+              <option>Private coaching</option>
+              <option>Help me figure it out</option>
+            </select>
+            <input type="text" name="sailor-info" placeholder="Sailor's name &amp; age (if not you)" class="full" />
+            <textarea name="notes" placeholder="Anything else? Experience, dates that work, questions (optional)" class="full"></textarea>
+            <button type="submit">Send →</button>
+          </form>
+        </div>
+
+        <div class="inquiry-info-side">
+          <p class="inquiry-info-eyebrow">Direct line</p>
+
+          <div class="inquiry-info-block">
+            <p class="lbl">Phone</p>
+            <p class="val"><a href="tel:+13054444571">(305) 444-4571</a><small>Office hours <span class="tbd">TBD</span></small></p>
+          </div>
+
+          <div class="inquiry-info-block">
+            <p class="lbl">Email</p>
+            <p class="val"><a href="mailto:icmanager@cgsc.org">icmanager@cgsc.org</a></p>
+          </div>
+
+          <div class="inquiry-info-block">
+            <p class="lbl">Address</p>
+            <p class="val">2990 S. Bayshore Drive<small>Miami, FL 33133</small></p>
+          </div>
+
+          <div class="inquiry-info-block">
+            <p class="lbl">Open house</p>
+            <p class="val"><span class="tbd">Cadence TBD</span><small>Drop-ins welcome by appointment. See the <a href="/calendar">calendar</a> for confirmed dates.</small></p>
+          </div>
+
+          <p class="inquiry-info-foot">Two-day response window. Walk-in tours of the dock are happily welcomed during office hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit the dock -->
+  <section class="panel grey">
+    <div class="container">
+      <div class="split-2col">
+        <div class="split-2col-media aerial accent-bracket"></div>
+        <div class="split-2col-body">
+          <p class="section-eyebrow">Visit the dock</p>
+          <h2 class="section-headline">2990 S. Bayshore Drive.</h2>
+          <p class="intro-prose">
+            We're on Biscayne Bay in <b>Coconut Grove</b> — a five-minute walk from downtown Coconut
+            Grove and a 10-minute drive from Brickell or Coral Gables. Free parking on-site;
+            Metrorail is a short ride or bike from the dock.
+          </p>
+          <p class="intro-prose">
+            <b>The fastest way to know if CGSC is right for you is to walk down the dock.</b> No
+            appointment needed during office hours; we'll happily show you the boats, the water,
+            and the coaches.
+          </p>
+          <ul style="list-style:none; padding:0; margin: 28px 0 0;">
+            <li style="padding: 6px 0; font-size:14px; color: var(--grey-700);">
+              <b style="display:inline-block; min-width:130px; color: var(--charcoal); font-family: var(--display); font-weight: 700;">Office hours</b>
+              <span class="tbd">TBD — pending verification with Lauren</span>
+            </li>
+            <li style="padding: 6px 0; font-size:14px; color: var(--grey-700);">
+              <b style="display:inline-block; min-width:130px; color: var(--charcoal); font-family: var(--display); font-weight: 700;">Open house</b>
+              <span class="tbd">Cadence TBD</span>
+            </li>
+            <li style="padding: 6px 0; font-size:14px; color: var(--grey-700);">
+              <b style="display:inline-block; min-width:130px; color: var(--charcoal); font-family: var(--display); font-weight: 700;">Parking</b>
+              Free on-site
+            </li>
+            <li style="padding: 6px 0; font-size:14px; color: var(--grey-700);">
+              <b style="display:inline-block; min-width:130px; color: var(--charcoal); font-family: var(--display); font-weight: 700;">Transit</b>
+              Metrorail Coconut Grove station, then 1.5 mi
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map placeholder -->
+  <section class="panel">
+    <div class="container">
+      <p class="section-eyebrow">Find us</p>
+      <h2 class="section-headline">Coconut Grove waterfront.</h2>
+      <p class="section-sub">Map embed lands in Phase 2 (Mapbox or static tile). For now, click through to Google Maps for directions.</p>
+
+      <div style="aspect-ratio: 16 / 8; border-radius: 4px; background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #1A3A8A 110%); position: relative; overflow: hidden; margin-top: 24px;">
+        <div style="position:absolute; inset:0; background: radial-gradient(circle at 50% 50%, rgba(255, 139, 94, 0.35) 0%, transparent 25%); pointer-events:none;"></div>
+        <div style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); text-align:center; color: var(--white);">
+          <p style="font-family: var(--display); font-weight: 900; font-size: 24px; letter-spacing: -0.01em; margin: 0;">CGSC Instructional Center</p>
+          <p style="font-family: var(--body); font-size: 14px; opacity: 0.85; margin: 6px 0 18px;">2990 S. Bayshore Drive · Miami, FL 33133</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=2990+S+Bayshore+Drive+Miami+FL+33133" target="_blank" rel="noopener" class="btn-light">Open in Google Maps →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -105,5 +213,6 @@
     <a href="/contact" class="drawer-cta" data-drawer-link>Visit / Inquire →</a>
   </div>
   <script src="/js/site.js" defer></script>
+  <script src="/js/pages/race-team.js" defer></script>
 </body>
 </html>
