@@ -36,20 +36,268 @@
     <div class="container">
       <p class="breadcrumb"><a href="/">Home</a> <span class="sep">→</span> <a href="/programs">Programs</a> <span class="sep">→</span> Camps &amp; Coaching</p>
       <h1>Camps &amp; Coaching</h1>
-      <p class="subhead">Seasonal camps, holiday clinics, and private coaching. Year-round entry points — for first-time sailors and the not-yet-decided-if-they're-serious.</p>
+      <p class="subhead">Seasonal camps, holiday clinics, and private coaching. <em>Year-round entry points</em> for first-time sailors and the not-yet-decided-if-they're-serious.</p>
       <span class="location-chip">Biscayne Bay · Coconut Grove</span>
     </div>
   </section>
 
-  <section class="phase-placeholder">
+  <nav class="page-subnav" aria-label="Camps & Coaching sections" data-scrollspy>
+    <div class="page-subnav-inner">
+      <a href="#about" class="active">The Program</a>
+      <a href="#camps">Available Camps</a>
+      <a href="#private">Private Coaching</a>
+      <a href="#faq">FAQ</a>
+      <a href="#inquire">Inquire</a>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="panel" id="about">
     <div class="container">
-      <p class="placeholder-tag">Phase A skeleton</p>
-      <h2 class="placeholder-h">Camps &amp; Coaching — Phase D</h2>
-      <p class="placeholder-sub">
-        Phase D fills this in by adapting Mouratoglou's Camps page treatment: count headline ("N AVAILABLE CAMPS"),
-        filter bar (duration / level / age), camp card grid, accommodation/options if relevant for CGSC families,
-        FAQ accordion, contact form.
+      <p class="section-eyebrow">Camps &amp; Coaching</p>
+      <h2 class="section-headline">The entry point — and the way to keep sailing.</h2>
+      <p class="intro-prose">
+        Camps and Coaching are <b>how new sailors start at CGSC</b> and how members fill the gaps between
+        weekly programs. School breaks, holiday weeks, summer afternoons, last-minute one-on-ones — if
+        you want to sail and there isn't a class meeting tomorrow, this is the way.
       </p>
+      <p class="intro-prose">
+        Every camp is led by the same coaches who run the Race Team and Adult Sailing. <b>Same boats,
+        same coaches, same standards — just a different schedule.</b>
+      </p>
+    </div>
+  </section>
+
+  <!-- Available Camps -->
+  <section class="panel grey" id="camps">
+    <div class="container">
+      <p class="camps-count"><em>6</em> available camps</p>
+
+      <div class="filter-row" aria-label="Filter camps">
+        <label>Filter</label>
+        <select aria-label="Duration">
+          <option>Any duration</option>
+          <option>1 day</option>
+          <option>Weekend</option>
+          <option>1 week</option>
+          <option>2 weeks</option>
+        </select>
+        <select aria-label="Age">
+          <option>Any age</option>
+          <option>Ages 6–9</option>
+          <option>Ages 10–13</option>
+          <option>Ages 14–18</option>
+          <option>Adults</option>
+        </select>
+        <select aria-label="Level">
+          <option>Any level</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+      </div>
+
+      <div class="preview-grid">
+        <article class="preview-card">
+          <div class="preview-card-media camps"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Ages 6–9</span>
+              <span class="chip">1 week</span>
+              <span class="chip rust">Summer</span>
+            </div>
+            <h3 class="preview-card-title">Optimist Discovery Week</h3>
+            <p class="preview-card-meta">First-time sailors. Optimist dinghies. Calm Bay days.</p>
+          </div>
+        </article>
+
+        <article class="preview-card">
+          <div class="preview-card-media"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Ages 10–13</span>
+              <span class="chip">2 weeks</span>
+              <span class="chip rust">Summer</span>
+            </div>
+            <h3 class="preview-card-title">Junior Intensive</h3>
+            <p class="preview-card-meta">Develop-rung sailors. 420s, tactics, first race weekends.</p>
+          </div>
+        </article>
+
+        <article class="preview-card">
+          <div class="preview-card-media race"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Ages 14–18</span>
+              <span class="chip">1 week</span>
+              <span class="chip">Winter break</span>
+            </div>
+            <h3 class="preview-card-title">Race Team Prep</h3>
+            <p class="preview-card-meta">Pre-season conditioning. Open to Race Team prospects.</p>
+          </div>
+        </article>
+
+        <article class="preview-card">
+          <div class="preview-card-media event"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Adults</span>
+              <span class="chip">Weekend</span>
+              <span class="chip">Beginner</span>
+            </div>
+            <h3 class="preview-card-title">Adult Discovery Weekend</h3>
+            <p class="preview-card-meta">Two-day adult intro. No experience required.</p>
+          </div>
+        </article>
+
+        <article class="preview-card">
+          <div class="preview-card-media"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">All ages</span>
+              <span class="chip">1 day</span>
+              <span class="chip rust">Spring break</span>
+            </div>
+            <h3 class="preview-card-title">Spring Break Sail Day</h3>
+            <p class="preview-card-meta">One-day camps each day of the week. Drop-in welcome.</p>
+          </div>
+        </article>
+
+        <article class="preview-card">
+          <div class="preview-card-media camps"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Ages 10–13</span>
+              <span class="chip">1 week</span>
+              <span class="chip">Holiday week</span>
+            </div>
+            <h3 class="preview-card-title">Holiday Junior Camp</h3>
+            <p class="preview-card-meta">For school-break weeks. Half-day mornings on the water.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Private coaching -->
+  <section class="panel charcoal" id="private">
+    <div class="container">
+      <div class="split-2col">
+        <div class="split-2col-media coaches accent-bracket"></div>
+        <div class="split-2col-body">
+          <p class="section-eyebrow">Private Coaching</p>
+          <h2 class="section-headline">One coach, one sailor, one boat.</h2>
+          <p class="intro-prose">
+            Private coaching is on-demand and one-on-one — for sailors who need to <b>fix a specific
+            thing</b>, prep for a specific regatta, or get unstuck. Schedule is flexible. The coach you
+            work with is the one with the right specialty.
+          </p>
+          <p class="intro-prose">
+            Booked through Maru or Rosa. <b>Hourly rates are <span class="tbd">TBD</span></b> — being
+            finalized for the 2026 season. Email for current rates.
+          </p>
+          <p style="margin-top:24px;"><a href="mailto:icmanager@cgsc.org" class="btn-ghost">Email to book →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="panel" id="faq">
+    <div class="container">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-headline">Common questions.</h2>
+
+      <div class="faq-accordion">
+        <details class="faq-item">
+          <summary>How do camps differ from the Race Team or Adult programs?</summary>
+          <div class="faq-body">
+            Camps are <b>time-bound</b> — a week, a weekend, a single day. Race Team and Adult Sailing
+            are <b>ongoing year-round programs</b>. Same coaches teach both; camps are how you try the
+            water before committing.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Does my kid need to know how to sail to come to a camp?</summary>
+          <div class="faq-body">
+            No. We run discovery-level camps for absolute beginners every season. Ages 6–9 typically start
+            in Optimist dinghies on calm Bay days with two coaches per group.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>How does private coaching get scheduled?</summary>
+          <div class="faq-body">
+            Email <a href="mailto:icmanager@cgsc.org">icmanager@cgsc.org</a> with what you're working on
+            and when you want to sail. Maru or Rosa will match you with the right coach and confirm
+            available dates within two days.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>What's the equipment situation?</summary>
+          <div class="faq-body">
+            Boats and gear are included for all camps. Sailors bring their own sun protection, water,
+            and shoes that can get wet. Everything else is on the dock.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>How do I know if a camp is the right fit?</summary>
+          <div class="faq-body">
+            Open practices happen multiple times each season — free, no commitment, just come by the
+            dock. Use the form below or call the office and we'll point you to the next one.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inquire -->
+  <section class="panel charcoal" id="inquire">
+    <div class="container">
+      <p class="section-eyebrow">Sign up</p>
+      <h2 class="section-headline">Pick a camp, or ask which one.</h2>
+      <p class="section-sub">Tell us a bit about the sailor — we'll send back the next available camp dates and any open spots.</p>
+
+      <div class="inquiry-block">
+        <div class="inquiry-form-side">
+          <p class="inquiry-form-eyebrow">Camps &amp; Coaching — inquire</p>
+          <h3 class="inquiry-form-headline">Tell us about the sailor — <em>we'll suggest a camp.</em></h3>
+          <p class="inquiry-helper">No commitment. We'll send back upcoming camps that fit, with dates and open-spot counts.</p>
+
+          <form class="inquiry-form" data-form-inquiry novalidate>
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="text" name="sailor-age" placeholder="Sailor's age" class="full" />
+            <select name="camp-type" class="full">
+              <option value="">Camp type</option>
+              <option>Summer camp (week)</option>
+              <option>Spring / winter break</option>
+              <option>Weekend camp</option>
+              <option>Single-day drop-in</option>
+              <option>Private coaching</option>
+              <option>Not sure — help me figure it out</option>
+            </select>
+            <textarea name="notes" placeholder="Experience level, dates that work, anything else (optional)" class="full"></textarea>
+            <button type="submit">Send →</button>
+          </form>
+        </div>
+
+        <div class="inquiry-info-side">
+          <p class="inquiry-info-eyebrow">Direct line</p>
+          <div class="inquiry-info-block">
+            <p class="lbl">Phone</p>
+            <p class="val"><a href="tel:+13054444571">(305) 444-4571</a></p>
+          </div>
+          <div class="inquiry-info-block">
+            <p class="lbl">Email</p>
+            <p class="val"><a href="mailto:icmanager@cgsc.org">icmanager@cgsc.org</a></p>
+          </div>
+          <div class="inquiry-info-block">
+            <p class="lbl">Visit the dock</p>
+            <p class="val">2990 S. Bayshore Drive<small>Miami, FL 33133</small></p>
+          </div>
+          <p class="inquiry-info-foot">Camps fill quickly during school breaks — inquire early. Spots posted on the <a href="/calendar">calendar</a> as cohorts open.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -105,5 +353,6 @@
     <a href="/contact" class="drawer-cta" data-drawer-link>Visit / Inquire →</a>
   </div>
   <script src="/js/site.js" defer></script>
+  <script src="/js/pages/race-team.js" defer></script>
 </body>
 </html>
