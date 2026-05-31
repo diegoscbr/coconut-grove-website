@@ -1,6 +1,31 @@
-# Brand Decisions · v1
+# Brand Decisions · v1.1
 
-> Locked decisions from the brainstorm session on **2026-05-01**. This is the source of truth for the cgscic.org homepage brand and IA. Supersedes any earlier exploration.
+> v1 locked **2026-05-01** (brainstorm session). v1.1 reconciled **2026-05-31** after the multi-page mockup build (`MOCKUPS_PRD.md`).
+> v1.1 supersedes v1 where they conflict; v1 sections that are not in the v1.1 changelog below remain authoritative as written.
+
+---
+
+## v1.1 changelog (2026-05-31)
+
+Five decisions changed during the multi-page mockup build (grill-me session on 2026-05-31 + Phase A–H build). Each is reflected in the live prototype at <https://prototype-sooty-seven.vercel.app>.
+
+| § | What changed | Why |
+|---|---|---|
+| **§1 · Hero copy (subhead)** | Live copy locked as v1.1: *"For 80 years the CGSC has been the training ground for sailors at every level. Now, we're taking it to the next level, for all sailors on Biscayne Bay."* | v1 ended on elite outcomes ("international wins and Olympic podiums"). Diego revised the live copy to be inclusive ("for all sailors") — better matches the IC's every-level brief. |
+| **§3 · Five pillars → three program destinations** | Three pillars in IA: **Adult Sailing · Race Team · Camps & Coaching**. Junior Academy + High Performance Center absorbed into Race Team as pathway stages (Discover → Develop → Race → Compete → Perform; HPC is the Perform apex). | Junior Academy and HPC are not peer pillars — they're stages of the same competitive ladder. Collapsing five into three removed false distinctions; HPC gains the apex rather than being one tile in five. |
+| **§7 · Programs grid (Home)** | 5-tile featured+grid → **3 cards** (Adult Sailing · Race Team · Camps & Coaching). | Follows §3 consolidation. |
+| **§8 · Pathway visualization location** | Pathway lives on **/programs/race-team#pathway**, not on Home. Home shows a teaser linking to it. | Pathway is the Race Team story (junior to HPC). Putting it on Home dilutes both surfaces; making it the centerpiece of Race Team strengthens that page. |
+| **§18 (new) · Marketplace surface** | New top-level page added: a **member-only club bulletin board** for buying, selling, and trading used sailing gear. Three templates (index + listing detail + post-item form). Member-only conceit visible as an auth-gate banner. | Not in v1. Surfaced by Diego during the multi-page IA grill-me; built in Phase G. |
+
+### IA — locked v1.1
+
+Top-level nav (6): **Home · Programs · About · Calendar · Contact · Marketplace**
+- Programs sub-pages (3): Adult Sailing · Race Team · Camps & Coaching
+- About is one scrolling page (Heritage + Coaches + Timeline; no news section)
+- Calendar absorbs the news/blog index; individual stories have their own template at `/calendar/[slug]`
+- Marketplace = index + listing detail + post-item form, members-only conceit
+
+12 page templates total — see `MOCKUPS_PRD.md` for the full build trace.
 
 ---
 
@@ -343,9 +368,37 @@ Direct. Imperative. Like a coach on the dock.
 
 ---
 
+## 18 · Marketplace surface · v1.1 (NEW)
+
+> Added 2026-05-31 during the multi-page mockup build. See `MOCKUPS_PRD.md` Phase G.
+
+A new top-level destination: `/marketplace`. Members-only conceit (visual auth gate, not enforced in v1) for buying, selling, and trading used sailing gear among CGSC members.
+
+**Visual character (locked):** Club bulletin board, not Craigslist. Curated, sparse, navy/rust palette. No commercial-marketplace clutter (no ads, no "Recommended for you," no platform-fee language).
+
+**Three templates:**
+
+| Template | Purpose | Key elements |
+|---|---|---|
+| `/marketplace` (index) | Browse all current listings | Auth-gate banner · count headline ("8 items on the dock") · filter bar (category / price / condition) · listing-card grid · House Rules section (4 numbered rules) |
+| `/marketplace/listing` (detail) | Single listing detail | Auth-gate · breadcrumb · gallery (main + 4 thumbs) · sticky info card with chips · price · meta · Message Seller CTA · seller-card (member contact) · related listings rail |
+| `/marketplace/post` (form) | Members create new listings | Auth-gate · upload zone (drag/drop placeholder) · category / condition / price / description / contact-preference form · House Rules section |
+
+**Auth gate (visual conceit only in v1):** A rust-accented banner directly under topnav: "Signed in as [Member Name] · CGSC Member since [Year]" + Post-an-item link + Sign-out link. Phase 2 wires real auth.
+
+**House rules (canonical):**
+1. Members only. Posting and contact require a current CGSC membership.
+2. Sailing-related items only. Not a general for-sale board.
+3. Listings expire after 60 days.
+4. Transactions are between members. CGSC is not a party to any sale.
+
+**Component library impact:** Phase G added `.auth-gate`, `.listing-card`, `.listing-detail-grid`, `.listing-gallery`, `.seller-card`, `.upload-zone` to `prototype/styles/components.css`.
+
+---
+
 # ✅ Brand spec complete
 
-All 8 sections + footer + nav + mobile + voice locked as of **2026-05-02**.
+v1 locked **2026-05-02**. v1.1 reconciled **2026-05-31** (see v1.1 changelog at top + §18 above).
 
 ---
 

@@ -61,13 +61,15 @@ prototype/
 | Phase | Scope | Status |
 |---|---|---|
 | A | Shell — tokens, components.css starter, 12 skeletons | ✅ |
-| B | Race Team interior (anchor) | pending |
-| C | Home revision | pending |
-| D | Programs landing + Adult + Camps | pending |
-| E | About + Calendar + story detail | pending |
-| F | Contact | pending |
-| G | Marketplace × 3 | pending |
-| H | Polish + BRAND_DECISIONS.md v1.1 | pending |
+| B | Race Team interior (anchor, richest components) | ✅ |
+| C | Home revision against new IA | ✅ |
+| D | Programs landing + Adult Sailing + Camps & Coaching | ✅ |
+| E | About + Calendar + story detail | ✅ |
+| F | Contact | ✅ |
+| G | Marketplace × 3 | ✅ |
+| H | Polish + BRAND_DECISIONS.md v1.1 + link audit | ✅ |
+
+**Build complete — 2026-05-31.** Zero broken internal links across the 12 page templates. Ready for Phase 2 (Next.js + Sanity + Resend) conversation per `../HANDOFF.md`, informed by the mockup component library.
 
 ## TBDs
 
