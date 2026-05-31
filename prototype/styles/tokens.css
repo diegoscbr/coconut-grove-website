@@ -1,0 +1,94 @@
+/* ==========================================================================
+   cgscic.org · tokens.css · design-system core
+   Locked via BRAND_DECISIONS.md (palette §5, type §5).
+   Extracted from prototype v1's styles.css :root block, 2026-05-31.
+   ========================================================================== */
+
+:root {
+  /* Color · §5 */
+  --navy: #1A3A8A;
+  --navy-deep: #142A66;
+  --light-blue: #4A8FCF;
+  --light-blue-soft: #B5C7E8;
+  --rust: #FF8B5E;
+  --white: #FFFFFF;
+  --charcoal: #111111;
+  --grey-50: #fafafa;
+  --grey-100: #f4f6fa;
+  --grey-200: #ececec;
+  --grey-300: #cfdbe6;
+  --grey-500: #666666;
+  --grey-700: #444444;
+
+  /* Type · §5 */
+  --display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, sans-serif;
+  --letter-display: -0.035em;
+  --letter-eyebrow: 0.18em;
+  --letter-link: 0.16em;
+
+  /* Layout */
+  --max: 1200px;
+  --section-y: 96px;
+  --section-y-tight: 72px;
+  --container-x: clamp(20px, 5vw, 48px);
+  --nav-h: 68px;
+
+  /* Elevation */
+  --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.06);
+  --shadow-lift: 0 12px 40px rgba(0, 0, 0, 0.10);
+}
+
+/* --------------------------------------------------------------------------
+   Reset & base
+   -------------------------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--charcoal);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: var(--container-x);
+  padding-right: var(--container-x);
+}
+
+/* TBD chip — wherever content is pending Maru/Rosa verification */
+.tbd {
+  display: inline-block;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: rgba(255, 139, 94, 0.12);
+  color: var(--rust);
+  padding: 3px 7px;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
