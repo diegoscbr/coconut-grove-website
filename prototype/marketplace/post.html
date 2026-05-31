@@ -32,24 +32,98 @@
     </div>
   </header>
 
+  <div class="auth-gate">
+    <div class="auth-gate-inner">
+      <span class="auth-gate-status"><b>Members</b> Signed in as Diego Escobar · CGSC Member since 2024</span>
+      <div class="auth-gate-actions">
+        <a href="/marketplace">← Back to listings</a>
+        <a href="#">Sign out</a>
+      </div>
+    </div>
+  </div>
+
   <section class="hero-compact">
     <div class="container">
       <p class="breadcrumb"><a href="/">Home</a> <span class="sep">→</span> <a href="/marketplace">Marketplace</a> <span class="sep">→</span> Post an Item</p>
       <h1>Post an item</h1>
       <p class="subhead">List your used sailing gear for fellow CGSC members. <em>Members only.</em></p>
-      <span class="location-chip">Members · CGSC Coconut Grove</span>
     </div>
   </section>
 
-  <section class="phase-placeholder">
+  <section class="panel">
     <div class="container">
-      <p class="placeholder-tag">Phase A skeleton</p>
-      <h2 class="placeholder-h">Post an Item — Phase G</h2>
-      <p class="placeholder-sub">
-        Phase G fills this in: photo upload (no-op), title, category dropdown, price, condition, description,
-        contact preference (email/phone/in-person at dock). Form submits with a confirmation flash, no persistence.
-        Visual auth gate at the top: "Signed in as [Member Name]" or "Members only — sign in to post."
-      </p>
+      <p class="section-eyebrow">New listing</p>
+      <h2 class="section-headline">Tell us what you're selling.</h2>
+      <p class="section-sub">Listings expire after 60 days. Re-post if it hasn't sold. CGSC isn't a party to the sale — set up the meet at the dock.</p>
+
+      <div class="post-form-block">
+        <form class="inquiry-form" data-form-inquiry novalidate style="grid-template-columns: 1fr;">
+          <!-- Photo upload -->
+          <div class="upload-zone" role="button" tabindex="0" aria-label="Upload photos">
+            <span class="upload-icon">+</span>
+            <span class="upload-hint">Add photos</span>
+            <span class="upload-sub">Drag &amp; drop or click · Up to 8 photos · <span class="tbd">Upload no-op</span></span>
+          </div>
+
+          <input type="text" name="title" placeholder="Title (e.g. North 3DL Jib · 420 class)" required />
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <select name="category" required>
+              <option value="">Category</option>
+              <option>Sails &amp; rigging</option>
+              <option>Hulls &amp; boats</option>
+              <option>Hardware</option>
+              <option>Apparel &amp; safety</option>
+              <option>Electronics</option>
+              <option>Other</option>
+            </select>
+            <select name="condition" required>
+              <option value="">Condition</option>
+              <option>Like new</option>
+              <option>Good</option>
+              <option>Fair</option>
+              <option>For parts</option>
+            </select>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <input type="text" name="price" placeholder="Price ($)" required />
+            <select name="price-flexibility">
+              <option value="">Pricing</option>
+              <option>Firm</option>
+              <option>OBO (or best offer)</option>
+              <option>Free / trade</option>
+            </select>
+          </div>
+
+          <textarea name="description" placeholder="Description — what's the gear, why are you selling, what condition is it really in?" rows="5" required></textarea>
+
+          <select name="contact-pref">
+            <option value="">How should buyers reach you?</option>
+            <option>Email (from profile)</option>
+            <option>Phone (from profile)</option>
+            <option>In-person only · meet at the dock</option>
+          </select>
+
+          <button type="submit">Publish listing →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- House rules -->
+  <section class="panel grey">
+    <div class="container">
+      <p class="section-eyebrow">Before you post</p>
+      <h2 class="section-headline">A few reminders.</h2>
+
+      <ol class="method-list">
+        <li><b>Sailing-related items only.</b> Boats, sails, rigging, hardware, electronics, apparel, safety gear. Not a general for-sale board.</li>
+        <li><b>Be honest about condition.</b> "Good" is a real word; "Like new" should mean it. Buyers will inspect at the dock.</li>
+        <li><b>Set a real price.</b> "OBO" is fine, but anchor it to something. Browsing competitive listings on West Marine or eBay first never hurts.</li>
+        <li><b>Take a few photos.</b> Phone camera, natural light, multiple angles. Photos do most of the work.</li>
+        <li><b>You're responsible for the sale.</b> CGSC isn't a party. Meet at the dock, inspect the gear, exchange money or trade, done.</li>
+      </ol>
     </div>
   </section>
 
@@ -105,5 +179,6 @@
     <a href="/contact" class="drawer-cta" data-drawer-link>Visit / Inquire →</a>
   </div>
   <script src="/js/site.js" defer></script>
+  <script src="/js/pages/race-team.js" defer></script>
 </body>
 </html>

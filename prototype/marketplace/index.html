@@ -32,6 +32,17 @@
     </div>
   </header>
 
+  <!-- Auth gate (member-only conceit) -->
+  <div class="auth-gate">
+    <div class="auth-gate-inner">
+      <span class="auth-gate-status"><b>Members</b> Signed in as Diego Escobar · CGSC Member since 2024</span>
+      <div class="auth-gate-actions">
+        <a href="/marketplace/post">Post an Item</a>
+        <a href="#">Sign out</a>
+      </div>
+    </div>
+  </div>
+
   <section class="hero-compact">
     <div class="container">
       <p class="breadcrumb"><a href="/">Home</a> <span class="sep">→</span> Marketplace</p>
@@ -41,19 +52,187 @@
     </div>
   </section>
 
-  <section class="phase-placeholder">
+  <section class="panel">
     <div class="container">
-      <p class="placeholder-tag">Phase A skeleton</p>
-      <h2 class="placeholder-h">Marketplace index — Phase G</h2>
-      <p class="placeholder-sub">
-        Phase G fills this in: gallery of 5-8 plausible listings (used Optimist, North 3DL jib, Harken winch handle, etc.),
-        filter chips (category · price range · condition), and a "Post an item" CTA. Visual character:
-        club bulletin board, not Craigslist. Member-only conceit (auth gate as visual element, not enforced).
-      </p>
-      <ul class="ref-list">
-        <li><b>Listing detail</b><a href="/marketplace/listing">/marketplace/listing</a></li>
-        <li><b>Post an item</b><a href="/marketplace/post">/marketplace/post</a></li>
-      </ul>
+      <div style="display:flex; justify-content:space-between; align-items:end; flex-wrap:wrap; gap:16px; margin-bottom:8px;">
+        <div>
+          <p class="section-eyebrow">All listings</p>
+          <h2 class="section-headline">8 items on the dock.</h2>
+        </div>
+        <a href="/marketplace/post" class="btn-primary">+ Post an item</a>
+      </div>
+
+      <div class="filter-row" aria-label="Filter listings">
+        <label>Filter</label>
+        <select aria-label="Category">
+          <option>All categories</option>
+          <option>Sails &amp; rigging</option>
+          <option>Hulls &amp; boats</option>
+          <option>Hardware</option>
+          <option>Apparel &amp; safety</option>
+          <option>Electronics</option>
+        </select>
+        <select aria-label="Price">
+          <option>Any price</option>
+          <option>Under $100</option>
+          <option>$100–$500</option>
+          <option>$500–$2,000</option>
+          <option>$2,000+</option>
+        </select>
+        <select aria-label="Condition">
+          <option>Any condition</option>
+          <option>Like new</option>
+          <option>Good</option>
+          <option>Fair</option>
+          <option>For parts</option>
+        </select>
+      </div>
+
+      <div class="preview-grid">
+        <a href="/marketplace/listing" class="preview-card listing-card">
+          <div class="preview-card-media race"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Sails</span>
+              <span class="chip">Like new</span>
+            </div>
+            <h3 class="preview-card-title">North 3DL Jib · 420 class</h3>
+            <p class="listing-price">$850 <small>OBO</small></p>
+            <div class="listing-meta-row">
+              <span>Posted 3d ago</span>
+              <span>Rosa L.</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/marketplace/listing" class="preview-card listing-card">
+          <div class="preview-card-media"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Boats</span>
+              <span class="chip">Good</span>
+            </div>
+            <h3 class="preview-card-title">Optimist · 2018 · Race-ready</h3>
+            <p class="listing-price">$2,400</p>
+            <div class="listing-meta-row">
+              <span>Posted 1w ago</span>
+              <span>Raul R.</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/marketplace/listing" class="preview-card listing-card">
+          <div class="preview-card-media camps"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Hardware</span>
+              <span class="chip">Good</span>
+            </div>
+            <h3 class="preview-card-title">Harken winch handle · 10"</h3>
+            <p class="listing-price">$45</p>
+            <div class="listing-meta-row">
+              <span>Posted 2d ago</span>
+              <span>Orlando G.</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/marketplace/listing" class="preview-card listing-card">
+          <div class="preview-card-media event"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Apparel</span>
+              <span class="chip">Like new</span>
+            </div>
+            <h3 class="preview-card-title">Zhik foul weather kit · Men's M</h3>
+            <p class="listing-price">$320 <small>OBO</small></p>
+            <div class="listing-meta-row">
+              <span>Posted 5d ago</span>
+              <span>Aish N.</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/marketplace/listing" class="preview-card listing-card">
+          <div class="preview-card-media feature"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Sails</span>
+              <span class="chip">Fair</span>
+            </div>
+            <h3 class="preview-card-title">Laser radial sail · Practice grade</h3>
+            <p class="listing-price">$140</p>
+            <div class="listing-meta-row">
+              <span>Posted 4d ago</span>
+              <span>Kope N.</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/marketplace/listing" class="preview-card listing-card">
+          <div class="preview-card-media race"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Hardware</span>
+              <span class="chip">Like new</span>
+            </div>
+            <h3 class="preview-card-title">Ronstan Series 30 ball bearing block</h3>
+            <p class="listing-price">$58</p>
+            <div class="listing-meta-row">
+              <span>Posted 6d ago</span>
+              <span>Maru U.</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/marketplace/listing" class="preview-card listing-card">
+          <div class="preview-card-media"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Electronics</span>
+              <span class="chip">Good</span>
+            </div>
+            <h3 class="preview-card-title">Velocitek SpeedPuck · with battery</h3>
+            <p class="listing-price">$185</p>
+            <div class="listing-meta-row">
+              <span>Posted 1w ago</span>
+              <span>Lauren S.</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/marketplace/listing" class="preview-card listing-card">
+          <div class="preview-card-media camps"></div>
+          <div class="preview-card-body">
+            <div class="chips-row">
+              <span class="chip">Safety</span>
+              <span class="chip">Good</span>
+            </div>
+            <h3 class="preview-card-title">Mustang Survival PFD · Youth M</h3>
+            <p class="listing-price">$35</p>
+            <div class="listing-meta-row">
+              <span>Posted 2w ago</span>
+              <span>Rosa L.</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marketplace rules -->
+  <section class="panel grey">
+    <div class="container">
+      <p class="section-eyebrow">House rules</p>
+      <h2 class="section-headline">A bulletin board, not a marketplace platform.</h2>
+      <p class="section-sub">CGSC Marketplace exists so members can pass gear to each other directly. No platform fee, no escrow, no shipping calculator. Transactions happen at the dock; we just make the listings searchable.</p>
+
+      <ol class="method-list">
+        <li><b>Members only.</b> Posting and contact require a current CGSC membership. Browsing on the public site is allowed, but contact info is hidden until you sign in.</li>
+        <li><b>Sailing-related items.</b> Boats, sails, rigging, electronics, apparel, safety gear. Not a general for-sale board.</li>
+        <li><b>Listings expire after 60 days.</b> Re-post if it hasn't sold; helps keep the dock current.</li>
+        <li><b>Transactions are between members.</b> CGSC is not a party to any sale. Inspect the gear at the dock before you pay.</li>
+      </ol>
     </div>
   </section>
 

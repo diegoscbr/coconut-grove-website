@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Listing detail · Marketplace · CGSC Instructional Center</title>
-  <meta name="description" content="Marketplace listing detail template. Photos, description, condition, and member contact info." />
+  <title>North 3DL Jib · 420 class · Marketplace · CGSC Instructional Center</title>
+  <meta name="description" content="Used North 3DL Jib for 420 class. Like new condition. Listed by Rosa Lamela. Marketplace listing template." />
   <link rel="icon" href="/assets/pennant.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,23 +32,125 @@
     </div>
   </header>
 
-  <section class="hero-compact">
+  <div class="auth-gate">
+    <div class="auth-gate-inner">
+      <span class="auth-gate-status"><b>Members</b> Signed in as Diego Escobar · CGSC Member since 2024</span>
+      <div class="auth-gate-actions">
+        <a href="/marketplace/post">Post an Item</a>
+        <a href="#">Sign out</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero-compact" style="padding: clamp(40px, 6vh, 64px) 0;">
     <div class="container">
       <p class="breadcrumb"><a href="/">Home</a> <span class="sep">→</span> <a href="/marketplace">Marketplace</a> <span class="sep">→</span> Listing</p>
-      <h1>Listing detail template</h1>
-      <p class="subhead">Phase G replaces this with a real listing: photo gallery, title, price, condition, description, and seller contact info.</p>
     </div>
   </section>
 
-  <section class="phase-placeholder">
+  <section class="panel">
     <div class="container">
-      <p class="placeholder-tag">Phase A skeleton</p>
-      <h2 class="placeholder-h">Listing detail — Phase G</h2>
-      <p class="placeholder-sub">
-        Each marketplace listing resolves to a URL like <code>/marketplace/[slug]</code>. Phase G builds the
-        layout: gallery on the left, meta panel on the right (price · condition · category · posted-date),
-        description body, "Message seller" no-op CTA with the member's email/phone visible.
-      </p>
+      <div class="listing-detail-grid">
+        <div class="listing-gallery">
+          <div class="main-img"></div>
+          <div class="thumbs">
+            <div class="thumb active"></div>
+            <div class="thumb"></div>
+            <div class="thumb"></div>
+            <div class="thumb"></div>
+          </div>
+        </div>
+
+        <div class="listing-info">
+          <div class="chips-row" style="margin-bottom:12px;">
+            <span class="chip">Sails &amp; rigging</span>
+            <span class="chip rust">Like new</span>
+          </div>
+          <h1>North 3DL Jib · 420 class</h1>
+          <p class="listing-price">$850 <small>OBO</small></p>
+
+          <div class="listing-meta-row">
+            <span>Posted 3d ago</span>
+            <span>Category · Sails</span>
+            <span>Condition · Like new</span>
+          </div>
+
+          <p style="font-size:14.5px; line-height:1.6; color: var(--grey-700); margin: 0 0 20px;">
+            Used in the 2026 Don Q regatta only. Two days on the water, one regatta weekend.
+            Comes with original bag, batten kit, and tuning guide. Excellent shape for the price.
+            Available at the dock — pick up Saturday morning.
+          </p>
+
+          <button type="button" class="btn-primary" style="width:100%; justify-content:center;">Message seller →</button>
+
+          <div class="seller-card">
+            <p class="lbl">Listed by</p>
+            <p class="seller-name">Rosa Lamela</p>
+            <p class="seller-meta">CGSC Member · Director · Programs</p>
+            <div class="seller-contact">
+              <a href="mailto:rosa@cgsc.org">rosa@cgsc.org</a>
+              <a href="tel:+13054444571">(305) 444-4571</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Description detail -->
+  <section class="panel grey">
+    <div class="container">
+      <div style="max-width: 720px;">
+        <p class="section-eyebrow">More details</p>
+        <h2 class="section-headline">Why I'm selling.</h2>
+        <p class="intro-prose">
+          We upgraded the Race Team 420s to a new sail set this season, and this one was barely broken
+          in before the swap. <b>Condition is genuinely like-new</b> — no creases beyond storage folds,
+          no wear on the corners, original tack and clew rings.
+        </p>
+        <p class="intro-prose">
+          Pickup at the CGSC dock, Saturday mornings or by appointment. Cash, Venmo, or PayPal. Happy
+          to set the sail on a boat at the dock so you can see it before paying.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related listings -->
+  <section class="panel">
+    <div class="container">
+      <p class="section-eyebrow">More from the dock</p>
+      <h2 class="section-headline">Recent listings.</h2>
+
+      <div class="preview-grid">
+        <a href="/marketplace/listing" class="preview-card listing-card">
+          <div class="preview-card-media feature"></div>
+          <div class="preview-card-body">
+            <div class="chips-row"><span class="chip">Sails</span><span class="chip">Fair</span></div>
+            <h3 class="preview-card-title">Laser radial sail · Practice grade</h3>
+            <p class="listing-price">$140</p>
+            <div class="listing-meta-row"><span>4d ago · Kope N.</span></div>
+          </div>
+        </a>
+        <a href="/marketplace/listing" class="preview-card listing-card">
+          <div class="preview-card-media camps"></div>
+          <div class="preview-card-body">
+            <div class="chips-row"><span class="chip">Hardware</span><span class="chip">Good</span></div>
+            <h3 class="preview-card-title">Harken winch handle · 10"</h3>
+            <p class="listing-price">$45</p>
+            <div class="listing-meta-row"><span>2d ago · Orlando G.</span></div>
+          </div>
+        </a>
+        <a href="/marketplace/listing" class="preview-card listing-card">
+          <div class="preview-card-media event"></div>
+          <div class="preview-card-body">
+            <div class="chips-row"><span class="chip">Apparel</span><span class="chip">Like new</span></div>
+            <h3 class="preview-card-title">Zhik foul weather kit · Men's M</h3>
+            <p class="listing-price">$320 <small>OBO</small></p>
+            <div class="listing-meta-row"><span>5d ago · Aish N.</span></div>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
