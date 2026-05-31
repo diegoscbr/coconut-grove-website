@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Calendar · Coconut Grove Sailing Club Instructional Center</title>
-  <meta name="description" content="Regattas, training, stories from the dock. What's happening at CGSC — events and news in one place." />
+  <meta name="description" content="Regattas, training, open houses, and stories from the dock. What's happening at CGSC — events and news in one place." />
   <link rel="icon" href="/assets/pennant.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,18 +41,121 @@
     </div>
   </section>
 
-  <section class="phase-placeholder">
+  <!-- Tabs -->
+  <section class="panel">
     <div class="container">
-      <p class="placeholder-tag">Phase A skeleton</p>
-      <h2 class="placeholder-h">Calendar — Phase E (events + news combined hub)</h2>
-      <p class="placeholder-sub">
-        Phase E fills this in. The Calendar is CGSC-native — no direct Mouratoglou parallel — and combines
-        upcoming events with recent news/stories on one surface. Layout decision (two tabs vs. merged timeline)
-        deferred to Phase E. Anchor regattas: Don Q Snipe April 10-12 2026, Orange Bowl, Optimist RWB.
-      </p>
-      <ul class="ref-list">
-        <li><b>Sample story</b><a href="/calendar/sample-story">/calendar/sample-story</a> — story detail template</li>
-      </ul>
+      <p class="section-eyebrow">The dock</p>
+      <h2 class="section-headline">Upcoming &amp; recent.</h2>
+      <p class="section-sub">Regatta dates marked "confirmed" are locked. The rest are TBD as the 2026 schedule firms up with US Sailing and the regional fleets.</p>
+
+      <div class="tab-bar" role="tablist" aria-label="Calendar filter">
+        <button type="button" role="tab" class="active" data-tab="all">All <span class="tab-count">10</span></button>
+        <button type="button" role="tab" data-tab="events">Events <span class="tab-count">6</span></button>
+        <button type="button" role="tab" data-tab="stories">Stories <span class="tab-count">4</span></button>
+      </div>
+
+      <div class="preview-grid" data-tab-content>
+        <!-- Events -->
+        <a href="/calendar/sample-story" class="preview-card" data-type="events">
+          <div class="preview-card-media event"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow">Regatta · April 10–12</p>
+            <h3 class="preview-card-title">Don Q Rum Keg Snipe Regatta</h3>
+            <p class="preview-card-meta">Hosted by CGSC · Confirmed 2026</p>
+          </div>
+        </a>
+        <a href="/calendar/sample-story" class="preview-card" data-type="events">
+          <div class="preview-card-media"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow">Open House · <span class="tbd">Date TBD</span></p>
+            <h3 class="preview-card-title">Spring Discovery Week</h3>
+            <p class="preview-card-meta">Race Team · No commitment, no fee</p>
+          </div>
+        </a>
+        <a href="/calendar/sample-story" class="preview-card" data-type="events">
+          <div class="preview-card-media"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow">Regatta · Late December</p>
+            <h3 class="preview-card-title">Orange Bowl International Youth</h3>
+            <p class="preview-card-meta">Optimist · 420 · Laser · 29er · Co-hosted</p>
+          </div>
+        </a>
+        <a href="/calendar/sample-story" class="preview-card" data-type="events">
+          <div class="preview-card-media event"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow">Camp · Summer</p>
+            <h3 class="preview-card-title">Junior Intensive — Summer Session</h3>
+            <p class="preview-card-meta">Ages 10–13 · 2 weeks · <span class="tbd">Dates TBD</span></p>
+          </div>
+        </a>
+        <a href="/calendar/sample-story" class="preview-card" data-type="events">
+          <div class="preview-card-media"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow">Regatta · Summer</p>
+            <h3 class="preview-card-title">Optimist Red, White &amp; Blue</h3>
+            <p class="preview-card-meta">National Optimist regatta · CGSC host weekend</p>
+          </div>
+        </a>
+        <a href="/calendar/sample-story" class="preview-card" data-type="events">
+          <div class="preview-card-media"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow">Regatta · Fall</p>
+            <h3 class="preview-card-title">CGSC Team Race Invitational</h3>
+            <p class="preview-card-meta">3-on-3 team racing · College &amp; high-school</p>
+          </div>
+        </a>
+
+        <!-- Stories -->
+        <a href="/calendar/sample-story" class="preview-card" data-type="stories">
+          <div class="preview-card-media feature"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow">Feature · 2026</p>
+            <h3 class="preview-card-title">Maru Urban joins as Director of Sailing Performance</h3>
+            <p class="preview-card-meta">Story · By Lauren Simpson</p>
+          </div>
+        </a>
+        <a href="/calendar/sample-story" class="preview-card" data-type="stories">
+          <div class="preview-card-media race"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow race">Race result</p>
+            <h3 class="preview-card-title">CGSC sailors finish top-5 in regional 420 series</h3>
+            <p class="preview-card-meta">Race Team · 2026 spring</p>
+          </div>
+        </a>
+        <a href="/calendar/sample-story" class="preview-card" data-type="stories">
+          <div class="preview-card-media feature"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow">Coach's notebook</p>
+            <h3 class="preview-card-title">Reading the Bay: a coach's guide for the first season</h3>
+            <p class="preview-card-meta">By Raul Ramos · 2026</p>
+          </div>
+        </a>
+        <a href="/calendar/sample-story" class="preview-card" data-type="stories">
+          <div class="preview-card-media"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow">Program news</p>
+            <h3 class="preview-card-title">2026 schedule: registration opens for adult cohorts</h3>
+            <p class="preview-card-meta">Adult Sailing · By Rosa Lamela</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calendar in PDF -->
+  <section class="panel grey">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <p class="section-eyebrow">Full season at a glance</p>
+          <h2 class="section-headline">The 2026 sailing year, on one page.</h2>
+          <p>Race Team families and Adult Sailing cohorts — print the full season calendar. Updated as dates firm up; current version posted as a downloadable PDF below.</p>
+        </div>
+        <div class="cta-banner-action">
+          <a href="#" class="btn-light">Download (PDF) →</a>
+          <span class="tbd">PDF generation: Phase 2</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -108,5 +211,6 @@
     <a href="/contact" class="drawer-cta" data-drawer-link>Visit / Inquire →</a>
   </div>
   <script src="/js/site.js" defer></script>
+  <script src="/js/pages/calendar.js" defer></script>
 </body>
 </html>
