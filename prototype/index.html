@@ -42,7 +42,7 @@
     </div>
   </header>
 
-  <!-- Hero (Home keeps full hero with video; Phase C rebuilds the body below) -->
+  <!-- Hero (full, with video) -->
   <section class="hero" aria-labelledby="hero-h">
     <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/hero-poster.jpg" aria-hidden="true">
       <source src="/assets/hero.mp4" type="video/mp4" />
@@ -67,26 +67,205 @@
     </div>
   </section>
 
-  <!-- Phase A skeleton — Phase C populates the home body -->
-  <section class="phase-placeholder">
+  <!-- Programs · 3-up linking out -->
+  <section class="panel">
     <div class="container">
-      <p class="placeholder-tag">Phase A skeleton</p>
-      <h2 class="placeholder-h">Home body — Phase C</h2>
-      <p class="placeholder-sub">
-        The hero above lifts from the v1 prototype. Phase C revises the home against the new IA:
-        3 program cards (not 5), Pathway moves to <code>/programs/race-team</code>, sections link out
-        to interior pages instead of expanding inline. See <code>MOCKUPS_PRD.md</code> for the spec.
-      </p>
-      <ul class="ref-list">
-        <li><b>Programs</b><a href="/programs">/programs</a> — landing</li>
-        <li><b>Adult Sailing</b><a href="/programs/adult-sailing">/programs/adult-sailing</a></li>
-        <li><b>Race Team</b><a href="/programs/race-team">/programs/race-team</a></li>
-        <li><b>Camps & Coaching</b><a href="/programs/camps-coaching">/programs/camps-coaching</a></li>
-        <li><b>About</b><a href="/about">/about</a></li>
-        <li><b>Calendar</b><a href="/calendar">/calendar</a></li>
-        <li><b>Contact</b><a href="/contact">/contact</a></li>
-        <li><b>Marketplace</b><a href="/marketplace">/marketplace</a></li>
-      </ul>
+      <p class="section-eyebrow">Programs</p>
+      <h2 class="section-headline">Three ways to sail with us.</h2>
+      <p class="section-sub">From a first time on the water to international competition — three programs cover every level of the CGSC pathway, taught by the same coaches, on the same Bay.</p>
+
+      <div class="program-cards-grid">
+        <a href="/programs/adult-sailing" class="program-card">
+          <div class="program-card-media adult"></div>
+          <div class="program-card-body">
+            <p class="program-card-eyebrow">Program</p>
+            <h3 class="program-card-title">Adult Sailing</h3>
+            <p class="program-card-line">Get on the water, build the skill, no racing required. The parallel adult track.</p>
+            <span class="program-card-cta">Explore →</span>
+          </div>
+        </a>
+
+        <a href="/programs/race-team" class="program-card">
+          <div class="program-card-media race"></div>
+          <div class="program-card-body">
+            <p class="program-card-eyebrow">Program · The new chapter</p>
+            <h3 class="program-card-title">Race Team</h3>
+            <p class="program-card-line">The competitive pipeline — junior to high performance. Director-led by Maru Urban.</p>
+            <span class="program-card-cta">Explore →</span>
+          </div>
+        </a>
+
+        <a href="/programs/camps-coaching" class="program-card">
+          <div class="program-card-media camps"></div>
+          <div class="program-card-body">
+            <p class="program-card-eyebrow">Program</p>
+            <h3 class="program-card-title">Camps &amp; Coaching</h3>
+            <p class="program-card-line">Seasonal camps, holiday clinics, private coaching. Year-round entry points.</p>
+            <span class="program-card-cta">Explore →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pathway preview · teases Race Team -->
+  <section class="panel grey">
+    <div class="container">
+      <div class="split-2col reverse">
+        <div class="split-2col-body">
+          <p class="section-eyebrow">The Pathway</p>
+          <h2 class="section-headline">Five rungs. One ladder.</h2>
+          <p class="intro-prose">
+            <b>Discover. Develop. Race. Compete. Perform.</b> Every CGSC sailor — whether they start at six
+            or sixty — sees the same ladder. The Race Team is the spine; the High Performance Center
+            is the apex.
+          </p>
+          <p class="intro-prose">
+            See where you'd start, where you'd be in three years, and where the ladder leads after that.
+          </p>
+          <p style="margin-top:24px;"><a href="/programs/race-team#pathway" class="btn-primary">Explore the Pathway →</a></p>
+        </div>
+        <div class="split-2col-media race accent-bracket"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About preview · 80 years -->
+  <section class="panel charcoal">
+    <div class="container">
+      <div class="split-2col">
+        <div class="split-2col-media aerial accent-bracket"></div>
+        <div class="split-2col-body">
+          <p class="section-eyebrow">About</p>
+          <h2 class="section-headline">Eighty years on Biscayne Bay.</h2>
+          <p class="intro-prose">
+            Founded in <b>1946</b> by Marshall Pollard, Wirth Monroe, Frank Kerdyk, and Jack Engle —
+            CGSC has been the training ground for South Florida sailors at every level for the better
+            part of a century.
+          </p>
+          <p class="intro-prose">
+            The Instructional Center is the next chapter. <b>The same standards, deeper coaching, a
+            broader ladder</b> — from first sail to Olympic campaign.
+          </p>
+          <p style="margin-top:24px;"><a href="/about" class="btn-light">Read the story →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaches preview -->
+  <section class="panel">
+    <div class="container">
+      <p class="section-eyebrow">The coaches</p>
+      <h2 class="section-headline">Directed by <em>Maru Urban</em>.</h2>
+      <p class="section-sub">The Instructional Center's coaching staff has seen every level of the sport — youth fleets, college nationals, World Sailing circuits, and Olympic campaigns. Continuity from first regatta to last is the point.</p>
+
+      <div class="coach-grid">
+        <div class="coach featured">
+          <div class="coach-portrait"></div>
+          <p class="coach-name">Maru Urban</p>
+          <p class="coach-role">Director · Sailing Performance &amp; Development</p>
+        </div>
+        <div class="coach">
+          <div class="coach-portrait"></div>
+          <p class="coach-name">Rosa Lamela</p>
+          <p class="coach-role">Director · Programs</p>
+        </div>
+        <div class="coach">
+          <div class="coach-portrait"></div>
+          <p class="coach-name">Raul Ramos</p>
+          <p class="coach-role">Coach</p>
+        </div>
+        <div class="coach">
+          <div class="coach-portrait"></div>
+          <p class="coach-name">Aish Nedunchezhiyan</p>
+          <p class="coach-role">Coach</p>
+        </div>
+        <div class="coach">
+          <div class="coach-portrait"></div>
+          <p class="coach-name">Luis "Kope" Novoa</p>
+          <p class="coach-role">Coach</p>
+        </div>
+        <div class="coach">
+          <div class="coach-portrait"></div>
+          <p class="coach-name">Orlando Gonzalez</p>
+          <p class="coach-role">Coach</p>
+        </div>
+      </div>
+
+      <p style="margin-top:32px;"><a href="/about#coaches" class="btn-primary">Meet the full team →</a></p>
+    </div>
+  </section>
+
+  <!-- Calendar preview · events + recent stories -->
+  <section class="panel grey">
+    <div class="container">
+      <p class="section-eyebrow">What's on the dock</p>
+      <h2 class="section-headline">Upcoming &amp; recent.</h2>
+      <p class="section-sub">Race results, open houses, and stories from the coaches. The Calendar is the one place to follow what's happening at CGSC.</p>
+
+      <div class="preview-grid">
+        <a href="/calendar" class="preview-card">
+          <div class="preview-card-media event"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow">Regatta · April 10–12</p>
+            <h3 class="preview-card-title">Don Q Rum Keg Snipe Regatta</h3>
+            <p class="preview-card-meta">2026 · Confirmed</p>
+          </div>
+        </a>
+        <a href="/calendar" class="preview-card">
+          <div class="preview-card-media"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow">Open House · <span class="tbd">Date TBD</span></p>
+            <h3 class="preview-card-title">Spring Discovery Week</h3>
+            <p class="preview-card-meta">Race Team · Bring the kid, sail a boat</p>
+          </div>
+        </a>
+        <a href="/calendar/sample-story" class="preview-card">
+          <div class="preview-card-media feature"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow">Feature</p>
+            <h3 class="preview-card-title">Maru Urban joins as Director of Sailing Performance</h3>
+            <p class="preview-card-meta">Story</p>
+          </div>
+        </a>
+        <a href="/calendar/sample-story" class="preview-card">
+          <div class="preview-card-media race"></div>
+          <div class="preview-card-body">
+            <p class="preview-card-eyebrow race">Race result</p>
+            <h3 class="preview-card-title">CGSC sailors finish top-5 in regional 420 series</h3>
+            <p class="preview-card-meta">Race Team</p>
+          </div>
+        </a>
+      </div>
+
+      <p style="margin-top:32px;"><a href="/calendar" class="btn-primary">See the full calendar →</a></p>
+    </div>
+  </section>
+
+  <!-- Marketplace teaser -->
+  <section class="panel">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <p class="section-eyebrow">Members only</p>
+          <h2 class="section-headline">The dock's bulletin board.</h2>
+          <p>Buy, sell, and trade used sailing gear with fellow CGSC members. No scams, no spam, no strangers — just members and the gear that's already on the Bay.</p>
+        </div>
+        <div class="cta-banner-action">
+          <a href="/marketplace" class="btn-light">Browse the marketplace →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final inquiry CTA -->
+  <section class="panel grey">
+    <div class="container" style="text-align:center;">
+      <p class="section-eyebrow" style="display:block; text-align:center;">Sail with us</p>
+      <h2 class="section-headline" style="max-width:none;">Drop by the dock or send a note.</h2>
+      <p class="section-sub" style="margin-left:auto; margin-right:auto;">We answer within two days. Open practices and discovery weeks happen regularly — there's no commitment to come see if it's a fit.</p>
+      <p style="margin-top:8px;"><a href="/contact" class="btn-primary">Visit / Inquire →</a></p>
     </div>
   </section>
 
@@ -155,11 +334,7 @@
         </div>
         <div class="footer-bottom">
           <span>© 2026 Coconut Grove Sailing Club Instructional Center · 2990 S. Bayshore Drive, Miami, FL 33133</span>
-          <div class="legal">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Accessibility</a>
-          </div>
+          <div class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Accessibility</a></div>
         </div>
       </div>
     </div>
@@ -170,15 +345,8 @@
   <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
     <div class="mobile-drawer-head">
       <div class="wordmark">
-        <svg class="pen" viewBox="0 0 56 32" aria-hidden="true">
-          <polygon points="0,0 56,16 0,32" fill="#fff"/>
-          <polygon points="3,4 49,16 3,28" fill="#1A3A8A"/>
-          <text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">CGSC</text>
-        </svg>
-        <span class="text">
-          <span class="top">Instructional Center</span>
-          <span class="bot">Coconut Grove · 1946</span>
-        </span>
+        <svg class="pen" viewBox="0 0 56 32" aria-hidden="true"><polygon points="0,0 56,16 0,32" fill="#fff"/><polygon points="3,4 49,16 3,28" fill="#1A3A8A"/><text x="9" y="20" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">CGSC</text></svg>
+        <span class="text"><span class="top">Instructional Center</span><span class="bot">Coconut Grove · 1946</span></span>
       </div>
       <button class="mobile-drawer-close" data-action="close-drawer" aria-label="Close menu" type="button">×</button>
     </div>
