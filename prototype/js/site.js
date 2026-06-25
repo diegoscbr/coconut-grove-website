@@ -87,8 +87,10 @@
   // Coaches without a photo keep the styled gradient placeholder.
   const COACH_PHOTOS = {
     'Maru Urban': '/assets/coaches/maru.jpg',
+    'Steve Mitchell': '/assets/coaches/steve.jpg',
     'Rosa Lamela': '/assets/coaches/rosa.jpg',
     'Orlando Gonzalez': '/assets/coaches/orlando.jpg',
+    'Lauren Simpson': '/assets/coaches/lauren.jpg',
   };
 
   document.querySelectorAll('.coach').forEach((card) => {

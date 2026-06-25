@@ -2137,3 +2137,47 @@
 /* Coach headshots with real photos (class applied by site.js) */
 .coach-portrait.has-photo { background-size: cover; background-position: center top; }
 .coach-portrait.has-photo::after { display: none; }
+
+/* Contact page — Instructional Center leadership contacts */
+.contact-people {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2.6vw, 30px);
+  margin-top: clamp(28px, 4vh, 44px);
+}
+.contact-person {
+  background: var(--white);
+  border-radius: 4px;
+  border-top: 3px solid var(--rust);
+  padding: 28px 26px 24px;
+  box-shadow: 0 2px 10px rgba(20, 42, 102, 0.08);
+}
+.contact-person .cp-role {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin: 0 0 6px;
+}
+.contact-person .cp-name {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: var(--letter-display);
+  color: var(--charcoal);
+  margin: 0 0 14px;
+}
+.contact-person .cp-line {
+  font-family: var(--body);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 4px 0;
+  color: var(--grey-700);
+}
+.contact-person .cp-line a { color: var(--charcoal); }
+.contact-person .cp-line a:hover { color: var(--rust); }
+@media (max-width: 768px) {
+  .contact-people { grid-template-columns: 1fr; }
+}
