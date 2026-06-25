@@ -643,6 +643,7 @@
   margin: 0 auto;
   padding: 0 var(--container-x);
   display: flex;
+  align-items: center;
   gap: 6px;
   overflow-x: auto;
   scrollbar-width: none;
@@ -2135,7 +2136,11 @@
 .program-card-media.camps { background-color: #4A8FCF; background-image: url("/assets/heroes/camps.jpg"); }
 
 /* Coach headshots with real photos (class applied by site.js) */
-.coach-portrait.has-photo { background-size: cover; background-position: center top; }
+/* .coach.featured .coach-portrait (3 classes) outranks a 2-class rule and its
+   `background` shorthand resets size/position — so match that specificity. */
+.coach-portrait.has-photo,
+.coach.featured .coach-portrait.has-photo { background-size: cover; background-position: center top; }
+.coach.featured .coach-portrait.has-photo { background-position: 22% center; }
 .coach-portrait.has-photo::after { display: none; }
 
 /* Contact page — Instructional Center leadership contacts */
