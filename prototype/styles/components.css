@@ -2093,3 +2093,47 @@
   .inquiry-form { grid-template-columns: 1fr; }
   .manifesto-line { font-size: clamp(36px, 11vw, 56px); }
 }
+
+/* ============================================================
+   Real content imagery — v1 photo pass (2026-06-24)
+   Layered last so photos override the gradient placeholders.
+   Each rule keeps a navy background-color fallback if a photo
+   fails to load. Overlays preserve text legibility + depth.
+   ============================================================ */
+
+/* Page hero banners — photo behind a dark navy wash so white headings stay legible */
+.hero-compact.has-hero-photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #142A66;
+}
+.hero-compact.hero-about     { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/about.jpg"); }
+.hero-compact.hero-programs  { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/programs.jpg"); }
+.hero-compact.hero-race-team { background-image: linear-gradient(180deg, rgba(10,18,44,0.72) 0%, rgba(10,18,44,0.86) 100%), url("/assets/heroes/race-team.jpg"); }
+.hero-compact.hero-camps     { background-image: linear-gradient(180deg, rgba(16,28,66,0.72) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/camps.jpg"); }
+.hero-compact.hero-calendar  { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/calendar.jpg"); }
+
+/* Split 2-col media — real photo, gradient as fallback color */
+.split-2col-media.aerial,
+.split-2col-media.race,
+.split-2col-media.coaches { background-size: cover; background-position: center; background-repeat: no-repeat; }
+.split-2col-media.aerial  { background-color: #1A3A8A; background-image: url("/assets/heroes/about.jpg"); }
+.split-2col-media.race    { background-color: #0F2660; background-image: url("/assets/pathway/race.jpg"); }
+.split-2col-media.coaches { background-color: #2A5179; background-image: url("/assets/methodology.jpg"); }
+/* swap the blue tint for a subtle bottom vignette now that real photos sit underneath */
+.split-2col-media.aerial::after,
+.split-2col-media.race::after,
+.split-2col-media.coaches::after { background: linear-gradient(180deg, transparent 55%, rgba(10,18,44,0.32) 100%); }
+
+/* Program cards */
+.program-card-media.adult,
+.program-card-media.race,
+.program-card-media.camps { background-size: cover; background-position: center; background-repeat: no-repeat; }
+.program-card-media.adult { background-color: #2A5179; background-image: url("/assets/heroes/programs.jpg"); }
+.program-card-media.race  { background-color: #0F2660; background-image: url("/assets/heroes/race-team.jpg"); }
+.program-card-media.camps { background-color: #4A8FCF; background-image: url("/assets/heroes/camps.jpg"); }
+
+/* Coach headshots with real photos (class applied by site.js) */
+.coach-portrait.has-photo { background-size: cover; background-position: center top; }
+.coach-portrait.has-photo::after { display: none; }

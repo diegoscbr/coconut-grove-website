@@ -80,4 +80,24 @@
       targets.forEach((el) => observer.observe(el));
     }
   }
+
+  // ---------- Coach headshots · apply real photos by name ----------
+  // Coach cards repeat across pages as identical markup, so we map the
+  // displayed name to a photo here rather than hand-editing every card.
+  // Coaches without a photo keep the styled gradient placeholder.
+  const COACH_PHOTOS = {
+    'Maru Urban': '/assets/coaches/maru.jpg',
+    'Rosa Lamela': '/assets/coaches/rosa.jpg',
+    'Orlando Gonzalez': '/assets/coaches/orlando.jpg',
+  };
+
+  document.querySelectorAll('.coach').forEach((card) => {
+    const nameEl = card.querySelector('.coach-name');
+    const portrait = card.querySelector('.coach-portrait');
+    if (!nameEl || !portrait) return;
+    const photo = COACH_PHOTOS[nameEl.textContent.trim()];
+    if (!photo) return;
+    portrait.classList.add('has-photo');
+    portrait.style.backgroundImage = `url("${photo}")`;
+  });
 })();
