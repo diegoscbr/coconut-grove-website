@@ -60,7 +60,9 @@
 }
 
 .wordmark { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.wordmark .pen { width: 36px; height: 22px; }
+/* Official CGSC burgee (img) sits on navy chrome, so give it a white badge */
+.pen { background: #fff; border-radius: 5px; padding: 4px 6px; box-sizing: border-box; object-fit: contain; display: block; }
+.wordmark .pen { width: 48px; height: 32px; }
 .wordmark .text { display: flex; flex-direction: column; line-height: 1; }
 .wordmark .top {
   font-family: var(--display);
@@ -497,7 +499,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 .footer-mark { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
-.footer-mark .pen { width: 56px; height: 32px; }
+.footer-mark .pen { width: 68px; height: 46px; }
 .footer-mark .top {
   font-family: var(--display);
   font-weight: 800;
