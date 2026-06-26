@@ -5,9 +5,9 @@
    ========================================================================== */
 
 :root {
-  /* Color · §5 */
-  --navy: #1A3A8A;
-  --navy-deep: #142A66;
+  /* Color · §5 — navy sampled from the official CGSC burgee (2026-06-25) */
+  --navy: #0C0969;
+  --navy-deep: #07053F;
   --light-blue: #4A8FCF;
   --light-blue-soft: #B5C7E8;
   --rust: #FF8B5E;

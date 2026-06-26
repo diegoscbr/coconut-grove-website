@@ -41,12 +41,12 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--navy);
-  color: var(--white);
+  background: var(--white);
+  color: var(--navy);
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(12, 9, 105, 0.10);
 }
 .topnav-inner {
   width: 100%;
@@ -60,9 +60,11 @@
 }
 
 .wordmark { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-/* Official CGSC burgee (img) sits on navy chrome, so give it a white badge */
+/* Official CGSC burgee (img). On navy chrome (footer, mobile drawer) it gets a
+   white badge; in the white header it sits directly on white. */
 .pen { background: #fff; border-radius: 5px; padding: 4px 6px; box-sizing: border-box; object-fit: contain; display: block; }
 .wordmark .pen { width: 48px; height: 32px; }
+.topnav .pen { background: none; padding: 0; }
 .wordmark .text { display: flex; flex-direction: column; line-height: 1; }
 .wordmark .top {
   font-family: var(--display);
@@ -81,6 +83,9 @@
   color: var(--light-blue-soft);
   margin-top: 4px;
 }
+/* White header overrides (drawer wordmark stays light on navy) */
+.topnav .wordmark .top { color: var(--navy); }
+.topnav .wordmark .bot { color: var(--grey-500); }
 
 .topnav-links { display: flex; gap: 26px; align-items: center; }
 .topnav-links a {
@@ -89,8 +94,8 @@
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--white);
-  opacity: 0.85;
+  color: var(--navy);
+  opacity: 0.78;
   position: relative;
   padding: 6px 0;
 }
@@ -118,7 +123,7 @@
   justify-content: center;
   background: transparent;
   border: 0;
-  color: var(--white);
+  color: var(--navy);
 }
 .topnav-burger span,
 .topnav-burger span::before,
@@ -126,7 +131,7 @@
   display: block;
   width: 22px;
   height: 1.5px;
-  background: var(--white);
+  background: var(--navy);
   position: relative;
 }
 .topnav-burger span::before,
@@ -144,7 +149,7 @@
   min-height: calc(100vh - var(--nav-h));
   background:
     radial-gradient(ellipse at 70% 85%, rgba(255, 139, 94, 0.18) 0%, transparent 55%),
-    linear-gradient(180deg, #B5C7E8 0%, #4A8FCF 38%, #1A3A8A 78%, #142A66 100%);
+    linear-gradient(180deg, #B5C7E8 0%, #4A8FCF 38%, #0C0969 78%, #07053F 100%);
   color: var(--white);
   overflow: hidden;
   isolation: isolate;
@@ -165,10 +170,10 @@
   inset: 0;
   background:
     linear-gradient(180deg,
-      rgba(20, 42, 102, 0.30) 0%,
+      rgba(12, 9, 105, 0.30) 0%,
       rgba(26, 58, 138, 0.25) 35%,
-      rgba(20, 42, 102, 0.65) 90%,
-      rgba(20, 42, 102, 0.85) 100%),
+      rgba(12, 9, 105, 0.65) 90%,
+      rgba(12, 9, 105, 0.85) 100%),
     linear-gradient(90deg,
       rgba(0, 0, 0, 0.35) 0%,
       rgba(0, 0, 0, 0.10) 50%,
@@ -270,7 +275,7 @@
 /* Compact hero — interior pages (Mouratoglou pattern: smaller, no video) */
 .hero-compact {
   position: relative;
-  background: linear-gradient(180deg, #1A3A8A 0%, #142A66 100%);
+  background: linear-gradient(180deg, #0C0969 0%, #07053F 100%);
   color: var(--white);
   padding: clamp(72px, 12vh, 128px) 0 clamp(56px, 9vh, 96px);
   overflow: hidden;
@@ -416,7 +421,7 @@
 
 .footer-newsletter {
   position: relative;
-  background: linear-gradient(135deg, #1A3A8A 0%, #142A66 100%);
+  background: linear-gradient(135deg, #0C0969 0%, #07053F 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   padding: 64px 0;
 }
@@ -708,13 +713,13 @@
 .split-2col-media {
   aspect-ratio: 4 / 3;
   border-radius: 4px;
-  background: linear-gradient(135deg, #4A8FCF 0%, #1A3A8A 70%, #142A66 100%);
+  background: linear-gradient(135deg, #4A8FCF 0%, #0C0969 70%, #07053F 100%);
   position: relative;
   overflow: hidden;
 }
-.split-2col-media.aerial { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 35%, #1A3A8A 80%, #142A66 110%); }
-.split-2col-media.race   { background: linear-gradient(135deg, #1A3A8A 0%, #0F2660 60%, #050B22 100%); }
-.split-2col-media.coaches{ background: linear-gradient(135deg, #6EA3C5 0%, #2A5179 60%, #1A3A8A 100%); }
+.split-2col-media.aerial { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 35%, #0C0969 80%, #07053F 110%); }
+.split-2col-media.race   { background: linear-gradient(135deg, #0C0969 0%, #0F2660 60%, #050B22 100%); }
+.split-2col-media.coaches{ background: linear-gradient(135deg, #6EA3C5 0%, #2A5179 60%, #0C0969 100%); }
 .split-2col-media::after {
   content: "";
   position: absolute;
@@ -890,7 +895,7 @@
   margin-bottom: 22px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #1A3A8A 0%, #0F2660 60%, #050B22 100%);
+  background: linear-gradient(135deg, #0C0969 0%, #0F2660 60%, #050B22 100%);
 }
 .pathway-detail-img::after {
   content: "";
@@ -959,7 +964,7 @@
   aspect-ratio: 1;
   width: 88%;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4A8FCF 0%, #1A3A8A 80%);
+  background: linear-gradient(135deg, #4A8FCF 0%, #0C0969 80%);
   margin: 0 0 14px;
   position: relative;
 }
@@ -971,7 +976,7 @@
   background: radial-gradient(ellipse at 50% 30%, rgba(74,143,207,0.45) 0%, transparent 60%);
 }
 .coach.featured .coach-portrait {
-  background: linear-gradient(135deg, #4A8FCF 0%, #1A3A8A 60%, rgba(255,139,94,0.4) 200%);
+  background: linear-gradient(135deg, #4A8FCF 0%, #0C0969 60%, rgba(255,139,94,0.4) 200%);
   box-shadow: 0 0 0 3px var(--rust);
 }
 .coach-name {
@@ -1386,9 +1391,9 @@
   inset: 0;
   background: radial-gradient(ellipse at 70% 70%, rgba(255, 139, 94, 0.18) 0%, transparent 55%);
 }
-.program-card-media.adult  { background: linear-gradient(135deg, #6EA3C5 0%, #2A5179 60%, #1A3A8A 100%); }
-.program-card-media.race   { background: linear-gradient(135deg, #1A3A8A 0%, #0F2660 60%, #050B22 100%); }
-.program-card-media.camps  { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #1A3A8A 110%); }
+.program-card-media.adult  { background: linear-gradient(135deg, #6EA3C5 0%, #2A5179 60%, #0C0969 100%); }
+.program-card-media.race   { background: linear-gradient(135deg, #0C0969 0%, #0F2660 60%, #050B22 100%); }
+.program-card-media.camps  { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #0C0969 110%); }
 .program-card-body {
   padding: 24px 24px 22px;
   display: flex;
@@ -1456,10 +1461,10 @@
 .preview-card:hover { border-color: var(--navy); box-shadow: var(--shadow-card); transform: translateY(-2px); }
 .preview-card-media {
   aspect-ratio: 16 / 10;
-  background: linear-gradient(135deg, #6EA3C5 0%, #1A3A8A 80%);
+  background: linear-gradient(135deg, #6EA3C5 0%, #0C0969 80%);
 }
-.preview-card-media.race    { background: linear-gradient(135deg, #1A3A8A 0%, #0F2660 60%, #050B22 100%); }
-.preview-card-media.feature { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #1A3A8A 110%); }
+.preview-card-media.race    { background: linear-gradient(135deg, #0C0969 0%, #0F2660 60%, #050B22 100%); }
+.preview-card-media.feature { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #0C0969 110%); }
 .preview-card-media.event   { background: linear-gradient(135deg, #f5d090 0%, #FF8B5E 50%, #c46b3a 100%); }
 .preview-card-body {
   padding: 18px 18px 20px;
@@ -1765,7 +1770,7 @@
 .article-lead-img {
   aspect-ratio: 16 / 9;
   border-radius: 4px;
-  background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #1A3A8A 110%);
+  background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #0C0969 110%);
   margin: 0 0 32px;
   position: relative;
   overflow: hidden;
@@ -1926,7 +1931,7 @@
 .listing-gallery .main-img {
   aspect-ratio: 4 / 3;
   border-radius: 4px;
-  background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #1A3A8A 110%);
+  background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #0C0969 110%);
   position: relative;
   overflow: hidden;
 }
@@ -1944,7 +1949,7 @@
 .listing-gallery .thumb {
   aspect-ratio: 1;
   border-radius: 3px;
-  background: linear-gradient(135deg, #6EA3C5 0%, #2A5179 70%, #1A3A8A 110%);
+  background: linear-gradient(135deg, #6EA3C5 0%, #2A5179 70%, #0C0969 110%);
   cursor: pointer;
   border: 2px solid transparent;
   transition: border-color 0.15s;
@@ -2109,7 +2114,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #142A66;
+  background-color: #07053F;
 }
 .hero-compact.hero-about     { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/about.jpg"); }
 .hero-compact.hero-programs  { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/programs.jpg"); }
@@ -2122,7 +2127,7 @@
 .split-2col-media.aerial,
 .split-2col-media.race,
 .split-2col-media.coaches { background-size: cover; background-position: center; background-repeat: no-repeat; }
-.split-2col-media.aerial  { background-color: #1A3A8A; background-image: url("/assets/heroes/about.jpg"); }
+.split-2col-media.aerial  { background-color: #0C0969; background-image: url("/assets/heroes/about.jpg"); }
 .split-2col-media.aerial.bayview { background-image: url("/assets/heroes/calendar.jpg"); }
 .split-2col-media.race    { background-color: #0F2660; background-image: url("/assets/pathway/race.jpg"); }
 .split-2col-media.coaches { background-color: #2A5179; background-image: url("/assets/methodology.jpg"); }
@@ -2159,13 +2164,13 @@
   border-radius: 4px;
   border-top: 3px solid var(--rust);
   padding: 28px 26px 24px;
-  box-shadow: 0 2px 10px rgba(20, 42, 102, 0.08);
+  box-shadow: 0 2px 10px rgba(12, 9, 105, 0.08);
 }
 .contact-person .cp-photo {
   width: 84px;
   aspect-ratio: 1;
   border-radius: 4px;
-  background-color: #1A3A8A;
+  background-color: #0C0969;
   background-size: cover;
   background-position: center top;
   margin: 0 0 18px;
@@ -2213,12 +2218,12 @@
   background: var(--white);
   border-radius: 4px;
   border-top: 3px solid var(--rust);
-  box-shadow: 0 2px 10px rgba(20, 42, 102, 0.08);
+  box-shadow: 0 2px 10px rgba(12, 9, 105, 0.08);
   overflow: hidden;
 }
 .course-card-media {
   aspect-ratio: 16 / 10;
-  background-color: #1A3A8A;
+  background-color: #0C0969;
   background-size: cover;
   background-position: center;
 }
@@ -2246,7 +2251,7 @@
 }
 .course-meta {
   margin: auto 0 0;
-  border-top: 1px solid rgba(20, 42, 102, 0.10);
+  border-top: 1px solid rgba(12, 9, 105, 0.10);
   padding-top: 14px;
   display: grid;
   gap: 9px;
