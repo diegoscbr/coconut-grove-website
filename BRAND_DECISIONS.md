@@ -91,7 +91,7 @@ Combines D's territorial frame with C's heritage→now arc as a temporal layer.
 
 | Role | Hex | Notes |
 |---|---|---|
-| Primary navy | `#1A3A8A` | Carried forward from CGSC parent club |
+| Primary navy | `#0C0969` | Sampled from the official CGSC burgee (2026-06-25); replaces earlier `#1A3A8A` |
 | Light blue | `#4A8FCF` | Secondary, parent-club continuity |
 | White | `#FFFFFF` | Base |
 | Warm rust accent | `#FF8B5E` | Italic-only; "new chapter" beat |
@@ -310,9 +310,9 @@ The entity is the **Coconut Grove Sailing Club Instructional Center** (cgscic.or
 
 ---
 
-## 15 · Top nav · A · Solid navy bar
+## 15 · Top nav · A · White bar
 
-Always-on solid navy bar across every page. Sticky on scroll.
+Always-on white bar across every page, sticky on scroll (updated 2026-06-25 from the original solid-navy bar). The official navy burgee sits directly on white; wordmark, nav links, and hamburger are navy; "Visit / Inquire" stays a rust CTA. The footer and mobile drawer remain navy (burgee shown on a white badge there).
 
 **Layout** (left → right):
 - Wordmark · pennant + "Instructional Center" + "Coconut Grove · 1946" sub-mark
