@@ -15,6 +15,16 @@
   color: var(--navy);
   margin: 0 0 14px;
 }
+/* Small leading rule — matches the eyebrow color (navy on light, rust on dark) */
+.section-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  vertical-align: middle;
+  margin: -2px 10px 0 0;
+}
 .section-headline {
   font-family: var(--display);
   font-weight: 800;
@@ -149,7 +159,7 @@
   min-height: calc(100vh - var(--nav-h));
   background:
     radial-gradient(ellipse at 70% 85%, rgba(255, 139, 94, 0.18) 0%, transparent 55%),
-    linear-gradient(180deg, #B5C7E8 0%, #4A8FCF 38%, #0C0969 78%, #07053F 100%);
+    linear-gradient(180deg, #B7B5E8 0%, #4E4ACF 38%, #0C0969 78%, #07053F 100%);
   color: var(--white);
   overflow: hidden;
   isolation: isolate;
@@ -671,7 +681,7 @@
 }
 .page-subnav a:hover { color: var(--charcoal); }
 .page-subnav a.active {
-  background: var(--charcoal);
+  background: var(--navy);
   color: var(--white);
   padding: 10px 16px;
 }
@@ -713,13 +723,13 @@
 .split-2col-media {
   aspect-ratio: 4 / 3;
   border-radius: 4px;
-  background: linear-gradient(135deg, #4A8FCF 0%, #0C0969 70%, #07053F 100%);
+  background: linear-gradient(135deg, #4E4ACF 0%, #0C0969 70%, #07053F 100%);
   position: relative;
   overflow: hidden;
 }
-.split-2col-media.aerial { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 35%, #0C0969 80%, #07053F 110%); }
-.split-2col-media.race   { background: linear-gradient(135deg, #0C0969 0%, #0F2660 60%, #050B22 100%); }
-.split-2col-media.coaches{ background: linear-gradient(135deg, #6EA3C5 0%, #2A5179 60%, #0C0969 100%); }
+.split-2col-media.aerial { background: linear-gradient(135deg, #B7B5E8 0%, #4E4ACF 35%, #0C0969 80%, #07053F 110%); }
+.split-2col-media.race   { background: linear-gradient(135deg, #0C0969 0%, #120F60 60%, #060522 100%); }
+.split-2col-media.coaches{ background: linear-gradient(135deg, #6F6CC7 0%, #2C2A79 60%, #0C0969 100%); }
 .split-2col-media::after {
   content: "";
   position: absolute;
@@ -744,6 +754,17 @@
   color: var(--charcoal);
   font-weight: 700;
 }
+/* Body links carry the burgee blue, hover to rust */
+.intro-prose a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(12, 9, 105, 0.35);
+}
+.intro-prose a:hover { color: var(--rust); text-decoration-color: var(--rust); }
+.panel.dark .intro-prose a, .panel.charcoal .intro-prose a { color: var(--light-blue-soft); text-decoration-color: rgba(183, 181, 232, 0.4); }
+.panel.dark .intro-prose a:hover, .panel.charcoal .intro-prose a:hover { color: var(--rust); text-decoration-color: var(--rust); }
 .panel.dark .intro-prose, .panel.charcoal .intro-prose { color: rgba(255, 255, 255, 0.88); }
 .panel.dark .intro-prose b, .panel.charcoal .intro-prose b { color: var(--rust); }
 
@@ -895,7 +916,7 @@
   margin-bottom: 22px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #0C0969 0%, #0F2660 60%, #050B22 100%);
+  background: linear-gradient(135deg, #0C0969 0%, #120F60 60%, #060522 100%);
 }
 .pathway-detail-img::after {
   content: "";
@@ -964,7 +985,7 @@
   aspect-ratio: 1;
   width: 88%;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4A8FCF 0%, #0C0969 80%);
+  background: linear-gradient(135deg, #4E4ACF 0%, #0C0969 80%);
   margin: 0 0 14px;
   position: relative;
 }
@@ -976,7 +997,7 @@
   background: radial-gradient(ellipse at 50% 30%, rgba(74,143,207,0.45) 0%, transparent 60%);
 }
 .coach.featured .coach-portrait {
-  background: linear-gradient(135deg, #4A8FCF 0%, #0C0969 60%, rgba(255,139,94,0.4) 200%);
+  background: linear-gradient(135deg, #4E4ACF 0%, #0C0969 60%, rgba(255,139,94,0.4) 200%);
   box-shadow: 0 0 0 3px var(--rust);
 }
 .coach-name {
@@ -1391,9 +1412,9 @@
   inset: 0;
   background: radial-gradient(ellipse at 70% 70%, rgba(255, 139, 94, 0.18) 0%, transparent 55%);
 }
-.program-card-media.adult  { background: linear-gradient(135deg, #6EA3C5 0%, #2A5179 60%, #0C0969 100%); }
-.program-card-media.race   { background: linear-gradient(135deg, #0C0969 0%, #0F2660 60%, #050B22 100%); }
-.program-card-media.camps  { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #0C0969 110%); }
+.program-card-media.adult  { background: linear-gradient(135deg, #6F6CC7 0%, #2C2A79 60%, #0C0969 100%); }
+.program-card-media.race   { background: linear-gradient(135deg, #0C0969 0%, #120F60 60%, #060522 100%); }
+.program-card-media.camps  { background: linear-gradient(135deg, #B7B5E8 0%, #4E4ACF 50%, #0C0969 110%); }
 .program-card-body {
   padding: 24px 24px 22px;
   display: flex;
@@ -1461,10 +1482,10 @@
 .preview-card:hover { border-color: var(--navy); box-shadow: var(--shadow-card); transform: translateY(-2px); }
 .preview-card-media {
   aspect-ratio: 16 / 10;
-  background: linear-gradient(135deg, #6EA3C5 0%, #0C0969 80%);
+  background: linear-gradient(135deg, #6F6CC7 0%, #0C0969 80%);
 }
-.preview-card-media.race    { background: linear-gradient(135deg, #0C0969 0%, #0F2660 60%, #050B22 100%); }
-.preview-card-media.feature { background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #0C0969 110%); }
+.preview-card-media.race    { background: linear-gradient(135deg, #0C0969 0%, #120F60 60%, #060522 100%); }
+.preview-card-media.feature { background: linear-gradient(135deg, #B7B5E8 0%, #4E4ACF 50%, #0C0969 110%); }
 .preview-card-media.event   { background: linear-gradient(135deg, #f5d090 0%, #FF8B5E 50%, #c46b3a 100%); }
 .preview-card-body {
   padding: 18px 18px 20px;
@@ -1770,7 +1791,7 @@
 .article-lead-img {
   aspect-ratio: 16 / 9;
   border-radius: 4px;
-  background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #0C0969 110%);
+  background: linear-gradient(135deg, #B7B5E8 0%, #4E4ACF 50%, #0C0969 110%);
   margin: 0 0 32px;
   position: relative;
   overflow: hidden;
@@ -1931,7 +1952,7 @@
 .listing-gallery .main-img {
   aspect-ratio: 4 / 3;
   border-radius: 4px;
-  background: linear-gradient(135deg, #B5C7E8 0%, #4A8FCF 50%, #0C0969 110%);
+  background: linear-gradient(135deg, #B7B5E8 0%, #4E4ACF 50%, #0C0969 110%);
   position: relative;
   overflow: hidden;
 }
@@ -1949,7 +1970,7 @@
 .listing-gallery .thumb {
   aspect-ratio: 1;
   border-radius: 3px;
-  background: linear-gradient(135deg, #6EA3C5 0%, #2A5179 70%, #0C0969 110%);
+  background: linear-gradient(135deg, #6F6CC7 0%, #2C2A79 70%, #0C0969 110%);
   cursor: pointer;
   border: 2px solid transparent;
   transition: border-color 0.15s;
@@ -2129,8 +2150,8 @@
 .split-2col-media.coaches { background-size: cover; background-position: center; background-repeat: no-repeat; }
 .split-2col-media.aerial  { background-color: #0C0969; background-image: url("/assets/heroes/about.jpg"); }
 .split-2col-media.aerial.bayview { background-image: url("/assets/heroes/calendar.jpg"); }
-.split-2col-media.race    { background-color: #0F2660; background-image: url("/assets/pathway/race.jpg"); }
-.split-2col-media.coaches { background-color: #2A5179; background-image: url("/assets/methodology.jpg"); }
+.split-2col-media.race    { background-color: #120F60; background-image: url("/assets/pathway/race.jpg"); }
+.split-2col-media.coaches { background-color: #2C2A79; background-image: url("/assets/methodology.jpg"); }
 /* swap the blue tint for a subtle bottom vignette now that real photos sit underneath */
 .split-2col-media.aerial::after,
 .split-2col-media.race::after,
@@ -2140,9 +2161,9 @@
 .program-card-media.adult,
 .program-card-media.race,
 .program-card-media.camps { background-size: cover; background-position: center; background-repeat: no-repeat; }
-.program-card-media.adult { background-color: #2A5179; background-image: url("/assets/heroes/adult.jpg"); }
-.program-card-media.race  { background-color: #0F2660; background-image: url("/assets/heroes/race-team.jpg"); }
-.program-card-media.camps { background-color: #4A8FCF; background-image: url("/assets/heroes/camps.jpg"); }
+.program-card-media.adult { background-color: #2C2A79; background-image: url("/assets/heroes/adult.jpg"); }
+.program-card-media.race  { background-color: #120F60; background-image: url("/assets/heroes/race-team.jpg"); }
+.program-card-media.camps { background-color: #4E4ACF; background-image: url("/assets/heroes/camps.jpg"); }
 
 /* Coach headshots with real photos (class applied by site.js) */
 /* .coach.featured .coach-portrait (3 classes) outranks a 2-class rule and its
