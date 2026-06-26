@@ -70,11 +70,10 @@
 }
 
 .wordmark { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-/* Official CGSC burgee (img). On navy chrome (footer, mobile drawer) it gets a
-   white badge; in the white header it sits directly on white. */
-.pen { background: #fff; border-radius: 5px; padding: 4px 6px; box-sizing: border-box; object-fit: contain; display: block; }
+/* Official CGSC burgee (img) — chrome is light everywhere now, so it sits
+   directly on white with no badge. */
+.pen { object-fit: contain; display: block; }
 .wordmark .pen { width: 48px; height: 32px; }
-.topnav .pen { background: none; padding: 0; }
 .wordmark .text { display: flex; flex-direction: column; line-height: 1; }
 .wordmark .top {
   font-family: var(--display);
@@ -82,7 +81,7 @@
   font-size: 13px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--navy);
 }
 .wordmark .bot {
   font-family: var(--body);
@@ -90,12 +89,9 @@
   font-size: 9px;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--light-blue-soft);
+  color: var(--grey-500);
   margin-top: 4px;
 }
-/* White header overrides (drawer wordmark stays light on navy) */
-.topnav .wordmark .top { color: var(--navy); }
-.topnav .wordmark .bot { color: var(--grey-500); }
 
 .topnav-links { display: flex; gap: 26px; align-items: center; }
 .topnav-links a {
@@ -427,12 +423,12 @@
    Footer · newsletter band + sitemap
    -------------------------------------------------------------------------- */
 
-.site-footer { background: var(--navy); color: var(--white); }
+.site-footer { background: var(--white); color: var(--charcoal); }
 
 .footer-newsletter {
   position: relative;
-  background: linear-gradient(135deg, #0C0969 0%, #07053F 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--grey-100);
+  border-bottom: 1px solid rgba(12, 9, 105, 0.10);
   padding: 64px 0;
 }
 .footer-newsletter::before {
@@ -463,13 +459,13 @@
   font-size: clamp(24px, 3vw, 32px);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--white);
+  color: var(--charcoal);
   margin: 0 0 8px;
 }
 .footer-news-h em { font-style: italic; color: var(--rust); font-weight: 500; }
 .footer-news-sub {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--grey-700);
   line-height: 1.6;
   margin: 0;
   max-width: 520px;
@@ -478,23 +474,23 @@
 .footer-news-form input {
   flex: 1;
   padding: 14px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--white);
+  border: 1px solid rgba(12, 9, 105, 0.25);
+  background: var(--white);
+  color: var(--charcoal);
   border-radius: 2px;
   font-family: var(--body);
   font-size: 14px;
 }
-.footer-news-form input::placeholder { color: rgba(255, 255, 255, 0.55); }
+.footer-news-form input::placeholder { color: var(--grey-500); }
 .footer-news-form input:focus {
   outline: 0;
   border-color: var(--rust);
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--white);
 }
 .footer-news-form button {
   padding: 14px 26px;
-  background: var(--white);
-  color: var(--navy);
+  background: var(--navy);
+  color: var(--white);
   border: 0;
   font-family: var(--body);
   font-weight: 700;
@@ -511,7 +507,7 @@
   grid-template-columns: 1.4fr repeat(4, 1fr);
   gap: 32px;
   padding-bottom: 32px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(12, 9, 105, 0.12);
 }
 .footer-mark { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 .footer-mark .pen { width: 68px; height: 46px; }
@@ -521,7 +517,7 @@
   font-size: 14px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--navy);
   margin-top: 4px;
 }
 .footer-mark .bot {
@@ -530,7 +526,7 @@
   font-size: 9px;
   letter-spacing: 0.36em;
   text-transform: uppercase;
-  color: var(--light-blue-soft);
+  color: var(--grey-500);
   margin-top: 4px;
 }
 .footer-col h6 {
@@ -546,7 +542,7 @@
 .footer-col li {
   padding: 5px 0;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--grey-700);
 }
 .footer-col li a:hover { color: var(--rust); }
 .footer-bottom {
@@ -559,7 +555,7 @@
   font-family: var(--body);
   font-size: 11px;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--grey-500);
 }
 .footer-bottom .legal { display: flex; gap: 16px; }
 .footer-bottom a:hover { color: var(--rust); }
@@ -590,8 +586,8 @@
   position: fixed;
   inset: 0;
   z-index: 70;
-  background: var(--navy);
-  color: var(--white);
+  background: var(--white);
+  color: var(--charcoal);
   padding: 24px var(--container-x);
   flex-direction: column;
 }
@@ -606,7 +602,7 @@
 .mobile-drawer-close {
   background: transparent;
   border: 0;
-  color: var(--white);
+  color: var(--navy);
   width: 40px;
   height: 40px;
   font-size: 28px;
@@ -624,9 +620,9 @@
   font-size: 28px;
   letter-spacing: -0.01em;
   text-transform: none;
-  color: var(--white);
+  color: var(--charcoal);
   padding: 16px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(12, 9, 105, 0.1);
 }
 .mobile-drawer .drawer-cta {
   background: var(--rust);
