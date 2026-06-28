@@ -41,10 +41,6 @@ prototype/
 │   ├── index.html                Events + news combined
 │   └── sample-story.html         Story detail template
 ├── contact.html
-├── marketplace/
-│   ├── index.html
-│   ├── listing.html              Listing detail template
-│   └── post.html                 Post-item form
 ├── assets/                       hero video, poster, pennant SVG
 ├── styles/
 │   ├── tokens.css                design-system core (colors, type, spacing)
@@ -66,7 +62,7 @@ prototype/
 | D | Programs landing + Adult Sailing + Camps & Coaching | ✅ |
 | E | About + Calendar + story detail | ✅ |
 | F | Contact | ✅ |
-| G | Marketplace × 3 | ✅ |
+| G | Marketplace × 3 | ⏸️ Deferred to Stage 2 — removed 2026-06-28 |
 | H | Polish + BRAND_DECISIONS.md v1.1 + link audit | ✅ |
 
 **Build complete — 2026-05-31.** Zero broken internal links across the 12 page templates. Ready for Phase 2 (Next.js + Sanity + Resend) conversation per `../HANDOFF.md`, informed by the mockup component library.
