@@ -1918,6 +1918,7 @@
 .hero-compact.hero-camps     { background-image: linear-gradient(180deg, rgba(16,28,66,0.72) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/camps.jpg"); }
 .hero-compact.hero-calendar  { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/calendar.jpg"); }
 .hero-compact.hero-adult     { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/adult.jpg"); }
+.hero-compact.hero-contact   { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/contact.jpg"); }
 
 /* Split 2-col media — real photo, gradient as fallback color */
 .split-2col-media.aerial,
