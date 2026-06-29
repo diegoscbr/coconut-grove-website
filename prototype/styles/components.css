@@ -108,6 +108,70 @@
 .topnav-links a:hover { opacity: 1; }
 .topnav-links a.active { opacity: 1; border-bottom: 2px solid var(--rust); }
 
+/* Header dropdowns (Programs, About) */
+.topnav-links .nav-item { position: relative; display: flex; align-items: center; }
+.topnav-links .nav-item > a { display: inline-flex; align-items: center; gap: 6px; }
+.topnav-links .nav-item > a::after {
+  content: "";
+  width: 5px; height: 5px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  opacity: 0.55;
+  transition: transform 0.16s ease;
+}
+.topnav-links .nav-item:hover > a::after,
+.topnav-links .nav-item:focus-within > a::after { transform: translateY(0) rotate(225deg); }
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: -12px;
+  margin-top: 12px;
+  min-width: 208px;
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(7, 5, 63, 0.13);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s;
+  z-index: 60;
+}
+/* invisible bridge so the menu doesn't close when crossing the gap */
+.nav-dropdown::before { content: ""; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
+.topnav-links .nav-item:hover .nav-dropdown,
+.topnav-links .nav-item:focus-within .nav-dropdown {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.nav-dropdown a {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.005em;
+  text-transform: none;
+  color: var(--navy);
+  opacity: 1;
+  padding: 9px 12px;
+  border-radius: 5px;
+  border-bottom: none;
+  white-space: nowrap;
+}
+.nav-dropdown a:hover { background: var(--grey-100); opacity: 1; }
+
+/* Mobile drawer sub-links (program/about children) */
+.mobile-drawer .drawer-sub {
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  opacity: 0.72;
+  padding-left: 18px;
+}
+
 .topnav-cta {
   background: var(--rust);
   color: var(--navy);
