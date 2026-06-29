@@ -716,6 +716,9 @@
   align-items: center;
 }
 .split-2col.reverse > :first-child { order: 2; }
+/* fill-media: stretch a short image to match the text column height (removes dead space) */
+.split-2col.fill-media { align-items: stretch; }
+.split-2col.fill-media .split-2col-media { aspect-ratio: auto; }
 .split-2col-media {
   aspect-ratio: 4 / 3;
   border-radius: 4px;
