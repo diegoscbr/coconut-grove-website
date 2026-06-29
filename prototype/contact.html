@@ -21,8 +21,22 @@
         <span class="text"><span class="top">Instructional Center</span><span class="bot">Coconut Grove · 1946</span></span>
       </a>
       <nav class="topnav-links" aria-label="Primary">
-        <a href="/programs">Programs</a>
-        <a href="/about">About</a>
+        <div class="nav-item">
+          <a href="/programs">Programs</a>
+          <div class="nav-dropdown">
+            <a href="/programs/adult-sailing">Adult Sailing</a>
+            <a href="/programs/race-team">Race Team</a>
+            <a href="/programs/camps-coaching">Camps &amp; Coaching</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/about">About</a>
+          <div class="nav-dropdown">
+            <a href="/about#coaches">Coaches</a>
+            <a href="/about#heritage">Heritage</a>
+            <a href="/about#mission">Mission</a>
+          </div>
+        </div>
         <a href="/calendar">Calendar</a>
         <a href="/contact" class="active">Contact</a>
       </nav>
@@ -226,7 +240,13 @@
     </div>
     <nav aria-label="Mobile">
       <a href="/programs" data-drawer-link>Programs</a>
+      <a href="/programs/adult-sailing" class="drawer-sub" data-drawer-link>Adult Sailing</a>
+      <a href="/programs/race-team" class="drawer-sub" data-drawer-link>Race Team</a>
+      <a href="/programs/camps-coaching" class="drawer-sub" data-drawer-link>Camps &amp; Coaching</a>
       <a href="/about" data-drawer-link>About</a>
+      <a href="/about#coaches" class="drawer-sub" data-drawer-link>Coaches</a>
+      <a href="/about#heritage" class="drawer-sub" data-drawer-link>Heritage</a>
+      <a href="/about#mission" class="drawer-sub" data-drawer-link>Mission</a>
       <a href="/calendar" data-drawer-link>Calendar</a>
       <a href="/contact" data-drawer-link>Contact</a>
     </nav>
