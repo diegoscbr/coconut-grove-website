@@ -63,6 +63,7 @@
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 var(--container-x);
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -93,7 +94,7 @@
   margin-top: 4px;
 }
 
-.topnav-links { display: flex; gap: 26px; align-items: center; }
+.topnav-links { display: flex; gap: 26px; align-items: center; align-self: stretch; height: 100%; }
 .topnav-links a {
   font-family: var(--body);
   font-weight: 600;
@@ -108,8 +109,8 @@
 .topnav-links a:hover { opacity: 1; }
 .topnav-links a.active { opacity: 1; border-bottom: 2px solid var(--rust); }
 
-/* Header dropdowns (Programs, About) */
-.topnav-links .nav-item { position: relative; display: flex; align-items: center; }
+/* Header dropdowns (Programs, About) — extend down from the header, not a floating card */
+.topnav-links .nav-item { position: relative; display: flex; align-items: center; height: 100%; }
 .topnav-links .nav-item > a { display: inline-flex; align-items: center; gap: 6px; }
 .topnav-links .nav-item > a::after {
   content: "";
@@ -124,26 +125,22 @@
 .topnav-links .nav-item:focus-within > a::after { transform: translateY(0) rotate(225deg); }
 .nav-dropdown {
   position: absolute;
-  top: 100%;
-  left: -12px;
-  margin-top: 12px;
-  min-width: 208px;
+  top: 100%;               /* flush with the header's bottom edge */
+  left: -16px;
+  min-width: 220px;
   background: var(--white);
-  border: 1px solid var(--grey-200);
-  border-radius: 8px;
-  box-shadow: 0 14px 34px rgba(7, 5, 63, 0.13);
-  padding: 8px;
+  border: none;
+  border-bottom: 1px solid rgba(12, 9, 105, 0.10);  /* continues the header underline */
+  box-shadow: 0 18px 22px -14px rgba(7, 5, 63, 0.22); /* soft fade below only */
+  padding: 6px 0 8px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-6px);
-  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s;
-  z-index: 60;
+  transform: translateY(-8px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  z-index: 49;             /* sits just under the header (50) so it reads as part of it */
 }
-/* invisible bridge so the menu doesn't close when crossing the gap */
-.nav-dropdown::before { content: ""; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
 .topnav-links .nav-item:hover .nav-dropdown,
 .topnav-links .nav-item:focus-within .nav-dropdown {
   opacity: 1; visibility: visible; transform: translateY(0);
@@ -155,9 +152,8 @@
   letter-spacing: 0.005em;
   text-transform: none;
   color: var(--navy);
-  opacity: 1;
-  padding: 9px 12px;
-  border-radius: 5px;
+  opacity: 0.82;
+  padding: 10px 24px;
   border-bottom: none;
   white-space: nowrap;
 }
