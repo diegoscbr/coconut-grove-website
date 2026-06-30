@@ -2172,3 +2172,99 @@
   .course-meta > div { grid-template-columns: 84px 1fr; }
   .season-note { grid-template-columns: 1fr; }
 }
+
+/* ==========================================================================
+   Home redesign · nonprofit rebalance (Rosa memo, 2026-06-29)
+   Nav/footer architecture is hand-duplicated per page (D-ARCH); these are the
+   only new reusable patterns the rebalance introduces.
+   ========================================================================== */
+
+/* Footer — prominent main-club link sitting under the burgee mark */
+.footer-club-link {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-top: 8px;
+}
+.footer-club-link:hover { color: var(--rust); }
+
+/* Footer — pending links render as muted text + TBD chip, never a dead href */
+.footer-tbd {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--grey-500);
+}
+
+/* Section tag — small label that scopes a section (e.g. "For our youth race team") */
+.section-tag {
+  display: inline-block;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rust);
+  background: rgba(255, 139, 94, 0.12);
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin: 0 0 16px;
+}
+.panel.dark .section-tag, .panel.charcoal .section-tag { background: rgba(255, 139, 94, 0.18); }
+
+/* Pathway adult off-ramp — keeps adults from reading the youth ladder as theirs */
+.pathway-offramp {
+  margin-top: 22px;
+  font-family: var(--body);
+  font-size: 14px;
+  color: var(--grey-700);
+}
+.pathway-offramp a {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(12, 9, 105, 0.35);
+}
+.pathway-offramp a:hover { color: var(--rust); text-decoration-color: var(--rust); }
+.panel.dark .pathway-offramp, .panel.charcoal .pathway-offramp { color: rgba(255, 255, 255, 0.82); }
+.panel.dark .pathway-offramp a, .panel.charcoal .pathway-offramp a { color: var(--light-blue-soft); }
+
+/* Dock — two labeled buckets: On the Horizon (upcoming) / Recent Happenings (past) */
+.dock-bucket + .dock-bucket { margin-top: 48px; }
+.dock-bucket-label {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.005em;
+  color: var(--charcoal);
+  margin: 0 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--grey-200);
+}
+.dock-bucket-label .count {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+/* Leadership grid — exactly three (Maru / Rosa / Lauren), centered + larger
+   than the full coach roster's auto-fill. Photos auto-apply via site.js by name. */
+.coach-grid.leadership {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 640px) {
+  .coach-grid.leadership { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+}
