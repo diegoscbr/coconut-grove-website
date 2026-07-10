@@ -1,4 +1,5 @@
 import { stegaClean } from "next-sanity";
+import { toPlayableVideoUrl } from "@/lib/video";
 
 export type HeroData = {
   eyebrow?: string | null;
@@ -21,7 +22,9 @@ export type HeroData = {
 export function Hero({ hero }: { hero: HeroData | null | undefined }) {
   if (!hero) return null;
 
-  const videoUrl = hero.videoUrl ? stegaClean(hero.videoUrl) : null;
+  const videoUrl = toPlayableVideoUrl(
+    hero.videoUrl ? stegaClean(hero.videoUrl) : null,
+  );
   const posterUrl = hero.posterUrl ? stegaClean(hero.posterUrl) : undefined;
   const ctaHref = hero.ctaHref ? stegaClean(hero.ctaHref) : "/contact";
 
