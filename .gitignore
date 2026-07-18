@@ -147,3 +147,9 @@ vite.config.ts.timestamp-*
 .DS_Store
 **/.DS_Store
 .gstack/
+
+# Vercel
+.vercel
+
+# Next.js generated
+next-env.d.ts
