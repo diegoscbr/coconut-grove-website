@@ -1,23 +1,17 @@
-import { sanityFetch } from "@/sanity/lib/live";
-import { HOME_QUERY } from "@/sanity/lib/queries";
-import { HOME_CONTENT, type HomeContent } from "@/lib/content/home";
+import { HOME_CONTENT } from "@/lib/content/home";
 import { Hero } from "@/components/Hero";
 import { Rich } from "@/components/Rich";
 
-export const dynamic = "force-dynamic";
-
-export default async function HomePage() {
-  const { data } = await sanityFetch({ query: HOME_QUERY });
-  const c = ((data as Partial<HomeContent> | null) ?? {}) as HomeContent;
+export default function HomePage() {
   const {
-    hero = HOME_CONTENT.hero,
-    programs = HOME_CONTENT.programs,
-    pathway = HOME_CONTENT.pathway,
-    about = HOME_CONTENT.about,
-    leadership = HOME_CONTENT.leadership,
-    dock = HOME_CONTENT.dock,
-    finalCta = HOME_CONTENT.finalCta,
-  } = c;
+    hero,
+    programs,
+    pathway,
+    about,
+    leadership,
+    dock,
+    finalCta,
+  } = HOME_CONTENT;
 
   return (
     <>

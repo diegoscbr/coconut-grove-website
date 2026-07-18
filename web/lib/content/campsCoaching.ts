@@ -1,7 +1,6 @@
 // Youth Sailing page content — exact copy ported from prototype/programs/camps-coaching.html.
 // (The page reads as "Youth Sailing"; the route/file stays camps-coaching.)
-// Single source of truth: renders as a fallback (so the page is a 1:1 replica with
-// zero setup) AND seeds Sanity (initialValue on the campsCoaching schema).
+// Single source of truth — edit this file to change the page's copy.
 export const CAMPS_COACHING_CONTENT = {
   hero: {
     breadcrumbHomeLabel: "Home",

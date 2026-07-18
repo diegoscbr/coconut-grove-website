@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Inter_Tight } from "next/font/google";
-import { draftMode } from "next/headers";
-import { VisualEditing } from "next-sanity/visual-editing";
-import { SanityLive } from "@/sanity/lib/live";
-import { DisableDraftMode } from "@/components/DisableDraftMode";
 import "./globals.css";
 
 const inter = Inter({
@@ -27,25 +23,14 @@ export const metadata: Metadata = {
     "The Instructional Center — a 501(c)(3) nonprofit carrying Coconut Grove's sailing legacy forward on Biscayne Bay. Youth sailing, racing teams, and adult programs for every sailor.",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { isEnabled: isDraft } = await draftMode();
-
   return (
     <html lang="en" className={`${inter.variable} ${interTight.variable}`}>
-      <body className="has-sticky-cta">
-        {children}
-        <SanityLive />
-        {isDraft && (
-          <>
-            <VisualEditing />
-            <DisableDraftMode />
-          </>
-        )}
-      </body>
+      <body className="has-sticky-cta">{children}</body>
     </html>
   );
 }

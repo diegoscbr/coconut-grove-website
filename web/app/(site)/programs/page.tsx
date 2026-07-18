@@ -1,20 +1,14 @@
-import { sanityFetch } from "@/sanity/lib/live";
-import { PROGRAMS_INDEX_QUERY } from "@/sanity/lib/queries";
-import { PROGRAMS_INDEX_CONTENT, type ProgramsIndexContent } from "@/lib/content/programsIndex";
+import { PROGRAMS_INDEX_CONTENT } from "@/lib/content/programsIndex";
 import { Rich } from "@/components/Rich";
 
-export const dynamic = "force-dynamic";
-
-export default async function ProgramsPage() {
-  const { data } = await sanityFetch({ query: PROGRAMS_INDEX_QUERY });
-  const c = ((data as Partial<ProgramsIndexContent> | null) ?? {}) as ProgramsIndexContent;
+export default function ProgramsPage() {
   const {
-    hero = PROGRAMS_INDEX_CONTENT.hero,
-    cards = PROGRAMS_INDEX_CONTENT.cards,
-    fit = PROGRAMS_INDEX_CONTENT.fit,
-    coaches = PROGRAMS_INDEX_CONTENT.coaches,
-    inquiry = PROGRAMS_INDEX_CONTENT.inquiry,
-  } = c;
+    hero,
+    cards,
+    fit,
+    coaches,
+    inquiry,
+  } = PROGRAMS_INDEX_CONTENT;
 
   return (
     <>

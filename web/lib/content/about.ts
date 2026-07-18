@@ -1,6 +1,5 @@
 // About page content — exact copy ported from prototype/about.html.
-// This is the single source of truth: it renders as a fallback (so the page is
-// a 1:1 replica with zero setup) AND seeds Sanity (initialValue on the schema).
+// Single source of truth — edit this file to change the page's copy.
 export const ABOUT_CONTENT = {
   hero: {
     breadcrumbHomeLabel: "Home",

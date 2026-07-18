@@ -1,6 +1,5 @@
 // Home page content — exact copy ported from prototype/index.html.
-// This is the single source of truth: it renders as a fallback (so the page is
-// a 1:1 replica with zero setup) AND seeds Sanity (scripts/seed.ts).
+// Single source of truth — edit this file to change the page's copy.
 export const HOME_CONTENT = {
   hero: {
     eyebrow: "Coconut Grove · Biscayne Bay · Since 1946",

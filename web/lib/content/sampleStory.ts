@@ -1,7 +1,6 @@
 // Sample story / article detail — exact copy ported from
 // prototype/calendar/sample-story.html.
-// Single source of truth: renders as a fallback (1:1 replica with zero setup)
-// AND seeds Sanity.
+// Single source of truth — edit this file to change the page's copy.
 
 // An inline run inside a paragraph or blockquote. Plain text renders through
 // <Rich> (so **bold** becomes <b>); `href` makes it a link; `em` wraps in <em>.

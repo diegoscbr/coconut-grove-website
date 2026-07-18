@@ -1,13 +1,7 @@
-import { sanityFetch } from "@/sanity/lib/live";
-import { CALENDAR_QUERY } from "@/sanity/lib/queries";
-import { CALENDAR_CONTENT, type CalendarContent } from "@/lib/content/calendar";
+import { CALENDAR_CONTENT } from "@/lib/content/calendar";
 
-export const dynamic = "force-dynamic";
-
-export default async function CalendarPage() {
-  const { data } = await sanityFetch({ query: CALENDAR_QUERY });
-  const c = ((data as Partial<CalendarContent> | null) ?? {}) as CalendarContent;
-  const { hero = CALENDAR_CONTENT.hero } = c;
+export default function CalendarPage() {
+  const { hero } = CALENDAR_CONTENT;
 
   return (
     <>

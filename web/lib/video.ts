@@ -5,8 +5,8 @@
  *
  * - Local/asset paths and direct video files (.mp4/.webm/.ogg/.mov) pass through.
  * - Google Drive share links (/file/d/ID/...) convert to a direct-stream URL.
- *   Note: Drive is unreliable for large files; prefer a Sanity upload, a file in
- *   /public/assets, or a real video host (Mux/Cloudflare/Vimeo) for production.
+ *   Note: Drive is unreliable for large files; prefer a file in /public/assets
+ *   or a real video host (Mux/Cloudflare/Vimeo) for production.
  */
 export function toPlayableVideoUrl(
   raw?: string | null,

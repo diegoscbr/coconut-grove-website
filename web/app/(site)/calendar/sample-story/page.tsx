@@ -1,10 +1,6 @@
 import { Fragment } from "react";
-import { sanityFetch } from "@/sanity/lib/live";
-import { SAMPLE_STORY_QUERY } from "@/sanity/lib/queries";
-import { SAMPLE_STORY_CONTENT, type SampleStoryContent } from "@/lib/content/sampleStory";
+import { SAMPLE_STORY_CONTENT } from "@/lib/content/sampleStory";
 import { Rich } from "@/components/Rich";
-
-export const dynamic = "force-dynamic";
 
 type Part = { text: string; href?: string; em?: boolean };
 
@@ -22,14 +18,12 @@ function renderPart(part: Part, i: number) {
   return <Rich key={i} text={part.text} />;
 }
 
-export default async function SampleStoryPage() {
-  const { data } = await sanityFetch({ query: SAMPLE_STORY_QUERY });
-  const c = ((data as Partial<SampleStoryContent> | null) ?? {}) as SampleStoryContent;
+export default function SampleStoryPage() {
   const {
-    hero = SAMPLE_STORY_CONTENT.hero,
-    article = SAMPLE_STORY_CONTENT.article,
-    related = SAMPLE_STORY_CONTENT.related,
-  } = c;
+    hero,
+    article,
+    related,
+  } = SAMPLE_STORY_CONTENT;
 
   return (
     <>

@@ -1,27 +1,21 @@
-import { sanityFetch } from "@/sanity/lib/live";
-import { RACE_TEAM_QUERY } from "@/sanity/lib/queries";
-import { RACE_TEAM_CONTENT, type RaceTeamContent } from "@/lib/content/raceTeam";
+import { RACE_TEAM_CONTENT } from "@/lib/content/raceTeam";
 import { Rich } from "@/components/Rich";
 
-export const dynamic = "force-dynamic";
-
-export default async function RaceTeamPage() {
-  const { data } = await sanityFetch({ query: RACE_TEAM_QUERY });
-  const c = ((data as Partial<RaceTeamContent> | null) ?? {}) as RaceTeamContent;
+export default function RaceTeamPage() {
   const {
-    hero = RACE_TEAM_CONTENT.hero,
-    subnav = RACE_TEAM_CONTENT.subnav,
-    intro = RACE_TEAM_CONTENT.intro,
-    bay = RACE_TEAM_CONTENT.bay,
-    methodology = RACE_TEAM_CONTENT.methodology,
-    pathway = RACE_TEAM_CONTENT.pathway,
-    coaches = RACE_TEAM_CONTENT.coaches,
-    stats = RACE_TEAM_CONTENT.stats,
-    regattas = RACE_TEAM_CONTENT.regattas,
-    faq = RACE_TEAM_CONTENT.faq,
-    manifesto = RACE_TEAM_CONTENT.manifesto,
-    inquiry = RACE_TEAM_CONTENT.inquiry,
-  } = c;
+    hero,
+    subnav,
+    intro,
+    bay,
+    methodology,
+    pathway,
+    coaches,
+    stats,
+    regattas,
+    faq,
+    manifesto,
+    inquiry,
+  } = RACE_TEAM_CONTENT;
 
   return (
     <>

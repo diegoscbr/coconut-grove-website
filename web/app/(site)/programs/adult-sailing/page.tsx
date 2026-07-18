@@ -1,26 +1,20 @@
-import { sanityFetch } from "@/sanity/lib/live";
-import { ADULT_SAILING_QUERY } from "@/sanity/lib/queries";
-import { ADULT_SAILING_CONTENT, type AdultSailingContent } from "@/lib/content/adultSailing";
+import { ADULT_SAILING_CONTENT } from "@/lib/content/adultSailing";
 import { Rich } from "@/components/Rich";
 import { CourseGrid, Linkify } from "@/components/AdultSailingCourses";
 
-export const dynamic = "force-dynamic";
-
-export default async function AdultSailingPage() {
-  const { data } = await sanityFetch({ query: ADULT_SAILING_QUERY });
-  const c = ((data as Partial<AdultSailingContent> | null) ?? {}) as AdultSailingContent;
+export default function AdultSailingPage() {
   const {
-    hero = ADULT_SAILING_CONTENT.hero,
-    subnav = ADULT_SAILING_CONTENT.subnav,
-    intro = ADULT_SAILING_CONTENT.intro,
-    beginner = ADULT_SAILING_CONTENT.beginner,
-    intermediate = ADULT_SAILING_CONTENT.intermediate,
-    cruising = ADULT_SAILING_CONTENT.cruising,
-    seasonal = ADULT_SAILING_CONTENT.seasonal,
-    whereWeSail = ADULT_SAILING_CONTENT.whereWeSail,
-    coaches = ADULT_SAILING_CONTENT.coaches,
-    register = ADULT_SAILING_CONTENT.register,
-  } = c;
+    hero,
+    subnav,
+    intro,
+    beginner,
+    intermediate,
+    cruising,
+    seasonal,
+    whereWeSail,
+    coaches,
+    register,
+  } = ADULT_SAILING_CONTENT;
 
   return (
     <>

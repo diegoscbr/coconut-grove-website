@@ -1,21 +1,15 @@
-export const dynamic = "force-dynamic";
-
-import { sanityFetch } from "@/sanity/lib/live";
-import { ABOUT_QUERY } from "@/sanity/lib/queries";
-import { ABOUT_CONTENT, type AboutContent } from "@/lib/content/about";
+import { ABOUT_CONTENT } from "@/lib/content/about";
 import { Rich } from "@/components/Rich";
 
-export default async function AboutPage() {
-  const { data } = await sanityFetch({ query: ABOUT_QUERY });
-  const c = ((data as Partial<AboutContent> | null) ?? {}) as AboutContent;
+export default function AboutPage() {
   const {
-    hero = ABOUT_CONTENT.hero,
-    subnav = ABOUT_CONTENT.subnav,
-    coaches = ABOUT_CONTENT.coaches,
-    heritage = ABOUT_CONTENT.heritage,
-    mission = ABOUT_CONTENT.mission,
-    inquiry = ABOUT_CONTENT.inquiry,
-  } = c;
+    hero,
+    subnav,
+    coaches,
+    heritage,
+    mission,
+    inquiry,
+  } = ABOUT_CONTENT;
 
   return (
     <>

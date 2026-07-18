@@ -1,6 +1,5 @@
 // Programs (index) page content — exact copy ported from prototype/programs/index.html.
-// Single source of truth: renders as a fallback (1:1 replica with zero setup)
-// AND seeds Sanity.
+// Single source of truth — edit this file to change the page's copy.
 export const PROGRAMS_INDEX_CONTENT = {
   hero: {
     breadcrumbLabel: "Home",

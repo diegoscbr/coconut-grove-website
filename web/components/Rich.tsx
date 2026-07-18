@@ -2,8 +2,7 @@ import { Fragment } from "react";
 
 /**
  * Renders a copy string with inline **bold** spans as <b>. Lets prose stay a
- * single editable Sanity string while preserving the prototype's bold lead-ins.
- * (A later pass can upgrade these fields to full Portable Text rich text.)
+ * single editable string while preserving the prototype's bold lead-ins.
  */
 export function Rich({ text }: { text?: string | null }) {
   if (!text) return null;

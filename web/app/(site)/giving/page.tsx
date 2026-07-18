@@ -1,18 +1,12 @@
-import { sanityFetch } from "@/sanity/lib/live";
-import { GIVING_QUERY } from "@/sanity/lib/queries";
-import { GIVING_CONTENT, type GivingContent } from "@/lib/content/giving";
+import { GIVING_CONTENT } from "@/lib/content/giving";
 import { Rich } from "@/components/Rich";
 
-export const dynamic = "force-dynamic";
-
-export default async function GivingPage() {
-  const { data } = await sanityFetch({ query: GIVING_QUERY });
-  const c = ((data as Partial<GivingContent> | null) ?? {}) as GivingContent;
+export default function GivingPage() {
   const {
-    hero = GIVING_CONTENT.hero,
-    whyGive = GIVING_CONTENT.whyGive,
-    comingSoon = GIVING_CONTENT.comingSoon,
-  } = c;
+    hero,
+    whyGive,
+    comingSoon,
+  } = GIVING_CONTENT;
 
   return (
     <>

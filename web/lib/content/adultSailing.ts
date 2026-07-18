@@ -1,6 +1,5 @@
 // Adult Sailing page content — exact copy ported from prototype/programs/adult-sailing.html.
-// Single source of truth: renders as a fallback (so the page is a 1:1 replica with
-// zero setup) AND seeds Sanity (initialValue on the adultSailing schema).
+// Single source of truth — edit this file to change the page's copy.
 export const ADULT_SAILING_CONTENT = {
   hero: {
     breadcrumbHome: "Home",

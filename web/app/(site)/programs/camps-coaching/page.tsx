@@ -1,22 +1,16 @@
-import { sanityFetch } from "@/sanity/lib/live";
-import { CAMPS_COACHING_QUERY } from "@/sanity/lib/queries";
-import { CAMPS_COACHING_CONTENT, type CampsCoachingContent } from "@/lib/content/campsCoaching";
+import { CAMPS_COACHING_CONTENT } from "@/lib/content/campsCoaching";
 import { Rich } from "@/components/Rich";
 
-export const dynamic = "force-dynamic";
-
-export default async function CampsCoachingPage() {
-  const { data } = await sanityFetch({ query: CAMPS_COACHING_QUERY });
-  const c = ((data as Partial<CampsCoachingContent> | null) ?? {}) as CampsCoachingContent;
+export default function CampsCoachingPage() {
   const {
-    hero = CAMPS_COACHING_CONTENT.hero,
-    subnav = CAMPS_COACHING_CONTENT.subnav,
-    intro = CAMPS_COACHING_CONTENT.intro,
-    camps = CAMPS_COACHING_CONTENT.camps,
-    private: privateCoaching = CAMPS_COACHING_CONTENT.private,
-    faq = CAMPS_COACHING_CONTENT.faq,
-    inquire = CAMPS_COACHING_CONTENT.inquire,
-  } = c;
+    hero,
+    subnav,
+    intro,
+    camps,
+    private: privateCoaching,
+    faq,
+    inquire,
+  } = CAMPS_COACHING_CONTENT;
 
   return (
     <>

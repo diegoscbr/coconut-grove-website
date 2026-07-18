@@ -5,25 +5,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "seed": "tsx --env-file=.env.local scripts/seed.ts"
+    "start": "next start"
   },
   "dependencies": {
-    "@sanity/image-url": "^2.1.1",
-    "@sanity/vision": "^6.4.0",
-    "@sanity/visual-editing": "^5.4.5",
     "next": "16.2.10",
-    "next-sanity": "^13.1.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "sanity": "^6.4.0",
-    "styled-components": "^6.4.3"
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "tsx": "^4.23.0",
     "typescript": "^5"
   }
 }

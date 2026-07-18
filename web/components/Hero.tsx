@@ -1,4 +1,3 @@
-import { stegaClean } from "next-sanity";
 import { toPlayableVideoUrl } from "@/lib/video";
 
 export type HeroData = {
@@ -14,19 +13,15 @@ export type HeroData = {
 };
 
 /**
- * Renders the homepage hero from CMS content. The markup + classNames are a
- * 1:1 port of prototype/index.html; the design lives entirely in globals.css.
- * Strings are rendered as-is so Sanity's stega overlays make them click-to-edit
- * in the Studio's Presentation view. URLs are stega-cleaned before use.
+ * Renders the homepage hero. The markup + classNames are a 1:1 port of
+ * prototype/index.html; the design lives entirely in globals.css.
  */
 export function Hero({ hero }: { hero: HeroData | null | undefined }) {
   if (!hero) return null;
 
-  const videoUrl = toPlayableVideoUrl(
-    hero.videoUrl ? stegaClean(hero.videoUrl) : null,
-  );
-  const posterUrl = hero.posterUrl ? stegaClean(hero.posterUrl) : undefined;
-  const ctaHref = hero.ctaHref ? stegaClean(hero.ctaHref) : "/contact";
+  const videoUrl = toPlayableVideoUrl(hero.videoUrl ?? null);
+  const posterUrl = hero.posterUrl ?? undefined;
+  const ctaHref = hero.ctaHref || "/contact";
 
   return (
     <section className="hero" aria-labelledby="hero-h">

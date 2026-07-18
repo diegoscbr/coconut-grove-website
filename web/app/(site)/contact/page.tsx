@@ -1,20 +1,14 @@
-export const dynamic = "force-dynamic";
-
-import { sanityFetch } from "@/sanity/lib/live";
-import { CONTACT_QUERY } from "@/sanity/lib/queries";
-import { CONTACT_CONTENT, type ContactContent } from "@/lib/content/contact";
+import { CONTACT_CONTENT } from "@/lib/content/contact";
 import { Rich } from "@/components/Rich";
 
-export default async function ContactPage() {
-  const { data } = await sanityFetch({ query: CONTACT_QUERY });
-  const c = ((data as Partial<ContactContent> | null) ?? {}) as ContactContent;
+export default function ContactPage() {
   const {
-    hero = CONTACT_CONTENT.hero,
-    inquiry = CONTACT_CONTENT.inquiry,
-    contacts = CONTACT_CONTENT.contacts,
-    visit = CONTACT_CONTENT.visit,
-    map = CONTACT_CONTENT.map,
-  } = c;
+    hero,
+    inquiry,
+    contacts,
+    visit,
+    map,
+  } = CONTACT_CONTENT;
 
   return (
     <>

@@ -1,19 +1,13 @@
-import { sanityFetch } from "@/sanity/lib/live";
-import { YOUTH_REGATTAS_QUERY } from "@/sanity/lib/queries";
-import { YOUTH_REGATTAS_CONTENT, type YouthRegattasContent } from "@/lib/content/youthRegattas";
+import { YOUTH_REGATTAS_CONTENT } from "@/lib/content/youthRegattas";
 
-export const dynamic = "force-dynamic";
-
-export default async function YouthRegattasPage() {
-  const { data } = await sanityFetch({ query: YOUTH_REGATTAS_QUERY });
-  const c = ((data as Partial<YouthRegattasContent> | null) ?? {}) as YouthRegattasContent;
+export default function YouthRegattasPage() {
   const {
-    hero = YOUTH_REGATTAS_CONTENT.hero,
-    subnav = YOUTH_REGATTAS_CONTENT.subnav,
-    sponsors = YOUTH_REGATTAS_CONTENT.sponsors,
-    logistics = YOUTH_REGATTAS_CONTENT.logistics,
-    results = YOUTH_REGATTAS_CONTENT.results,
-  } = c;
+    hero,
+    subnav,
+    sponsors,
+    logistics,
+    results,
+  } = YOUTH_REGATTAS_CONTENT;
 
   return (
     <>
