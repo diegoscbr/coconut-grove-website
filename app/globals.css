@@ -700,6 +700,43 @@ button { font: inherit; cursor: pointer; }
   color: var(--grey-700);
 }
 .footer-col li a:hover { color: var(--rust); }
+/* Calendar · Google Calendar embed */
+.calendar-embed { margin-top: 34px; }
+.calendar-embed iframe {
+  display: block;
+  width: 100%;
+  height: 680px;
+  border: 1px solid var(--grey-200);
+  background: var(--white);
+}
+.calendar-embed-placeholder {
+  border: 1px dashed var(--grey-300);
+  background: var(--grey-50);
+  padding: 90px 24px;
+  text-align: center;
+}
+.calendar-embed-placeholder .placeholder-chip {
+  display: inline-block;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rust);
+  background: rgba(255, 139, 94, 0.12);
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin: 0 0 14px;
+}
+.calendar-embed-placeholder p {
+  font-family: var(--body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--grey-500);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
 /* Giving · legal lines + check-donation details */
 .giving-legal {
   list-style: none;

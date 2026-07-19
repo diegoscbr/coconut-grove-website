@@ -74,64 +74,6 @@ export const HOME_CONTENT = {
     ctaLabel: "Meet the full team →",
     ctaHref: "/about#coaches",
   },
-  dock: {
-    eyebrow: "What's on the dock",
-    headline: "On the horizon & recent happenings.",
-    sub: "Regattas, open houses, and stories from the coaches — the one place to follow life at the Instructional Center.",
-    horizon: {
-      label: "On the Horizon",
-      count: "Upcoming",
-      cards: [
-        {
-          href: "/calendar",
-          mediaClass: "event",
-          eyebrow: "Regatta · April 10–12",
-          eyebrowTbd: "",
-          title: "Don Q Rum Keg Snipe Regatta",
-          meta: "2026 · Confirmed",
-        },
-        {
-          href: "/calendar",
-          mediaClass: "",
-          eyebrow: "Open House · ",
-          eyebrowTbd: "Date TBD",
-          title: "Spring Discovery Week",
-          meta: "Youth Sailing · Bring the kid, sail a boat",
-        },
-      ],
-    },
-    recent: {
-      label: "Recent Happenings",
-      count: "Latest",
-      cards: [
-        {
-          href: "/calendar/sample-story",
-          mediaClass: "feature",
-          eyebrow: "Feature",
-          eyebrowClass: "",
-          title: "Maru Urban joins as Director of Sailing Performance",
-          meta: "Story",
-        },
-        {
-          href: "/calendar/sample-story",
-          mediaClass: "race",
-          eyebrow: "Race result",
-          eyebrowClass: "race",
-          title: "CGSC sailors finish top-5 in regional 420 series",
-          meta: "Racing Teams",
-        },
-      ],
-    },
-    ctaLabel: "See the full calendar →",
-    ctaHref: "/calendar",
-  },
-  finalCta: {
-    eyebrow: "Sail with us",
-    headline: "Drop by the dock or send a note.",
-    sub: "Open practices and discovery weeks happen regularly — there's no commitment to come see if it's a fit.",
-    ctaLabel: "Visit / Inquire →",
-    ctaHref: "/contact",
-  },
 };
 
 export type HomeContent = typeof HOME_CONTENT;

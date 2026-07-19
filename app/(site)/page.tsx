@@ -9,8 +9,6 @@ export default function HomePage() {
     pathway,
     about,
     leadership,
-    dock,
-    finalCta,
   } = HOME_CONTENT;
 
   return (
@@ -114,82 +112,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What's on the dock */}
-      <section className="panel grey">
-        <div className="container">
-          <p className="section-eyebrow">{dock.eyebrow}</p>
-          <h2 className="section-headline">{dock.headline}</h2>
-          <p className="section-sub">{dock.sub}</p>
-
-          {[dock.horizon, dock.recent].map((bucket, bi) => (
-            <div key={bi} className="dock-bucket">
-              <h3 className="dock-bucket-label">
-                {bucket.label} <span className="count">{bucket.count}</span>
-              </h3>
-              <div className="preview-grid">
-                {bucket.cards.map((card, i) => {
-                  const cc = card as {
-                    href: string;
-                    mediaClass: string;
-                    eyebrow: string;
-                    eyebrowTbd?: string;
-                    eyebrowClass?: string;
-                    title: string;
-                    meta: string;
-                  };
-                  return (
-                    <a key={i} href={cc.href} className="preview-card">
-                      <div className={`preview-card-media ${cc.mediaClass}`.trim()}></div>
-                      <div className="preview-card-body">
-                        <p
-                          className={
-                            cc.eyebrowClass
-                              ? `preview-card-eyebrow ${cc.eyebrowClass}`
-                              : "preview-card-eyebrow"
-                          }
-                        >
-                          {cc.eyebrow}
-                          {cc.eyebrowTbd ? (
-                            <span className="tbd">{cc.eyebrowTbd}</span>
-                          ) : null}
-                        </p>
-                        <h3 className="preview-card-title">{cc.title}</h3>
-                        <p className="preview-card-meta">{cc.meta}</p>
-                      </div>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
-
-          <p style={{ marginTop: 32 }}>
-            <a href={dock.ctaHref} className="btn-primary">
-              {dock.ctaLabel}
-            </a>
-          </p>
-        </div>
-      </section>
-
-      {/* Final inquiry CTA */}
-      <section className="panel grey">
-        <div className="container" style={{ textAlign: "center" }}>
-          <p className="section-eyebrow" style={{ display: "block", textAlign: "center" }}>
-            {finalCta.eyebrow}
-          </p>
-          <h2 className="section-headline" style={{ maxWidth: "none" }}>
-            {finalCta.headline}
-          </h2>
-          <p className="section-sub" style={{ marginLeft: "auto", marginRight: "auto" }}>
-            {finalCta.sub}
-          </p>
-          <p style={{ marginTop: 8 }}>
-            <a href={finalCta.ctaHref} className="btn-primary">
-              {finalCta.ctaLabel}
-            </a>
-          </p>
-        </div>
-      </section>
     </>
   );
 }
