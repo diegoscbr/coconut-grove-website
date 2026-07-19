@@ -341,18 +341,6 @@ button { font: inherit; cursor: pointer; }
       rgba(0, 0, 0, 0.00) 100%);
   z-index: -1;
 }
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      0deg, transparent 0, transparent 3px,
-      rgba(0, 0, 0, 0.04) 3px, rgba(0, 0, 0, 0.04) 4px
-    );
-  pointer-events: none;
-  z-index: -1;
-}
 @media (prefers-reduced-motion: reduce) {
   .hero-video { display: none; }
 }
