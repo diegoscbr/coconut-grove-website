@@ -142,21 +142,11 @@ export default function RaceTeamPage() {
               <p className="intro-prose">
                 <Rich text={coaches.prose2} />
               </p>
-              <a href={coaches.rosterHref} className="btn-ghost">
+              <Link href={coaches.rosterHref} className="btn-ghost">
                 {coaches.rosterLabel}
-              </a>
+              </Link>
             </div>
             <div className="split-2col-media race accent-bracket"></div>
-          </div>
-
-          <div className="coach-grid">
-            {coaches.people.map((p, i) => (
-              <div key={i} className="coach">
-                <div className="coach-portrait"></div>
-                <p className="coach-name">{p.name}</p>
-                <p className="coach-role">{p.role}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

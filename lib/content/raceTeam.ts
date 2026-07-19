@@ -119,22 +119,15 @@ export const RACE_TEAM_CONTENT = {
   },
   coaches: {
     eyebrow: "Coaches",
-    headlinePre: "Directed by ",
-    headlineEm: "Maru Urban",
-    headlinePost: ".",
+    headlinePre: "Coached at ",
+    headlineEm: "every level",
+    headlinePost: " of the sport.",
     prose1:
-      "The Racing Teams are led by **Maru Urban**, incoming Director of Sailing Performance & Development, with a coaching team that has seen every level of the sport — youth fleets, college nationals, World Sailing circuits, and Olympic campaigns.",
+      "The Racing Teams' coaching staff has seen every level of the sport — youth fleets, college nationals, World Sailing circuits, and Olympic campaigns — and coaches on the same waters our sailors race.",
     prose2:
       "We don't rotate coaches by program. **The same staff that runs the Racing Teams also coaches the High Performance Center.** Continuity from a sailor's first regatta through their last is the point.",
-    rosterLabel: "Meet the full roster →",
+    rosterLabel: "Meet the coaches →",
     rosterHref: "/about#coaches",
-    people: [
-      { name: "Maru Urban", role: "Director · Sailing Performance & Development" },
-      { name: "Steve Mitchell", role: "High Performance Lead" },
-      { name: "Rosa Lamela", role: "Director of Programs Development" },
-      { name: "Orlando Gonzalez", role: "ILCA Coach" },
-      { name: "Lauren Simpson", role: "General Manager" },
-    ],
   },
   regattas: {
     eyebrow: "Selected regattas",
@@ -206,8 +199,8 @@ export const RACE_TEAM_CONTENT = {
   manifesto: {
     ariaLabel: "Racing Teams manifesto",
     lines: [
-      { text: "Read the Bay.", accent: false },
-      { text: "Trim the boat.", accent: true },
+      { text: "Read the wind.", accent: false },
+      { text: "Trim your sails.", accent: true },
       { text: "Win the race.", accent: false },
     ],
   },
