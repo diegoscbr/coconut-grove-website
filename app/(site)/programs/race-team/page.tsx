@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { RACE_TEAM_CONTENT } from "@/lib/content/raceTeam";
 import { Rich } from "@/components/Rich";
+import { PathwaySelector } from "@/components/PathwaySelector";
 
 export const metadata: Metadata = {
   title: "Racing Teams",
@@ -17,7 +19,6 @@ export default function RaceTeamPage() {
     methodology,
     pathway,
     coaches,
-    stats,
     regattas,
     faq,
     manifesto,
@@ -120,50 +121,7 @@ export default function RaceTeamPage() {
           <h2 className="section-headline">{pathway.headline}</h2>
           <p className="section-sub">{pathway.sub}</p>
 
-          <div className="pathway-selector" data-pathway>
-            <div className="pathway-list" role="tablist" aria-label="Pathway stages">
-              {pathway.rungs.map((r, i) => {
-                const active = r.rung === pathway.activeRung;
-                return (
-                  <button
-                    key={i}
-                    type="button"
-                    className={active ? "pathway-item active" : "pathway-item"}
-                    data-rung={r.rung}
-                    role="tab"
-                    id={`rung-${r.rung}`}
-                    aria-controls="pathway-detail"
-                    aria-selected={active ? "true" : "false"}
-                  >
-                    <span className="name">{r.name}</span>
-                    <span className="age">{r.age}</span>
-                  </button>
-                );
-              })}
-            </div>
-            <div
-              className="pathway-detail"
-              role="tabpanel"
-              id="pathway-detail"
-              aria-labelledby={`rung-${pathway.activeRung}`}
-            >
-              <div className="pathway-detail-img" data-pathway-img></div>
-              <h3 className="pathway-detail-name" data-pathway-name>
-                {pathway.detail.name}
-              </h3>
-              <p className="pathway-detail-age" data-pathway-age>
-                {pathway.detail.age}
-              </p>
-              <p className="pathway-detail-desc" data-pathway-desc>
-                {pathway.detail.desc}
-              </p>
-              <div className="pathway-meta" data-pathway-meta>
-                {pathway.detail.meta.map((m, i) => (
-                  <span key={i}>{m}</span>
-                ))}
-              </div>
-            </div>
-          </div>
+          <PathwaySelector rungs={pathway.rungs} initialRung={pathway.activeRung} />
         </div>
       </section>
 
@@ -197,32 +155,6 @@ export default function RaceTeamPage() {
                 <div className="coach-portrait"></div>
                 <p className="coach-name">{p.name}</p>
                 <p className="coach-role">{p.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="panel" id="stats">
-        <div className="container">
-          <p className="section-eyebrow">{stats.eyebrow}</p>
-          <h2 className="section-headline">{stats.headline}</h2>
-          <p className="section-sub">{stats.sub}</p>
-
-          <div className="stats-grid">
-            {stats.tiles.map((t, i) => (
-              <div key={i} className={t.tbd ? "stat-tile tbd" : "stat-tile"}>
-                <p className="num">
-                  {t.num}
-                  {t.small ? (
-                    <>
-                      {" "}
-                      <small>{t.small}</small>
-                    </>
-                  ) : null}
-                </p>
-                <p className="label">{t.label}</p>
               </div>
             ))}
           </div>
@@ -286,84 +218,17 @@ export default function RaceTeamPage() {
         </div>
       </section>
 
-      {/* Inquiry */}
+      {/* Inquiry — routes to the contact page */}
       <section className="panel charcoal" id="inquire">
         <div className="container">
           <p className="section-eyebrow">{inquiry.eyebrow}</p>
           <h2 className="section-headline">{inquiry.headline}</h2>
           <p className="section-sub">{inquiry.sub}</p>
-
-          <div className="inquiry-block">
-            <div className="inquiry-form-side">
-              <p className="inquiry-form-eyebrow">{inquiry.formEyebrow}</p>
-              <h3 className="inquiry-form-headline">
-                {inquiry.formHeadlinePre}
-                <em>{inquiry.formHeadlineEm}</em>
-              </h3>
-              <p className="inquiry-helper">{inquiry.formHelper}</p>
-
-              <form className="inquiry-form" data-form-inquiry noValidate>
-                <input type="text" name="parent-name" placeholder={inquiry.parentNamePlaceholder} required />
-                <input type="email" name="email" placeholder={inquiry.emailPlaceholder} required />
-                <input type="text" name="sailor-name" placeholder={inquiry.sailorNamePlaceholder} />
-                <input type="text" name="sailor-age" placeholder={inquiry.sailorAgePlaceholder} />
-                <select name="experience" className="full">
-                  <option value="">{inquiry.experienceLabel}</option>
-                  {inquiry.experienceOptions.map((o, i) => (
-                    <option key={i}>{o}</option>
-                  ))}
-                </select>
-                <select name="rung" className="full">
-                  <option value="">{inquiry.rungLabel}</option>
-                  {inquiry.rungOptions.map((o, i) => (
-                    <option key={i}>{o}</option>
-                  ))}
-                </select>
-                <textarea name="notes" placeholder={inquiry.notesPlaceholder} className="full"></textarea>
-                <button type="submit">{inquiry.submitLabel}</button>
-              </form>
-            </div>
-
-            <div className="inquiry-info-side">
-              <p className="inquiry-info-eyebrow">{inquiry.infoEyebrow}</p>
-
-              <div className="inquiry-info-block">
-                <p className="lbl">{inquiry.director.lbl}</p>
-                <p className="val">
-                  {inquiry.director.name}
-                  <small>{inquiry.director.small}</small>
-                </p>
-              </div>
-
-              <div className="inquiry-info-block">
-                <p className="lbl">{inquiry.phone.lbl}</p>
-                <p className="val">
-                  <a href={inquiry.phone.href}>{inquiry.phone.number}</a>
-                </p>
-              </div>
-
-              <div className="inquiry-info-block">
-                <p className="lbl">{inquiry.email.lbl}</p>
-                <p className="val">
-                  <a href={inquiry.email.href}>{inquiry.email.address}</a>
-                </p>
-              </div>
-
-              <div className="inquiry-info-block">
-                <p className="lbl">{inquiry.visit.lbl}</p>
-                <p className="val">
-                  {inquiry.visit.line1}
-                  <small>{inquiry.visit.line2}</small>
-                </p>
-              </div>
-
-              <p className="inquiry-info-foot">
-                {inquiry.footPre}
-                <a href={inquiry.footLinkHref}>{inquiry.footLinkText}</a>
-                {inquiry.footPost}
-              </p>
-            </div>
-          </div>
+          <p style={{ marginTop: 8 }}>
+            <Link href={inquiry.ctaHref} className="btn-primary">
+              {inquiry.ctaLabel}
+            </Link>
+          </p>
         </div>
       </section>
     </>
