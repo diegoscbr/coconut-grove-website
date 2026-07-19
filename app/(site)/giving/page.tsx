@@ -18,7 +18,7 @@ export default function GivingPage() {
 
   return (
     <>
-      <section className="hero-compact">
+      <section className="hero-compact has-hero-photo hero-giving">
         <div className="container">
           <p className="breadcrumb">
             <a href={hero.breadcrumbHomeHref}>{hero.breadcrumbHomeLabel}</a>{" "}
