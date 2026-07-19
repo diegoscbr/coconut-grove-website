@@ -41,9 +41,9 @@ export const HOME_CONTENT = {
   pathway: {
     tag: "For our youth race team",
     eyebrow: "The Pathway",
-    headline: "Five rungs. One ladder.",
+    headline: "Four rungs. One ladder.",
     prose1:
-      "**Discover. Develop. Race. Compete. Perform.** Every young racer on the team follows the same ladder — Racing Teams is the spine, the High Performance Center the apex.",
+      "**Discover. Develop. Race. Beyond.** Every young racer on the team follows the same ladder — Racing Teams is the spine, the High Performance Center the apex.",
     prose2:
       "See where a sailor starts, where they'd be in three years, and where the ladder leads after that.",
     ctaLabel: "Explore the Pathway →",

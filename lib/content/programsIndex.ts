@@ -24,7 +24,7 @@ export const PROGRAMS_INDEX_CONTENT = {
         mediaClass: "race",
         eyebrow: "The new chapter",
         title: "Racing Teams",
-        line: "The competitive pipeline — junior to high performance. Director-led by Maru Urban. Discover, Develop, Race, Compete, Perform.",
+        line: "The competitive pipeline — junior to high performance. Director-led by Maru Urban. Discover, Develop, Race, Beyond.",
       },
       {
         href: "/programs/camps-coaching",
@@ -39,7 +39,7 @@ export const PROGRAMS_INDEX_CONTENT = {
     eyebrow: "Where do you fit?",
     headline: "The CGSC pathway.",
     prose1:
-      "All three programs feed the same pathway: **Discover → Develop → Race → Compete → Perform.** Youth Sailing and Adult Sailing are entry points; Racing Teams is the competitive ladder; the High Performance Center is the apex.",
+      "All three programs feed the same pathway: **Discover → Develop → Race → Beyond.** Youth Sailing and Adult Sailing are entry points; Racing Teams is the competitive ladder; the High Performance Center is the apex.",
     prose2:
       "Wherever you start, the same coaches see you all the way up. **No re-onboarding, no switching languages** — the next rung is always one practice away.",
     ctaLabel: "See the Pathway visualization →",

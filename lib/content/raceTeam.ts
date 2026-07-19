@@ -7,7 +7,7 @@ export const RACE_TEAM_CONTENT = {
     breadcrumbCurrent: "Racing Teams",
     h1: "Racing Teams",
     subheadPre: "The CGSC competitive pathway — junior to high performance. ",
-    subheadEmphasis: "Develop. Race. Compete. Perform.",
+    subheadEmphasis: "Discover. Develop. Race. Beyond.",
     subheadPost: " Director-led, year-round, on Biscayne Bay.",
     locationChip: "Biscayne Bay · Coconut Grove",
   },
@@ -24,7 +24,7 @@ export const RACE_TEAM_CONTENT = {
     eyebrow: "The Racing Teams",
     headline: "A pipeline, not a program.",
     prose1:
-      "The CGSC Racing Teams are the **competitive spine of the Instructional Center**. Sailors enter as juniors, develop through fleet racing on Biscayne Bay, and exit into college, national, or Olympic-track competition. Five rungs, one ladder, the same coaches all the way up.",
+      "The CGSC Racing Teams are the **competitive spine of the Instructional Center**. Sailors enter as juniors, develop through fleet racing on Biscayne Bay, and exit into college, national, or Olympic-track competition. Four rungs, one ladder, the same coaches all the way up.",
     prose2: `We race **30+ regattas a season** — Miami, the Keys, the Bahamas, and the regatta circuits that feed US Sailing's youth and college pipelines. The High Performance Center, **Director-led by Maru Urban**, sits at the top of the ladder as the next chapter — for the sailor who is no longer asking "should I race?" but "how far can I take this?"`,
   },
   bay: {
@@ -62,7 +62,7 @@ export const RACE_TEAM_CONTENT = {
   },
   pathway: {
     eyebrow: "The Pathway",
-    headline: "Five rungs, one ladder.",
+    headline: "Four rungs, one ladder.",
     sub: "Click a rung to see where it leads — ages, training cadence, fleet, and what comes next. Default: Race.",
     activeRung: "race",
     rungs: [
@@ -94,21 +94,12 @@ export const RACE_TEAM_CONTENT = {
         tint: "#0F2660",
       },
       {
-        rung: "compete",
-        name: "Compete",
-        age: "College / National",
-        desc: "High school sailing, college recruitment, US national championships. Sailors who came up through the Bay carrying CGSC standards into bigger fleets.",
-        meta: ["4× / Week", "Performance group", "Year-round"],
-        img: "/assets/pathway/compete.jpg",
-        tint: "#0F2660",
-      },
-      {
         rung: "beyond",
         name: "Beyond",
         age: "After the program",
         desc: "Sailors leave the program with the skills to compete at the highest levels of the sport — should they choose to. And with the club's history of hosting major international and Olympic-class events, that level of racing happens on their home waters.",
         meta: ["Alumni", "Olympic-class regattas", "Home waters"],
-        img: "/assets/pathway/perform.jpg",
+        img: "/assets/pathway/beyond.jpg",
         tint: "#142A66",
         link: {
           label: "ISAF Sailing World Cup Miami — raced on Biscayne Bay →",
@@ -176,7 +167,7 @@ export const RACE_TEAM_CONTENT = {
       },
       {
         q: "What boats do you sail?",
-        a: "Optimist for younger juniors. 420 and Laser through the Race and Compete rungs. High Performance Center sailors campaign Olympic-class equipment (49er, ILCA, FX) and travel boats where the campaign requires it.",
+        a: "Optimist for younger juniors. 420 and Laser through the Race rung. High Performance Center sailors campaign Olympic-class equipment (49er, ILCA, FX) and travel boats where the campaign requires it.",
       },
       {
         q: "How does year-round training work?",
