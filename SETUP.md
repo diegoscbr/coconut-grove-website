@@ -53,6 +53,46 @@ Site: <http://localhost:3000>. `npm run build` must stay green before pushing.
 | `components/Rich.tsx` | Inline `**bold**` renderer for prose |
 | `lib/content/*` | Per-page content — the single source of truth |
 
+## Newsletter capture (footer form → Google Sheet)
+
+The footer form POSTs to `/api/newsletter`, which validates the address
+(syntax + live DNS MX check on the domain, plus a bot honeypot) and forwards it
+to a Google Apps Script webhook that appends to the signups sheet
+(`docs.google.com/spreadsheets/d/1Y0KmPyzThbdVJ-6cI1DW9Ur7tEOcfwDDwVLpfoXd1NI`).
+
+One-time setup (needs the sheet owner's Google account):
+
+1. Open the sheet → **Extensions → Apps Script**, replace the contents with:
+
+   ```js
+   function doPost(e) {
+     const email = String((e.parameter.email || "")).trim().toLowerCase();
+     const out = (o) =>
+       ContentService.createTextOutput(JSON.stringify(o)).setMimeType(
+         ContentService.MimeType.JSON,
+       );
+     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return out({ ok: false });
+     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+     const last = sheet.getLastRow();
+     const existing =
+       last > 0 ? sheet.getRange(1, 1, last, 1).getValues().flat() : [];
+     if (existing.indexOf(email) === -1) {
+       sheet.appendRow([email, new Date(), e.parameter.source || "website"]);
+     }
+     return out({ ok: true });
+   }
+   ```
+
+2. **Deploy → New deployment → Web app**, Execute as **Me**, Who has access
+   **Anyone**, then copy the `/exec` URL.
+3. Put that URL in `.env.local` as `NEWSLETTER_SHEET_WEBHOOK=...` (see
+   `.env.example`) and add the same variable in Vercel → Settings →
+   Environment Variables (Production + Preview), then redeploy.
+
+Until the variable is set, signups return a friendly error (the API responds
+503) — nothing is silently dropped. Duplicate emails are de-duped in the
+script. Columns: email · timestamp · source.
+
 ## Deploying
 
 Vercel with **Root Directory left at the repo root** (clear any old `web` or

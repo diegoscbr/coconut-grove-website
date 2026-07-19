@@ -27,7 +27,7 @@ export const CALENDAR_CONTENT = {
   newsletter: {
     tag: "Coming soon",
     headline: "The Instructional Center newsletter.",
-    sub: "Monthly updates from the dock — program news, results, and what's ahead. Sign-up opens soon.",
+    sub: "Monthly updates from the dock — program news, results, and what's ahead. Add your email in the footer below to be first on the list.",
   },
 };
 

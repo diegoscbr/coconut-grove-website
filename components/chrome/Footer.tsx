@@ -21,7 +21,17 @@ export function Footer() {
                 aria-label="Email address"
                 required
               />
+              {/* Honeypot — hidden from humans, bots fill it and get filtered */}
+              <input
+                type="text"
+                name="company"
+                className="hp-field"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
               <button type="submit">Subscribe</button>
+              <p className="footer-news-msg" data-news-msg role="status"></p>
             </form>
           </div>
         </div>

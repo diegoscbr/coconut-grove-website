@@ -625,7 +625,28 @@ button { font: inherit; cursor: pointer; }
   margin: 0;
   max-width: 520px;
 }
-.footer-news-form { display: flex; gap: 8px; }
+.footer-news-form { display: flex; flex-wrap: wrap; gap: 8px; }
+/* Honeypot field — visually removed, still in the DOM for bots */
+.footer-news-form .hp-field {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.footer-news-msg {
+  width: 100%;
+  min-height: 1em;
+  margin: 2px 0 0;
+  font-family: var(--body);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--rust);
+}
 .footer-news-form input {
   flex: 1;
   padding: 14px 16px;
