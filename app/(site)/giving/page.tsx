@@ -12,6 +12,7 @@ export default function GivingPage() {
   const {
     hero,
     whyGive,
+    checks,
     comingSoon,
   } = GIVING_CONTENT;
 
@@ -36,8 +37,28 @@ export default function GivingPage() {
           <p className="intro-prose">
             <Rich text={whyGive.prose1} />
           </p>
+          <ul className="giving-legal">
+            {whyGive.legalLines.map((line, i) => (
+              <li key={i}>{line}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Give by check */}
+      <section className="panel grey">
+        <div className="container">
+          <p className="section-eyebrow">{checks.eyebrow}</p>
           <p className="intro-prose">
-            <Rich text={whyGive.prose2} />
+            <Rich text={checks.intro} />
+          </p>
+          <p className="giving-address">
+            {checks.address.map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < checks.address.length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </div>
       </section>

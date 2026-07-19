@@ -700,6 +700,37 @@ button { font: inherit; cursor: pointer; }
   color: var(--grey-700);
 }
 .footer-col li a:hover { color: var(--rust); }
+/* Giving · legal lines + check-donation details */
+.giving-legal {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  max-width: 640px;
+}
+.giving-legal li {
+  font-family: var(--body);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--grey-500);
+  padding: 3px 0;
+}
+.giving-address {
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--grey-700);
+  margin: 18px 0 0;
+}
+
+.footer-legal {
+  margin: 26px 0 0;
+  max-width: 720px;
+  font-family: var(--body);
+  font-size: 11px;
+  line-height: 1.75;
+  letter-spacing: 0.06em;
+  color: var(--grey-500);
+}
 .footer-bottom {
   padding-top: 22px;
   display: flex;

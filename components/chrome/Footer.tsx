@@ -136,11 +136,18 @@ export function Footer() {
               </ul>
             </div>
           </div>
+          <p className="footer-legal">
+            CGSC Instructional Center (CGSCIC) is a 501(c)(3) nonprofit
+            organization dedicated to expanding access to sailing and youth
+            development on the water. Your gift directly supports our youth
+            sailing program through scholarships, equipment maintenance and
+            capital purchases that make it possible for CGSCIC to empower the
+            next generation of sailors.
+          </p>
           <div className="footer-bottom">
             <span>
               © 2026 Coconut Grove Sailing Club Instructional Center · 2990 S.
-              Bayshore Drive, Miami, FL 33133 · A registered 501(c)(3) nonprofit{" "}
-              <span className="tbd">Legal verbiage TBD</span>
+              Bayshore Drive, Miami, FL 33133
             </span>
             <div className="legal">
               <a href="#">Privacy</a>
