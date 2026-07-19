@@ -19,7 +19,7 @@ export default function YouthRegattasPage() {
 
   return (
     <>
-      <section className="hero-compact">
+      <section className="hero-compact has-hero-photo hero-youth-regattas">
         <div className="container">
           <p className="breadcrumb">
             <Link href="/">{hero.breadcrumbHome}</Link> <span className="sep">→</span>{" "}

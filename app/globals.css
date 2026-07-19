@@ -2172,6 +2172,7 @@ button { font: inherit; cursor: pointer; }
 .hero-compact.hero-camps     { background-image: linear-gradient(180deg, rgba(16,28,66,0.72) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/camps.jpg"); }
 .hero-compact.hero-calendar  { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/calendar.jpg"); }
 .hero-compact.hero-giving    { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/giving.jpg"); }
+.hero-compact.hero-youth-regattas { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/youth-regattas.jpg"); }
 .hero-compact.hero-adult     { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/adult.jpg"); }
 .hero-compact.hero-contact   { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/contact.jpg"); }
 
