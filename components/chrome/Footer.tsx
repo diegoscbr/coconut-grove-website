@@ -105,14 +105,22 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <span className="footer-tbd">
-                    Vakaros <span className="tbd">URL TBD</span>
-                  </span>
+                  <a
+                    href="https://www.vakaros.com/en-eu"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Vakaros
+                  </a>
                 </li>
                 <li>
-                  <span className="footer-tbd">
-                    NOBs <span className="tbd">URL TBD</span>
-                  </span>
+                  <a
+                    href="https://www.nobmultisports.com/en/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    NOBs
+                  </a>
                 </li>
               </ul>
             </div>
@@ -129,9 +137,13 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <span className="footer-tbd">
-                    Instagram <span className="tbd">Handle TBD</span>
-                  </span>
+                  <a
+                    href="https://www.instagram.com/cgscic_/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Instagram
+                  </a>
                 </li>
               </ul>
             </div>
