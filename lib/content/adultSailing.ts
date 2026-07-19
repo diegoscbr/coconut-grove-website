@@ -17,7 +17,6 @@ export const ADULT_SAILING_CONTENT = {
     { href: "#beginner", label: "Beginner" },
     { href: "#intermediate", label: "Intermediate" },
     { href: "#cruising", label: "Cruising & Nav" },
-    { href: "#coaches", label: "Coaches" },
     { href: "#register", label: "Register" },
   ],
   intro: {
@@ -225,20 +224,6 @@ export const ADULT_SAILING_CONTENT = {
       "CGSC Instructional Center is a 501(c)(3) nonprofit and part of Coconut Grove Sailing Club. ",
     prose2LinkText: "Visit the parent club →",
     prose2LinkHref: "https://cgsc.org/",
-  },
-  coaches: {
-    eyebrow: "The instructors",
-    headline: "US Sailing-certified, across every program.",
-    sub: "Every adult course and clinic is taught by US Sailing-certified instructors — the same staff who run the Center's youth and high-performance programs.",
-    people: [
-      { name: "Maru Urban", role: "Director · Sailing Performance & Development" },
-      { name: "Steve Mitchell", role: "High Performance Lead" },
-      { name: "Rosa Lamela", role: "Director of Programs Development" },
-      { name: "Orlando Gonzalez", role: "ILCA Coach" },
-      { name: "Lauren Simpson", role: "General Manager" },
-    ],
-    ctaLabel: "Meet the full team →",
-    ctaHref: "/about#coaches",
   },
   register: {
     eyebrow: "Register",
