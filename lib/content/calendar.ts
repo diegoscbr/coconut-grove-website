@@ -19,7 +19,7 @@ export const CALENDAR_CONTENT = {
     // renders automatically. Get it from Google Calendar → Settings → (your
     // calendar) → "Integrate calendar" → copy the src="..." URL from the
     // embed code (looks like https://calendar.google.com/calendar/embed?src=...).
-    src: "https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&src=Y181OTc0MGJkZjgwYjc4MGZjYWM3Yjg5NjBmMTA4NDVkMWY5OTg3YWVlNjNhYWYwZTM5ZWYwMzc5ZTAyYzczMjA4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y19iNzQyNDFlY2NlNDk0MjI0MGRmMzQwOWMyODQ4OWMxZGIwNjljMWVhOTUxZjI3M2Q2OWUwNjI1NTE4YjY4YzI3QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23a32929&color=%23a32929",
+    src: "https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&src=Y181OTc0MGJkZjgwYjc4MGZjYWM3Yjg5NjBmMTA4NDVkMWY5OTg3YWVlNjNhYWYwZTM5ZWYwMzc5ZTAyYzczMjA4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y19iNzQyNDFlY2NlNDk0MjI0MGRmMzQwOWMyODQ4OWMxZGIwNjljMWVhOTUxZjI3M2Q2OWUwNjI1NTE4YjY4YzI3QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23FF8B5E&color=%230C0969",
     placeholderTag: "Coming soon",
     placeholderNote:
       "The event calendar will appear here — regattas, open practices, and Center events.",
