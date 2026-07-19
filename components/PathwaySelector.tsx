@@ -7,7 +7,6 @@ export type PathwayRung = {
   name: string;
   age: string;
   desc: string;
-  meta: string[];
   img: string;
   tint: string;
   link?: { label: string; href: string };
@@ -77,11 +76,6 @@ export function PathwaySelector({
         <h3 className="pathway-detail-name">{active.name}</h3>
         <p className="pathway-detail-age">{active.age}</p>
         <p className="pathway-detail-desc">{active.desc}</p>
-        <div className="pathway-meta">
-          {active.meta.map((m, i) => (
-            <span key={i}>{m}</span>
-          ))}
-        </div>
         {active.link && (
           <p className="pathway-detail-link">
             <a href={active.link.href} target="_blank" rel="noopener">
