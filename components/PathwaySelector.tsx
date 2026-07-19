@@ -10,6 +10,7 @@ export type PathwayRung = {
   meta: string[];
   img: string;
   tint: string;
+  link?: { label: string; href: string };
 };
 
 /**
@@ -81,6 +82,13 @@ export function PathwaySelector({
             <span key={i}>{m}</span>
           ))}
         </div>
+        {active.link && (
+          <p className="pathway-detail-link">
+            <a href={active.link.href} target="_blank" rel="noopener">
+              {active.link.label}
+            </a>
+          </p>
+        )}
       </div>
     </div>
   );

@@ -1153,6 +1153,13 @@ button { font: inherit; cursor: pointer; }
 }
 .pathway-item.active .age { color: var(--rust); font-weight: 600; }
 .pathway-detail { display: flex; flex-direction: column; }
+.pathway-detail-link {
+  margin: 16px 0 0;
+  font-family: var(--body);
+  font-size: 13px;
+}
+.pathway-detail-link a { color: var(--navy); font-weight: 600; }
+.pathway-detail-link a:hover { color: var(--rust); }
 .pathway-detail-img {
   aspect-ratio: 16 / 8;
   border-radius: 3px;
