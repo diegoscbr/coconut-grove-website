@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function CalendarPage() {
-  const { hero } = CALENDAR_CONTENT;
+  const { hero, embed, newsletter } = CALENDAR_CONTENT;
 
   return (
     <>
@@ -24,6 +24,37 @@ export default function CalendarPage() {
             <em>{hero.subheadEm}</em>
           </p>
           <span className="location-chip">{hero.locationChip}</span>
+        </div>
+      </section>
+
+      {/* Google Calendar embed (renders once embed.src is set in lib/content/calendar.ts) */}
+      <section className="panel">
+        <div className="container">
+          <p className="section-eyebrow">{embed.eyebrow}</p>
+          <h2 className="section-headline">{embed.headline}</h2>
+          <div className="calendar-embed">
+            {embed.src ? (
+              <iframe
+                src={embed.src}
+                title="CGSC Instructional Center event calendar"
+                loading="lazy"
+              />
+            ) : (
+              <div className="calendar-embed-placeholder">
+                <span className="placeholder-chip">{embed.placeholderTag}</span>
+                <p>{embed.placeholderNote}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter · coming soon */}
+      <section className="phase-placeholder">
+        <div className="container">
+          <span className="placeholder-tag">{newsletter.tag}</span>
+          <h3 className="placeholder-h">{newsletter.headline}</h3>
+          <p className="placeholder-sub">{newsletter.sub}</p>
         </div>
       </section>
     </>

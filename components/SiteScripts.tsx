@@ -42,7 +42,7 @@ export function SiteScripts() {
     };
     document.addEventListener("keydown", onKey);
 
-    // Newsletter · placeholder no-op
+    // Newsletter · validate, then capture via /api/newsletter (Google Sheet)
     const newsletterForm = document.querySelector("[data-form-newsletter]");
     const onSubmit = (e: Event) => {
       e.preventDefault();
@@ -51,15 +51,58 @@ export function SiteScripts() {
         'button[type="submit"]',
       );
       const input = form.querySelector<HTMLInputElement>('input[type="email"]');
+      const msg = form.querySelector<HTMLElement>("[data-news-msg]");
       if (!button || !input) return;
+
+      const setMsg = (text: string) => {
+        if (msg) msg.textContent = text;
+      };
+      const email = input.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        setMsg("Please enter a valid email address.");
+        return;
+      }
+
       const originalText = button.textContent;
-      button.textContent = "On the list ✓";
       button.disabled = true;
-      input.value = "";
-      setTimeout(() => {
+      button.textContent = "Adding…";
+      setMsg("");
+
+      const honeypot =
+        form.querySelector<HTMLInputElement>('input[name="company"]')?.value ??
+        "";
+      const restore = () => {
         button.textContent = originalText;
         button.disabled = false;
-      }, 3500);
+      };
+
+      fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, company: honeypot }),
+      })
+        .then(async (res) => {
+          const data = (await res.json().catch(() => ({}))) as {
+            ok?: boolean;
+            error?: string;
+          };
+          if (res.ok && data.ok) {
+            button.textContent = "On the list ✓";
+            input.value = "";
+            setTimeout(restore, 3500);
+            return;
+          }
+          restore();
+          setMsg(
+            data.error === "invalid_email"
+              ? "That email doesn't look deliverable — check for typos."
+              : "Something went wrong — please try again.",
+          );
+        })
+        .catch(() => {
+          restore();
+          setMsg("Something went wrong — please try again.");
+        });
     };
     newsletterForm?.addEventListener("submit", onSubmit);
 

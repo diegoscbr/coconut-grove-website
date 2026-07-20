@@ -20,7 +20,6 @@ export default function AdultSailingPage() {
     cruising,
     seasonal,
     whereWeSail,
-    coaches,
     register,
   } = ADULT_SAILING_CONTENT;
 
@@ -141,29 +140,6 @@ export default function AdultSailingPage() {
             </div>
             <div className="split-2col-media aerial bayview accent-bracket"></div>
           </div>
-        </div>
-      </section>
-
-      {/* Coaches */}
-      <section className="panel grey" id="coaches">
-        <div className="container">
-          <p className="section-eyebrow">{coaches.eyebrow}</p>
-          <h2 className="section-headline">{coaches.headline}</h2>
-          <p className="section-sub">{coaches.sub}</p>
-          <div className="coach-grid">
-            {coaches.people.map((p, i) => (
-              <div key={i} className="coach">
-                <div className="coach-portrait"></div>
-                <p className="coach-name">{p.name}</p>
-                <p className="coach-role">{p.role}</p>
-              </div>
-            ))}
-          </div>
-          <p style={{ marginTop: 32 }}>
-            <a href={coaches.ctaHref} className="btn-primary">
-              {coaches.ctaLabel}
-            </a>
-          </p>
         </div>
       </section>
 

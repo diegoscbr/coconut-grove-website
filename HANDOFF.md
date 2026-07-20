@@ -32,6 +32,10 @@
 2. **Hero video content** — `hero.videoUrl` in `lib/content/home.ts` must be a
    real playable source: `/assets/hero.mp4` in the repo, or a proper video host
    (Vimeo/Mux/Cloudflare Stream). Not a Google Drive share link.
+3. **Newsletter webhook** — create the Google Apps Script web app on the
+   signups sheet and set `NEWSLETTER_SHEET_WEBHOOK` in Vercel (steps in
+   `SETUP.md` → "Newsletter capture"). Until then the footer form shows a
+   friendly error instead of capturing.
 
 ## SHOULD-DO (quality)
 

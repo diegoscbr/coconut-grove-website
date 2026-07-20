@@ -15,9 +15,23 @@ export const GIVING_CONTENT = {
     eyebrow: "Why give",
     headline: "Every sailor, on the water.",
     prose1:
-      "The Coconut Grove Sailing Club Instructional Center is a **501(c)(3) nonprofit**. Your support keeps sailing accessible on Biscayne Bay — funding boats, coaching, and scholarships so that cost is never the reason a young sailor stays on shore.",
-    prose2:
-      "We're setting up a dedicated, secure donation page. In the meantime, reach out and we'll make sure your gift counts.",
+      "CGSC Instructional Center (CGSCIC) is a **501(c)(3) nonprofit organization** dedicated to expanding access to sailing and youth development on the water. Your gift directly supports our youth sailing program through scholarships, equipment maintenance and capital purchases that make it possible for CGSCIC to empower the next generation of sailors.",
+    legalLines: [
+      "Donations are tax-deductible as allowed by law.",
+      "No goods or services were provided in exchange for this contribution.",
+      "Donor information is kept confidential and will never be shared or sold.",
+    ],
+  },
+  checks: {
+    eyebrow: "Give by check",
+    intro:
+      "For those who prefer to make check donations, please make checks payable to **CGSCIC** and send to:",
+    address: [
+      "Coconut Grove Sailing Club",
+      "2900 S. Bayshore Drive",
+      "Miami, FL 33133",
+      "Attn: ROSA LAMELA",
+    ],
   },
   comingSoon: {
     tag: "Coming soon",

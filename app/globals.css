@@ -341,18 +341,6 @@ button { font: inherit; cursor: pointer; }
       rgba(0, 0, 0, 0.00) 100%);
   z-index: -1;
 }
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      0deg, transparent 0, transparent 3px,
-      rgba(0, 0, 0, 0.04) 3px, rgba(0, 0, 0, 0.04) 4px
-    );
-  pointer-events: none;
-  z-index: -1;
-}
 @media (prefers-reduced-motion: reduce) {
   .hero-video { display: none; }
 }
@@ -625,7 +613,28 @@ button { font: inherit; cursor: pointer; }
   margin: 0;
   max-width: 520px;
 }
-.footer-news-form { display: flex; gap: 8px; }
+.footer-news-form { display: flex; flex-wrap: wrap; gap: 8px; }
+/* Honeypot field — visually removed, still in the DOM for bots */
+.footer-news-form .hp-field {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.footer-news-msg {
+  width: 100%;
+  min-height: 1em;
+  margin: 2px 0 0;
+  font-family: var(--body);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--rust);
+}
 .footer-news-form input {
   flex: 1;
   padding: 14px 16px;
@@ -700,6 +709,74 @@ button { font: inherit; cursor: pointer; }
   color: var(--grey-700);
 }
 .footer-col li a:hover { color: var(--rust); }
+/* Calendar · Google Calendar embed */
+.calendar-embed { margin-top: 34px; }
+.calendar-embed iframe {
+  display: block;
+  width: 100%;
+  height: 680px;
+  border: 1px solid var(--grey-200);
+  background: var(--white);
+}
+.calendar-embed-placeholder {
+  border: 1px dashed var(--grey-300);
+  background: var(--grey-50);
+  padding: 90px 24px;
+  text-align: center;
+}
+.calendar-embed-placeholder .placeholder-chip {
+  display: inline-block;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rust);
+  background: rgba(255, 139, 94, 0.12);
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin: 0 0 14px;
+}
+.calendar-embed-placeholder p {
+  font-family: var(--body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--grey-500);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* Giving · legal lines + check-donation details */
+.giving-legal {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  max-width: 640px;
+}
+.giving-legal li {
+  font-family: var(--body);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--grey-500);
+  padding: 3px 0;
+}
+.giving-address {
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--grey-700);
+  margin: 18px 0 0;
+}
+
+.footer-legal {
+  margin: 26px 0 0;
+  max-width: 720px;
+  font-family: var(--body);
+  font-size: 11px;
+  line-height: 1.75;
+  letter-spacing: 0.06em;
+  color: var(--grey-500);
+}
 .footer-bottom {
   padding-top: 22px;
   display: flex;
@@ -1064,6 +1141,13 @@ button { font: inherit; cursor: pointer; }
 }
 .pathway-item.active .age { color: var(--rust); font-weight: 600; }
 .pathway-detail { display: flex; flex-direction: column; }
+.pathway-detail-link {
+  margin: 16px 0 0;
+  font-family: var(--body);
+  font-size: 13px;
+}
+.pathway-detail-link a { color: var(--navy); font-weight: 600; }
+.pathway-detail-link a:hover { color: var(--rust); }
 .pathway-detail-img {
   aspect-ratio: 16 / 8;
   border-radius: 3px;
@@ -2075,6 +2159,8 @@ button { font: inherit; cursor: pointer; }
 .hero-compact.hero-race-team { background-image: linear-gradient(180deg, rgba(10,18,44,0.72) 0%, rgba(10,18,44,0.86) 100%), url("/assets/heroes/race-team.jpg"); }
 .hero-compact.hero-camps     { background-image: linear-gradient(180deg, rgba(16,28,66,0.72) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/camps.jpg"); }
 .hero-compact.hero-calendar  { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/calendar.jpg"); }
+.hero-compact.hero-giving    { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/giving.jpg"); }
+.hero-compact.hero-youth-regattas { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/youth-regattas.jpg"); }
 .hero-compact.hero-adult     { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/adult.jpg"); }
 .hero-compact.hero-contact   { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/contact.jpg"); }
 

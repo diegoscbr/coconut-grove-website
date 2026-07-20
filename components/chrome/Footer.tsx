@@ -21,7 +21,17 @@ export function Footer() {
                 aria-label="Email address"
                 required
               />
+              {/* Honeypot — hidden from humans, bots fill it and get filtered */}
+              <input
+                type="text"
+                name="company"
+                className="hp-field"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
               <button type="submit">Subscribe</button>
+              <p className="footer-news-msg" data-news-msg role="status"></p>
             </form>
           </div>
         </div>
@@ -105,14 +115,22 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <span className="footer-tbd">
-                    Vakaros <span className="tbd">URL TBD</span>
-                  </span>
+                  <a
+                    href="https://www.vakaros.com/en-eu"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Vakaros
+                  </a>
                 </li>
                 <li>
-                  <span className="footer-tbd">
-                    NOBs <span className="tbd">URL TBD</span>
-                  </span>
+                  <a
+                    href="https://www.nobmultisports.com/en/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    NOBs
+                  </a>
                 </li>
               </ul>
             </div>
@@ -129,18 +147,29 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <span className="footer-tbd">
-                    Instagram <span className="tbd">Handle TBD</span>
-                  </span>
+                  <a
+                    href="https://www.instagram.com/cgscic_/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Instagram
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
+          <p className="footer-legal">
+            CGSC Instructional Center (CGSCIC) is a 501(c)(3) nonprofit
+            organization dedicated to expanding access to sailing and youth
+            development on the water. Your gift directly supports our youth
+            sailing program through scholarships, equipment maintenance and
+            capital purchases that make it possible for CGSCIC to empower the
+            next generation of sailors.
+          </p>
           <div className="footer-bottom">
             <span>
               © 2026 Coconut Grove Sailing Club Instructional Center · 2990 S.
-              Bayshore Drive, Miami, FL 33133 · A registered 501(c)(3) nonprofit{" "}
-              <span className="tbd">Legal verbiage TBD</span>
+              Bayshore Drive, Miami, FL 33133
             </span>
             <div className="legal">
               <a href="#">Privacy</a>
