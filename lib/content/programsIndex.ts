@@ -10,6 +10,13 @@ export const PROGRAMS_INDEX_CONTENT = {
       "From a first time on the water to international competition — three programs cover every level of the CGSC pathway, taught by the same coaches, on the same Bay.",
     locationChip: "Biscayne Bay · Coconut Grove",
   },
+  summerCallout: {
+    eyebrow: "Summer 2026",
+    message: "Sign up for summer camps is open!",
+    detail: "Summer Camp 2026 · June 8 – August 7 · Ages 6 – 17 welcome.",
+    ctaLabel: "Camp details & registration →",
+    ctaHref: "/programs/camps-coaching#summer-camp",
+  },
   cards: {
     items: [
       {
@@ -29,7 +36,7 @@ export const PROGRAMS_INDEX_CONTENT = {
       {
         href: "/programs/camps-coaching",
         mediaClass: "camps",
-        eyebrow: "Seasonal & private",
+        eyebrow: "Summer enrollment open",
         title: "Youth Sailing",
         line: "Holiday camps, discovery weeks, private coaching. The entry point — and the way to keep sailing through every break.",
       },

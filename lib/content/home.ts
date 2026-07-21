@@ -1,6 +1,12 @@
 // Home page content — exact copy ported from prototype/index.html.
 // Single source of truth — edit this file to change the page's copy.
 export const HOME_CONTENT = {
+  announcement: {
+    message: "Sign up for summer camps is open!",
+    href: "/programs/camps-coaching#summer-camp",
+    ariaLabel:
+      "Sign up for summer camps is open! See Summer Camp 2026 dates, fees, and registration.",
+  },
   hero: {
     eyebrow: "Coconut Grove · Biscayne Bay · Since 1946",
     headlineLines: ["The", "Instructional", "Center"],
