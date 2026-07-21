@@ -2449,3 +2449,299 @@ button { font: inherit; cursor: pointer; }
 @media (max-width: 640px) {
   .coach-grid.leadership { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 }
+
+/* --------------------------------------------------------------------------
+   Announcement banner — scrolling marquee strip at the top of the homepage
+   -------------------------------------------------------------------------- */
+
+.announce-banner {
+  display: block;
+  background: var(--rust);
+  color: var(--navy);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 11px 0;
+}
+.announce-banner:hover .announce-track,
+.announce-banner:focus-visible .announce-track { animation-play-state: paused; }
+.announce-banner:focus-visible { outline: 2px solid var(--navy); outline-offset: -2px; }
+.announce-track {
+  display: flex;
+  width: max-content;
+  animation: announce-scroll 26s linear infinite;
+}
+.announce-group { display: flex; }
+.announce-item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: var(--letter-link);
+  text-transform: uppercase;
+}
+.announce-sep { margin: 0 26px; font-weight: 400; }
+@keyframes announce-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+/* Reduced motion: swap the marquee for one static centered line */
+.announce-static { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .announce-track { display: none; }
+  .announce-static {
+    display: block;
+    text-align: center;
+    font-family: var(--body);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: var(--letter-link);
+    text-transform: uppercase;
+  }
+  .announce-static .announce-sep { margin: 0 0 0 12px; }
+}
+
+/* --------------------------------------------------------------------------
+   Summer callout — registration strip on the Programs index
+   -------------------------------------------------------------------------- */
+
+.summer-callout {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  background: var(--navy);
+  color: var(--white);
+  border-left: 4px solid var(--rust);
+  border-radius: 4px;
+  padding: 18px 22px;
+  margin-bottom: 36px;
+}
+.summer-callout-eyebrow {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rust);
+  flex-shrink: 0;
+}
+.summer-callout-body {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+.summer-callout-body b { color: var(--white); }
+.summer-callout-cta {
+  margin-left: auto;
+  flex-shrink: 0;
+  background: var(--rust);
+  color: var(--navy);
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: var(--letter-link);
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border-radius: 2px;
+}
+.summer-callout:hover .summer-callout-cta { background: var(--white); }
+
+/* --------------------------------------------------------------------------
+   Summer Camp 2026 — Youth Sailing lead section
+   -------------------------------------------------------------------------- */
+
+.camp-hero {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 4px;
+  padding: clamp(32px, 5vw, 56px);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+.camp-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 110% 15%, rgba(255, 139, 94, 0.25) 0%, transparent 55%);
+  pointer-events: none;
+}
+.camp-hero > * { position: relative; z-index: 1; }
+.camp-hero .section-eyebrow { color: var(--rust); }
+.camp-hero-title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin: 0 0 16px;
+}
+.camp-hero-chips { margin-bottom: 20px; }
+.camp-hero .chip { color: var(--white); background: rgba(255, 255, 255, 0.14); font-size: 11px; padding: 5px 10px; }
+.camp-hero .chip.rust { color: var(--rust); background: rgba(255, 139, 94, 0.16); }
+.camp-hero-intro {
+  max-width: 720px;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+}
+.camp-hero-cta {
+  margin: 28px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.camp-hero-cta small { font-size: 12px; opacity: 0.65; }
+.btn-register {
+  display: inline-block;
+  background: var(--rust);
+  color: var(--navy);
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: var(--letter-link);
+  text-transform: uppercase;
+  padding: 16px 28px;
+  border-radius: 2px;
+  transition: background 0.15s;
+}
+.btn-register:hover { background: var(--white); }
+
+.camp-block { margin-bottom: 48px; max-width: 880px; }
+.camp-sub {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(20px, 2.6vw, 26px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--charcoal);
+  margin: 0 0 12px;
+}
+.camp-lead {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin: 18px 0 10px;
+}
+.camp-list { list-style: none; margin: 0; padding: 0; }
+.camp-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--grey-700);
+  margin-bottom: 8px;
+}
+.camp-list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--rust);
+  font-weight: 700;
+}
+.camp-list.check li::before { content: "✓"; }
+.camp-list b { color: var(--charcoal); }
+
+.camp-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+.camp-two-col.three { grid-template-columns: repeat(3, 1fr); }
+.camp-data-card {
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: 4px;
+  padding: 22px;
+}
+.camp-data-label {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 0 0 14px;
+}
+.camp-data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--grey-100);
+  font-size: 14px;
+}
+.camp-data-row:last-of-type { border-bottom: 0; }
+.camp-data-row .lbl { font-weight: 600; color: var(--charcoal); flex-shrink: 0; }
+.camp-data-row .lbl.price {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--navy);
+}
+.camp-data-row .val { color: var(--grey-700); text-align: right; }
+.camp-data-foot { margin: 14px 0 0; font-size: 13.5px; }
+.camp-tip {
+  margin-top: 20px;
+  max-width: 880px;
+  background: rgba(255, 139, 94, 0.12);
+  border-left: 3px solid var(--rust);
+  border-radius: 2px;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--charcoal);
+}
+.camp-contact { margin-bottom: 56px; }
+
+.camp-clinics {
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: 4px;
+  padding: clamp(28px, 4vw, 44px);
+}
+.camp-clinics .camp-hero-cta { margin-top: 20px; }
+.camp-clinic-coach {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin: 0 0 4px;
+}
+.camp-clinic-note {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin: 0 0 10px;
+}
+.camp-clinic-body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--grey-700);
+  margin: 0 0 12px;
+}
+.camp-clinic-dates-label {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 12px 0 8px;
+}
+.camp-clinic-hours { font-size: 13.5px; color: var(--grey-700); margin: 8px 0 0; }
+
+@media (max-width: 760px) {
+  .camp-two-col,
+  .camp-two-col.three { grid-template-columns: 1fr; }
+  .summer-callout { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .summer-callout-cta { margin-left: 0; }
+  .camp-data-row { flex-wrap: wrap; }
+  .camp-data-row .val { text-align: left; }
+}

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function ProgramsPage() {
   const {
     hero,
+    summerCallout,
     cards,
     fit,
     coaches,
@@ -34,6 +35,13 @@ export default function ProgramsPage() {
       {/* Program cards */}
       <section className="panel">
         <div className="container">
+          <a href={summerCallout.ctaHref} className="summer-callout">
+            <span className="summer-callout-eyebrow">{summerCallout.eyebrow}</span>
+            <span className="summer-callout-body">
+              <b>{summerCallout.message}</b> {summerCallout.detail}
+            </span>
+            <span className="summer-callout-cta">{summerCallout.ctaLabel}</span>
+          </a>
           <div className="program-cards-grid">
             {cards.items.map((card, i) => (
               <a key={i} href={card.href} className="program-card">

@@ -1,9 +1,11 @@
 import { HOME_CONTENT } from "@/lib/content/home";
+import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { Hero } from "@/components/Hero";
 import { Rich } from "@/components/Rich";
 
 export default function HomePage() {
   const {
+    announcement,
     hero,
     programs,
     pathway,
@@ -13,6 +15,7 @@ export default function HomePage() {
 
   return (
     <>
+      <AnnouncementBanner announcement={announcement} />
       <Hero hero={hero} />
 
       {/* Programs · 3-up */}
