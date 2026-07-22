@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   const {
     hero,
-    inquiry,
     contacts,
     visit,
     map,
@@ -30,89 +29,6 @@ export default function ContactPage() {
             {hero.subheadLead} <em>{hero.subheadEm}</em>
           </p>
           <span className="location-chip">{hero.locationChip}</span>
-        </div>
-      </section>
-
-      {/* Inquiry */}
-      <section className="panel">
-        <div className="container">
-          <p className="section-eyebrow">{inquiry.eyebrow}</p>
-          <h2 className="section-headline">{inquiry.headline}</h2>
-          <p className="section-sub">{inquiry.sub}</p>
-
-          <div className="inquiry-block">
-            <div className="inquiry-form-side">
-              <p className="inquiry-form-eyebrow">{inquiry.form.eyebrow}</p>
-              <h3 className="inquiry-form-headline">
-                {inquiry.form.headlineLead} <em>{inquiry.form.headlineEm}</em>
-              </h3>
-              <p className="inquiry-helper">{inquiry.form.helper}</p>
-
-              <form className="inquiry-form" data-form-inquiry="" noValidate>
-                <input type="text" name="name" placeholder={inquiry.form.namePlaceholder} required />
-                <input type="email" name="email" placeholder={inquiry.form.emailPlaceholder} required />
-                <input type="tel" name="phone" placeholder={inquiry.form.phonePlaceholder} />
-                <select name="program">
-                  <option value="">{inquiry.form.programDefaultOption}</option>
-                  {inquiry.form.programOptions.map((o, i) => (
-                    <option key={i}>{o.label}</option>
-                  ))}
-                </select>
-                <input
-                  type="text"
-                  name="sailor-info"
-                  placeholder={inquiry.form.sailorInfoPlaceholder}
-                  className="full"
-                />
-                <textarea name="notes" placeholder={inquiry.form.notesPlaceholder} className="full"></textarea>
-                <button type="submit">{inquiry.form.submitLabel}</button>
-              </form>
-            </div>
-
-            <div className="inquiry-info-side">
-              <p className="inquiry-info-eyebrow">{inquiry.info.eyebrow}</p>
-
-              <div className="inquiry-info-block">
-                <p className="lbl">{inquiry.info.phoneLabel}</p>
-                <p className="val">
-                  <a href={inquiry.info.phoneHref}>{inquiry.info.phoneText}</a>
-                  <small>
-                    {inquiry.info.phoneSmallPre}
-                    <span className="tbd">{inquiry.info.phoneTbd}</span>
-                  </small>
-                </p>
-              </div>
-
-              <div className="inquiry-info-block">
-                <p className="lbl">{inquiry.info.emailLabel}</p>
-                <p className="val">
-                  <a href={inquiry.info.emailHref}>{inquiry.info.emailText}</a>
-                </p>
-              </div>
-
-              <div className="inquiry-info-block">
-                <p className="lbl">{inquiry.info.addressLabel}</p>
-                <p className="val">
-                  {inquiry.info.addressLine1}
-                  <small>{inquiry.info.addressSmall}</small>
-                </p>
-              </div>
-
-              <div className="inquiry-info-block">
-                <p className="lbl">{inquiry.info.openHouseLabel}</p>
-                <p className="val">
-                  <span className="tbd">{inquiry.info.openHouseTbd}</span>
-                  <small>
-                    {inquiry.info.openHouseSmallPre}
-                    <a href={inquiry.info.openHouseLinkHref}>{inquiry.info.openHouseLinkText}</a>
-                    {inquiry.info.openHouseSmallPost}
-                  </small>
-                </p>
-              </div>
-
-              <p className="inquiry-info-foot">{inquiry.info.foot}</p>
-            </div>
-          </div>
         </div>
       </section>
 
