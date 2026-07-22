@@ -201,68 +201,27 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map placeholder */}
+      {/* Map */}
       <section className="panel grey">
         <div className="container">
           <p className="section-eyebrow">{map.eyebrow}</p>
           <h2 className="section-headline">{map.headline}</h2>
           <p className="section-sub">{map.sub}</p>
 
-          <div
-            style={{
-              aspectRatio: "16 / 8",
-              borderRadius: 4,
-              background: "linear-gradient(135deg, #B7B5E8 0%, #4E4ACF 50%, #0C0969 110%)",
-              position: "relative",
-              overflow: "hidden",
-              marginTop: 24,
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background:
-                  "radial-gradient(circle at 50% 50%, rgba(255, 139, 94, 0.35) 0%, transparent 25%)",
-                pointerEvents: "none",
-              }}
-            ></div>
-            <div
-              style={{
-                position: "absolute",
-                left: "50%",
-                top: "50%",
-                transform: "translate(-50%,-50%)",
-                textAlign: "center",
-                color: "var(--white)",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "var(--display)",
-                  fontWeight: 900,
-                  fontSize: 24,
-                  letterSpacing: "-0.01em",
-                  margin: 0,
-                }}
-              >
-                {map.name}
-              </p>
-              <p
-                style={{
-                  fontFamily: "var(--body)",
-                  fontSize: 14,
-                  opacity: 0.85,
-                  margin: "6px 0 18px",
-                }}
-              >
-                {map.address}
-              </p>
-              <a href={map.linkHref} target="_blank" rel="noopener" className="btn-light">
-                {map.linkText}
-              </a>
-            </div>
+          <div className="map-embed">
+            <iframe
+              src={map.embedSrc}
+              title={map.embedTitle}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
+          <p className="map-embed-foot">
+            <a href={map.linkHref} target="_blank" rel="noopener">
+              {map.linkText}
+            </a>
+          </p>
         </div>
       </section>
     </>

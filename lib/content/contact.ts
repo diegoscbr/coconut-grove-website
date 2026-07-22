@@ -119,9 +119,10 @@ export const CONTACT_CONTENT = {
   map: {
     eyebrow: "Find us",
     headline: "Coconut Grove waterfront.",
-    sub: "Map embed lands in Phase 2 (Mapbox or static tile). For now, click through to Google Maps for directions.",
-    name: "CGSC Instructional Center",
-    address: "2990 S. Bayshore Drive · Miami, FL 33133",
+    sub: "We're on the water at 2990 S. Bayshore Drive — five minutes from downtown Coconut Grove.",
+    embedTitle: "Map to the CGSC Instructional Center, 2990 S. Bayshore Drive, Miami",
+    embedSrc:
+      "https://www.google.com/maps?q=Coconut+Grove+Sailing+Club,+2990+S+Bayshore+Dr,+Miami,+FL+33133&z=16&output=embed",
     linkText: "Open in Google Maps →",
     linkHref:
       "https://www.google.com/maps/search/?api=1&query=2990+S+Bayshore+Drive+Miami+FL+33133",
