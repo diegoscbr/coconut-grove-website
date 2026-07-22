@@ -166,10 +166,10 @@ button { font: inherit; cursor: pointer; }
 }
 
 .wordmark { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-/* Official CGSC burgee (img) — chrome is light everywhere now, so it sits
-   directly on white with no badge. */
+/* Official CGSC Instructional Center logo (img) — chrome is light everywhere
+   now, so it sits directly on white with no badge. */
 .pen { object-fit: contain; display: block; }
-.wordmark .pen { width: 48px; height: 32px; }
+.wordmark .pen { width: 44px; height: 32px; }
 .wordmark .text { display: flex; flex-direction: column; line-height: 1; }
 .wordmark .top {
   font-family: var(--display);
@@ -183,7 +183,7 @@ button { font: inherit; cursor: pointer; }
   font-family: var(--body);
   font-weight: 500;
   font-size: 9px;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--grey-500);
   margin-top: 4px;
@@ -200,6 +200,14 @@ button { font: inherit; cursor: pointer; }
   opacity: 0.78;
   position: relative;
   padding: 6px 0;
+  white-space: nowrap;
+}
+/* 981–1160px: nav is still full but the wordmark's longer second line
+   (Coconut Grove Sailing Club · 1946) squeezes the links — tighten up. */
+@media (max-width: 1160px) {
+  .topnav-links { gap: 14px; }
+  .topnav-links a { letter-spacing: 0.1em; }
+  .wordmark .bot { letter-spacing: 0.12em; }
 }
 .topnav-links a:hover { opacity: 1; }
 .topnav-links a.active { opacity: 1; border-bottom: 2px solid var(--rust); }
@@ -674,7 +682,7 @@ button { font: inherit; cursor: pointer; }
   border-bottom: 1px solid rgba(12, 9, 105, 0.12);
 }
 .footer-mark { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
-.footer-mark .pen { width: 68px; height: 46px; }
+.footer-mark .pen { width: 63px; height: 46px; }
 .footer-mark .top {
   font-family: var(--display);
   font-weight: 800;
@@ -688,7 +696,7 @@ button { font: inherit; cursor: pointer; }
   font-family: var(--body);
   font-weight: 500;
   font-size: 9px;
-  letter-spacing: 0.36em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--grey-500);
   margin-top: 4px;

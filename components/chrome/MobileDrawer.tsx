@@ -10,14 +10,14 @@ export function MobileDrawer() {
         <div className="wordmark">
           <Image
             className="pen"
-            src="/assets/cgsc-burgee.png"
-            alt="CGSC burgee"
-            width={252}
-            height={168}
+            src="/assets/cgscic-logo.png"
+            alt="CGSC Instructional Center logo"
+            width={273}
+            height={200}
           />
           <span className="text">
             <span className="top">Instructional Center</span>
-            <span className="bot">Coconut Grove · 1946</span>
+            <span className="bot">Coconut Grove Sailing Club · 1946</span>
           </span>
         </div>
         <button

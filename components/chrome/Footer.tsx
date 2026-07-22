@@ -42,14 +42,14 @@ export function Footer() {
             <div className="footer-mark">
               <Image
                 className="pen"
-                src="/assets/cgsc-burgee.png"
-                alt="CGSC burgee"
-                width={252}
-                height={168}
+                src="/assets/cgscic-logo.png"
+                alt="CGSC Instructional Center logo"
+                width={273}
+                height={200}
               />
               <div>
                 <div className="top">Instructional Center</div>
-                <div className="bot">Coconut Grove · 1946</div>
+                <div className="bot">Coconut Grove Sailing Club · 1946</div>
               </div>
               <a
                 className="footer-club-link"
