@@ -53,22 +53,8 @@ export const CONTACT_CONTENT = {
     donateLinkText: "Donate →",
     donateLinkHref: "https://cgscic.org/donate/",
   },
-  visit: {
-    eyebrow: "Visit the dock",
-    headline: "2990 S. Bayshore Drive.",
-    prose:
-      "We're on Biscayne Bay at **2990 S. Bayshore Drive** in Coconut Grove — the full CGSC fleet, dock, and coaching staff on site. The fastest way to know if CGSC is right for you is to walk down the dock and meet the boats, the water, and the coaches.",
-    list: {
-      officeHoursLabel: "Office hours",
-      officeHoursTbd: "TBD — call ahead to confirm",
-      openHouseLabel: "Open house",
-      openHouseTbd: "Cadence TBD",
-      openHouseTrailPre: " — see the ",
-      calendarLinkText: "calendar",
-      calendarLinkHref: "/calendar",
-      openHouseTrailPost: " for confirmed dates",
-    },
-  },
+  // The "Visit the dock" split section was removed as redundant on 2026-07-23;
+  // its aerial bayview photo now serves as this page's hero image.
   map: {
     eyebrow: "Find us",
     headline: "Coconut Grove waterfront.",

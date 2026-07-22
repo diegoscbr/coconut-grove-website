@@ -2170,14 +2170,13 @@ button { font: inherit; cursor: pointer; }
 .hero-compact.hero-giving    { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/giving.jpg"); }
 .hero-compact.hero-youth-regattas { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/youth-regattas.jpg"); }
 .hero-compact.hero-adult     { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/adult.jpg"); }
-.hero-compact.hero-contact   { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/contact.jpg"); }
+.hero-compact.hero-contact   { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/calendar.jpg"); }
 
 /* Split 2-col media — real photo, gradient as fallback color */
 .split-2col-media.aerial,
 .split-2col-media.race,
 .split-2col-media.coaches { background-size: cover; background-position: center; background-repeat: no-repeat; }
 .split-2col-media.aerial  { background-color: #0C0969; background-image: url("/assets/heroes/about.jpg"); }
-.split-2col-media.aerial.bayview { background-image: url("/assets/heroes/calendar.jpg"); }
 .split-2col-media.race    { background-color: #120F60; background-image: url("/assets/pathway/race.jpg"); }
 .split-2col-media.coaches { background-color: #2C2A79; background-image: url("/assets/methodology.jpg"); }
 /* swap the blue tint for a subtle bottom vignette now that real photos sit underneath */

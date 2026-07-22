@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { CONTACT_CONTENT } from "@/lib/content/contact";
-import { Rich } from "@/components/Rich";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -9,12 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const {
-    hero,
-    contacts,
-    visit,
-    map,
-  } = CONTACT_CONTENT;
+  const { hero, contacts, map } = CONTACT_CONTENT;
 
   return (
     <>
@@ -68,57 +62,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Visit the dock */}
-      <section className="panel">
-        <div className="container">
-          <div className="split-2col">
-            <div className="split-2col-media aerial bayview accent-bracket"></div>
-            <div className="split-2col-body">
-              <p className="section-eyebrow">{visit.eyebrow}</p>
-              <h2 className="section-headline">{visit.headline}</h2>
-              <p className="intro-prose">
-                <Rich text={visit.prose} />
-              </p>
-              <ul style={{ listStyle: "none", padding: 0, margin: "28px 0 0" }}>
-                <li style={{ padding: "6px 0", fontSize: 14, color: "var(--grey-700)" }}>
-                  <b
-                    style={{
-                      display: "inline-block",
-                      minWidth: 130,
-                      color: "var(--charcoal)",
-                      fontFamily: "var(--display)",
-                      fontWeight: 700,
-                    }}
-                  >
-                    {visit.list.officeHoursLabel}
-                  </b>
-                  <span className="tbd">{visit.list.officeHoursTbd}</span>
-                </li>
-                <li style={{ padding: "6px 0", fontSize: 14, color: "var(--grey-700)" }}>
-                  <b
-                    style={{
-                      display: "inline-block",
-                      minWidth: 130,
-                      color: "var(--charcoal)",
-                      fontFamily: "var(--display)",
-                      fontWeight: 700,
-                    }}
-                  >
-                    {visit.list.openHouseLabel}
-                  </b>
-                  <span className="tbd">{visit.list.openHouseTbd}</span>
-                  {visit.list.openHouseTrailPre}
-                  <a href={visit.list.calendarLinkHref}>{visit.list.calendarLinkText}</a>
-                  {visit.list.openHouseTrailPost}
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Map */}
-      <section className="panel grey">
+      <section className="panel">
         <div className="container">
           <p className="section-eyebrow">{map.eyebrow}</p>
           <h2 className="section-headline">{map.headline}</h2>
