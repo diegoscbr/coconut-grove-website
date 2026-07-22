@@ -8,7 +8,7 @@ export const HOME_CONTENT = {
       "Sign up for summer camps is open! See Summer Camp 2026 dates, fees, and registration.",
   },
   hero: {
-    eyebrow: "Coconut Grove · Biscayne Bay · Since 1946",
+    eyebrow: "Coconut Grove Sailing Club · Biscayne Bay · Since 1946",
     headlineLines: ["The", "Instructional", "Center"],
     modifier: "A 501(c)(3) nonprofit · Open to every sailor",
     subhead:

@@ -8,62 +8,15 @@ export const CONTACT_CONTENT = {
     breadcrumbCurrent: "Contact",
     headline: "Contact Us",
     subheadLead: "Coconut Grove Sailing Club Instructional Center.",
-    subheadEm: "Reach the team directly — by phone, by email, or the note below.",
+    subheadEm: "Reach the team directly — by phone or email.",
     locationChip: "2990 S. Bayshore Drive · Miami, FL 33133",
   },
-  inquiry: {
-    eyebrow: "Send a note",
-    headline: "Tell us about the sailor.",
-    sub: "A coach reads every inquiry and points you to the right program or course.",
-    form: {
-      eyebrow: "General inquiry",
-      headlineLead: "Sail with us —",
-      headlineEm: "where would you start?",
-      helper:
-        'No commitment, no fee. If you\'re not sure which program fits, mark "Help me figure it out" — we\'ll suggest one.',
-      namePlaceholder: "Your name",
-      emailPlaceholder: "Email",
-      phonePlaceholder: "Phone (optional)",
-      programDefaultOption: "Which program?",
-      programOptions: [
-        { label: "Adult Sailing" },
-        { label: "Racing Teams — Junior" },
-        { label: "Racing Teams — Senior / HPC" },
-        { label: "Youth Sailing" },
-        { label: "Private coaching" },
-        { label: "Help me figure it out" },
-      ],
-      sailorInfoPlaceholder: "Sailor's name & age (if not you)",
-      notesPlaceholder:
-        "Anything else? Experience, dates that work, questions (optional)",
-      submitLabel: "Send →",
-    },
-    info: {
-      eyebrow: "Direct line",
-      phoneLabel: "Phone",
-      phoneHref: "tel:+13054444571",
-      phoneText: "(305) 444-4571",
-      phoneSmallPre: "Office hours ",
-      phoneTbd: "TBD",
-      emailLabel: "Email",
-      emailHref: "mailto:icmanager@cgsc.org",
-      emailText: "icmanager@cgsc.org",
-      addressLabel: "Address",
-      addressLine1: "2990 S. Bayshore Drive",
-      addressSmall: "Miami, FL 33133",
-      openHouseLabel: "Open house",
-      openHouseTbd: "Cadence TBD",
-      openHouseSmallPre: "Drop-ins welcome by appointment. See the ",
-      openHouseLinkText: "calendar",
-      openHouseLinkHref: "/calendar",
-      openHouseSmallPost: " for confirmed dates.",
-      foot: "Prefer a specific person? See the Instructional Center contacts below.",
-    },
-  },
+  // The "Send a note" inquiry section (form + direct-line column) was removed
+  // at the client's request on 2026-07-23 — copy lives in git history.
   contacts: {
     eyebrow: "Who to reach",
     headline: "Instructional Center contacts.",
-    sub: "Coconut Grove Sailing Club Instructional Center. Reach the team directly, or send the form above and a coach will route it.",
+    sub: "Coconut Grove Sailing Club Instructional Center. Reach the team directly and a coach will point you to the right program or course.",
     people: [
       {
         photo: "/assets/coaches/maru.jpg",
@@ -100,28 +53,15 @@ export const CONTACT_CONTENT = {
     donateLinkText: "Donate →",
     donateLinkHref: "https://cgscic.org/donate/",
   },
-  visit: {
-    eyebrow: "Visit the dock",
-    headline: "2990 S. Bayshore Drive.",
-    prose:
-      "We're on Biscayne Bay at **2990 S. Bayshore Drive** in Coconut Grove — the full CGSC fleet, dock, and coaching staff on site. The fastest way to know if CGSC is right for you is to walk down the dock and meet the boats, the water, and the coaches.",
-    list: {
-      officeHoursLabel: "Office hours",
-      officeHoursTbd: "TBD — call ahead to confirm",
-      openHouseLabel: "Open house",
-      openHouseTbd: "Cadence TBD",
-      openHouseTrailPre: " — see the ",
-      calendarLinkText: "calendar",
-      calendarLinkHref: "/calendar",
-      openHouseTrailPost: " for confirmed dates",
-    },
-  },
+  // The "Visit the dock" split section was removed as redundant on 2026-07-23;
+  // its aerial bayview photo now serves as this page's hero image.
   map: {
     eyebrow: "Find us",
     headline: "Coconut Grove waterfront.",
-    sub: "Map embed lands in Phase 2 (Mapbox or static tile). For now, click through to Google Maps for directions.",
-    name: "CGSC Instructional Center",
-    address: "2990 S. Bayshore Drive · Miami, FL 33133",
+    sub: "We're on the water at 2990 S. Bayshore Drive — five minutes from downtown Coconut Grove.",
+    embedTitle: "Map to the CGSC Instructional Center, 2990 S. Bayshore Drive, Miami",
+    embedSrc:
+      "https://www.google.com/maps?q=Coconut+Grove+Sailing+Club,+2990+S+Bayshore+Dr,+Miami,+FL+33133&z=16&output=embed",
     linkText: "Open in Google Maps →",
     linkHref:
       "https://www.google.com/maps/search/?api=1&query=2990+S+Bayshore+Drive+Miami+FL+33133",

@@ -166,10 +166,10 @@ button { font: inherit; cursor: pointer; }
 }
 
 .wordmark { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-/* Official CGSC burgee (img) — chrome is light everywhere now, so it sits
-   directly on white with no badge. */
+/* Official CGSC Instructional Center logo (img) — chrome is light everywhere
+   now, so it sits directly on white with no badge. */
 .pen { object-fit: contain; display: block; }
-.wordmark .pen { width: 48px; height: 32px; }
+.wordmark .pen { width: 44px; height: 32px; }
 .wordmark .text { display: flex; flex-direction: column; line-height: 1; }
 .wordmark .top {
   font-family: var(--display);
@@ -183,7 +183,7 @@ button { font: inherit; cursor: pointer; }
   font-family: var(--body);
   font-weight: 500;
   font-size: 9px;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--grey-500);
   margin-top: 4px;
@@ -200,6 +200,14 @@ button { font: inherit; cursor: pointer; }
   opacity: 0.78;
   position: relative;
   padding: 6px 0;
+  white-space: nowrap;
+}
+/* 981–1160px: nav is still full but the wordmark's longer second line
+   (Coconut Grove Sailing Club · 1946) squeezes the links — tighten up. */
+@media (max-width: 1160px) {
+  .topnav-links { gap: 14px; }
+  .topnav-links a { letter-spacing: 0.1em; }
+  .wordmark .bot { letter-spacing: 0.12em; }
 }
 .topnav-links a:hover { opacity: 1; }
 .topnav-links a.active { opacity: 1; border-bottom: 2px solid var(--rust); }
@@ -674,7 +682,7 @@ button { font: inherit; cursor: pointer; }
   border-bottom: 1px solid rgba(12, 9, 105, 0.12);
 }
 .footer-mark { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
-.footer-mark .pen { width: 68px; height: 46px; }
+.footer-mark .pen { width: 63px; height: 46px; }
 .footer-mark .top {
   font-family: var(--display);
   font-weight: 800;
@@ -688,7 +696,7 @@ button { font: inherit; cursor: pointer; }
   font-family: var(--body);
   font-weight: 500;
   font-size: 9px;
-  letter-spacing: 0.36em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--grey-500);
   margin-top: 4px;
@@ -2162,14 +2170,13 @@ button { font: inherit; cursor: pointer; }
 .hero-compact.hero-giving    { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/giving.jpg"); }
 .hero-compact.hero-youth-regattas { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/youth-regattas.jpg"); }
 .hero-compact.hero-adult     { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/adult.jpg"); }
-.hero-compact.hero-contact   { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/contact.jpg"); }
+.hero-compact.hero-contact   { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/calendar.jpg"); }
 
 /* Split 2-col media — real photo, gradient as fallback color */
 .split-2col-media.aerial,
 .split-2col-media.race,
 .split-2col-media.coaches { background-size: cover; background-position: center; background-repeat: no-repeat; }
 .split-2col-media.aerial  { background-color: #0C0969; background-image: url("/assets/heroes/about.jpg"); }
-.split-2col-media.aerial.bayview { background-image: url("/assets/heroes/calendar.jpg"); }
 .split-2col-media.race    { background-color: #120F60; background-image: url("/assets/pathway/race.jpg"); }
 .split-2col-media.coaches { background-color: #2C2A79; background-image: url("/assets/methodology.jpg"); }
 /* swap the blue tint for a subtle bottom vignette now that real photos sit underneath */
@@ -2729,6 +2736,28 @@ button { font: inherit; cursor: pointer; }
   border-radius: 4px;
   padding: 22px;
 }
+/* Contact — Google Maps embed */
+.map-embed {
+  aspect-ratio: 16 / 8;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 24px;
+  border: 1px solid var(--grey-200);
+  background: var(--grey-100);
+}
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.map-embed-foot { margin: 14px 0 0; font-size: 14px; }
+.map-embed-foot a { color: var(--navy); text-decoration: underline; }
+.map-embed-foot a:hover { color: var(--rust); }
+@media (max-width: 768px) {
+  .map-embed { aspect-ratio: 4 / 3; }
+}
+
 .fleet-footnote {
   font-size: 14.5px;
   color: var(--grey-700);
