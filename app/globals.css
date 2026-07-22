@@ -2588,6 +2588,7 @@ button { font: inherit; cursor: pointer; }
   color: rgba(255, 255, 255, 0.88);
   margin: 0;
 }
+.camp-hero-intro + .camp-hero-intro { margin-top: 14px; }
 .camp-hero-cta {
   margin: 28px 0 0;
   display: flex;
@@ -2699,6 +2700,45 @@ button { font: inherit; cursor: pointer; }
   color: var(--charcoal);
 }
 .camp-contact { margin-bottom: 56px; }
+
+/* Adult Sailing — program-specific pieces (shares the .camp-hero card system) */
+.camp-hero-tagline {
+  font-family: var(--display);
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: var(--rust);
+  margin: 0 0 18px;
+}
+.course-card .course-tagline {
+  font-family: var(--body);
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--navy);
+  margin: -4px 0 10px;
+}
+.split-2col-media.photo {
+  background-size: cover;
+  background-position: center;
+}
+.course-meta.standalone {
+  max-width: 880px;
+  margin: 28px 0 0;
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: 4px;
+  padding: 22px;
+}
+.fleet-footnote {
+  font-size: 14.5px;
+  color: var(--grey-700);
+  margin: 20px 0 0;
+}
+.fleet-footnote a { color: var(--navy); text-decoration: underline; }
+.fleet-footnote a:hover { color: var(--rust); }
+.panel.charcoal .section-sub a { color: var(--white); text-decoration: underline; }
+.panel.charcoal .section-sub a:hover { color: var(--rust); }
+.panel.charcoal .section-sub b { color: var(--white); }
 
 .camp-clinics {
   background: var(--white);

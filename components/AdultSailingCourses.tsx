@@ -27,7 +27,13 @@ export function Linkify({ text }: { text?: string | null }) {
 }
 
 type CourseMetaRow = { dt: string; dd: string };
-type Course = { name: string; desc: string; image: string; meta: CourseMetaRow[] };
+type Course = {
+  name: string;
+  tagline?: string;
+  desc: string;
+  image: string;
+  meta: CourseMetaRow[];
+};
 
 /** A `.course-grid` of `.course-card` articles, exactly as the prototype markup. */
 export function CourseGrid({ courses }: { courses: Course[] }) {
@@ -43,7 +49,8 @@ export function CourseGrid({ courses }: { courses: Course[] }) {
           ) : null}
           <div className="course-card-inner">
             <h3 className="course-name">{course.name}</h3>
-            <p className="course-desc">{course.desc}</p>
+            {course.tagline ? <p className="course-tagline">{course.tagline}</p> : null}
+            {course.desc ? <p className="course-desc">{course.desc}</p> : null}
             <dl className="course-meta">
               {course.meta.map((row, j) => (
                 <div key={j}>
