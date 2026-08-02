@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.join(__dirname),
   },
+  async redirects() {
+    return [
+      // Old WordPress Howler Regatta page, still in Google's index.
+      { source: "/hh", destination: "/calendar", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;
