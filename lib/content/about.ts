@@ -28,6 +28,7 @@ export const ABOUT_CONTENT = {
       { name: "Lauren Simpson", role: "General Manager" },
       { name: "Raul Ramos", role: "Racing Teams Coach" },
       { name: "Aish Nedunchezhiyan", role: "Race Coach" },
+      { name: 'Diunieski "Koki" Gutierrez', role: "Head RWB Opti Coach" },
       { name: "Oscar Sanchez Barreto", role: "Optimist Coach" },
       { name: "Kope Alfonso", role: "Opti Green Fleet Coach" },
       { name: "Norlem Garcia", role: "Foil & Windsurf Coach" },
