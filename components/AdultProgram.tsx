@@ -1,4 +1,5 @@
 import { ADULT_PROGRAM_CONTENT } from "@/lib/content/adultProgram";
+import { ADULT_SAILING_CONTENT } from "@/lib/content/adultSailing";
 import { CourseGrid, Linkify } from "@/components/AdultSailingCourses";
 
 /**
@@ -7,7 +8,7 @@ import { CourseGrid, Linkify } from "@/components/AdultSailingCourses";
  * with the Summer Camp section (.camp-* in globals.css).
  */
 export function AdultProgram() {
-  const { registrationUrl, lead, pathway, flyingScot, clinics, readyToStart } =
+  const { registrationUrl, lead, pathway, flyingScot, clinics, faq, readyToStart } =
     ADULT_PROGRAM_CONTENT;
 
   return (
@@ -55,6 +56,8 @@ export function AdultProgram() {
             </div>
             <div
               className="split-2col-media photo accent-bracket"
+              role="img"
+              aria-label={ADULT_SAILING_CONTENT.seo.heroImageAlt}
               style={{ backgroundImage: `url('${pathway.image}')` }}
             ></div>
           </div>
@@ -124,6 +127,21 @@ export function AdultProgram() {
             <a href={clinics.fleetFootnoteHref}>{clinics.fleetFootnoteLink}</a>
             {clinics.fleetFootnotePost}
           </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="panel grey" id="faq">
+        <div className="container">
+          <h2 className="section-headline">{faq.headline}</h2>
+          <div className="faq-accordion">
+            {faq.items.map((item, i) => (
+              <details key={i} className="faq-item">
+                <summary>{item.question}</summary>
+                <div className="faq-body">{item.answer}</div>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -3,10 +3,11 @@ import Link from "next/link";
 import { ADULT_SAILING_CONTENT } from "@/lib/content/adultSailing";
 import { AdultProgram } from "@/components/AdultProgram";
 
+// SEO fields come from the client's "CGSCIC-Adult-Sailing-Page - SEO Ready" doc —
+// the title is absolute (no "· CGSC Instructional Center" template suffix).
 export const metadata: Metadata = {
-  title: "Adult Sailing",
-  description:
-    "US Sailing certification courses from Basic Keelboat to Celestial Navigation, free Wednesday night community sailing, and racing clinics for adults on Biscayne Bay.",
+  title: { absolute: ADULT_SAILING_CONTENT.seo.title },
+  description: ADULT_SAILING_CONTENT.seo.description,
 };
 
 export default function AdultSailingPage() {
@@ -22,11 +23,7 @@ export default function AdultSailingPage() {
             {hero.breadcrumbCurrent}
           </p>
           <h1>{hero.h1}</h1>
-          <p className="subhead">
-            {hero.subheadPre}
-            <em>{hero.subheadEmphasis}</em>
-            {hero.subheadPost}
-          </p>
+          <p className="subhead">{hero.subhead}</p>
           <span className="location-chip">{hero.locationChip}</span>
         </div>
       </section>
