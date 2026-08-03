@@ -20,46 +20,64 @@ export const ABOUT_CONTENT = {
   },
   coaches: {
     eyebrow: "The coaches",
-    // Roster and titles follow the client's "CGSCIC Coaching Staff"
-    // organizational chart, 2026–2027 season. Order mirrors the chart:
-    // leadership, then Racing Teams (Maru), then Learn to Sail & Development
-    // (Rosa), then Fleet Operations. Nicknames stay inline in the name — that
-    // string is the lookup key for lib/coachPhotos.ts, so the two must match
-    // byte for byte.
-    people: [
-      // Leadership
-      { name: "Lauren Simpson", role: "General Manager" },
+    // Roster, titles, and tiering follow the client's "CGSCIC Coaching Staff"
+    // organizational chart, 2026–2027 season. The chart's boxes collapse into
+    // four bands by seniority: leadership, the coaches who head a fleet
+    // ("Head" in their chart title), the rest of the coaching staff, and
+    // Fleet Operations — which the chart keeps separate from coaching.
+    // `featured` renders the band larger with the rust-ring portrait.
+    // Nicknames stay inline in the name: that string is the lookup key for
+    // lib/coachPhotos.ts, so the two must match byte for byte.
+    tiers: [
       {
-        name: "Maru Urban",
-        role: "Director · Sailing Performance & Development · ILCA Coach · High School Head Coach & C420 Instructor",
+        label: "Leadership",
+        featured: true,
+        people: [
+          { name: "Lauren Simpson", role: "General Manager" },
+          {
+            name: "Maru Urban",
+            role: "Director · Sailing Performance & Development · ILCA Coach · High School Head Coach & C420 Instructor",
+          },
+          {
+            name: "Rosa Lamela",
+            role: "Director · Programs & Development · Opti Learn to Sail Coach",
+          },
+        ],
       },
       {
-        name: "Rosa Lamela",
-        role: "Director · Programs & Development · Opti Learn to Sail Coach",
+        label: "Head Coaches",
+        featured: false,
+        people: [
+          { name: 'Diunieski "Koki" Gutierrez', role: "Head Opti RWB Coach" },
+          { name: "Aish Nedunchezhiyan", role: "Head Green Fleet Coach" },
+          { name: "Orlando Gonzalez", role: "Head ILCA Coach" },
+          { name: "Justin Louden", role: "Head C420 Coach & High School Coach" },
+          { name: "Norlem Garcia", role: "Head Windsurf & Wing Foil Coach" },
+        ],
       },
-      // Racing Teams — Opti Championship Fleet (RWB)
-      { name: 'Diunieski "Koki" Gutierrez', role: "Head Opti RWB Coach" },
-      { name: "Raul Ramos", role: "Opti RWB Coach" },
-      // Racing Teams — Opti Green Fleet
-      { name: "Aish Nedunchezhiyan", role: "Head Green Fleet Coach" },
-      { name: 'Luis Orlando "Kope" Novoa', role: "Green Fleet Coach" },
-      // Racing Teams — ILCA
-      { name: "Orlando Gonzalez", role: "Head ILCA Coach" },
-      { name: "Steve Mitchell", role: "High Performance Coach · ILCA/RWB" },
-      // Racing Teams — C420 & High School
-      { name: "Justin Louden", role: "Head C420 Coach & High School Coach" },
-      { name: "Halsey Richartz", role: "High School Regatta Coach" },
-      // Learn to Sail & Development — Opti
-      { name: "Sebastian Lopez", role: "Opti Learn to Sail Coach" },
-      { name: "Alastar Cook", role: "Opti Learn to Sail Coach" },
-      { name: "Oscar Sanchez Barreto", role: "Opti Intermediate Development Coach" },
-      { name: "Michelle Perera", role: "Opti Intermediate Coach" },
-      // Learn to Sail & Development — ILCA, C420, Windsurf & Wing Foil
-      { name: "Alex Figueroa", role: "ILCA Development Coach" },
-      { name: "Erick Demario", role: "C420 Development Coach" },
-      { name: "Norlem Garcia", role: "Head Windsurf & Wing Foil Coach" },
-      // Fleet Operations
-      { name: "Jonathan Rodriguez", role: "Powerboat Fleet Operations Manager" },
+      {
+        label: "Coaching Staff",
+        featured: false,
+        people: [
+          { name: "Steve Mitchell", role: "High Performance Coach · ILCA/RWB" },
+          { name: "Raul Ramos", role: "Opti RWB Coach" },
+          { name: 'Luis Orlando "Kope" Novoa', role: "Green Fleet Coach" },
+          { name: "Halsey Richartz", role: "High School Regatta Coach" },
+          { name: "Sebastian Lopez", role: "Opti Learn to Sail Coach" },
+          { name: "Alastar Cook", role: "Opti Learn to Sail Coach" },
+          { name: "Oscar Sanchez Barreto", role: "Opti Intermediate Development Coach" },
+          { name: "Michelle Perera", role: "Opti Intermediate Coach" },
+          { name: "Alex Figueroa", role: "ILCA Development Coach" },
+          { name: "Erick Demario", role: "C420 Development Coach" },
+        ],
+      },
+      {
+        label: "Fleet Operations",
+        featured: false,
+        people: [
+          { name: "Jonathan Rodriguez", role: "Powerboat Fleet Operations Manager" },
+        ],
+      },
     ],
     ctaLabel: "Schedule a coach conversation →",
     ctaHref: "/contact",
