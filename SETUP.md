@@ -34,7 +34,7 @@ Site: <http://localhost:3000>. `npm run build` must stay green before pushing.
 | `/about` | `lib/content/about.ts` | about.html |
 | `/programs` | `lib/content/programsIndex.ts` | programs/index.html |
 | `/programs/race-team` | `lib/content/raceTeam.ts` | programs/race-team.html |
-| `/programs/camps-coaching` | `lib/content/campsCoaching.ts` | programs/camps-coaching.html |
+| `/programs/camps-coaching` | `lib/content/fallYouth.ts` | — (rebuilt 2026-08 as 2026 Fall Youth Sailing) |
 | `/programs/adult-sailing` | `lib/content/adultSailing.ts` | programs/adult-sailing.html |
 | `/youth-regattas` | `lib/content/youthRegattas.ts` | youth-regattas.html |
 | `/calendar` | `lib/content/calendar.ts` | calendar/index.html |
