@@ -8,6 +8,7 @@ export const COACH_PHOTOS: Record<string, string> = {
   "Lauren Simpson": "/assets/coaches/lauren.jpg",
   "Raul Ramos": "/assets/coaches/raul.jpg",
   "Aish Nedunchezhiyan": "/assets/coaches/aish.jpg",
+  'Diunieski "Koki" Gutierrez': "/assets/coaches/koki.jpg",
   "Oscar Sanchez Barreto": "/assets/coaches/oscar.jpg",
   "Sebastian Lopez": "/assets/coaches/sebastian.jpg",
   "Kope Alfonso": "/assets/coaches/kope.jpg",
