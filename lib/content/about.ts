@@ -25,13 +25,13 @@ export const ABOUT_CONTENT = {
     // four bands by seniority: leadership, the coaches who head a fleet
     // ("Head" in their chart title), the rest of the coaching staff, and
     // Fleet Operations — which the chart keeps separate from coaching.
-    // `featured` renders the band larger with the rust-ring portrait.
+    // `lead` renders the band as a wider grid with larger portraits.
     // Nicknames stay inline in the name: that string is the lookup key for
     // lib/coachPhotos.ts, so the two must match byte for byte.
     tiers: [
       {
         label: "Leadership",
-        featured: true,
+        lead: true,
         people: [
           { name: "Lauren Simpson", role: "General Manager" },
           {
@@ -46,7 +46,7 @@ export const ABOUT_CONTENT = {
       },
       {
         label: "Head Coaches",
-        featured: false,
+        lead: false,
         people: [
           { name: 'Diunieski "Koki" Gutierrez', role: "Head Opti RWB Coach" },
           { name: "Aish Nedunchezhiyan", role: "Head Green Fleet Coach" },
@@ -57,7 +57,7 @@ export const ABOUT_CONTENT = {
       },
       {
         label: "Coaching Staff",
-        featured: false,
+        lead: false,
         people: [
           { name: "Steve Mitchell", role: "High Performance Coach · ILCA/RWB" },
           { name: "Raul Ramos", role: "Opti RWB Coach" },
@@ -73,7 +73,7 @@ export const ABOUT_CONTENT = {
       },
       {
         label: "Fleet Operations",
-        featured: false,
+        lead: false,
         people: [
           { name: "Jonathan Rodriguez", role: "Powerboat Fleet Operations Manager" },
         ],

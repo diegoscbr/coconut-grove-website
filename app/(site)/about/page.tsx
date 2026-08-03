@@ -54,9 +54,9 @@ export default function AboutPage() {
           {coaches.tiers.map((tier, t) => (
             <div key={t} className="coach-tier">
               <p className="coach-tier-label">{tier.label}</p>
-              <div className={`coach-grid${tier.featured ? " tier-lead" : ""}`}>
+              <div className={`coach-grid${tier.lead ? " tier-lead" : ""}`}>
                 {tier.people.map((p, i) => (
-                  <div key={i} className={`coach${tier.featured ? " featured" : ""}`}>
+                  <div key={i} className="coach">
                     <div className="coach-portrait"></div>
                     <p className="coach-name">{p.name}</p>
                     <p className="coach-role">{p.role}</p>
