@@ -1,5 +1,6 @@
-// Adult Sailing page content — copy provided by the client
-// ("CGSCIC — Adult Sailing Page" draft, 2026-07-23).
+// Adult Sailing page content — exact copy from the client's
+// "CGSCIC-Adult-Sailing-Page - SEO Ready" doc (2026-08-02), which supersedes
+// the 2026-07-23 draft.
 // Rendered by components/AdultProgram.tsx on /programs/adult-sailing.
 // Single source of truth — edit this file to change the page's copy.
 
@@ -40,8 +41,8 @@ export const ADULT_PROGRAM_CONTENT = {
           { dt: "Prerequisite", dd: "None. Complete beginners welcome." },
           { dt: "You'll learn", dd: "Sailing terminology, rigging, points of sail, knots, charts, navigation rules, anchoring, crew-overboard recovery, and more." },
           { dt: "Format", dd: "Classroom + on-the-water instruction" },
-          { dt: "Schedule", dd: "Second and third weekend of every month (except August) | 9AM – 4PM, Saturday & Sunday" },
-          { dt: "Cost", dd: "$715 Members | $815 Non Members" },
+          { dt: "Schedule", dd: "Second and third weekend of every month (except August) | 9 AM – 4 PM, Saturday & Sunday" },
+          { dt: "Cost", dd: "$715 Members | $815 Non-Members" },
           { dt: "Leads to", dd: "US Sailing Basic Keelboat Certification" },
         ],
       },
@@ -68,8 +69,8 @@ export const ADULT_PROGRAM_CONTENT = {
         meta: [
           { dt: "Prerequisite", dd: "US Sailing Basic Keelboat Certification" },
           { dt: "You'll learn", dd: "Boat systems, weather awareness, safety preparation, chart reading, navigation, docking and maneuvering under power." },
-          { dt: "Schedule", dd: "9AM to 4:30PM | September TBD | November 11 - 14" },
-          { dt: "Cost", dd: "$1275 Members | $1375 Non Members" },
+          { dt: "Schedule", dd: "9 AM – 4:30 PM | September TBD | November 11–14" },
+          { dt: "Cost", dd: "$1,275 Members | $1,375 Non-Members" },
           { dt: "Leads to", dd: "US Sailing Bareboat Cruising & Certification" },
         ],
       },
@@ -81,8 +82,8 @@ export const ADULT_PROGRAM_CONTENT = {
         meta: [
           { dt: "Prerequisite", dd: "US Sailing Basic Cruising Certification" },
           { dt: "You'll learn", dd: "Cruise planning and provisioning, overnight anchoring, emergency procedures, advanced sail trim, crew management." },
-          { dt: "Schedule", dd: "9AM – 4:30PM | September 18 – 21 | December 11 - 14" },
-          { dt: "Cost", dd: "$1520 Members | $1620 Non Members" },
+          { dt: "Schedule", dd: "9 AM – 4:30 PM | September 18–21 | December 11–14" },
+          { dt: "Cost", dd: "$1,520 Members | $1,620 Non-Members" },
         ],
       },
       {
@@ -93,9 +94,9 @@ export const ADULT_PROGRAM_CONTENT = {
         meta: [
           { dt: "Prerequisite", dd: "None, though Basic Keelboat is recommended" },
           { dt: "You'll learn", dd: "Paper charts, plotting, bearings and fixes, dead reckoning, tides and currents, passage planning." },
-          { dt: "Format", dd: "Four evening classroom sessions | Mondays and Thursdays 5:30PM – 9PM" },
+          { dt: "Format", dd: "Four evening classroom sessions | Mondays and Thursdays 5:30 PM – 9 PM" },
           { dt: "Dates", dd: "August 10, 12, 17, 19" },
-          { dt: "Cost", dd: "$825 Members | $925 Non Members" },
+          { dt: "Cost", dd: "$825 Members | $925 Non-Members" },
         ],
       },
       {
@@ -106,9 +107,9 @@ export const ADULT_PROGRAM_CONTENT = {
         meta: [
           { dt: "Prerequisite", dd: "US Sailing Coastal Navigation" },
           { dt: "You'll learn", dd: "Sight reduction, sextant use, sun and star sights, time and the nautical almanac, position fixing at sea." },
-          { dt: "Format", dd: "Six evening classroom sessions | Mondays and Thursdays 5:30PM – 9PM" },
+          { dt: "Format", dd: "Six evening classroom sessions | Mondays and Thursdays 5:30 PM – 9 PM" },
           { dt: "Dates", dd: "October 12, 14, 19, 21, 26 and 28" },
-          { dt: "Cost", dd: "$1190 Members | $1290 Non Members" },
+          { dt: "Cost", dd: "$1,190 Members | $1,290 Non-Members" },
         ],
       },
     ],
@@ -125,10 +126,10 @@ export const ADULT_PROGRAM_CONTENT = {
       ],
       image: "/assets/courses/flying-scot-racing.jpg",
       meta: [
-        { dt: "When", dd: "Every Wednesday, during daylight savings (March–November) | Arrive by 4:00 PM, sailing until about 7:00 PM" },
+        { dt: "When", dd: "Every Wednesday during daylight saving time (March–November) | Arrive by 4:00 PM, sailing until about 7:00 PM" },
         { dt: "Cost", dd: "Free and open to the public" },
         { dt: "Experience", dd: "Some sailing experience is strongly recommended, but all levels are welcome." },
-        { dt: "Bring", dd: "Sunscreen, long sleeved beach shirt, a hat, and shoes you don't mind getting wet" },
+        { dt: "Bring", dd: "Sunscreen, long-sleeved beach shirt, a hat, and shoes you don't mind getting wet" },
         { dt: "Contact", dd: "Bud Price — flyingscot@cgsc.org" },
       ],
     },
@@ -144,7 +145,7 @@ export const ADULT_PROGRAM_CONTENT = {
           { dt: "Schedule", dd: "By request only" },
           { dt: "Cost", dd: "$285 per person" },
           { dt: "Contact", dd: "Bud Price — flyingscot@cgsc.org" },
-          { dt: "Registration & Payment", dd: "Done onsite before the first lesson" },
+          { dt: "Registration & Payment", dd: "Done on site before the session" },
         ],
       },
       {
@@ -154,7 +155,7 @@ export const ADULT_PROGRAM_CONTENT = {
         image: "/assets/courses/flying-scot-racing.jpg",
         meta: [
           { dt: "Schedule", dd: "The second and fourth Saturdays of every month" },
-          { dt: "Cost", dd: "$75 Members | $100 Non Members" },
+          { dt: "Cost", dd: "$75 Members | $100 Non-Members" },
           { dt: "Contact", dd: "Bud Price — flyingscot@cgsc.org" },
         ],
       },
@@ -166,8 +167,8 @@ export const ADULT_PROGRAM_CONTENT = {
     intro:
       "Every clinic has the same goal: sharpen your boat handling and tactical decision-making in a supportive group setting, with an eye toward getting race-course ready. Whatever you sail, you'll come away a more capable sailor. Most of these build on skills you already have — and every one of them will make you a better sailor on any boat you step onto.",
     meta: [
-      { dt: "Cost", dd: "$85 Members | $100 Non-members | Register and pay on site before the session" },
-      { dt: "Format", dd: "2.5-to-3-hour sessions — on land instruction, on-the-water drills, short course casual racing" },
+      { dt: "Cost", dd: "$85 Members | $100 Non-Members | Register and pay on site before the session" },
+      { dt: "Format", dd: "2.5-to-3-hour sessions — on-land instruction, on-the-water drills, short-course casual racing" },
       { dt: "Prerequisite", dd: "Prior sailing experience is required. Beginner sailors looking for additional time on the water are welcome to join." },
     ],
     fleetLead: "Choose your fleet:",
@@ -178,8 +179,8 @@ export const ADULT_PROGRAM_CONTENT = {
         desc: "",
         image: "/assets/courses/sunfish.jpg",
         meta: [
-          { dt: "Schedule", dd: "Every other Sunday from 3PM – 6PM" },
-          { dt: "Contact", dd: "Manu Francia – ecf76italy@hotmail.com" },
+          { dt: "Schedule", dd: "Every other Sunday from 3 PM – 6 PM" },
+          { dt: "Contact", dd: "Manu Francia — ecf76italy@hotmail.com" },
         ],
       },
       {
@@ -188,7 +189,7 @@ export const ADULT_PROGRAM_CONTENT = {
         desc: "",
         image: "/assets/courses/ilca.jpg",
         meta: [
-          { dt: "Schedule", dd: "Mid-May to Mid-August | Saturday, 9AM – 11:30AM" },
+          { dt: "Schedule", dd: "Mid-May to mid-August | Saturday, 9 AM – 11:30 AM" },
           { dt: "Contact", dd: "Rosa Lamela — adultsailing@cgsc.org | 305.747.2600" },
         ],
       },
@@ -198,16 +199,51 @@ export const ADULT_PROGRAM_CONTENT = {
         desc: "",
         image: "/assets/courses/windsurf.jpg",
         meta: [
-          { dt: "Schedule", dd: "First and third Saturday of every month (except August) | 9AM to 11:30AM" },
+          { dt: "Schedule", dd: "First and third Saturday of every month (except August) | 9 AM – 11:30 AM" },
           { dt: "Contact", dd: "Norlem Garcia — garcianorlem@gmail.com" },
           { dt: "Note", dd: "Beginner lessons also available upon request." },
         ],
       },
     ],
-    fleetFootnotePre: "Flying Scots — see ",
+    fleetFootnotePre: "Flying Scots — See ",
     fleetFootnoteLink: "the Flying Scot Program above",
     fleetFootnoteHref: "#flying-scot",
     fleetFootnotePost: ".",
+  },
+  faq: {
+    headline: "Frequently Asked Questions",
+    items: [
+      {
+        question: "Do I need any experience to learn to sail?",
+        answer:
+          "No. Our Basic Keelboat course starts from zero — no experience or equipment needed. You'll go from the dock to the helm over a single weekend on Biscayne Bay.",
+      },
+      {
+        question: "How do I earn a US Sailing certification?",
+        answer:
+          "Start with the Basic Keelboat course, then a short certification and coaching session with a written and on-the-water test. From there the pathway continues to Basic Cruising, Bareboat Cruising, and Coastal and Celestial Navigation.",
+      },
+      {
+        question: "Do I need to own a boat?",
+        answer:
+          "No. We provide the boats for every course — from our 23' Ensign keelboats to cruising boats and Flying Scots.",
+      },
+      {
+        question: "Do you offer free sailing?",
+        answer:
+          "Yes. Our Wednesday Night Community Sailing on Biscayne Bay is free and open to the public from March through November — no boat or membership required.",
+      },
+      {
+        question: "How much do adult sailing lessons cost?",
+        answer:
+          "The Basic Keelboat course is $715 for members and $815 for non-members. Cruising, navigation, and clinic pricing is listed with each course above.",
+      },
+      {
+        question: "Where are you located?",
+        answer:
+          "At Coconut Grove Sailing Club, 2990 S Bayshore Drive, Miami, FL 33133 – on Biscayne Bay, right next to Peacock Park.",
+      },
+    ],
   },
   readyToStart: {
     headline: "Ready to Start?",
