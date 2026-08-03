@@ -1,7 +1,9 @@
 # CGSC Instructional Center — run & edit
 
 The site is a plain Next.js (App Router) app at the **repo root**. **No CMS, no
-backend, no environment variables.** All copy lives in typed TypeScript files in
+backend, no required environment variables** (one optional var,
+`NEWSLETTER_SHEET_WEBHOOK`, powers the footer newsletter form — see below).
+All copy lives in typed TypeScript files in
 this repo — edit a file, commit, push, and Vercel redeploys.
 
 ## Run it locally
