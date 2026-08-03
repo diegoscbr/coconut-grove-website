@@ -3,7 +3,7 @@
 export const HOME_CONTENT = {
   announcement: {
     message: "Sign up for summer camps is open!",
-    href: "/programs/camps-coaching#summer-camp",
+    href: "/programs/camps-coaching#fall-youth",
     ariaLabel:
       "Sign up for summer camps is open! See Summer Camp 2026 dates, fees, and registration.",
   },

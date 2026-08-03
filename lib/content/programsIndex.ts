@@ -15,7 +15,7 @@ export const PROGRAMS_INDEX_CONTENT = {
     message: "Sign up for summer camps is open!",
     detail: "Summer Camp 2026 · June 8 – August 7 · Ages 6 – 17 welcome.",
     ctaLabel: "Camp details & registration →",
-    ctaHref: "/programs/camps-coaching#summer-camp",
+    ctaHref: "/programs/camps-coaching#fall-youth",
   },
   cards: {
     items: [

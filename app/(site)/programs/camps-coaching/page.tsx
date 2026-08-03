@@ -1,29 +1,36 @@
 import type { Metadata } from "next";
-import { CAMPS_COACHING_CONTENT } from "@/lib/content/campsCoaching";
-import { SummerCamp2026 } from "@/components/SummerCamp2026";
+import Link from "next/link";
+import { FALL_YOUTH_CONTENT } from "@/lib/content/fallYouth";
+import { FallYouth2026 } from "@/components/FallYouth2026";
 
+// SEO fields come from the client's "Fall-Youth-Sailing-SEO Ready" doc —
+// the title is absolute (no "· CGSC Instructional Center" template suffix).
 export const metadata: Metadata = {
-  title: "Youth Sailing",
-  description:
-    "Summer Camp 2026 registration is open — June 8 to August 7, ages 6–17. Youth sailing camps and private coaching at the Instructional Center on Biscayne Bay.",
+  title: { absolute: FALL_YOUTH_CONTENT.seo.title },
+  description: FALL_YOUTH_CONTENT.seo.description,
 };
 
 export default function CampsCoachingPage() {
-  const { hero } = CAMPS_COACHING_CONTENT;
+  const { hero } = FALL_YOUTH_CONTENT;
 
   return (
     <>
       <section className="hero-compact has-hero-photo hero-camps">
         <div className="container">
-          <p className="breadcrumb"><a href={hero.breadcrumbHomeHref}>{hero.breadcrumbHomeLabel}</a> <span className="sep">→</span> <a href={hero.breadcrumbProgramsHref}>{hero.breadcrumbProgramsLabel}</a> <span className="sep">→</span> {hero.breadcrumbCurrent}</p>
+          <p className="breadcrumb">
+            <Link href={hero.breadcrumbHomeHref}>{hero.breadcrumbHomeLabel}</Link>{" "}
+            <span className="sep">→</span>{" "}
+            <Link href={hero.breadcrumbProgramsHref}>{hero.breadcrumbProgramsLabel}</Link>{" "}
+            <span className="sep">→</span> {hero.breadcrumbCurrent}
+          </p>
           <h1>{hero.h1}</h1>
-          <p className="subhead">{hero.subheadBefore}<em>{hero.subheadEmphasis}</em>{hero.subheadAfter}</p>
+          <p className="subhead">{hero.subhead}</p>
           <span className="location-chip">{hero.locationChip}</span>
         </div>
       </section>
 
-      {/* Summer Camp 2026 */}
-      <SummerCamp2026 />
+      {/* 2026 Fall Youth Sailing */}
+      <FallYouth2026 />
     </>
   );
 }
