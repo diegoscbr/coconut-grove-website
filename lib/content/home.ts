@@ -1,12 +1,11 @@
 // Home page content — exact copy ported from prototype/index.html.
 // Single source of truth — edit this file to change the page's copy.
+import type { AnnouncementData } from "@/components/AnnouncementBanner";
+
 export const HOME_CONTENT = {
-  announcement: {
-    message: "Sign up for summer camps is open!",
-    href: "/programs/camps-coaching#fall-youth",
-    ariaLabel:
-      "Sign up for summer camps is open! See Summer Camp 2026 dates, fees, and registration.",
-  },
+  // Banner hidden until the client supplies fall campaign copy — the summer
+  // camp message it carried was removed with the 2026 Fall Youth Sailing page.
+  announcement: null as AnnouncementData | null,
   hero: {
     eyebrow: "Coconut Grove Sailing Club · Biscayne Bay · Since 1946",
     headlineLines: ["The", "Instructional", "Center"],
