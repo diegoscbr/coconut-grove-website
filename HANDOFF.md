@@ -3,12 +3,16 @@
 **Read this first in a new session.** Companion to `SETUP.md` (run/edit/deploy).
 
 - **State (2026-07-19):** plain Next.js 16 (App Router) app at the **repo
-  root** — no CMS, no env vars, all content in `lib/content/*.ts`. The Sanity
+  root** — no CMS, no required env vars (`NEWSLETTER_SHEET_WEBHOOK` is optional,
+  for the footer form), all content in `lib/content/*.ts`. The Sanity
   layer was removed and the old static `prototype/` site deleted; the Next.js
   app was hoisted from `web/` to the root so `npm run build` works from the
   repo root.
 - **What shipped:** the full static site migrated 1:1 into Next.js 16
   (App Router), 11 pages, all statically prerendered. `npm run build` is green.
+  Since then `/programs/camps-coaching` was rebuilt (2026-08) as the 2026 Fall
+  Youth Sailing page (`lib/content/fallYouth.ts` + `components/FallYouth2026.tsx`)
+  — that page is no longer 1:1 with the prototype.
 
 ## Architecture (recap)
 
@@ -39,9 +43,9 @@
 
 ## SHOULD-DO (quality)
 
-3. **Per-page SEO metadata**: only a generic site-wide title/description exists
-   today (`app/layout.tsx`). Add a `metadata` export per route, sourced from
-   each page's content file.
+3. **Per-page SEO metadata** — done: routes now export their own `metadata`
+   (e.g. `app/(site)/programs/camps-coaching/page.tsx`), on top of the
+   site-wide defaults in `app/layout.tsx`.
 
 ## NICE-TO-HAVE (flagged in the PR)
 

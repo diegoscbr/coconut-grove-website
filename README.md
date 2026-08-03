@@ -2,7 +2,8 @@
 
 Website redesign for the CGSC Instructional Center (cgscic.org): a plain
 Next.js (App Router) site. All copy lives in typed content files in
-`lib/content/*` — no CMS, no env vars, every page statically prerendered.
+`lib/content/*` — no CMS, no required env vars, every page statically
+prerendered.
 
 ```bash
 npm install

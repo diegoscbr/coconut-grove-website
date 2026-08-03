@@ -1,7 +1,9 @@
 # CGSC Instructional Center — run & edit
 
 The site is a plain Next.js (App Router) app at the **repo root**. **No CMS, no
-backend, no environment variables.** All copy lives in typed TypeScript files in
+backend, no required environment variables** (one optional var,
+`NEWSLETTER_SHEET_WEBHOOK`, powers the footer newsletter form — see below).
+All copy lives in typed TypeScript files in
 this repo — edit a file, commit, push, and Vercel redeploys.
 
 ## Run it locally
@@ -34,7 +36,7 @@ Site: <http://localhost:3000>. `npm run build` must stay green before pushing.
 | `/about` | `lib/content/about.ts` | about.html |
 | `/programs` | `lib/content/programsIndex.ts` | programs/index.html |
 | `/programs/race-team` | `lib/content/raceTeam.ts` | programs/race-team.html |
-| `/programs/camps-coaching` | `lib/content/campsCoaching.ts` | programs/camps-coaching.html |
+| `/programs/camps-coaching` | `lib/content/fallYouth.ts` | — (rebuilt 2026-08 as 2026 Fall Youth Sailing) |
 | `/programs/adult-sailing` | `lib/content/adultSailing.ts` | programs/adult-sailing.html |
 | `/youth-regattas` | `lib/content/youthRegattas.ts` | youth-regattas.html |
 | `/calendar` | `lib/content/calendar.ts` | calendar/index.html |
