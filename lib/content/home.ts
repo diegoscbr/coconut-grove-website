@@ -70,11 +70,10 @@ export const HOME_CONTENT = {
   leadership: {
     eyebrow: "Leadership",
     headline: "The team behind the Center.",
-    sub: "Day to day, the Instructional Center is led by three people who set the standard on and off the water.",
+    sub: "Day to day, the Instructional Center is led by two people who set the standard on and off the water.",
     people: [
       { name: "Maru Urban", role: "Director of Sailing Performance & Development" },
       { name: "Rosa Lamela", role: "Director of Programs & Development" },
-      { name: "Lauren Simpson", role: "General Manager" },
     ],
     ctaLabel: "Meet the full team →",
     ctaHref: "/about#coaches",

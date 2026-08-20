@@ -54,7 +54,7 @@ export const SAMPLE_STORY_CONTENT: SampleStory = {
   article: {
     meta: {
       cat: "Feature",
-      byline: "By Lauren Simpson · General Manager",
+      byline: "By Maru Urban · Director of Sailing Performance & Development",
       info: "2026 · 4 min read",
     },
     leadImgLabel: "Maru Urban on the Coconut Grove dock — placeholder image",

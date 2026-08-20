@@ -56,7 +56,6 @@ export const PROGRAMS_INDEX_CONTENT = {
       { name: "Steve Mitchell", role: "High Performance Lead" },
       { name: "Rosa Lamela", role: "Director of Programs Development" },
       { name: "Orlando Gonzalez", role: "ILCA Coach" },
-      { name: "Lauren Simpson", role: "General Manager" },
     ],
     ctaLabel: "Meet the full team →",
     ctaHref: "/about#coaches",

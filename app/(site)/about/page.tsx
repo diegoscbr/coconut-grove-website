@@ -51,15 +51,20 @@ export default function AboutPage() {
         <div className="container">
           <p className="section-eyebrow">{coaches.eyebrow}</p>
 
-          <div className="coach-grid">
-            {coaches.people.map((p, i) => (
-              <div key={i} className="coach">
-                <div className="coach-portrait"></div>
-                <p className="coach-name">{p.name}</p>
-                <p className="coach-role">{p.role}</p>
+          {coaches.tiers.map((tier, t) => (
+            <div key={t} className="coach-tier">
+              <p className="coach-tier-label">{tier.label}</p>
+              <div className={`coach-grid${tier.lead ? " tier-lead" : ""}`}>
+                {tier.people.map((p, i) => (
+                  <div key={i} className="coach">
+                    <div className="coach-portrait"></div>
+                    <p className="coach-name">{p.name}</p>
+                    <p className="coach-role">{p.role}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
 
           <p style={{ marginTop: 32 }}>
             <a href={coaches.ctaHref} className="btn-primary">
