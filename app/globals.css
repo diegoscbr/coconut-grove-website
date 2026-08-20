@@ -1282,7 +1282,7 @@ button { font: inherit; cursor: pointer; }
 .coach-tier .coach-grid { margin-top: 26px; }
 /* Leadership reads bigger: fewer, wider columns means larger portraits. */
 .coach-grid.tier-lead {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   max-width: 840px;
   gap: 40px;
 }
@@ -2465,16 +2465,16 @@ button { font: inherit; cursor: pointer; }
   color: var(--rust);
 }
 
-/* Leadership grid — exactly three (Maru / Rosa / Lauren), centered + larger
+/* Leadership grid — exactly two (Maru / Rosa), centered + larger
    than the full coach roster's auto-fill. Photos auto-apply via site.js by name. */
 .coach-grid.leadership {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  max-width: 760px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 520px;
   margin-left: auto;
   margin-right: auto;
 }
 @media (max-width: 640px) {
-  .coach-grid.leadership { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .coach-grid.leadership { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 }
 
 /* --------------------------------------------------------------------------

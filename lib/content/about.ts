@@ -33,7 +33,6 @@ export const ABOUT_CONTENT = {
         label: "Leadership",
         lead: true,
         people: [
-          { name: "Lauren Simpson", role: "General Manager" },
           {
             name: "Maru Urban",
             role: "Director · Sailing Performance & Development · ILCA Coach · High School Head Coach & C420 Instructor",

@@ -3,7 +3,6 @@
 // that string. Coaches without a photo keep the styled gradient placeholder.
 // Order follows the org-chart roster in lib/content/about.ts.
 export const COACH_PHOTOS: Record<string, string> = {
-  "Lauren Simpson": "/assets/coaches/lauren.jpg",
   "Maru Urban": "/assets/coaches/maru.jpg",
   "Rosa Lamela": "/assets/coaches/rosa.jpg",
   'Diunieski "Koki" Gutierrez': "/assets/coaches/koki.jpg",
