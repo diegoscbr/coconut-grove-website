@@ -28,15 +28,17 @@ export function Linkify({ text }: { text?: string | null }) {
 
 type CourseMetaRow = { dt: string; dd: string };
 type Course = {
+  /** "01".."06" on the certification courses; absent elsewhere. */
+  number?: string;
   name: string;
   tagline?: string;
   desc: string;
   image: string;
-  meta: CourseMetaRow[];
+  meta: readonly CourseMetaRow[];
 };
 
 /** A `.course-grid` of `.course-card` articles, exactly as the prototype markup. */
-export function CourseGrid({ courses }: { courses: Course[] }) {
+export function CourseGrid({ courses }: { courses: readonly Course[] }) {
   return (
     <div className="course-grid">
       {courses.map((course, i) => (
@@ -48,6 +50,9 @@ export function CourseGrid({ courses }: { courses: Course[] }) {
             ></div>
           ) : null}
           <div className="course-card-inner">
+            {course.number ? (
+              <p className="course-number">{course.number}</p>
+            ) : null}
             <h3 className="course-name">{course.name}</h3>
             {course.tagline ? <p className="course-tagline">{course.tagline}</p> : null}
             {course.desc ? <p className="course-desc">{course.desc}</p> : null}
