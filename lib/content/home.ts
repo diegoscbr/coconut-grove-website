@@ -13,8 +13,15 @@ export const HOME_CONTENT = {
     subhead:
       "Carrying Coconut Grove's sailing legacy forward — from a first lesson on Biscayne Bay to an international racing campaign.",
     subheadEmphasis: "Eighty years of sailing, open to all.",
-    ctaLabel: "Sail with us",
-    ctaHref: "/contact",
+    // Punch list S1: registration leads, contact drops to secondary.
+    // The CTA points at /programs rather than a Clubspot link because there
+    // are two registrations (youth fa7vTl77ap, adult zzXFEJa92k) and one
+    // button cannot choose between them. /programs routes to both.
+    ctaLabel: "Register",
+    ctaHref: "/programs",
+    ctaNote: "Fall youth season runs through December 13 · Adult courses year-round",
+    ctaSecondaryLabel: "Sail with us",
+    ctaSecondaryHref: "/contact",
     posterUrl: "/assets/hero-poster.jpg",
     videoUrl: "/assets/hero.mp4",
   },
@@ -64,6 +71,11 @@ export const HOME_CONTENT = {
       "Founded in **1946** by a small group of passionate Miami sailors, CGSC has been the training ground for South Florida sailors at every level for the better part of a century.",
     prose2:
       "The Instructional Center is the next chapter. **The same standards, deeper coaching, a broader ladder** — from first sail to Olympic campaign.",
+    // Punch list Y4: this reach figure was buried in Rosa's signed letter on
+    // /programs/camps-coaching. Surfaced here. The letter keeps its own copy —
+    // removing that sentence leaves "keep that going" with no antecedent.
+    prose3:
+      "**Nearly 400 children and teens** came through our doors this past summer — many of them sailing for the first time.",
     ctaLabel: "Read the story →",
     ctaHref: "/about",
   },

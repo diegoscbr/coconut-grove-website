@@ -104,12 +104,20 @@ export const FALL_YOUTH_CONTENT = {
         name: "Intermediate Level Opti",
         description:
           "These sailors are ready to sail solo and improve their boat handling skills. Proper tacking, upwind and downwind sailing, and a first introduction to sailing a triangle course all come into view as they begin to prepare for racing. This is where their understanding of how the wind affects their boat begins to make sense.",
+        // Two schedule choices, not one schedule in two rows. The page
+        // previously listed both under a single option, so they rendered as
+        // two conflicting "When" blocks (punch list Y1). The second one's
+        // Thursday end time was missing; 4:00 – 6:00 PM matches every other
+        // weekday session on this page. Confirm with Rosa.
         options: [
           {
-            when: [
-              "Wednesdays 4:00 – 6:00 PM · Sundays 11:00 AM – 4:00 PM",
-              "Thursdays, 4:00 – Saturdays 11:00 AM – 4:00 PM",
-            ],
+            label: "Midweek + Sunday",
+            when: ["Wednesdays 4:00 – 6:00 PM · Sundays 11:00 AM – 4:00 PM"],
+            fee: "Member $1,315 | Non-Member $1,420",
+          },
+          {
+            label: "Midweek + Saturday",
+            when: ["Thursdays 4:00 – 6:00 PM · Saturdays 11:00 AM – 4:00 PM"],
             fee: "Member $1,315 | Non-Member $1,420",
           },
         ],
@@ -260,7 +268,7 @@ export const FALL_YOUTH_CONTENT = {
       {
         question: "How old does my child need to be to start sailing?",
         answer:
-          "Children can begin our Optimist and Learn to Sail and programs at age 6. Windsurfing also starts at age 6, and our bigger-boat development programs (ILCA and C420) begin at age 12.",
+          "Children can begin our Optimist and Learn to Sail programs at age 6. Windsurfing also starts at age 6, and our bigger-boat development programs (ILCA and C420) begin at age 12.",
       },
       {
         question: "Does my child need any experience?",

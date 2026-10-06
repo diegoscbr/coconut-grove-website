@@ -429,6 +429,34 @@ button { font: inherit; cursor: pointer; }
 }
 .hero-cta:hover { background: var(--light-blue-soft); }
 
+/* Punch list S1 — registration leads, "Sail with us" drops to secondary,
+   season dates sit beside both. */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.hero-cta-secondary {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: var(--letter-link);
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 16px 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
+.hero-cta-secondary:hover { border-bottom-color: var(--white); }
+.hero-cta-note {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--light-blue-soft);
+  max-width: 34ch;
+}
+
 /* Compact hero — interior pages (Mouratoglou pattern: smaller, no video) */
 .hero-compact {
   position: relative;
@@ -783,6 +811,17 @@ button { font: inherit; cursor: pointer; }
   font-size: 11px;
   line-height: 1.75;
   letter-spacing: 0.06em;
+  color: var(--grey-500);
+}
+/* Punch list S9 — SMS compliance disclosure. Quieter than .footer-legal:
+   it is a required notice, not part of the nonprofit statement. */
+.footer-sms {
+  margin: 18px 0 0;
+  max-width: 720px;
+  font-family: var(--body);
+  font-size: 10px;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
   color: var(--grey-500);
 }
 .footer-bottom {

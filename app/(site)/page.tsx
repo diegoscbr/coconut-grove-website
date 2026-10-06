@@ -82,6 +82,9 @@ export default function HomePage() {
               <p className="intro-prose">
                 <Rich text={about.prose2} />
               </p>
+              <p className="intro-prose">
+                <Rich text={about.prose3} />
+              </p>
               <p style={{ marginTop: 24 }}>
                 <a href={about.ctaHref} className="btn-light">
                   {about.ctaLabel}
