@@ -8,6 +8,9 @@ export type HeroData = {
   subheadEmphasis?: string | null;
   ctaLabel?: string | null;
   ctaHref?: string | null;
+  ctaNote?: string | null;
+  ctaSecondaryLabel?: string | null;
+  ctaSecondaryHref?: string | null;
   posterUrl?: string | null;
   videoUrl?: string | null;
 };
@@ -57,9 +60,17 @@ export function Hero({ hero }: { hero: HeroData | null | undefined }) {
         </div>
         {hero.ctaLabel && (
           <div className="hero-foot">
-            <a href={ctaHref} className="hero-cta">
-              {hero.ctaLabel} →
-            </a>
+            <div className="hero-cta-group">
+              <a href={ctaHref} className="hero-cta">
+                {hero.ctaLabel} →
+              </a>
+              {hero.ctaSecondaryLabel && hero.ctaSecondaryHref && (
+                <a href={hero.ctaSecondaryHref} className="hero-cta-secondary">
+                  {hero.ctaSecondaryLabel}
+                </a>
+              )}
+            </div>
+            {hero.ctaNote && <p className="hero-cta-note">{hero.ctaNote}</p>}
           </div>
         )}
       </div>

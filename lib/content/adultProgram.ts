@@ -180,7 +180,8 @@ export const ADULT_PROGRAM_CONTENT = {
         image: "/assets/courses/sunfish.jpg",
         meta: [
           { dt: "Schedule", dd: "Every other Sunday from 3 PM – 6 PM" },
-          { dt: "Contact", dd: "Manu Francia — ecf76italy@hotmail.com" },
+          { dt: "Coach", dd: "Manu Francia" },
+          { dt: "Contact", dd: "adultsailing@cgsc.org | 305.747.2600" },
         ],
       },
       {
@@ -200,7 +201,8 @@ export const ADULT_PROGRAM_CONTENT = {
         image: "/assets/courses/windsurf.jpg",
         meta: [
           { dt: "Schedule", dd: "First and third Saturday of every month (except August) | 9 AM – 11:30 AM" },
-          { dt: "Contact", dd: "Norlem Garcia — garcianorlem@gmail.com" },
+          { dt: "Coach", dd: "Norlem Garcia" },
+          { dt: "Contact", dd: "adultsailing@cgsc.org | 305.747.2600" },
           { dt: "Note", dd: "Beginner lessons also available upon request." },
         ],
       },
