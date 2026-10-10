@@ -2,40 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Canonical footer, ported 1:1 from the prototype (incl. TBD chips).
+// The newsletter band was removed 2026-10-09: its capture webhook was never
+// configured, so every signup 503d and was dropped. Restore with one revert
+// once NEWSLETTER_SHEET_WEBHOOK exists — and update /privacy in the same PR.
 export function Footer() {
   return (
     <footer className="site-footer" role="contentinfo">
-      <div className="footer-newsletter">
-        <div className="container">
-          <div className="footer-newsletter-row">
-            <div>
-              <h2 className="footer-news-h">
-                Stay in the loop with the Instructional Center.
-              </h2>
-            </div>
-            <form className="footer-news-form" data-form-newsletter noValidate>
-              <input
-                type="email"
-                name="email"
-                placeholder="Your email"
-                aria-label="Email address"
-                required
-              />
-              {/* Honeypot — hidden from humans, bots fill it and get filtered */}
-              <input
-                type="text"
-                name="company"
-                className="hp-field"
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
-              />
-              <button type="submit">Subscribe</button>
-              <p className="footer-news-msg" data-news-msg role="status"></p>
-            </form>
-          </div>
-        </div>
-      </div>
       <div className="footer-sitemap">
         <div className="container">
           <div className="footer-sitemap-row">

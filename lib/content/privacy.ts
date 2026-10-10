@@ -4,34 +4,37 @@
 // WRITTEN AGAINST THE CODE, NOT FROM A TEMPLATE. Every claim below was checked:
 //   - no analytics, tag manager, ad pixel, cookie or storage call exists in the
 //     repo (grep for gtag/fbq/analytics/cookie/localStorage returns nothing)
-//   - the only form on the site is the footer newsletter, which POSTs an email
-//     to app/api/newsletter/route.ts and forwards it to a Google Apps Script
-//     webhook, plus an MX lookup on the domain to check deliverability
+//   - there are NO forms on the site. The footer newsletter and its
+//     /api/newsletter route were removed 2026-10-09 because the capture
+//     webhook was never configured and every signup was being dropped.
 //   - registration hands off to Clubspot; contact is plain mailto:/tel: links
 //
-// IF ANY OF THAT CHANGES, THIS FILE CHANGES. Two known tripwires:
+// IF ANY OF THAT CHANGES, THIS FILE CHANGES. Three known tripwires:
 //   1. S8 stages a Meta advertising pixel. Activating it makes the "no tracking
 //      pixels" claim below false. Update this file in the same PR.
 //   2. If a donation platform (Zeffy/Givebutter, F1) is ever embedded rather
 //      than linked, the Donations section needs rewriting.
+//   3. Restoring the newsletter form reintroduces email collection. The
+//      "no forms" and "collects nothing" claims below both become false.
 import type { LegalDoc } from "@/lib/content/legalDoc";
 
 export const PRIVACY_CONTENT: LegalDoc = {
   seo: {
     title: "Privacy Policy",
     description:
-      "How the Coconut Grove Sailing Club Instructional Center handles information on cgscic.org. We collect one thing: your email address, and only if you give it to us.",
+      "How the Coconut Grove Sailing Club Instructional Center handles information on cgscic.org. The short version: this website collects nothing about you.",
   },
   hero: {
     breadcrumbCurrent: "Privacy Policy",
     headline: "Privacy Policy",
     subhead:
-      "What we collect on this website, which is very little, and what happens to it.",
+      "What this website collects, which is nothing, and where your information does go when you sail with us.",
   },
   effective: "Effective October 9, 2026",
   intro: [
     "The Coconut Grove Sailing Club Instructional Center (**CGSCIC**) is a 501(c)(3) nonprofit organization in Miami, Florida. This policy covers **cgscic.org** and the ways this website handles information about the people who visit it.",
-    "The short version: this website collects **one** piece of information, your email address, and only if you type it into the newsletter box yourself. There are no cookies, no analytics, no advertising trackers, and no accounts to create.",
+    "The short version: **this website collects nothing about you.** There are no forms, no cookies, no analytics, no advertising trackers and no accounts to create. You can read every page without telling us anything.",
+    "You can still reach us, register and give, and those things do involve your information. This policy says where it goes.",
   ],
   sections: [
     {
@@ -40,21 +43,12 @@ export const PRIVACY_CONTENT: LegalDoc = {
         "Most privacy policies are long because most websites collect a lot. This one does not. As of the effective date above, cgscic.org does **not**:",
       ],
       bullets: [
+        "have any forms, or any way for you to submit information to us",
         "set cookies, or store anything in your browser",
         "run Google Analytics or any other analytics service",
         "run advertising or social media tracking pixels",
         "ask you to create an account, or hold a password",
         "build a profile of you, sell information about you, or share it with advertisers",
-      ],
-    },
-    {
-      heading: "The newsletter signup",
-      body: [
-        "There is one form on this site: the **Stay in the loop** box in the footer. If you type an email address into it and press Subscribe, two things happen.",
-        "First, we check that the address looks deliverable by asking the public domain name system whether its domain can receive mail. We do not send anything to the address to test it, and we do not keep the result.",
-        "Second, the address is added to a private spreadsheet we keep with Google so we can email you about programs, registration dates and news from the Center. We record the address and that it came from the website footer. Nothing else: no name, no IP address, no browsing history.",
-        "We use it to send occasional Instructional Center email, and for nothing else. We do not sell it, rent it, or pass it to anyone outside the Center and the service we use to store and send the mail.",
-        "To come off the list, use the unsubscribe link in any email we send, or write to us at the address at the bottom of this page and we will remove you.",
       ],
     },
     {
@@ -87,7 +81,7 @@ export const PRIVACY_CONTENT: LegalDoc = {
     {
       heading: "Children's privacy",
       body: [
-        "We teach a lot of children, but this website is not built for them to use. We do not knowingly collect information from children through cgscic.org. The newsletter box is intended for adults, and program registration is completed by a parent or guardian through Clubspot.",
+        "We teach a lot of children, but this website is not built for them to use. Since cgscic.org has no forms at all, there is no way for a child, or anyone else, to give us information through it. Program registration is completed by a parent or guardian through Clubspot.",
         "If you believe a child has given us information through this website, write to us and we will delete it.",
       ],
     },

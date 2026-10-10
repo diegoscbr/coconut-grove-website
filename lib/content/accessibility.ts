@@ -42,7 +42,7 @@ export const ACCESSIBILITY_CONTENT: LegalDoc = {
         "**Skip to content.** A skip link is the first thing a keyboard or screen reader user reaches on every page, so you can jump past the navigation.",
         "**Structure a screen reader can follow.** Pages use real headings in order, real lists, and landmark regions for the navigation, main content and footer.",
         "**Described images.** Photographs that carry meaning have alternative text. Images that are purely decorative are marked so a screen reader skips them instead of reading a filename.",
-        "**Labelled controls.** Form fields and icon buttons have accessible names, including the newsletter field and the menu button.",
+        "**Labelled controls.** Icon buttons and interactive controls have accessible names, including the menu button and the navigation.",
         "**Reduced motion.** If your system asks for reduced motion, animations and the scrolling announcement banner stop.",
         "**Text that scales.** The layout uses relative sizing, so enlarging text or zooming to 200 percent does not cut content off or require sideways scrolling.",
         "**Declared language.** The page language is set, so screen readers pronounce it correctly.",
