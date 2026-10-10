@@ -57,7 +57,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener"
               >
-                Main Club Site · cgsc.org →
+                Coconut Grove Sailing Club — Membership, Moorings &amp; Club Life →
               </a>
             </div>
             <div className="footer-col">
@@ -165,6 +165,19 @@ export function Footer() {
             sailing program through scholarships, equipment maintenance and
             capital purchases that make it possible for CGSCIC to empower the
             next generation of sailors.
+          </p>
+          {/* Punch list S9 — SMS compliance disclosure, verbatim as supplied.
+              Do not reword: this is a compliance artifact, not marketing copy.
+              It names a Privacy Policy and a Terms of Service page, so S4 has
+              to land before this reaches production or it points at nothing. */}
+          <p className="footer-sms">
+            You can text Coconut Grove Sailing Club Instruction Center for
+            information regarding our sailing programs and program registration.
+            By texting CGSCIC, you agree to receive conversational messages from
+            Coconut Grove Sailing Club Instructional Center. Reply STOP to
+            opt-out; Reply HELP for support; Message &amp; data rates may apply;
+            Messaging frequency may vary. For more information, please visit our
+            Privacy Policy page or our Terms of Service page.
           </p>
           <div className="footer-bottom">
             <span>

@@ -429,6 +429,34 @@ button { font: inherit; cursor: pointer; }
 }
 .hero-cta:hover { background: var(--light-blue-soft); }
 
+/* Punch list S1 — registration leads, "Sail with us" drops to secondary,
+   season dates sit beside both. */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.hero-cta-secondary {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: var(--letter-link);
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 16px 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
+.hero-cta-secondary:hover { border-bottom-color: var(--white); }
+.hero-cta-note {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--light-blue-soft);
+  max-width: 34ch;
+}
+
 /* Compact hero — interior pages (Mouratoglou pattern: smaller, no video) */
 .hero-compact {
   position: relative;
@@ -783,6 +811,17 @@ button { font: inherit; cursor: pointer; }
   font-size: 11px;
   line-height: 1.75;
   letter-spacing: 0.06em;
+  color: var(--grey-500);
+}
+/* Punch list S9 — SMS compliance disclosure. Quieter than .footer-legal:
+   it is a required notice, not part of the nonprofit statement. */
+.footer-sms {
+  margin: 18px 0 0;
+  max-width: 720px;
+  font-family: var(--body);
+  font-size: 10px;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
   color: var(--grey-500);
 }
 .footer-bottom {
@@ -2381,6 +2420,17 @@ button { font: inherit; cursor: pointer; }
   .season-note { grid-template-columns: 1fr; }
 }
 
+/* Adult Sailing build specification, Part 3 (Mobile): label and value pairs in
+   the course cards stack vertically on narrow screens rather than sitting in
+   fixed-width columns. The 84px label column above squeezes long values such
+   as "9 AM to 4:30 PM | October 16–19, 2026 | December 4–7, 2026". */
+@media (max-width: 560px) {
+  .course-meta > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
 /* ==========================================================================
    Home redesign · nonprofit rebalance (Rosa memo, 2026-06-29)
    Nav/footer architecture is hand-duplicated per page (D-ARCH); these are the
@@ -2698,3 +2748,207 @@ button { font: inherit; cursor: pointer; }
 .panel.charcoal .section-sub a:hover { color: var(--rust); }
 .panel.charcoal .section-sub b { color: var(--white); }
 
+
+/* ==========================================================================
+   Adult Sailing · September 2026 build specification
+   Contact band, member boat-access panel, instructor roster, course numbering.
+   ========================================================================== */
+
+/* Contact + registration band — sits directly under the hero, above the fold.
+   The specification: "This is the single most important addition to the page." */
+.contact-band {
+  background: var(--grey-100);
+  border-top: 3px solid var(--rust);
+  border-bottom: 1px solid var(--grey-300);
+}
+.contact-band-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.contact-band-lead {
+  margin: 0 0 4px;
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  font-size: 17px;
+  color: var(--navy);
+}
+.contact-band-body {
+  margin: 0;
+  font-size: 15px;
+  color: var(--grey-700);
+}
+.contact-band-body a {
+  color: var(--light-blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.contact-band-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Lead section photo — small source, capped at the width the spec allows. */
+.lead-with-photo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: start;
+}
+.lead-photo {
+  margin: 0;
+  max-width: 300px;
+}
+.lead-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+.lead-photo figcaption {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--grey-500);
+}
+
+/* "Cruising and Navigation Certification Courses" + its dates kicker */
+.cruising-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 56px;
+}
+.cruising-kicker {
+  margin: 0;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 10.5px;
+  letter-spacing: var(--letter-eyebrow);
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+/* Course numbering, 01–06 */
+.course-number {
+  margin: 0 0 6px;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: var(--letter-eyebrow);
+  color: var(--light-blue);
+}
+
+/* Member boat access — pull-out fleet panel beside the prose */
+.fleet-panel {
+  background: var(--white);
+  border: 1px solid var(--grey-300);
+  border-top: 3px solid var(--navy);
+  border-radius: 2px;
+  padding: 26px 24px;
+  align-self: start;
+}
+.fleet-panel-label {
+  margin: 0 0 12px;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 10.5px;
+  letter-spacing: var(--letter-eyebrow);
+  text-transform: uppercase;
+  color: var(--rust);
+}
+.fleet-panel-fleet {
+  margin: 0 0 12px;
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--navy);
+}
+.fleet-panel-note {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--grey-700);
+}
+.fleet-panel-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0;
+}
+.fleet-panel-secondary {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: var(--letter-link);
+  text-transform: uppercase;
+  color: var(--navy);
+  border-bottom: 1px solid var(--grey-300);
+  padding-bottom: 3px;
+}
+.fleet-panel-secondary:hover { border-bottom-color: var(--navy); }
+
+/* Instructor roster. Portraits are placeholders until the images from Rosa's
+   Drive folder are processed and placed; the gradient matches the About
+   roster's treatment for coaches without a headshot. */
+.instructor-group { margin-top: 40px; }
+.instructor-group-label {
+  margin: 0 0 18px;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: var(--letter-eyebrow);
+  text-transform: uppercase;
+  color: var(--rust);
+}
+.instructor-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 24px;
+}
+.instructor-grid.tier-lead { grid-template-columns: repeat(2, minmax(0, 260px)); }
+.instructor-portrait {
+  aspect-ratio: 3 / 4;
+  border-radius: 2px;
+  background: linear-gradient(150deg, var(--light-blue-soft), var(--light-blue));
+  margin-bottom: 12px;
+}
+.instructor-name {
+  margin: 0 0 2px;
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 16px;
+  color: var(--navy);
+}
+.instructor-role {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--grey-500);
+}
+
+@media (max-width: 900px) {
+  .instructor-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .lead-with-photo { grid-template-columns: 1fr; }
+  .lead-photo { max-width: 100%; }
+  .instructor-grid,
+  .instructor-grid.tier-lead { grid-template-columns: repeat(2, 1fr); }
+  .contact-band-inner { align-items: flex-start; }
+}

@@ -28,7 +28,7 @@ export const GIVING_CONTENT = {
       "For those who prefer to make check donations, please make checks payable to **CGSCIC** and send to:",
     address: [
       "Coconut Grove Sailing Club",
-      "2900 S. Bayshore Drive",
+      "2990 S. Bayshore Drive",
       "Miami, FL 33133",
       "Attn: ROSA LAMELA",
     ],
