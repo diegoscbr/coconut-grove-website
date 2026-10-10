@@ -46,10 +46,9 @@ export const ADULT_PROGRAM_CONTENT = {
       "As a US Sailing Accredited School, the CGSC Instructional Center holds every course to the highest national standards for safety, instruction, and seamanship. Our instructors are US Sailing certified, and they teach with the patience and care of people who remember their own first day at the helm.",
       "But the skills are only part of the story. The Coconut Grove Sailing Club has always been a place where a love of the water brings people together, across every age and demographic. You will arrive to learn something. You will stay because you have found your place in a community of sailors that has anchored Coconut Grove for eighty years and will for decades more.",
     ],
-    // Small supporting photo. The specification is explicit: the source file is
-    // small, do not scale it beyond about 300px wide. Empty until the file is
-    // in public/assets/courses/ — the component renders the figure once it is.
-    image: "",
+    // Small supporting photo, 320x227 as supplied. The specification is
+    // explicit: do not scale it beyond about 300px wide, so .lead-photo caps it.
+    image: "/assets/courses/helm-coaching.jpg",
     imageAlt: "An instructor coaching a student at the helm on Biscayne Bay",
     imageCaption: "Learning the helm on Biscayne Bay.",
   },
@@ -213,7 +212,7 @@ export const ADULT_PROGRAM_CONTENT = {
         "Just learned to sail? There is no better way to build real time on the water. Been at it forty years? Casual racing keeps your boat handling honest. Come once and you will see what we mean when we call this a community. Come twice and you will be a part of it.",
       ],
       image: "/assets/courses/flying-scot-racing.jpg",
-      imageAlt: "Two Flying Scots racing close together on Biscayne Bay",
+      imageAlt: "A Flying Scot sailing on Biscayne Bay with three crew aboard",
       meta: [
         { dt: "When", dd: "Every Wednesday during daylight saving time (March to November), arrive by 4:00 PM, sailing until about 7:00 PM" },
         { dt: "Cost", dd: "Free and open to the public" },
@@ -318,22 +317,22 @@ export const ADULT_PROGRAM_CONTENT = {
         label: "Program Leadership",
         lead: true,
         people: [
-          { name: "Pierre Berthier", role: "Adult Sailing Chairperson" },
-          { name: "Ed Benitez", role: "Keelboat Instructor and Lead Coordinator" },
+          { name: "Pierre Berthier", role: "Adult Sailing Chairperson", photo: "/assets/coaches/pierre.jpg" },
+          { name: "Ed Benitez", role: "Keelboat Instructor and Lead Coordinator", photo: "/assets/coaches/ed.jpg" },
         ],
       },
       {
         label: "Instructors",
         lead: false,
         people: [
-          { name: "Andy Hacket", role: "Keelboat" },
-          { name: "Rose Mather", role: "Keelboat" },
-          { name: "Marika de Nie", role: "Keelboat and Sunfish" },
-          { name: "Manu Francia", role: "Keelboat and Sunfish" },
-          { name: "Liam Thomson", role: "Keelboat" },
-          { name: "Mike Stephens", role: "Cruising and Navigation" },
-          { name: "Orlando Gonzalez", role: "Laser / ILCA" },
-          { name: "Norlem Garcia", role: "Windsurfing and Wing Foil" },
+          { name: "Andy Hacket", role: "Keelboat", photo: "/assets/coaches/andy.jpg" },
+          { name: "Rose Mathers", role: "Keelboat", photo: "/assets/coaches/rose-mathers.jpg" },
+          { name: "Marika de Nie", role: "Keelboat and Sunfish", photo: "/assets/coaches/marika.jpg" },
+          { name: "Manu Francia", role: "Keelboat and Sunfish", photo: "/assets/coaches/manu.jpg" },
+          { name: "Liam Thomson", role: "Keelboat", photo: "/assets/coaches/liam.jpg" },
+          { name: "Mike Stephens", role: "Cruising and Navigation", photo: "/assets/coaches/mike.jpg" },
+          { name: "Orlando Gonzalez", role: "Laser / ILCA", photo: "/assets/coaches/orlando.jpg" },
+          { name: "Norlem Garcia", role: "Windsurfing and Wing Foil", photo: "/assets/coaches/norlem.jpg" },
         ],
       },
     ],
