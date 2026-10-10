@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ADULT_PROGRAM_CONTENT } from "@/lib/content/adultProgram";
 import { ADULT_SAILING_CONTENT } from "@/lib/content/adultSailing";
 import { CourseGrid, Linkify } from "@/components/AdultSailingCourses";
@@ -57,14 +58,27 @@ export function AdultProgram() {
             <p className="section-eyebrow">{lead.eyebrow}</p>
             <h2 className="camp-hero-title">{lead.title}</h2>
             <p className="camp-hero-tagline">{lead.tagline}</p>
-            {/* The helm photo lands with the image pass, once Rosa's files are
-                in public/assets and their real dimensions are known. The copy
-                fields are already in place; set lead.image to render it. */}
-            {lead.paragraphs.map((para, i) => (
-              <p key={i} className="camp-hero-intro">
-                {para}
-              </p>
-            ))}
+            <div className="lead-with-photo">
+              <div>
+                {lead.paragraphs.map((para, i) => (
+                  <p key={i} className="camp-hero-intro">
+                    {para}
+                  </p>
+                ))}
+              </div>
+              {lead.image ? (
+                <figure className="lead-photo">
+                  <Image
+                    src={lead.image}
+                    alt={lead.imageAlt}
+                    width={320}
+                    height={227}
+                    sizes="300px"
+                  />
+                  <figcaption>{lead.imageCaption}</figcaption>
+                </figure>
+              ) : null}
+            </div>
           </div>
         </div>
       </section>
@@ -240,7 +254,18 @@ export function AdultProgram() {
               <ul className={`instructor-grid${group.lead ? " tier-lead" : ""}`}>
                 {group.people.map((person, j) => (
                   <li key={j} className="instructor">
-                    <div className="instructor-portrait" aria-hidden="true"></div>
+                    {person.photo ? (
+                      <Image
+                        className="instructor-portrait"
+                        src={person.photo}
+                        alt={`${person.name}, ${person.role} at the CGSC Instructional Center`}
+                        width={525}
+                        height={700}
+                        sizes="(max-width: 768px) 46vw, 23vw"
+                      />
+                    ) : (
+                      <div className="instructor-portrait" aria-hidden="true"></div>
+                    )}
                     <p className="instructor-name">{person.name}</p>
                     <p className="instructor-role">{person.role}</p>
                   </li>
