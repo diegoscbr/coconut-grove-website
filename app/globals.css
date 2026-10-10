@@ -2811,6 +2811,7 @@ button { font: inherit; cursor: pointer; }
   height: auto;
   border-radius: 2px;
 }
+.lead-photo figure { margin: 0; }
 .lead-photo figcaption {
   margin-top: 8px;
   font-size: 12px;
@@ -2921,8 +2922,15 @@ button { font: inherit; cursor: pointer; }
   gap: 28px 24px;
 }
 .instructor-grid.tier-lead { grid-template-columns: repeat(2, minmax(0, 260px)); }
+/* Portraits are supplied at mixed sizes — six are 525x700, Marika's is 465x620
+   and Ed's source was a 320x225 landscape. object-fit holds the 3:4 frame for
+   all of them; the gradient stays as the fallback for anyone without a photo. */
 .instructor-portrait {
+  width: 100%;
+  height: auto;
   aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
   border-radius: 2px;
   background: linear-gradient(150deg, var(--light-blue-soft), var(--light-blue));
   margin-bottom: 12px;
