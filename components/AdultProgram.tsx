@@ -8,40 +8,69 @@ import { CourseGrid, Linkify } from "@/components/AdultSailingCourses";
  * with the Summer Camp section (.camp-* in globals.css).
  */
 export function AdultProgram() {
-  const { registrationUrl, lead, pathway, flyingScot, clinics, faq, readyToStart } =
-    ADULT_PROGRAM_CONTENT;
+  const {
+    registrationUrl,
+    contactBand,
+    lead,
+    pathway,
+    afterCertification,
+    flyingScot,
+    clinics,
+    instructors,
+    faq,
+    readyToStart,
+  } = ADULT_PROGRAM_CONTENT;
 
   return (
     <>
-      {/* Lead card — find your place, registration CTA */}
-      <section className="panel grey" id="about">
+      {/* Contact + registration band. The specification calls this the single
+          most important addition to the page: people called and emailed with
+          general questions and had no obvious route before. One of exactly two
+          Register buttons on the page; the other closes it. */}
+      <section className="contact-band">
+        <div className="container contact-band-inner">
+          <div>
+            <p className="contact-band-lead">{contactBand.questionLead}</p>
+            <p className="contact-band-body">
+              {contactBand.questionBody}{" "}
+              <a href={contactBand.emailHref}>{contactBand.emailText}</a>
+            </p>
+          </div>
+          <div className="contact-band-action">
+            <p className="contact-band-lead">{contactBand.registerLead}</p>
+            <a
+              href={registrationUrl}
+              className="btn-register"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {contactBand.ctaLabel}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Learn to Sail in Miami on Biscayne Bay */}
+      <section className="panel grey" id="program">
         <div className="container">
           <div className="camp-hero">
             <p className="section-eyebrow">{lead.eyebrow}</p>
             <h2 className="camp-hero-title">{lead.title}</h2>
             <p className="camp-hero-tagline">{lead.tagline}</p>
+            {/* The helm photo lands with the image pass, once Rosa's files are
+                in public/assets and their real dimensions are known. The copy
+                fields are already in place; set lead.image to render it. */}
             {lead.paragraphs.map((para, i) => (
               <p key={i} className="camp-hero-intro">
                 {para}
               </p>
             ))}
-            <p className="camp-hero-cta">
-              <a
-                href={registrationUrl}
-                className="btn-register"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {lead.ctaLabel}
-              </a>
-              <small>{lead.ctaNote}</small>
-            </p>
           </div>
         </div>
       </section>
 
       {/* US Sailing Certification Pathway */}
-      <section className="panel" id="pathway">
+      <section className="panel" id="certification-pathway">
         <div className="container">
           <div className="split-2col">
             <div className="split-2col-body">
@@ -62,11 +91,77 @@ export function AdultProgram() {
             ></div>
           </div>
           <CourseGrid courses={pathway.courses} />
+
+          <div className="cruising-heading">
+            <h3 className="camp-sub">{pathway.cruisingHeading}</h3>
+            <p className="cruising-kicker">{pathway.cruisingKicker}</p>
+          </div>
+          <CourseGrid courses={pathway.cruisingCourses} />
+        </div>
+      </section>
+
+      {/* Boat access for members — new in the September specification */}
+      <section className="panel grey" id="after-certification">
+        <div className="container">
+          <p className="section-eyebrow">{afterCertification.eyebrow}</p>
+          <h2 className="section-headline">{afterCertification.headline}</h2>
+          <div className="split-2col">
+            <div className="split-2col-body">
+              {afterCertification.paragraphs.map((para, i) => (
+                <p key={i} className="intro-prose">
+                  {para}
+                </p>
+              ))}
+            </div>
+            <aside className="fleet-panel">
+              <p className="fleet-panel-label">{afterCertification.panel.label}</p>
+              <p className="fleet-panel-fleet">{afterCertification.panel.fleet}</p>
+              <p className="fleet-panel-note">{afterCertification.panel.note}</p>
+              <p className="fleet-panel-actions">
+                <a
+                  href={afterCertification.panel.primaryHref}
+                  className="btn-register"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {afterCertification.panel.primaryLabel}
+                </a>
+                <a
+                  href={afterCertification.panel.secondaryHref}
+                  className="fleet-panel-secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {afterCertification.panel.secondaryLabel}
+                </a>
+              </p>
+            </aside>
+          </div>
+
+          <h3 className="camp-sub" style={{ marginTop: 48 }}>
+            {afterCertification.ensign.headline}
+          </h3>
+          <p className="intro-prose">{afterCertification.ensign.body}</p>
+          <p className="intro-prose">
+            <Linkify text={afterCertification.ensign.contact} />
+          </p>
+
+          <h3 className="camp-sub" style={{ marginTop: 40 }}>
+            {afterCertification.racing.headline}
+          </h3>
+          <p className="intro-prose">{afterCertification.racing.body}</p>
+          <p className="intro-prose">
+            {afterCertification.racing.linkedPre}
+            <a href={afterCertification.racing.linkedHref}>
+              {afterCertification.racing.linkedLabel}
+            </a>
+            <Linkify text={afterCertification.racing.linkedPost} />
+          </p>
         </div>
       </section>
 
       {/* Flying Scot Program */}
-      <section className="panel grey" id="flying-scot">
+      <section className="panel" id="flying-scot">
         <div className="container">
           <p className="section-eyebrow">{flyingScot.eyebrow}</p>
           <h2 className="section-headline">{flyingScot.wednesday.headline}</h2>
@@ -81,6 +176,8 @@ export function AdultProgram() {
             </div>
             <div
               className="split-2col-media photo accent-bracket"
+              role="img"
+              aria-label={flyingScot.wednesday.imageAlt}
               style={{ backgroundImage: `url('${flyingScot.wednesday.image}')` }}
             ></div>
           </div>
@@ -103,7 +200,7 @@ export function AdultProgram() {
       </section>
 
       {/* Clinics */}
-      <section className="panel" id="clinics">
+      <section className="panel grey" id="clinics">
         <div className="container">
           <p className="section-eyebrow">{clinics.eyebrow}</p>
           <h2 className="section-headline">{clinics.headline}</h2>
@@ -127,6 +224,30 @@ export function AdultProgram() {
             <a href={clinics.fleetFootnoteHref}>{clinics.fleetFootnoteLink}</a>
             {clinics.fleetFootnotePost}
           </p>
+        </div>
+      </section>
+
+      {/* Instructor roster — new in the September specification. Each person
+          appears once, with every discipline they teach on that entry. */}
+      <section className="panel" id="instructors">
+        <div className="container">
+          <p className="section-eyebrow">{instructors.eyebrow}</p>
+          <h2 className="section-headline">{instructors.headline}</h2>
+          <p className="intro-prose">{instructors.intro}</p>
+          {instructors.groups.map((group, i) => (
+            <div key={i} className="instructor-group">
+              <h3 className="instructor-group-label">{group.label}</h3>
+              <ul className={`instructor-grid${group.lead ? " tier-lead" : ""}`}>
+                {group.people.map((person, j) => (
+                  <li key={j} className="instructor">
+                    <div className="instructor-portrait" aria-hidden="true"></div>
+                    <p className="instructor-name">{person.name}</p>
+                    <p className="instructor-role">{person.role}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
 

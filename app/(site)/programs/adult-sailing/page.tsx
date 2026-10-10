@@ -1,14 +1,47 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ADULT_SAILING_CONTENT } from "@/lib/content/adultSailing";
+import { ADULT_PROGRAM_CONTENT } from "@/lib/content/adultProgram";
 import { AdultProgram } from "@/components/AdultProgram";
+import {
+  courseSchema,
+  faqSchema,
+  jsonLd,
+  sportsActivityLocationSchema,
+} from "@/lib/schema";
 
-// SEO fields come from the client's "CGSCIC-Adult-Sailing-Page - SEO Ready" doc —
-// the title is absolute (no "· CGSC Instructional Center" template suffix).
+// SEO fields come from Part 3 of the client's build specification
+// "CGSCIC-Adult-Sailing_Updated.docx" — the title is absolute (no
+// "· CGSC Instructional Center" template suffix, the string carries its own).
+const { seo } = ADULT_SAILING_CONTENT;
+
 export const metadata: Metadata = {
-  title: { absolute: ADULT_SAILING_CONTENT.seo.title },
-  description: ADULT_SAILING_CONTENT.seo.description,
+  title: { absolute: seo.title },
+  description: seo.description,
+  alternates: { canonical: seo.canonical },
+  openGraph: {
+    type: "website",
+    siteName: "CGSC Instructional Center",
+    title: seo.title,
+    description: seo.description,
+    url: seo.canonical,
+    images: [{ url: seo.ogImage, alt: seo.heroImageAlt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.title,
+    description: seo.description,
+    images: [seo.ogImage],
+  },
 };
+
+// Part 3 asks for three structured-data blocks. All six certification courses
+// are covered; the builders read the same content objects the page renders, so
+// a copy edit cannot leave the schema behind.
+const CERTIFICATION_COURSES = [
+  ...ADULT_PROGRAM_CONTENT.pathway.courses,
+  ...ADULT_PROGRAM_CONTENT.pathway.cruisingCourses,
+];
 
 export default function AdultSailingPage() {
   const { hero, subnav } = ADULT_SAILING_CONTENT;
@@ -38,8 +71,29 @@ export default function AdultSailingPage() {
         </div>
       </nav>
 
-      {/* Adult program — lead, certification pathway, Flying Scot, clinics, register */}
+      {/* Adult program — lead, certification pathway, boat access, Flying Scot,
+          clinics, instructors, FAQ, register */}
       <AdultProgram />
+
+      {CERTIFICATION_COURSES.map((course) => (
+        <script
+          key={course.name}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(courseSchema(course)) }}
+        />
+      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd(faqSchema(ADULT_PROGRAM_CONTENT.faq.items)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd(sportsActivityLocationSchema()),
+        }}
+      />
     </>
   );
 }
