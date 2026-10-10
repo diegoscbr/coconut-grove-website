@@ -3,8 +3,7 @@
 **Read this first in a new session.** Companion to `SETUP.md` (run/edit/deploy).
 
 - **State (2026-07-19):** plain Next.js 16 (App Router) app at the **repo
-  root** — no CMS, no required env vars (`NEWSLETTER_SHEET_WEBHOOK` is optional,
-  for the footer form), all content in `lib/content/*.ts`. The Sanity
+  root** — no CMS, no env vars at all, all content in `lib/content/*.ts`. The Sanity
   layer was removed and the old static `prototype/` site deleted; the Next.js
   app was hoisted from `web/` to the root so `npm run build` works from the
   repo root.
@@ -36,10 +35,12 @@
 2. **Hero video content** — `hero.videoUrl` in `lib/content/home.ts` must be a
    real playable source: `/assets/hero.mp4` in the repo, or a proper video host
    (Vimeo/Mux/Cloudflare Stream). Not a Google Drive share link.
-3. **Newsletter webhook** — create the Google Apps Script web app on the
-   signups sheet and set `NEWSLETTER_SHEET_WEBHOOK` in Vercel (steps in
-   `SETUP.md` → "Newsletter capture"). Until then the footer form shows a
-   friendly error instead of capturing.
+3. **Newsletter — removed 2026-10-09.** The footer form and its
+   `/api/newsletter` route were deleted: `NEWSLETTER_SHEET_WEBHOOK` was never
+   set in Vercel, so every signup returned 503 and was dropped on the floor.
+   To bring it back, revert that commit, set the var, and update
+   `lib/content/privacy.ts` in the same PR — the policy now states the site
+   has no forms and collects nothing.
 
 ## SHOULD-DO (quality)
 

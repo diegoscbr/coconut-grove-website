@@ -9,12 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function GivingPage() {
-  const {
-    hero,
-    whyGive,
-    checks,
-    comingSoon,
-  } = GIVING_CONTENT;
+  const { hero, whyGive, checks, giveOnline } = GIVING_CONTENT;
 
   return (
     <>
@@ -63,15 +58,36 @@ export default function GivingPage() {
         </div>
       </section>
 
-      <section className="phase-placeholder">
+      <section className="panel">
         <div className="container">
-          <span className="placeholder-tag">{comingSoon.tag}</span>
-          <h3 className="placeholder-h">{comingSoon.headline}</h3>
-          <p className="placeholder-sub">{comingSoon.sub}</p>
-          <p style={{ marginTop: 8 }}>
-            <a href={comingSoon.ctaHref} className="btn-primary">
-              {comingSoon.ctaLabel}
+          <p className="section-eyebrow">{giveOnline.eyebrow}</p>
+          <h2 className="section-headline">{giveOnline.headline}</h2>
+          <p className="intro-prose">{giveOnline.sub}</p>
+
+          <ul className="give-tiers">
+            {giveOnline.tiers.map((tier) => (
+              <li key={tier.amount}>
+                <b>{tier.amount}</b>
+                <span>{tier.line}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="give-tiers-note">{giveOnline.tiersNote}</p>
+
+          <p style={{ marginTop: 24 }}>
+            <a
+              href={giveOnline.ctaHref}
+              className="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {giveOnline.ctaLabel}
             </a>
+          </p>
+
+          <p className="intro-prose" style={{ marginTop: 24 }}>
+            {giveOnline.aside}{" "}
+            <a href={giveOnline.asideCtaHref}>{giveOnline.asideCtaLabel}</a>.
           </p>
         </div>
       </section>

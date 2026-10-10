@@ -2,40 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Canonical footer, ported 1:1 from the prototype (incl. TBD chips).
+// The newsletter band was removed 2026-10-09: its capture webhook was never
+// configured, so every signup 503d and was dropped. Restore with one revert
+// once NEWSLETTER_SHEET_WEBHOOK exists — and update /privacy in the same PR.
 export function Footer() {
   return (
     <footer className="site-footer" role="contentinfo">
-      <div className="footer-newsletter">
-        <div className="container">
-          <div className="footer-newsletter-row">
-            <div>
-              <h2 className="footer-news-h">
-                Stay in the loop with the Instructional Center.
-              </h2>
-            </div>
-            <form className="footer-news-form" data-form-newsletter noValidate>
-              <input
-                type="email"
-                name="email"
-                placeholder="Your email"
-                aria-label="Email address"
-                required
-              />
-              {/* Honeypot — hidden from humans, bots fill it and get filtered */}
-              <input
-                type="text"
-                name="company"
-                className="hp-field"
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
-              />
-              <button type="submit">Subscribe</button>
-              <p className="footer-news-msg" data-news-msg role="status"></p>
-            </form>
-          </div>
-        </div>
-      </div>
       <div className="footer-sitemap">
         <div className="container">
           <div className="footer-sitemap-row">
@@ -168,16 +140,17 @@ export function Footer() {
           </p>
           {/* Punch list S9 — SMS compliance disclosure, verbatim as supplied.
               Do not reword: this is a compliance artifact, not marketing copy.
-              It names a Privacy Policy and a Terms of Service page, so S4 has
-              to land before this reaches production or it points at nothing. */}
+              The only change is that the two pages it names are now links, and
+              the pages exist (S4, pulled off hold by Peter on 2026-10-09). */}
           <p className="footer-sms">
             You can text Coconut Grove Sailing Club Instruction Center for
             information regarding our sailing programs and program registration.
             By texting CGSCIC, you agree to receive conversational messages from
             Coconut Grove Sailing Club Instructional Center. Reply STOP to
             opt-out; Reply HELP for support; Message &amp; data rates may apply;
-            Messaging frequency may vary. For more information, please visit our
-            Privacy Policy page or our Terms of Service page.
+            Messaging frequency may vary. For more information, please visit our{" "}
+            <Link href="/privacy">Privacy Policy</Link> page or our{" "}
+            <Link href="/terms">Terms of Service</Link> page.
           </p>
           <div className="footer-bottom">
             <span>
@@ -185,9 +158,9 @@ export function Footer() {
               Bayshore Drive, Miami, FL 33133
             </span>
             <div className="legal">
-              <a href="#">Privacy</a>
-              <a href="#">Terms</a>
-              <a href="#">Accessibility</a>
+              <Link href="/privacy">Privacy</Link>
+              <Link href="/terms">Terms</Link>
+              <Link href="/accessibility">Accessibility</Link>
             </div>
           </div>
         </div>

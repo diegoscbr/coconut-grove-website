@@ -599,107 +599,19 @@ button { font: inherit; cursor: pointer; }
 }
 
 /* --------------------------------------------------------------------------
-   Footer · newsletter band + sitemap
+   Footer · sitemap
    -------------------------------------------------------------------------- */
 
-.site-footer { background: var(--white); color: var(--charcoal); }
-
-.footer-newsletter {
-  position: relative;
-  background: var(--grey-100);
-  border-bottom: 1px solid rgba(12, 9, 105, 0.10);
-  padding: 64px 0;
-}
-.footer-newsletter::before {
+.site-footer { background: var(--white); color: var(--charcoal); position: relative; }
+/* Rust top accent, inherited from the removed newsletter band so the footer
+   keeps its edge against the page above it. */
+.site-footer::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--rust) 0%, transparent 50%);
 }
-.footer-newsletter-row {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-.footer-news-eyebrow {
-  font-family: var(--body);
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--rust);
-  margin: 0 0 8px;
-}
-.footer-news-h {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(24px, 3vw, 32px);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--charcoal);
-  margin: 0 0 8px;
-}
-.footer-news-h em { font-style: italic; color: var(--rust); font-weight: 500; }
-.footer-news-sub {
-  font-size: 14px;
-  color: var(--grey-700);
-  line-height: 1.6;
-  margin: 0;
-  max-width: 520px;
-}
-.footer-news-form { display: flex; flex-wrap: wrap; gap: 8px; }
-/* Honeypot field — visually removed, still in the DOM for bots */
-.footer-news-form .hp-field {
-  position: absolute !important;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  border: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-.footer-news-msg {
-  width: 100%;
-  min-height: 1em;
-  margin: 2px 0 0;
-  font-family: var(--body);
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--rust);
-}
-.footer-news-form input {
-  flex: 1;
-  padding: 14px 16px;
-  border: 1px solid rgba(12, 9, 105, 0.25);
-  background: var(--white);
-  color: var(--charcoal);
-  border-radius: 2px;
-  font-family: var(--body);
-  font-size: 14px;
-}
-.footer-news-form input::placeholder { color: var(--grey-500); }
-.footer-news-form input:focus {
-  outline: 0;
-  border-color: var(--rust);
-  background: var(--white);
-}
-.footer-news-form button {
-  padding: 14px 26px;
-  background: var(--navy);
-  color: var(--white);
-  border: 0;
-  font-family: var(--body);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: var(--letter-link);
-  text-transform: uppercase;
-  border-radius: 2px;
-}
-.footer-news-form button:hover { background: var(--rust); color: var(--navy); }
 
 .footer-sitemap { padding: 56px 0 32px; }
 .footer-sitemap-row {
@@ -2179,7 +2091,6 @@ button { font: inherit; cursor: pointer; }
 @media (max-width: 980px) {
   .topnav-links, .topnav-cta { display: none; }
   .topnav-burger { display: inline-flex; }
-  .footer-newsletter-row { grid-template-columns: 1fr; gap: 24px; }
   .footer-sitemap-row { grid-template-columns: 1fr 1fr; gap: 28px; }
   body.has-sticky-cta { padding-bottom: 64px; }
   .mobile-sticky-cta { display: block; }
@@ -2959,4 +2870,173 @@ button { font: inherit; cursor: pointer; }
   .instructor-grid,
   .instructor-grid.tier-lead { grid-template-columns: repeat(2, 1fr); }
   .contact-band-inner { align-items: flex-start; }
+}
+
+/* ============================================================
+   Policy pages (/privacy, /terms, /accessibility) — punch list S4
+   ============================================================ */
+.legal-effective {
+  font-family: var(--body);
+  font-size: 12px;
+  letter-spacing: var(--letter-eyebrow);
+  text-transform: uppercase;
+  color: var(--grey-500);
+  margin: 0 0 28px;
+}
+.legal-doc { max-width: 68ch; }
+.legal-section { margin-top: 40px; }
+.legal-section:first-of-type { margin-top: 32px; }
+.legal-section h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: clamp(20px, 2.4vw, 25px);
+  line-height: 1.2;
+  color: var(--navy);
+  margin: 0 0 14px;
+}
+.legal-section p,
+.legal-section li {
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--grey-700);
+  margin: 0 0 14px;
+}
+.legal-section b { color: var(--charcoal); font-weight: 600; }
+.legal-section ul { margin: 0 0 14px; padding-left: 22px; }
+.legal-section li { margin-bottom: 8px; }
+.legal-section a {
+  color: var(--light-blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.legal-section a:hover { color: var(--rust); }
+
+/* ============================================================
+   Program comparison table (/programs/parent-guide) — punch list P2
+   First table on the site, so these styles are new rather than reused.
+   ============================================================ */
+.compare-wrap {
+  margin: 28px 0 18px;
+  overflow-x: auto;
+  background: var(--white);
+  border: 1px solid var(--grey-300);
+  border-radius: 3px;
+}
+.compare-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-family: var(--body);
+}
+.compare-table th,
+.compare-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--grey-200);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.compare-table thead th {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--grey-100);
+  border-bottom: 1px solid var(--grey-300);
+  white-space: nowrap;
+}
+.compare-table tbody th {
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.compare-table td {
+  color: var(--grey-700);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.compare-table tbody tr:last-child th,
+.compare-table tbody tr:last-child td { border-bottom: 0; }
+.compare-table tbody tr:hover { background: var(--grey-50); }
+
+/* ============================================================
+   Accessibility plumbing — skip link, visible focus, screen-reader text.
+   Added so the /accessibility statement is true rather than aspirational.
+   ============================================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -60px;
+  z-index: 200;
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 0 0 3px 3px;
+  text-decoration: none;
+  transition: top 120ms ease-in;
+}
+.skip-link:focus { top: 0; }
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Suggested-gift tiers on /giving — punch list F2 */
+.give-tiers {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  max-width: 760px;
+}
+.give-tiers li {
+  border: 1px solid var(--grey-300);
+  border-radius: 3px;
+  background: var(--white);
+  padding: 16px 18px;
+}
+.give-tiers b {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+.give-tiers span {
+  display: block;
+  font-family: var(--body);
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--grey-500);
+  margin-top: 7px;
+}
+.give-tiers-note {
+  font-family: var(--body);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--grey-500);
+  margin: 14px 0 0;
+  max-width: 60ch;
 }
