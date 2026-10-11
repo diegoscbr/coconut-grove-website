@@ -2142,7 +2142,6 @@ button { font: inherit; cursor: pointer; }
 .hero-compact.hero-camps     { background-image: linear-gradient(180deg, rgba(16,28,66,0.72) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/camps.jpg"); }
 .hero-compact.hero-calendar  { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/calendar.jpg"); }
 .hero-compact.hero-giving    { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/giving.jpg"); }
-.hero-compact.hero-youth-regattas { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/youth-regattas.jpg"); }
 .hero-compact.hero-adult     { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/adult.jpg"); }
 .hero-compact.hero-contact   { background-image: linear-gradient(180deg, rgba(16,28,66,0.74) 0%, rgba(16,28,66,0.82) 100%), url("/assets/heroes/calendar.jpg"); }
 
@@ -2997,3 +2996,84 @@ button { font: inherit; cursor: pointer; }
   outline-offset: 2px;
   border-radius: 2px;
 }
+
+/* ============================================================
+   /register — punch list S1. Peter chose a landing page over a
+   direct Clubspot link so the homepage CTA survives a season change.
+   ============================================================ */
+.register-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+.register-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--grey-300);
+  border-top: 3px solid var(--navy);
+  border-radius: 3px;
+  background: var(--white);
+  padding: 26px 24px 24px;
+}
+.register-card:nth-child(2) { border-top-color: var(--light-blue); }
+.register-card:nth-child(3) { border-top-color: var(--rust); }
+.register-eyebrow {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: var(--letter-eyebrow);
+  text-transform: uppercase;
+  color: var(--light-blue);
+  margin: 0 0 8px;
+}
+.register-title {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: var(--letter-display);
+  font-size: 25px;
+  line-height: 1.1;
+  color: var(--navy);
+  margin: 0 0 16px;
+}
+.register-meta { margin: 0 0 16px; display: grid; gap: 9px; }
+.register-meta > div {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 12px;
+  border-top: 1px solid var(--grey-200);
+  padding-top: 9px;
+}
+.register-meta dt {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey-500);
+  padding-top: 2px;
+}
+.register-meta dd {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--charcoal);
+}
+.register-body {
+  font-family: var(--body);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--grey-700);
+  margin: 0 0 22px;
+  flex: 1;
+}
+.register-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.register-detail {
+  font-family: var(--body);
+  font-size: 13px;
+  color: var(--light-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(78, 74, 207, 0.4);
+}
+.register-detail:hover { color: var(--rust); text-decoration-color: var(--rust); }
