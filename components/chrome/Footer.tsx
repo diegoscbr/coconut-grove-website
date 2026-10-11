@@ -138,12 +138,20 @@ export function Footer() {
             capital purchases that make it possible for CGSCIC to empower the
             next generation of sailors.
           </p>
-          {/* Punch list S9 — SMS compliance disclosure, verbatim as supplied.
-              Do not reword: this is a compliance artifact, not marketing copy.
-              The only change is that the two pages it names are now links, and
-              the pages exist (S4, pulled off hold by Peter on 2026-10-09). */}
+          {/* Punch list S9 — SMS compliance disclosure. Treat as a compliance
+              artifact, not marketing copy: do not reword it further.
+
+              Two deliberate departures from the text Peter supplied, both
+              recorded here so nobody "restores" it to match the punch list:
+                1. The two pages it names are links now, and those pages exist
+                   (S4, pulled off hold by Peter 2026-10-09).
+                2. "Instruction Center" in the first sentence is corrected to
+                   "Instructional Center" (Diego, 2026-10-10). Peter's text had
+                   it both ways in consecutive sentences; this was the only
+                   place on the site missing the "-al", and the entity's name
+                   is a locked brand decision. Flagged to Peter and Anita. */}
           <p className="footer-sms">
-            You can text Coconut Grove Sailing Club Instruction Center for
+            You can text Coconut Grove Sailing Club Instructional Center for
             information regarding our sailing programs and program registration.
             By texting CGSCIC, you agree to receive conversational messages from
             Coconut Grove Sailing Club Instructional Center. Reply STOP to
