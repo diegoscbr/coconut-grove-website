@@ -64,16 +64,6 @@ export default function GivingPage() {
           <h2 className="section-headline">{giveOnline.headline}</h2>
           <p className="intro-prose">{giveOnline.sub}</p>
 
-          <ul className="give-tiers">
-            {giveOnline.tiers.map((tier) => (
-              <li key={tier.amount}>
-                <b>{tier.amount}</b>
-                <span>{tier.line}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="give-tiers-note">{giveOnline.tiersNote}</p>
-
           <p style={{ marginTop: 24 }}>
             <a
               href={giveOnline.ctaHref}
