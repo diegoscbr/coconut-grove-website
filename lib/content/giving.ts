@@ -33,12 +33,29 @@ export const GIVING_CONTENT = {
       "Attn: ROSA LAMELA",
     ],
   },
-  comingSoon: {
-    tag: "Coming soon",
-    headline: "Online donations are on the way.",
-    sub: "We're partnering with Bloomerang to launch a secure donation page. Until it's live, contact us to give, or to talk about sponsorship and planned gifts.",
-    ctaLabel: "Contact us to give →",
-    ctaHref: "/contact",
+  // Punch list F1 + F2 + the /giving half of F4. Interim by Diego's call
+  // (2026-10-09): online gifts route to CGSCIC's own Give Miami Day page rather
+  // than waiting on the Zeffy-vs-Givebutter decision, which is with Peter and
+  // Steve. This also replaces copy that still named Bloomerang, a vendor the
+  // club is explicitly no longer pursuing.
+  //
+  // URL verified 2026-10-09: returns 200 and the page title reads "Coconut
+  // Grove Sailing Club Instructional Center | Give Miami Day".
+  // When a direct platform is chosen, swap this block, not the whole page.
+  giveOnline: {
+    eyebrow: "Give online",
+    headline: "Give through Give Miami Day.",
+    sub: "Our gifts are processed by The Miami Foundation through our Give Miami Day page. It is secure, the receipt is immediate, and 100% of your gift reaches the Instructional Center.",
+    // Suggested-gift tiers (punch list F2) were removed 2026-10-10 by Diego:
+    // the Give Miami Day page runs its own amount picker, so duplicating one
+    // here just adds a step before the handoff. F2 reopens if the club ever
+    // moves to a donation form embedded on this page.
+    ctaLabel: "Donate on Give Miami Day →",
+    ctaHref: "https://givemiamiday.org/organization/cgscic",
+    aside:
+      "Prefer to talk it through, or interested in sponsorship or a planned gift?",
+    asideCtaLabel: "Contact us",
+    asideCtaHref: "/contact",
   },
 };
 

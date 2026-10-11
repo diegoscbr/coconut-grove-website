@@ -6,7 +6,7 @@ import { COACH_PHOTOS } from "@/lib/coachPhotos";
 
 /**
  * Client-side chrome behavior, ported 1:1 from prototype/js/site.js:
- * mobile drawer, newsletter placeholder, in-page scrollspy, and coach photos.
+ * mobile drawer, in-page scrollspy, and coach photos.
  * Runs against the same markup/attributes the prototype used. Re-binds on
  * route change so it works across the App Router.
  */
@@ -41,70 +41,6 @@ export function SiteScripts() {
       }
     };
     document.addEventListener("keydown", onKey);
-
-    // Newsletter · validate, then capture via /api/newsletter (Google Sheet)
-    const newsletterForm = document.querySelector("[data-form-newsletter]");
-    const onSubmit = (e: Event) => {
-      e.preventDefault();
-      const form = e.currentTarget as HTMLElement;
-      const button = form.querySelector<HTMLButtonElement>(
-        'button[type="submit"]',
-      );
-      const input = form.querySelector<HTMLInputElement>('input[type="email"]');
-      const msg = form.querySelector<HTMLElement>("[data-news-msg]");
-      if (!button || !input) return;
-
-      const setMsg = (text: string) => {
-        if (msg) msg.textContent = text;
-      };
-      const email = input.value.trim();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-        setMsg("Please enter a valid email address.");
-        return;
-      }
-
-      const originalText = button.textContent;
-      button.disabled = true;
-      button.textContent = "Adding…";
-      setMsg("");
-
-      const honeypot =
-        form.querySelector<HTMLInputElement>('input[name="company"]')?.value ??
-        "";
-      const restore = () => {
-        button.textContent = originalText;
-        button.disabled = false;
-      };
-
-      fetch("/api/newsletter", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, company: honeypot }),
-      })
-        .then(async (res) => {
-          const data = (await res.json().catch(() => ({}))) as {
-            ok?: boolean;
-            error?: string;
-          };
-          if (res.ok && data.ok) {
-            button.textContent = "On the list ✓";
-            input.value = "";
-            setTimeout(restore, 3500);
-            return;
-          }
-          restore();
-          setMsg(
-            data.error === "invalid_email"
-              ? "That email doesn't look deliverable — check for typos."
-              : "Something went wrong — please try again.",
-          );
-        })
-        .catch(() => {
-          restore();
-          setMsg("Something went wrong — please try again.");
-        });
-    };
-    newsletterForm?.addEventListener("submit", onSubmit);
 
     // In-page anchor scrollspy for long interior pages
     let observer: IntersectionObserver | undefined;
@@ -153,7 +89,6 @@ export function SiteScripts() {
       closeBtn?.removeEventListener("click", onClose);
       drawerLinks.forEach((link) => link.removeEventListener("click", onClose));
       document.removeEventListener("keydown", onKey);
-      newsletterForm?.removeEventListener("submit", onSubmit);
       observer?.disconnect();
     };
   }, [pathname]);

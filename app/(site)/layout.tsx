@@ -11,8 +11,13 @@ export default function SiteLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
+      {/* First focusable element on every page, so a keyboard or screen reader
+          user can jump the nav. Claimed by /accessibility, so keep it first. */}
+      <a href="#main" className="skip-link">
+        Skip to main content
+      </a>
       <TopNav />
-      {children}
+      <main id="main">{children}</main>
       <Footer />
       <StickyCTA />
       <MobileDrawer />
