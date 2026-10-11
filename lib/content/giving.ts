@@ -46,13 +46,10 @@ export const GIVING_CONTENT = {
     eyebrow: "Give online",
     headline: "Give through Give Miami Day.",
     sub: "Our gifts are processed by The Miami Foundation through our Give Miami Day page. It is secure, the receipt is immediate, and 100% of your gift reaches the Instructional Center.",
-    tiers: [
-      { amount: "$75", line: "A week of after-school sailing" },
-      { amount: "$825", line: "One child, one full season" },
-      { amount: "$1,500", line: "A season for two, plus gear" },
-    ],
-    tiersNote:
-      "Any amount helps. These are the numbers behind our programs, if it helps to picture where a gift goes.",
+    // Suggested-gift tiers (punch list F2) were removed 2026-10-10 by Diego:
+    // the Give Miami Day page runs its own amount picker, so duplicating one
+    // here just adds a step before the handoff. F2 reopens if the club ever
+    // moves to a donation form embedded on this page.
     ctaLabel: "Donate on Give Miami Day →",
     ctaHref: "https://givemiamiday.org/organization/cgscic",
     aside:
