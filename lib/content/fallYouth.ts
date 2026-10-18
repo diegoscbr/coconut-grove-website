@@ -40,6 +40,10 @@ export const FALL_YOUTH_CONTENT = {
     dateChip: "August 29 – December 13",
     ctaLabel: "Register for Fall Youth Sailing →",
     ctaNote: "Registration is handled on Clubspot — opens in a new tab.",
+    // Winter Break Camp build specification, Section 7: link /youth-sailing to
+    // /winter-camp with the anchor "Winter Camp" or "Winter Break Camp".
+    winterCampLabel: "Winter Break Camp →",
+    winterCampHref: "/winter-camp",
   },
   familyNote: {
     headline: "A Note to Our Families",

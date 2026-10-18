@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { GiveButton } from "@/lib/giveMiamiDay";
 
 // Canonical mobile drawer, ported 1:1. Open/close is wired by SiteScripts via
 // the data-action / data-drawer-link attributes (same as the prototype).
-export function MobileDrawer() {
+export function MobileDrawer({ give }: { give: GiveButton }) {
   return (
     <div className="mobile-drawer" id="mobile-drawer" aria-hidden="true">
       <div className="mobile-drawer-head">
@@ -59,9 +60,9 @@ export function MobileDrawer() {
           Contact
         </Link>
       </nav>
-      <Link href="/giving" className="drawer-cta" data-drawer-link>
-        Give →
-      </Link>
+      <a href={give.href} className="drawer-cta" data-drawer-link>
+        {give.label}
+      </a>
     </div>
   );
 }

@@ -641,7 +641,8 @@ button { font: inherit; cursor: pointer; }
   color: var(--grey-500);
   margin-top: 4px;
 }
-.footer-col h6 {
+.footer-col h6,
+.footer-col .footer-col-head {
   font-family: var(--body);
   font-weight: 700;
   font-size: 10px;
@@ -3077,3 +3078,304 @@ button { font: inherit; cursor: pointer; }
   text-decoration-color: rgba(78, 74, 207, 0.4);
 }
 .register-detail:hover { color: var(--rust); text-decoration-color: var(--rust); }
+
+/* ============================================================
+   Footer — Give button + Florida solicitation disclosure
+   (Giving page specification, Oct 2026: Give button and Section 7)
+   ============================================================ */
+.footer-give {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 6px;
+  padding: 12px 18px;
+  background: var(--rust);
+  color: var(--navy);
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: var(--letter-link);
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+.footer-give:hover { background: var(--navy); color: var(--white); }
+.footer-legal p { margin: 0; }
+.footer-legal p + p { margin-top: 8px; }
+.footer-legal a { color: var(--navy); text-decoration: underline; }
+.footer-legal a:hover { color: var(--rust); }
+/* The specification: the mockup's 11px low-contrast gray fails 4.5:1.
+   12px, #444 on white is about 9.7:1. */
+.footer-legal .footer-registration {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--grey-700);
+}
+
+/* ============================================================
+   Giving page (Rosa Lamela's build specification, 15 Oct 2026)
+   ============================================================ */
+.giving-hero-eyebrow {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--light-blue-soft);
+  margin: 0 0 22px;
+}
+.giving-hero h1 { text-transform: none; line-height: 1.02; }
+.giving-dates {
+  margin-top: 22px;
+  max-width: 640px;
+  border-left: 3px solid var(--rust);
+  padding-left: 18px;
+}
+.giving-dates p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+.giving-dates p:first-child { font-weight: 700; color: var(--white); }
+.giving-dates p + p { margin-top: 8px; }
+.giving-hero-cta { margin: 26px 0 0; }
+
+.giving-mission {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+  gap: clamp(28px, 5vw, 72px);
+}
+.giving-mission-statement {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--grey-700);
+}
+.giving-pullout {
+  margin: 28px 0 0;
+  max-width: 800px;
+  padding: 22px 26px;
+  background: var(--grey-100);
+  border-left: 3px solid var(--rust);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.4;
+  color: var(--charcoal);
+}
+
+.giving-stats { margin-top: 28px; }
+.giving-stats .num { color: var(--white); margin: 0 0 10px; }
+.giving-stat-caption {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.86);
+}
+.giving-stat-caption a { color: var(--light-blue-soft); text-decoration: underline; }
+.giving-stat-caption a:hover { color: var(--rust); }
+.giving-closing {
+  margin: 28px 0 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(18px, 1.6vw, 22px);
+  color: var(--white);
+}
+
+.gift-levels {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.gift-level {
+  position: relative;
+  background: var(--white);
+  border-top: 3px solid var(--rust);
+  border-radius: 4px;
+  padding: 22px 22px 24px;
+  box-shadow: 0 2px 10px rgba(12, 9, 105, 0.08);
+}
+.gift-level-amount {
+  margin: 0 0 8px;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+}
+.gift-level-does {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--grey-700);
+}
+/* $500 — the one level that funds a person rather than equipment. */
+.gift-level.featured { background: var(--navy); }
+.gift-level.featured .gift-level-amount,
+.gift-level.featured .gift-level-does { color: var(--white); }
+.gift-level-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 9px;
+  background: var(--rust);
+  color: var(--navy);
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+.giving-cta-row { margin: 28px 0 0; }
+
+.giving-other {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 5vw, 64px);
+}
+.giving-other .camp-sub { margin-top: 0; }
+.giving-other a { color: var(--navy); text-decoration: underline; }
+.giving-other a:hover { color: var(--rust); }
+
+@media (max-width: 980px) {
+  .gift-levels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .giving-mission,
+  .giving-other,
+  .gift-levels { grid-template-columns: 1fr; }
+  .giving-hero-cta .btn-register,
+  .giving-cta-row .btn-register,
+  .giving-cta-row .btn-primary {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   Winter Break Camp (/winter-camp, build specification Sept 2026)
+   Mobile requirements: 16px body text, 1.6 line height, single column
+   below 768px, full-width register button, schedule as stacked rows.
+   ============================================================ */
+.winter-label { margin-top: 36px; }
+.winter-sessions,
+.winter-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+  margin-top: 18px;
+}
+.winter-groups { margin-top: 28px; }
+.winter-session-name {
+  margin: 0 0 4px;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+.winter-session-dates {
+  margin: 0 0 10px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--charcoal);
+}
+.winter-session-price {
+  margin: 0 0 10px;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+}
+.winter-group-ages {
+  margin: -4px 0 10px;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+.winter-sessions .course-desc,
+.winter-groups .course-desc,
+.winter-faq .faq-body {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+.winter-cta { margin-top: 28px; }
+.winter-cta-note { font-size: 16px; line-height: 1.6; color: var(--grey-700); }
+.winter-register { min-height: 44px; }
+
+.winter-day {
+  margin: 24px 0 0;
+  max-width: 760px;
+  border-top: 1px solid var(--grey-200);
+}
+.winter-day > div {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--grey-200);
+}
+.winter-day-head span {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey-500);
+}
+.winter-day dt {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--navy);
+}
+.winter-day dd { margin: 0; font-size: 16px; line-height: 1.6; color: var(--grey-700); }
+.winter-day-note { margin-top: 20px; }
+
+.faq-item summary .faq-q {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+.winter-faq .faq-item summary { min-height: 44px; font-size: 16px; }
+
+.winter-contact a { color: var(--white); text-decoration: underline; }
+.winter-contact a:hover { color: var(--rust); }
+/* 44px tap targets without inflating the line: the padding grows the hit
+   area, the matching negative margin keeps the text where it was. */
+.winter-contact a { padding: 12px 0; margin: -12px 0; }
+.winter-updated {
+  margin: 28px 0 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  .winter-sessions,
+  .winter-groups { grid-template-columns: 1fr; }
+  .winter-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+  .winter-day-head { display: none !important; }
+  .winter-day > div { grid-template-columns: 1fr; gap: 2px; }
+}

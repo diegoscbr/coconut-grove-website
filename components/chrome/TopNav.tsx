@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { GiveButton } from "@/lib/giveMiamiDay";
 
 // Canonical top nav, ported 1:1 from the hand-copied block in the prototype.
 // Active link is derived from the current path instead of a per-file .active.
-export function TopNav() {
+export function TopNav({ give }: { give: GiveButton }) {
   const pathname = usePathname();
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -68,9 +69,9 @@ export function TopNav() {
             Contact
           </Link>
         </nav>
-        <Link href="/giving" className="topnav-cta">
-          Give →
-        </Link>
+        <a href={give.href} className="topnav-cta">
+          {give.label}
+        </a>
         <button
           className="topnav-burger"
           aria-label="Open menu"

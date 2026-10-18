@@ -87,6 +87,11 @@ export function FallYouth2026() {
               </a>
               <small>{header.ctaNote}</small>
             </p>
+            <p className="camp-hero-cta">
+              <Link href={header.winterCampHref} className="btn-light">
+                {header.winterCampLabel}
+              </Link>
+            </p>
           </div>
 
           <div className="camp-block">
