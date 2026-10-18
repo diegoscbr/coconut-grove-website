@@ -52,9 +52,6 @@ export function MobileDrawer() {
         >
           Youth Sailing
         </Link>
-        <Link href="/youth-regattas" data-drawer-link>
-          Youth Regattas
-        </Link>
         <Link href="/calendar" data-drawer-link>
           Calendar
         </Link>

@@ -122,6 +122,10 @@ export default function ProgramsPage() {
               {inquiry.ctaLabel}
             </a>
           </p>
+          <p className="pathway-offramp" style={{ marginTop: 20 }}>
+            {inquiry.guideLead}
+            <a href={inquiry.guideHref}>{inquiry.guideLinkText}</a>
+          </p>
         </div>
       </section>
     </>

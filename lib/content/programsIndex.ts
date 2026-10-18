@@ -66,6 +66,11 @@ export const PROGRAMS_INDEX_CONTENT = {
     sub: "Tell us about the sailor — age, experience, what you're after. A coach will be in touch within two days with a suggested entry point.",
     ctaLabel: "Inquire →",
     ctaHref: "/contact",
+    // Punch list P1/P2 — the parent guide answers the credential and
+    // cost questions before anyone has to call.
+    guideLead: "Comparing options for a child? ",
+    guideLinkText: "Read the parent guide →",
+    guideHref: "/programs/parent-guide",
   },
 };
 

@@ -56,12 +56,6 @@ export function TopNav() {
             </div>
           </div>
           <Link
-            href="/youth-regattas"
-            className={isActive("/youth-regattas") ? "active" : undefined}
-          >
-            Youth Regattas
-          </Link>
-          <Link
             href="/calendar"
             className={isActive("/calendar") ? "active" : undefined}
           >

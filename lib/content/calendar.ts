@@ -24,11 +24,6 @@ export const CALENDAR_CONTENT = {
     placeholderNote:
       "The event calendar will appear here — regattas, open practices, and Center events.",
   },
-  newsletter: {
-    tag: "Coming soon",
-    headline: "The Instructional Center newsletter.",
-    sub: "Monthly updates from the dock — program news, results, and what's ahead. Add your email in the footer below to be first on the list.",
-  },
 };
 
 export type CalendarContent = typeof CALENDAR_CONTENT;

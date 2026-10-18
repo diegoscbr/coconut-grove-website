@@ -14,11 +14,13 @@ export const HOME_CONTENT = {
       "Carrying Coconut Grove's sailing legacy forward — from a first lesson on Biscayne Bay to an international racing campaign.",
     subheadEmphasis: "Eighty years of sailing, open to all.",
     // Punch list S1: registration leads, contact drops to secondary.
-    // The CTA points at /programs rather than a Clubspot link because there
-    // are two registrations (youth fa7vTl77ap, adult zzXFEJa92k) and one
-    // button cannot choose between them. /programs routes to both.
+    // Punch list S1, closed 2026-10-11. The interim pointed at /programs
+    // because two Clubspot registrations exist (youth fa7vTl77ap, adult
+    // zzXFEJa92k) and one button cannot choose. Peter chose a landing page
+    // over a direct link on 9 Oct, so this now goes to /register, which
+    // carries all three routes and survives a season change.
     ctaLabel: "Register",
-    ctaHref: "/programs",
+    ctaHref: "/register",
     ctaNote: "Fall youth season runs through December 13 · Adult courses year-round",
     ctaSecondaryLabel: "Sail with us",
     ctaSecondaryHref: "/contact",

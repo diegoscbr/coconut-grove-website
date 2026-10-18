@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function CalendarPage() {
-  const { hero, embed, newsletter } = CALENDAR_CONTENT;
+  const { hero, embed } = CALENDAR_CONTENT;
 
   return (
     <>
@@ -49,14 +49,6 @@ export default function CalendarPage() {
         </div>
       </section>
 
-      {/* Newsletter · coming soon */}
-      <section className="phase-placeholder">
-        <div className="container">
-          <span className="placeholder-tag">{newsletter.tag}</span>
-          <h3 className="placeholder-h">{newsletter.headline}</h3>
-          <p className="placeholder-sub">{newsletter.sub}</p>
-        </div>
-      </section>
     </>
   );
 }
