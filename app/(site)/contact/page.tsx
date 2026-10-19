@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CONTACT_CONTENT } from "@/lib/content/contact";
 import { noArrow } from "@/lib/label";
 
@@ -56,9 +57,9 @@ export default function ContactPage() {
               {noArrow(contacts.clubLinkText)}
             </a>
             {contacts.footMid}
-            <a href={contacts.donateLinkHref} className="link-more" target="_blank" rel="noopener">
+            <Link href={contacts.donateLinkHref} className="link-more">
               {noArrow(contacts.donateLinkText)}
-            </a>
+            </Link>
           </p>
         </div>
       </section>

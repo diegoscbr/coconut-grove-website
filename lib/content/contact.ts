@@ -42,7 +42,7 @@ export const CONTACT_CONTENT = {
     clubLinkHref: "https://cgsc.org/",
     footMid: ". ",
     donateLinkText: "Donate →",
-    donateLinkHref: "https://cgscic.org/donate/",
+    donateLinkHref: "/giving",
   },
   // The "Visit the dock" split section was removed as redundant on 2026-07-23;
   // its aerial bayview photo now serves as this page's hero image.

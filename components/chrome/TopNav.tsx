@@ -55,6 +55,7 @@ export function TopNav({ give }: { give: GiveButton }) {
               <Link href="/programs/adult-sailing">Adult Sailing</Link>
               <Link href="/programs/race-team">Racing Teams</Link>
               <Link href="/programs/camps-coaching">Youth Sailing</Link>
+              <Link href="/programs/parent-guide">Parent Guide</Link>
             </div>
           </div>
           <Link
@@ -62,6 +63,14 @@ export function TopNav({ give }: { give: GiveButton }) {
             className={isActive("/calendar") ? "active" : undefined}
           >
             Calendar
+          </Link>
+          {/* The Give button follows the campaign date switch and can leave
+              the site; this link always reaches the giving page itself. */}
+          <Link
+            href="/giving"
+            className={isActive("/giving") ? "active" : undefined}
+          >
+            Giving
           </Link>
           <Link
             href="/contact"

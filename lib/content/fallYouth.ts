@@ -44,6 +44,10 @@ export const FALL_YOUTH_CONTENT = {
     // /winter-camp with the anchor "Winter Camp" or "Winter Break Camp".
     winterCampLabel: "Winter Break Camp →",
     winterCampHref: "/winter-camp",
+    // Ours, not the client's: first-time parents land here, so point them at
+    // the side-by-side comparison of every youth program.
+    parentGuideLabel: "New to the club? Compare every youth program in the parent guide",
+    parentGuideHref: "/programs/parent-guide",
   },
   familyNote: {
     headline: "A Note to Our Families",

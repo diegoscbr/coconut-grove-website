@@ -54,8 +54,14 @@ export function MobileDrawer({ give }: { give: GiveButton }) {
         >
           Youth Sailing
         </Link>
+        <Link href="/programs/parent-guide" className="drawer-sub" data-drawer-link>
+          Parent Guide
+        </Link>
         <Link href="/calendar" data-drawer-link>
           Calendar
+        </Link>
+        <Link href="/giving" data-drawer-link>
+          Giving
         </Link>
         <Link href="/contact" data-drawer-link>
           Contact
