@@ -137,13 +137,13 @@ export const PARENT_GUIDE_CONTENT = {
   seo: {
     title: "A Parent's Guide to Youth Sailing | Coconut Grove Sailing Club",
     description:
-      "Safety, instruction and a side-by-side comparison of every youth sailing program at the Coconut Grove Sailing Club Instructional Center — ages, days per week and fees in one table.",
+      "Safety, instruction and a side-by-side comparison of every youth sailing program at the Coconut Grove Sailing Club Instructional Center: ages, days per week and fees in one table.",
   },
   hero: {
     breadcrumbCurrent: "Parent Guide",
     headline: "A Parent's Guide",
     subhead:
-      "The questions parents ask us first, answered in one place — and every program side by side.",
+      "The questions parents ask us first, answered in one place, with every program side by side.",
     locationChip: "Biscayne Bay · Coconut Grove",
   },
   intro: {

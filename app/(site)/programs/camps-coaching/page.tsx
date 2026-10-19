@@ -19,9 +19,9 @@ export default function CampsCoachingPage() {
         <div className="container">
           <p className="breadcrumb">
             <Link href={hero.breadcrumbHomeHref}>{hero.breadcrumbHomeLabel}</Link>{" "}
-            <span className="sep">→</span>{" "}
+            <span className="sep">/</span>{" "}
             <Link href={hero.breadcrumbProgramsHref}>{hero.breadcrumbProgramsLabel}</Link>{" "}
-            <span className="sep">→</span> {hero.breadcrumbCurrent}
+            <span className="sep">/</span> {hero.breadcrumbCurrent}
           </p>
           <h1>{hero.h1}</h1>
           <p className="subhead">{hero.subhead}</p>

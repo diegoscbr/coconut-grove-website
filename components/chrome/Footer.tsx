@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { GiveButton } from "@/lib/giveMiamiDay";
 import { GIVING_DISCLOSURE as D } from "@/lib/content/giving";
+import { noArrow } from "@/lib/label";
 
 // Canonical footer, ported 1:1 from the prototype (incl. TBD chips).
 // The newsletter band was removed 2026-10-09: its capture webhook was never
@@ -31,12 +32,13 @@ export function Footer({ give }: { give: GiveButton }) {
                 target="_blank"
                 rel="noopener"
               >
-                Coconut Grove Sailing Club — Membership, Moorings &amp; Club Life →
+                <span>Coconut Grove Sailing Club</span>
+                <span className="footer-club-sub">Membership, Moorings &amp; Club Life</span>
               </a>
               {/* Giving spec: a Give button in the footer as well as the nav
                   and mobile menu, on the same Give Miami Day date switch. */}
               <a className="footer-give" href={give.href}>
-                {give.label}
+                {noArrow(give.label)}
               </a>
             </div>
             <div className="footer-col">

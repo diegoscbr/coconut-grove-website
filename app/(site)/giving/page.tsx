@@ -3,6 +3,7 @@ import { GIVING_CONTENT } from "@/lib/content/giving";
 import { GIVE_MIAMI_DAY_URL, isGiveMiamiDayLive } from "@/lib/giveMiamiDay";
 import { jsonLd } from "@/lib/schema";
 import { Rich } from "@/components/Rich";
+import { noArrow } from "@/lib/label";
 
 const { seo } = GIVING_CONTENT;
 
@@ -112,7 +113,7 @@ export default function GivingPage() {
               </div>
               <p className="giving-hero-cta">
                 <a href={hero.ctaHref} className="btn-register">
-                  {hero.ctaLabel}
+                  {noArrow(hero.ctaLabel)}
                 </a>
               </p>
             </>
@@ -178,7 +179,7 @@ export default function GivingPage() {
           </ul>
           <p className="giving-cta-row">
             <a href={levels.ctaHref} className="btn-register">
-              {levels.ctaLabel}
+              {noArrow(levels.ctaLabel)}
             </a>
           </p>
         </div>
@@ -197,7 +198,7 @@ export default function GivingPage() {
             ))}
             <p className="giving-cta-row">
               <a href={matching.ctaHref} className="btn-primary">
-                {matching.ctaLabel}
+                {noArrow(matching.ctaLabel)}
               </a>
             </p>
           </div>

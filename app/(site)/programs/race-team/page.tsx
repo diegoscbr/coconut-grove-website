@@ -3,6 +3,7 @@ import Link from "next/link";
 import { RACE_TEAM_CONTENT } from "@/lib/content/raceTeam";
 import { Rich } from "@/components/Rich";
 import { PathwaySelector } from "@/components/PathwaySelector";
+import { noArrow } from "@/lib/label";
 
 export const metadata: Metadata = {
   title: "Racing Teams",
@@ -31,9 +32,9 @@ export default function RaceTeamPage() {
         <div className="container">
           <p className="breadcrumb">
             <a href={hero.breadcrumbHome.href}>{hero.breadcrumbHome.label}</a>{" "}
-            <span className="sep">→</span>{" "}
+            <span className="sep">/</span>{" "}
             <a href={hero.breadcrumbPrograms.href}>{hero.breadcrumbPrograms.label}</a>{" "}
-            <span className="sep">→</span> {hero.breadcrumbCurrent}
+            <span className="sep">/</span> {hero.breadcrumbCurrent}
           </p>
           <h1>{hero.h1}</h1>
           <p className="subhead">
@@ -95,7 +96,7 @@ export default function RaceTeamPage() {
       <section className="panel" id="methodology">
         <div className="container">
           <div className="split-2col">
-            <div className="split-2col-media coaches accent-bracket"></div>
+            <div className="split-2col-media coaches"></div>
             <div className="split-2col-body">
               <p className="section-eyebrow">{methodology.eyebrow}</p>
               <h2 className="section-headline">{methodology.headline}</h2>
@@ -143,10 +144,10 @@ export default function RaceTeamPage() {
                 <Rich text={coaches.prose2} />
               </p>
               <Link href={coaches.rosterHref} className="btn-ghost">
-                {coaches.rosterLabel}
+                {noArrow(coaches.rosterLabel)}
               </Link>
             </div>
-            <div className="split-2col-media race accent-bracket"></div>
+            <div className="split-2col-media race"></div>
           </div>
         </div>
       </section>
@@ -174,7 +175,7 @@ export default function RaceTeamPage() {
 
           <p style={{ marginTop: 32 }}>
             <a href={regattas.ctaHref} className="btn-primary">
-              {regattas.ctaLabel}
+              {noArrow(regattas.ctaLabel)}
             </a>
           </p>
         </div>
@@ -216,7 +217,7 @@ export default function RaceTeamPage() {
           <p className="section-sub">{inquiry.sub}</p>
           <p style={{ marginTop: 8 }}>
             <Link href={inquiry.ctaHref} className="btn-primary">
-              {inquiry.ctaLabel}
+              {noArrow(inquiry.ctaLabel)}
             </Link>
           </p>
         </div>

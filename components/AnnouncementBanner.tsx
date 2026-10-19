@@ -17,7 +17,7 @@ export function AnnouncementBanner({ announcement }: { announcement: Announcemen
   const items = Array.from({ length: MARQUEE_REPEATS }, (_, i) => (
     <span key={i} className="announce-item">
       {announcement.message}
-      <span className="announce-sep">→</span>
+      <span className="announce-sep">/</span>
     </span>
   ));
 
@@ -30,7 +30,7 @@ export function AnnouncementBanner({ announcement }: { announcement: Announcemen
       </div>
       <span className="announce-static" aria-hidden="true">
         {announcement.message}
-        <span className="announce-sep">→</span>
+        <span className="announce-sep">/</span>
       </span>
     </a>
   );

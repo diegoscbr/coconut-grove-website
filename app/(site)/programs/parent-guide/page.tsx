@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PARENT_GUIDE_CONTENT } from "@/lib/content/parentGuide";
 import Link from "next/link";
 import { Rich } from "@/components/Rich";
+import { noArrow } from "@/lib/label";
 
 export const metadata: Metadata = PARENT_GUIDE_CONTENT.seo;
 
@@ -14,8 +15,8 @@ export default function ParentGuidePage() {
       <section className="hero-compact has-hero-photo hero-camps">
         <div className="container">
           <p className="breadcrumb">
-            <Link href="/">Home</Link> <span className="sep">→</span>{" "}
-            <Link href="/programs">Programs</Link> <span className="sep">→</span>{" "}
+            <Link href="/">Home</Link> <span className="sep">/</span>{" "}
+            <Link href="/programs">Programs</Link> <span className="sep">/</span>{" "}
             {hero.breadcrumbCurrent}
           </p>
           <h1>{hero.headline}</h1>
@@ -79,7 +80,7 @@ export default function ParentGuidePage() {
 
           <p style={{ marginTop: 20 }}>
             <Link href={comparison.ctaHref} className="btn-primary">
-              {comparison.ctaLabel}
+              {noArrow(comparison.ctaLabel)}
             </Link>
           </p>
         </div>
@@ -97,7 +98,7 @@ export default function ParentGuidePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {next.registerLabel}
+              {noArrow(next.registerLabel)}
             </a>
           </p>
           <p className="intro-prose" style={{ marginTop: 20 }}>

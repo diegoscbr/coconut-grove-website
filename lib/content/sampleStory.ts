@@ -45,11 +45,11 @@ export const SAMPLE_STORY_CONTENT: SampleStory = {
       { label: "Home", href: "/" },
       { label: "Calendar", href: "/calendar" },
     ],
-    crumbSep: "→",
+    crumbSep: "/",
     crumbCurrent: "Story",
     title: "Maru Urban joins as Director of Sailing Performance",
     subheadEm: "The next chapter of the CGSC pathway begins.",
-    subheadRest: " A note from the dock on what changes — and what doesn't.",
+    subheadRest: " A note from the dock on what changes, and what doesn't.",
   },
   article: {
     meta: {
@@ -57,7 +57,7 @@ export const SAMPLE_STORY_CONTENT: SampleStory = {
       byline: "By Maru Urban · Director of Sailing Performance & Development",
       info: "2026 · 4 min read",
     },
-    leadImgLabel: "Maru Urban on the Coconut Grove dock — placeholder image",
+    leadImgLabel: "Maru Urban on the Coconut Grove dock (placeholder image)",
     body: [
       {
         kind: "p",
@@ -75,7 +75,7 @@ export const SAMPLE_STORY_CONTENT: SampleStory = {
           { text: "Maru Urban", href: "/about#coaches" },
           {
             text:
-              " as our incoming Director of Sailing Performance & Development. Maru brings a depth of coaching that connects junior racing to Olympic-level competition — the full ladder our pathway has always pointed toward.",
+              " as our incoming Director of Sailing Performance & Development. Maru brings a depth of coaching that connects junior racing to Olympic-level competition: the full ladder our pathway has always pointed toward.",
           },
         ],
       },
@@ -99,7 +99,7 @@ export const SAMPLE_STORY_CONTENT: SampleStory = {
               "We don't separate programs by ambition; we separate them by stage. Wherever you start, the next rung is one practice away.",
           },
         ],
-        cite: "— Maru Urban, Director of Sailing Performance & Development",
+        cite: "Maru Urban, Director of Sailing Performance & Development",
       },
       { kind: "h2", text: "What doesn't" },
       {
@@ -121,7 +121,7 @@ export const SAMPLE_STORY_CONTENT: SampleStory = {
         parts: [
           {
             text:
-              "If you're a current CGSC sailor or family, you won't see anything go away. You'll see the ladder you're already on get taller — and the rungs get clearer.",
+              "If you're a current CGSC sailor or family, you won't see anything go away. You'll see the ladder you're already on get taller, and the rungs get clearer.",
           },
         ],
       },
@@ -129,7 +129,7 @@ export const SAMPLE_STORY_CONTENT: SampleStory = {
       {
         kind: "p",
         parts: [
-          { text: "We're hosting an open practice for prospective Racing Teams families on a date in the coming weeks — sign up via the " },
+          { text: "We're hosting an open practice for prospective Racing Teams families on a date in the coming weeks. Sign up via the " },
           { text: "inquiry form", href: "/contact" },
           { text: " or call the office. The full 2026 calendar is on the " },
           { text: "calendar page", href: "/calendar" },
@@ -141,7 +141,7 @@ export const SAMPLE_STORY_CONTENT: SampleStory = {
         parts: [
           {
             text:
-              'And if you\'ve never sailed at CGSC — or anywhere — this is a good moment to start. We have beginner cohorts running in Adult Sailing every season, and the Youth Sailing team can take a six-year-old from "never on a boat" to "running a regatta" in less time than you think.',
+              'And if you\'ve never sailed at CGSC, or anywhere, this is a good moment to start. We have beginner cohorts running in Adult Sailing every season, and the Youth Sailing team can take a six-year-old from "never on a boat" to "running a regatta" in less time than you think.',
           },
         ],
       },

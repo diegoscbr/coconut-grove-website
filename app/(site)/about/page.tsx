@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ABOUT_CONTENT } from "@/lib/content/about";
 import { Rich } from "@/components/Rich";
+import { CoachPortrait } from "@/components/CoachPortrait";
+import { noArrow } from "@/lib/label";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -57,7 +59,7 @@ export default function AboutPage() {
               <div className={`coach-grid${tier.lead ? " tier-lead" : ""}`}>
                 {tier.people.map((p, i) => (
                   <div key={i} className="coach">
-                    <div className="coach-portrait"></div>
+                    <CoachPortrait name={p.name} />
                     <p className="coach-name">{p.name}</p>
                     <p className="coach-role">{p.role}</p>
                   </div>
@@ -68,7 +70,7 @@ export default function AboutPage() {
 
           <p style={{ marginTop: 32 }}>
             <a href={coaches.ctaHref} className="btn-primary">
-              {coaches.ctaLabel}
+              {noArrow(coaches.ctaLabel)}
             </a>
           </p>
         </div>
@@ -132,7 +134,7 @@ export default function AboutPage() {
           </p>
           <p style={{ marginTop: 8 }}>
             <a href={inquiry.ctaHref} className="btn-primary">
-              {inquiry.ctaLabel}
+              {noArrow(inquiry.ctaLabel)}
             </a>
           </p>
         </div>

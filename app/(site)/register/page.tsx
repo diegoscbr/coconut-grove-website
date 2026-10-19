@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { REGISTER_CONTENT } from "@/lib/content/register";
+import { noArrow } from "@/lib/label";
 
 export const metadata: Metadata = REGISTER_CONTENT.seo;
 
@@ -12,7 +13,7 @@ export default function RegisterPage() {
       <section className="hero-compact has-hero-photo hero-programs">
         <div className="container">
           <p className="breadcrumb">
-            <Link href="/">Home</Link> <span className="sep">→</span>{" "}
+            <Link href="/">Home</Link> <span className="sep">/</span>{" "}
             {hero.breadcrumbCurrent}
           </p>
           <h1>{hero.headline}</h1>
@@ -47,11 +48,11 @@ export default function RegisterPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {route.ctaLabel}
+                      {noArrow(route.ctaLabel)}
                     </a>
                   ) : (
                     <Link href={route.ctaHref} className="btn-primary">
-                      {route.ctaLabel}
+                      {noArrow(route.ctaLabel)}
                     </Link>
                   )}
                   <Link href={route.detailHref} className="register-detail">
@@ -71,12 +72,12 @@ export default function RegisterPage() {
           <p className="intro-prose">{help.prose}</p>
           <p style={{ marginTop: 20 }}>
             <Link href={help.ctaHref} className="btn-primary">
-              {help.ctaLabel}
+              {noArrow(help.ctaLabel)}
             </Link>
           </p>
           <p className="pathway-offramp" style={{ marginTop: 20 }}>
             {help.contactPre}
-            <Link href={help.contactHref}>{help.contactLinkText}</Link>
+            <Link href={help.contactHref} className="link-more">{noArrow(help.contactLinkText)}</Link>
             {help.contactPost}
           </p>
         </div>

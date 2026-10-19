@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { CONTACT_CONTENT } from "@/lib/content/contact";
+import { noArrow } from "@/lib/label";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact the Instructional Center — 2990 S. Bayshore Drive, Miami, on Biscayne Bay.",
+    "Contact the Instructional Center at 2990 S. Bayshore Drive, Miami, on Biscayne Bay.",
 };
 
 export default function ContactPage() {
@@ -51,12 +52,12 @@ export default function ContactPage() {
 
           <p className="section-sub" style={{ marginTop: 28 }}>
             {contacts.footPre}
-            <a href={contacts.clubLinkHref} target="_blank" rel="noopener">
-              {contacts.clubLinkText}
+            <a href={contacts.clubLinkHref} className="link-more" target="_blank" rel="noopener">
+              {noArrow(contacts.clubLinkText)}
             </a>
             {contacts.footMid}
-            <a href={contacts.donateLinkHref} target="_blank" rel="noopener">
-              {contacts.donateLinkText}
+            <a href={contacts.donateLinkHref} className="link-more" target="_blank" rel="noopener">
+              {noArrow(contacts.donateLinkText)}
             </a>
           </p>
         </div>
@@ -79,8 +80,8 @@ export default function ContactPage() {
             ></iframe>
           </div>
           <p className="map-embed-foot">
-            <a href={map.linkHref} target="_blank" rel="noopener">
-              {map.linkText}
+            <a href={map.linkHref} className="link-more" target="_blank" rel="noopener">
+              {noArrow(map.linkText)}
             </a>
           </p>
         </div>

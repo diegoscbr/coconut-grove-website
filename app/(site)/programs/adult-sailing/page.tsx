@@ -51,8 +51,8 @@ export default function AdultSailingPage() {
       <section className="hero-compact has-hero-photo hero-adult">
         <div className="container">
           <p className="breadcrumb">
-            <Link href="/">{hero.breadcrumbHome}</Link> <span className="sep">→</span>{" "}
-            <Link href="/programs">{hero.breadcrumbPrograms}</Link> <span className="sep">→</span>{" "}
+            <Link href="/">{hero.breadcrumbHome}</Link> <span className="sep">/</span>{" "}
+            <Link href="/programs">{hero.breadcrumbPrograms}</Link> <span className="sep">/</span>{" "}
             {hero.breadcrumbCurrent}
           </p>
           <h1>{hero.h1}</h1>
