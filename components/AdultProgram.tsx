@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ADULT_PROGRAM_CONTENT } from "@/lib/content/adultProgram";
 import { ADULT_SAILING_CONTENT } from "@/lib/content/adultSailing";
 import { CourseGrid, Linkify } from "@/components/AdultSailingCourses";
+import { initials, noArrow } from "@/lib/label";
 
 /**
  * Adult Sailing program — the full body of the Adult Sailing page.
@@ -45,7 +46,7 @@ export function AdultProgram() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {contactBand.ctaLabel}
+              {noArrow(contactBand.ctaLabel)}
             </a>
           </div>
         </div>
@@ -98,7 +99,7 @@ export function AdultProgram() {
               ))}
             </div>
             <div
-              className="split-2col-media photo accent-bracket"
+              className="split-2col-media photo"
               role="img"
               aria-label={ADULT_SAILING_CONTENT.seo.heroImageAlt}
               style={{ backgroundImage: `url('${pathway.image}')` }}
@@ -189,7 +190,7 @@ export function AdultProgram() {
               ))}
             </div>
             <div
-              className="split-2col-media photo accent-bracket"
+              className="split-2col-media photo"
               role="img"
               aria-label={flyingScot.wednesday.imageAlt}
               style={{ backgroundImage: `url('${flyingScot.wednesday.image}')` }}
@@ -264,7 +265,9 @@ export function AdultProgram() {
                         sizes="(max-width: 768px) 46vw, 23vw"
                       />
                     ) : (
-                      <div className="instructor-portrait" aria-hidden="true"></div>
+                      <div className="instructor-portrait" aria-hidden="true">
+                        {initials(person.name)}
+                      </div>
                     )}
                     <p className="instructor-name">{person.name}</p>
                     <p className="instructor-role">{person.role}</p>
@@ -297,7 +300,7 @@ export function AdultProgram() {
           <h2 className="section-headline">{readyToStart.headline}</h2>
           <p className="section-sub">{readyToStart.body}</p>
           <p className="section-sub">
-            <b>{readyToStart.contactName}</b> —{" "}
+            <b>{readyToStart.contactName}</b>,{" "}
             <a href={readyToStart.emailHref}>{readyToStart.emailText}</a> |{" "}
             <a href={readyToStart.phoneHref}>{readyToStart.phoneText}</a>
           </p>
@@ -308,7 +311,7 @@ export function AdultProgram() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {readyToStart.ctaLabel}
+              {noArrow(readyToStart.ctaLabel)}
             </a>
           </p>
         </div>

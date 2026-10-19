@@ -4,6 +4,7 @@ import {
   FALL_YOUTH_CONTENT,
   type FallYouthProgram,
 } from "@/lib/content/fallYouth";
+import { noArrow } from "@/lib/label";
 
 /**
  * 2026 Fall Youth Sailing — the full body of the Youth Sailing page.
@@ -83,13 +84,18 @@ export function FallYouth2026() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {header.ctaLabel}
+                {noArrow(header.ctaLabel)}
               </a>
               <small>{header.ctaNote}</small>
             </p>
             <p className="camp-hero-cta">
               <Link href={header.winterCampHref} className="btn-light">
-                {header.winterCampLabel}
+                {noArrow(header.winterCampLabel)}
+              </Link>
+            </p>
+            <p className="camp-guide-link">
+              <Link href={header.parentGuideHref} className="link-more">
+                {header.parentGuideLabel}
               </Link>
             </p>
           </div>
@@ -183,7 +189,7 @@ export function FallYouth2026() {
           </ul>
           <p className="camp-hero-cta">
             <Link href={readyToRace.ctaHref} className="btn-register">
-              {readyToRace.ctaLabel}
+              {noArrow(readyToRace.ctaLabel)}
             </Link>
           </p>
         </div>
@@ -200,13 +206,13 @@ export function FallYouth2026() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {registration.ctaLabel}
+              {noArrow(registration.ctaLabel)}
             </a>
           </p>
           <p className="section-sub">
             {contact.headline}
             <br />
-            <b>{contact.name}</b> — {contact.role}
+            <b>{contact.name}</b>, {contact.role}
             <br />
             <a href={contact.emailHref}>{contact.emailText}</a> |{" "}
             <a href={contact.phoneHref}>{contact.phoneText}</a>

@@ -6,6 +6,7 @@ import {
   formatTuition,
 } from "@/lib/content/winterCamp";
 import { faqSchema, jsonLd } from "@/lib/schema";
+import { noArrow } from "@/lib/label";
 
 // Section 1 of the "Winter Break Camp Page — Build Specification". The title
 // is absolute: it carries its own brand suffix.
@@ -86,7 +87,7 @@ function RegisterButton() {
       target="_blank"
       rel="noopener noreferrer"
     >
-      {sessions.ctaLabel}
+      {noArrow(sessions.ctaLabel)}
     </a>
   );
 }
@@ -99,10 +100,10 @@ export default function WinterCampPage() {
       <section className="hero-compact has-hero-photo hero-camps">
         <div className="container">
           <p className="breadcrumb">
-            <Link href="/">Home</Link> <span className="sep">→</span>{" "}
-            <Link href="/programs">Programs</Link> <span className="sep">→</span>{" "}
+            <Link href="/">Home</Link> <span className="sep">/</span>{" "}
+            <Link href="/programs">Programs</Link> <span className="sep">/</span>{" "}
             <Link href="/programs/camps-coaching">Youth Sailing</Link>{" "}
-            <span className="sep">→</span> {hero.breadcrumbCurrent}
+            <span className="sep">/</span> {hero.breadcrumbCurrent}
           </p>
           <h1>{hero.h1}</h1>
           <p className="subhead">{hero.subhead}</p>

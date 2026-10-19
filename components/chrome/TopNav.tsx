@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { GiveButton } from "@/lib/giveMiamiDay";
+import { noArrow } from "@/lib/label";
 
 // Canonical top nav, ported 1:1 from the hand-copied block in the prototype.
 // Active link is derived from the current path instead of a per-file .active.
@@ -54,6 +55,7 @@ export function TopNav({ give }: { give: GiveButton }) {
               <Link href="/programs/adult-sailing">Adult Sailing</Link>
               <Link href="/programs/race-team">Racing Teams</Link>
               <Link href="/programs/camps-coaching">Youth Sailing</Link>
+              <Link href="/programs/parent-guide">Parent Guide</Link>
             </div>
           </div>
           <Link
@@ -61,6 +63,14 @@ export function TopNav({ give }: { give: GiveButton }) {
             className={isActive("/calendar") ? "active" : undefined}
           >
             Calendar
+          </Link>
+          {/* The Give button follows the campaign date switch and can leave
+              the site; this link always reaches the giving page itself. */}
+          <Link
+            href="/giving"
+            className={isActive("/giving") ? "active" : undefined}
+          >
+            Giving
           </Link>
           <Link
             href="/contact"
@@ -70,7 +80,7 @@ export function TopNav({ give }: { give: GiveButton }) {
           </Link>
         </nav>
         <a href={give.href} className="topnav-cta">
-          {give.label}
+          {noArrow(give.label)}
         </a>
         <button
           className="topnav-burger"

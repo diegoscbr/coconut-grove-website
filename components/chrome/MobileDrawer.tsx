@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { GiveButton } from "@/lib/giveMiamiDay";
+import { noArrow } from "@/lib/label";
 
 // Canonical mobile drawer, ported 1:1. Open/close is wired by SiteScripts via
 // the data-action / data-drawer-link attributes (same as the prototype).
@@ -53,15 +54,21 @@ export function MobileDrawer({ give }: { give: GiveButton }) {
         >
           Youth Sailing
         </Link>
+        <Link href="/programs/parent-guide" className="drawer-sub" data-drawer-link>
+          Parent Guide
+        </Link>
         <Link href="/calendar" data-drawer-link>
           Calendar
+        </Link>
+        <Link href="/giving" data-drawer-link>
+          Giving
         </Link>
         <Link href="/contact" data-drawer-link>
           Contact
         </Link>
       </nav>
       <a href={give.href} className="drawer-cta" data-drawer-link>
-        {give.label}
+        {noArrow(give.label)}
       </a>
     </div>
   );

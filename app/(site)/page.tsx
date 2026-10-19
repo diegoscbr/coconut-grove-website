@@ -2,6 +2,8 @@ import { HOME_CONTENT } from "@/lib/content/home";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { Hero } from "@/components/Hero";
 import { Rich } from "@/components/Rich";
+import { CoachPortrait } from "@/components/CoachPortrait";
+import { noArrow } from "@/lib/label";
 
 export default function HomePage() {
   const {
@@ -31,7 +33,7 @@ export default function HomePage() {
                 <div className="program-card-body">
                   <h3 className="program-card-title">{card.title}</h3>
                   <p className="program-card-line">{card.line}</p>
-                  <span className="program-card-cta">Explore →</span>
+                  <span className="program-card-cta">Explore</span>
                 </div>
               </a>
             ))}
@@ -55,15 +57,15 @@ export default function HomePage() {
               </p>
               <p style={{ marginTop: 24 }}>
                 <a href={pathway.ctaHref} className="btn-primary">
-                  {pathway.ctaLabel}
+                  {noArrow(pathway.ctaLabel)}
                 </a>
               </p>
               <p className="pathway-offramp">
                 {pathway.offRampPre}
-                <a href={pathway.offRampHref}>{pathway.offRampLinkText}</a>
+                <a href={pathway.offRampHref} className="link-more">{noArrow(pathway.offRampLinkText)}</a>
               </p>
             </div>
-            <div className="split-2col-media race accent-bracket"></div>
+            <div className="split-2col-media race"></div>
           </div>
         </div>
       </section>
@@ -72,7 +74,7 @@ export default function HomePage() {
       <section className="panel charcoal">
         <div className="container">
           <div className="split-2col">
-            <div className="split-2col-media aerial accent-bracket"></div>
+            <div className="split-2col-media aerial"></div>
             <div className="split-2col-body">
               <p className="section-eyebrow">{about.eyebrow}</p>
               <h2 className="section-headline">{about.headline}</h2>
@@ -87,7 +89,7 @@ export default function HomePage() {
               </p>
               <p style={{ marginTop: 24 }}>
                 <a href={about.ctaHref} className="btn-light">
-                  {about.ctaLabel}
+                  {noArrow(about.ctaLabel)}
                 </a>
               </p>
             </div>
@@ -104,7 +106,7 @@ export default function HomePage() {
           <div className="coach-grid leadership">
             {leadership.people.map((p, i) => (
               <div key={i} className="coach">
-                <div className="coach-portrait"></div>
+                <CoachPortrait name={p.name} />
                 <p className="coach-name">{p.name}</p>
                 <p className="coach-role">{p.role}</p>
               </div>
@@ -112,7 +114,7 @@ export default function HomePage() {
           </div>
           <p style={{ marginTop: 32 }}>
             <a href={leadership.ctaHref} className="btn-primary">
-              {leadership.ctaLabel}
+              {noArrow(leadership.ctaLabel)}
             </a>
           </p>
         </div>

@@ -11,7 +11,7 @@ export const HOME_CONTENT = {
     headlineLines: ["The", "Instructional", "Center"],
     modifier: "A 501(c)(3) nonprofit · Open to every sailor",
     subhead:
-      "Carrying Coconut Grove's sailing legacy forward — from a first lesson on Biscayne Bay to an international racing campaign.",
+      "Carrying Coconut Grove's sailing legacy forward, from a first lesson on Biscayne Bay to an international racing campaign.",
     subheadEmphasis: "Eighty years of sailing, open to all.",
     // Punch list S1: registration leads, contact drops to secondary.
     // Punch list S1, closed 2026-10-11. The interim pointed at /programs
@@ -30,25 +30,25 @@ export const HOME_CONTENT = {
   programs: {
     eyebrow: "Programs",
     headline: "Three ways to sail with us.",
-    sub: "From a first lesson to international competition — year-round programs for youth and adults alike, taught by the same coaches, on the same Bay.",
+    sub: "From a first lesson to international competition: year-round programs for youth and adults alike, taught by the same coaches, on the same Bay.",
     cards: [
       {
         href: "/programs/camps-coaching",
         mediaClass: "camps",
         title: "Youth Sailing",
-        line: "Year-round training and seasonal camps — the on-ramp for every young sailor, from the first time on the water up.",
+        line: "Year-round training and seasonal camps. The on-ramp for every young sailor, from the first time on the water up.",
       },
       {
         href: "/programs/race-team",
         mediaClass: "race",
         title: "Racing Teams",
-        line: "The next chapter — our competitive pipeline, from junior fleets to high performance. Private coaching lives here too.",
+        line: "The next chapter: our competitive pipeline, from junior fleets to high performance. Private coaching lives here too.",
       },
       {
         href: "/programs/adult-sailing",
         mediaClass: "adult",
         title: "Adult Sailing",
-        line: "Get on the water. Build the skill, no racing required — the parallel track for adults.",
+        line: "Get on the water. Build the skill, no racing required. The parallel track for adults.",
       },
     ],
   },
@@ -57,7 +57,7 @@ export const HOME_CONTENT = {
     eyebrow: "The Pathway",
     headline: "Four rungs. One ladder.",
     prose1:
-      "**Discover. Develop. Race. Beyond.** Every young racer on the team follows the same ladder — Racing Teams is the spine, the High Performance Center the apex.",
+      "**Discover. Develop. Race. Beyond.** Every young racer on the team follows the same ladder. Racing Teams is the spine, the High Performance Center the apex.",
     prose2:
       "See where a sailor starts, where they'd be in three years, and where the ladder leads after that.",
     ctaLabel: "Explore the Pathway →",
@@ -72,12 +72,12 @@ export const HOME_CONTENT = {
     prose1:
       "Founded in **1946** by a small group of passionate Miami sailors, CGSC has been the training ground for South Florida sailors at every level for the better part of a century.",
     prose2:
-      "The Instructional Center is the next chapter. **The same standards, deeper coaching, a broader ladder** — from first sail to Olympic campaign.",
+      "The Instructional Center is the next chapter. **The same standards, deeper coaching, a broader ladder**, from first sail to Olympic campaign.",
     // Punch list Y4: this reach figure was buried in Rosa's signed letter on
     // /programs/camps-coaching. Surfaced here. The letter keeps its own copy —
     // removing that sentence leaves "keep that going" with no antecedent.
     prose3:
-      "**Nearly 400 children and teens** came through our doors this past summer — many of them sailing for the first time.",
+      "**Nearly 400 children and teens** came through our doors this past summer, many of them sailing for the first time.",
     ctaLabel: "Read the story →",
     ctaHref: "/about",
   },

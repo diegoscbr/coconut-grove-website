@@ -7,7 +7,7 @@ export const PROGRAMS_INDEX_CONTENT = {
     breadcrumbCurrent: "Programs",
     headline: "Three ways to sail with us",
     subhead:
-      "From a first time on the water to international competition — three programs cover every level of the CGSC pathway, taught by the same coaches, on the same Bay.",
+      "From a first time on the water to international competition, three programs cover every level of the CGSC pathway, taught by the same coaches, on the same Bay.",
     locationChip: "Biscayne Bay · Coconut Grove",
   },
   cards: {
@@ -17,21 +17,21 @@ export const PROGRAMS_INDEX_CONTENT = {
         mediaClass: "adult",
         eyebrow: "No racing required",
         title: "Adult Sailing",
-        line: "Get on the water, build the skill, no pressure. Weekly sessions for adults of all levels — bring you, we'll bring the boat.",
+        line: "Get on the water, build the skill, no pressure. Weekly sessions for adults of all levels. Bring you; we'll bring the boat.",
       },
       {
         href: "/programs/race-team",
         mediaClass: "race",
         eyebrow: "The new chapter",
         title: "Racing Teams",
-        line: "The competitive pipeline — junior to high performance. Director-led by Maru Urban. Discover, Develop, Race, Beyond.",
+        line: "The competitive pipeline, junior to high performance. Director-led by Maru Urban. Discover, Develop, Race, Beyond.",
       },
       {
         href: "/programs/camps-coaching",
         mediaClass: "camps",
         eyebrow: "Fall enrollment open",
         title: "Youth Sailing",
-        line: "Holiday camps, discovery weeks, private coaching. The entry point — and the way to keep sailing through every break.",
+        line: "Holiday camps, discovery weeks, private coaching. The entry point, and the way to keep sailing through every break.",
       },
     ],
   },
@@ -39,9 +39,9 @@ export const PROGRAMS_INDEX_CONTENT = {
     eyebrow: "Where do you fit?",
     headline: "The CGSC pathway.",
     prose1:
-      "All three programs feed the same pathway: **Discover → Develop → Race → Beyond.** Youth Sailing and Adult Sailing are entry points; Racing Teams is the competitive ladder; the High Performance Center is the apex.",
+      "All three programs feed the same pathway: **Discover, Develop, Race, Beyond.** Youth Sailing and Adult Sailing are entry points; Racing Teams is the competitive ladder; the High Performance Center is the apex.",
     prose2:
-      "Wherever you start, the same coaches see you all the way up. **No re-onboarding, no switching languages** — the next rung is always one practice away.",
+      "Wherever you start, the same coaches see you all the way up. **No re-onboarding, no switching languages.** The next rung is always one practice away.",
     ctaLabel: "See the Pathway visualization →",
     ctaHref: "/programs/race-team#pathway",
   },
@@ -63,7 +63,7 @@ export const PROGRAMS_INDEX_CONTENT = {
   inquiry: {
     eyebrow: "Not sure which program?",
     headline: "We'll help you figure it out.",
-    sub: "Tell us about the sailor — age, experience, what you're after. A coach will be in touch within two days with a suggested entry point.",
+    sub: "Tell us about the sailor: age, experience, what you're after. A coach will be in touch within two days with a suggested entry point.",
     ctaLabel: "Inquire →",
     ctaHref: "/contact",
     // Punch list P1/P2 — the parent guide answers the credential and
