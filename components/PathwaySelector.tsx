@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { noArrow } from "@/lib/label";
 
 export type PathwayRung = {
   rung: string;
@@ -78,8 +79,8 @@ export function PathwaySelector({
         <p className="pathway-detail-desc">{active.desc}</p>
         {active.link && (
           <p className="pathway-detail-link">
-            <a href={active.link.href} target="_blank" rel="noopener">
-              {active.link.label}
+            <a href={active.link.href} className="link-more" target="_blank" rel="noopener">
+              {noArrow(active.link.label)}
             </a>
           </p>
         )}

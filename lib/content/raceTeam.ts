@@ -6,7 +6,7 @@ export const RACE_TEAM_CONTENT = {
     breadcrumbPrograms: { label: "Programs", href: "/programs" },
     breadcrumbCurrent: "Racing Teams",
     h1: "Racing Teams",
-    subheadPre: "The CGSC competitive pathway — junior to high performance. ",
+    subheadPre: "The CGSC competitive pathway, junior to high performance. ",
     subheadEmphasis: "Discover. Develop. Race. Beyond.",
     subheadPost: " Director-led, year-round, on Biscayne Bay.",
     locationChip: "Biscayne Bay · Coconut Grove",
@@ -25,7 +25,7 @@ export const RACE_TEAM_CONTENT = {
     headline: "A pipeline, not a program.",
     prose1:
       "The CGSC Racing Teams are the **competitive spine of the Instructional Center**. Sailors enter as juniors, develop through fleet racing on Biscayne Bay, and exit into college, national, or Olympic-track competition. Four rungs, one ladder, the same coaches all the way up.",
-    prose2: `We race **30+ regattas a season** — Miami, the Keys, the Bahamas, and the regatta circuits that feed US Sailing's youth and college pipelines. The High Performance Center, **Director-led by Maru Urban**, sits at the top of the ladder as the next chapter — for the sailor who is no longer asking "should I race?" but "how far can I take this?"`,
+    prose2: `We race **30+ regattas a season**: Miami, the Keys, the Bahamas, and the regatta circuits that feed US Sailing's youth and college pipelines. The High Performance Center, **Director-led by Maru Urban**, sits at the top of the ladder as the next chapter, for the sailor who is no longer asking "should I race?" but "how far can I take this?"`,
   },
   bay: {
     eyebrow: "The Bay",
@@ -44,7 +44,7 @@ export const RACE_TEAM_CONTENT = {
       "CGSC's Racing Teams method rests on **five fundamentals**. They aren't slogans. They are how every practice, every debrief, and every regatta brief is structured.",
     methods: [
       {
-        text: "**Watermanship first.** Reading the Bay — wind clocks, tide shifts, current eddies — comes before tactics. The boat follows if the water doesn't surprise you.",
+        text: "**Watermanship first.** Reading the Bay (wind clocks, tide shifts, current eddies) comes before tactics. The boat follows if the water doesn't surprise you.",
       },
       {
         text: "**Coach the sailor, not the rule book.** Every sailor's path is different. We adjust the rig, the goals, and the pressure to who's actually in the boat.",
@@ -53,7 +53,7 @@ export const RACE_TEAM_CONTENT = {
         text: "**Race the curriculum.** Tactics aren't chalkboard exercises. From a first regatta to Olympic trials, racing is how we teach.",
       },
       {
-        text: "**Results in the boat.** Talk is for the dock. Wins, fleet-relative finishes, position improvements — we measure where it counts.",
+        text: "**Results in the boat.** Talk is for the dock. Wins, fleet-relative finishes, position improvements. We measure where it counts.",
       },
       {
         text: "**The best still trim sails.** Olympic medalists drill the basics. So do our juniors. Mastery is a return, not an arrival.",
@@ -63,7 +63,7 @@ export const RACE_TEAM_CONTENT = {
   pathway: {
     eyebrow: "The Pathway",
     headline: "Four rungs, one ladder.",
-    sub: "Click a rung to see where it leads — ages, training cadence, fleet, and what comes next. Default: Race.",
+    sub: "Click a rung to see where it leads: ages, training cadence, fleet, and what comes next. Default: Race.",
     activeRung: "race",
     rungs: [
       {
@@ -86,7 +86,7 @@ export const RACE_TEAM_CONTENT = {
         rung: "race",
         name: "Race",
         age: "Age 14–18",
-        desc: "Where the team years pay off. Sailors take the skills built on the Racing Teams to national and international regattas — representing the club and the United States, and coming home with results.",
+        desc: "Where the team years pay off. Sailors take the skills built on the Racing Teams to national and international regattas, representing the club and the United States, and coming home with results.",
         img: "/assets/pathway/race.jpg",
         tint: "#0F2660",
       },
@@ -94,11 +94,11 @@ export const RACE_TEAM_CONTENT = {
         rung: "beyond",
         name: "Beyond",
         age: "After the program",
-        desc: "Sailors leave the program with the skills to compete at the highest levels of the sport — should they choose to. And with the club's history of hosting major international and Olympic-class events, that level of racing happens on their home waters.",
+        desc: "Sailors leave the program with the skills to compete at the highest levels of the sport, should they choose to. And with the club's history of hosting major international and Olympic-class events, that level of racing happens on their home waters.",
         img: "/assets/pathway/beyond.jpg",
         tint: "#142A66",
         link: {
-          label: "ISAF Sailing World Cup Miami — raced on Biscayne Bay →",
+          label: "ISAF Sailing World Cup Miami, raced on Biscayne Bay →",
           href: "https://www.yachtsandyachting.com/news/167796/ISAF-Sailing-World-Cup-Miami-overall",
         },
       },
@@ -110,7 +110,7 @@ export const RACE_TEAM_CONTENT = {
     headlineEm: "every level",
     headlinePost: " of the sport.",
     prose1:
-      "The Racing Teams' coaching staff has seen every level of the sport — youth fleets, college nationals, World Sailing circuits, and Olympic campaigns — and coaches on the same waters our sailors race.",
+      "The Racing Teams' coaching staff has seen every level of the sport (youth fleets, college nationals, World Sailing circuits and Olympic campaigns) and coaches on the same waters our sailors race.",
     prose2:
       "We don't rotate coaches by program. **The same staff that runs the Racing Teams also coaches the High Performance Center.** Continuity from a sailor's first regatta through their last is the point.",
     rosterLabel: "Meet the coaches →",
@@ -119,7 +119,7 @@ export const RACE_TEAM_CONTENT = {
   regattas: {
     eyebrow: "Selected regattas",
     headline: "Where we race.",
-    sub: "A slice of the 30+ regatta season. See the full calendar for everything else — Racing Teams sailors typically compete in 12–18 events per year.",
+    sub: "A slice of the 30+ regatta season. See the full calendar for everything else. Racing Teams sailors typically compete in 12–18 events per year.",
     cards: [
       {
         datePre: "April 10–12, 2026",
@@ -159,7 +159,7 @@ export const RACE_TEAM_CONTENT = {
     items: [
       {
         q: "Who are the Racing Teams for?",
-        a: "Sailors ages 10–18 who want to compete. Entry is by tryout, but we hold an open practice each season — anyone interested can come sail with the team and find out if it's the right fit before committing.",
+        a: "Sailors ages 10–18 who want to compete. Entry is by tryout, but we hold an open practice each season, so anyone interested can come sail with the team and find out if it's the right fit before committing.",
       },
       {
         q: "What boats do you sail?",
@@ -171,7 +171,7 @@ export const RACE_TEAM_CONTENT = {
       },
       {
         q: "How is it different from the Junior Academy?",
-        a: "There is no separate Junior Academy. The Racing Teams are the junior development program at CGSC — every sailor enters here. Younger and entry-level sailors start on the Discover and Develop rungs; the Youth Sailing program offers casual or seasonal alternatives.",
+        a: "There is no separate Junior Academy. The Racing Teams are the junior development program at CGSC. Every sailor enters here. Younger and entry-level sailors start on the Discover and Develop rungs; the Youth Sailing program offers casual or seasonal alternatives.",
       },
       {
         q: "Can my child try before committing?",
@@ -194,7 +194,7 @@ export const RACE_TEAM_CONTENT = {
   inquiry: {
     eyebrow: "Join the team",
     headline: "Ready to race?",
-    sub: "Tell us a bit about the sailor and a coach will be in touch within two days. Open practices and discovery weeks are scheduled regularly — we'll find the right entry point.",
+    sub: "Tell us a bit about the sailor and a coach will be in touch within two days. Open practices and discovery weeks are scheduled regularly, and we'll find the right entry point.",
     ctaLabel: "Contact us to get started →",
     ctaHref: "/contact",
   },

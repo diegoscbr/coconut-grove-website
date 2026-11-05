@@ -1,4 +1,5 @@
 import { toPlayableVideoUrl } from "@/lib/video";
+import { noArrow } from "@/lib/label";
 
 export type HeroData = {
   eyebrow?: string | null;
@@ -62,7 +63,7 @@ export function Hero({ hero }: { hero: HeroData | null | undefined }) {
           <div className="hero-foot">
             <div className="hero-cta-group">
               <a href={ctaHref} className="hero-cta">
-                {hero.ctaLabel} →
+                {noArrow(hero.ctaLabel)}
               </a>
               {hero.ctaSecondaryLabel && hero.ctaSecondaryHref && (
                 <a href={hero.ctaSecondaryHref} className="hero-cta-secondary">

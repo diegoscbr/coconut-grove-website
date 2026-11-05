@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s · CGSC Instructional Center",
   },
   description:
-    "The Instructional Center — a 501(c)(3) nonprofit carrying Coconut Grove's sailing legacy forward on Biscayne Bay. Youth sailing, racing teams, and adult programs for every sailor.",
+    "The Instructional Center, a 501(c)(3) nonprofit carrying Coconut Grove's sailing legacy forward on Biscayne Bay. Youth sailing, racing teams, and adult programs for every sailor.",
 };
 
 export default function RootLayout({

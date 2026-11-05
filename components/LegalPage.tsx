@@ -15,7 +15,7 @@ export function LegalPage({ doc }: { doc: LegalDoc }) {
       <section className="hero-compact">
         <div className="container">
           <p className="breadcrumb">
-            <Link href="/">Home</Link> <span className="sep">→</span>{" "}
+            <Link href="/">Home</Link> <span className="sep">/</span>{" "}
             {hero.breadcrumbCurrent}
           </p>
           <h1>{hero.headline}</h1>

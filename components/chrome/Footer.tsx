@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { GiveButton } from "@/lib/giveMiamiDay";
+import { GIVING_DISCLOSURE as D } from "@/lib/content/giving";
+import { noArrow } from "@/lib/label";
 
 // Canonical footer, ported 1:1 from the prototype (incl. TBD chips).
 // The newsletter band was removed 2026-10-09: its capture webhook was never
 // configured, so every signup 503d and was dropped. Restore with one revert
 // once NEWSLETTER_SHEET_WEBHOOK exists — and update /privacy in the same PR.
-export function Footer() {
+export function Footer({ give }: { give: GiveButton }) {
   return (
     <footer className="site-footer" role="contentinfo">
       <div className="footer-sitemap">
@@ -29,11 +32,17 @@ export function Footer() {
                 target="_blank"
                 rel="noopener"
               >
-                Coconut Grove Sailing Club — Membership, Moorings &amp; Club Life →
+                <span>Coconut Grove Sailing Club</span>
+                <span className="footer-club-sub">Membership, Moorings &amp; Club Life</span>
+              </a>
+              {/* Giving spec: a Give button in the footer as well as the nav
+                  and mobile menu, on the same Give Miami Day date switch. */}
+              <a className="footer-give" href={give.href}>
+                {noArrow(give.label)}
               </a>
             </div>
             <div className="footer-col">
-              <h6>Explore</h6>
+              <p className="footer-col-head">Explore</p>
               <ul>
                 <li>
                   <Link href="/">Home</Link>
@@ -56,7 +65,7 @@ export function Footer() {
               </ul>
             </div>
             <div className="footer-col">
-              <h6>Programs</h6>
+              <p className="footer-col-head">Programs</p>
               <ul>
                 <li>
                   <Link href="/programs/adult-sailing">Adult Sailing</Link>
@@ -67,10 +76,13 @@ export function Footer() {
                 <li>
                   <Link href="/programs/camps-coaching">Youth Sailing</Link>
                 </li>
+                <li>
+                  <Link href="/programs/parent-guide">Parent Guide</Link>
+                </li>
               </ul>
             </div>
             <div className="footer-col">
-              <h6>Useful Links</h6>
+              <p className="footer-col-head">Useful Links</p>
               <ul>
                 <li>
                   <a
@@ -107,7 +119,7 @@ export function Footer() {
               </ul>
             </div>
             <div className="footer-col">
-              <h6>Follow</h6>
+              <p className="footer-col-head">Follow</p>
               <ul>
                 <li>
                   <a
@@ -130,14 +142,23 @@ export function Footer() {
               </ul>
             </div>
           </div>
-          <p className="footer-legal">
-            CGSC Instructional Center (CGSCIC) is a 501(c)(3) nonprofit
-            organization dedicated to expanding access to sailing and youth
-            development on the water. Your gift directly supports our youth
-            sailing program through scholarships, equipment maintenance and
-            capital purchases that make it possible for CGSCIC to empower the
-            next generation of sailors.
-          </p>
+          {/* Giving page specification, Section 7: the Florida solicitation
+              disclosure (s. 496.411, F.S.), required on every page that offers
+              online giving, so it lives here rather than on /giving alone.
+              Reproduced exactly; the EIN sentence is withheld until the EIN is
+              supplied (see GIVING_DISCLOSURE in lib/content/giving.ts).
+              Replaces the earlier nonprofit statement that sat here. */}
+          <div className="footer-legal">
+            <p>{D.purpose}</p>
+            <p>{D.tax.join(" ")}</p>
+            <p>
+              {D.financialStatementLead}
+              <a href={`mailto:${D.email}`}>{D.email}</a> ·{" "}
+              <a href={D.phoneHref}>{D.phoneText}</a>.
+            </p>
+            <p>{D.organization}</p>
+            <p className="footer-registration">{D.floridaRegistration}</p>
+          </div>
           {/* Punch list S9 — SMS compliance disclosure. Treat as a compliance
               artifact, not marketing copy: do not reword it further.
 

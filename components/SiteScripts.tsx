@@ -2,11 +2,10 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { COACH_PHOTOS } from "@/lib/coachPhotos";
 
 /**
  * Client-side chrome behavior, ported 1:1 from prototype/js/site.js:
- * mobile drawer, in-page scrollspy, and coach photos.
+ * mobile drawer and in-page scrollspy.
  * Runs against the same markup/attributes the prototype used. Re-binds on
  * route change so it works across the App Router.
  */
@@ -73,16 +72,6 @@ export function SiteScripts() {
       }
     }
 
-    // Coach headshots · apply real photos by name
-    document.querySelectorAll(".coach").forEach((card) => {
-      const nameEl = card.querySelector(".coach-name");
-      const portrait = card.querySelector<HTMLElement>(".coach-portrait");
-      if (!nameEl || !portrait) return;
-      const photo = COACH_PHOTOS[(nameEl.textContent || "").trim()];
-      if (!photo) return;
-      portrait.classList.add("has-photo");
-      portrait.style.backgroundImage = `url("${photo}")`;
-    });
 
     return () => {
       openBtn?.removeEventListener("click", onOpen);

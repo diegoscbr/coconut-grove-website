@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { PROGRAMS_INDEX_CONTENT } from "@/lib/content/programsIndex";
 import { Rich } from "@/components/Rich";
+import { CoachPortrait } from "@/components/CoachPortrait";
+import { noArrow } from "@/lib/label";
 
 export const metadata: Metadata = {
   title: "Programs",
@@ -23,7 +25,7 @@ export default function ProgramsPage() {
         <div className="container">
           <p className="breadcrumb">
             <a href={hero.breadcrumbHref}>{hero.breadcrumbLabel}</a>{" "}
-            <span className="sep">→</span> {hero.breadcrumbCurrent}
+            <span className="sep">/</span> {hero.breadcrumbCurrent}
           </p>
           <h1>{hero.headline}</h1>
           <p className="subhead">{hero.subhead}</p>
@@ -42,7 +44,7 @@ export default function ProgramsPage() {
                   <p className="program-card-eyebrow">{card.eyebrow}</p>
                   <h3 className="program-card-title">{card.title}</h3>
                   <p className="program-card-line">{card.line}</p>
-                  <span className="program-card-cta">Explore →</span>
+                  <span className="program-card-cta">Explore</span>
                 </div>
               </a>
             ))}
@@ -65,7 +67,7 @@ export default function ProgramsPage() {
               </p>
               <p style={{ marginTop: 24 }}>
                 <a href={fit.ctaHref} className="btn-light">
-                  {fit.ctaLabel}
+                  {noArrow(fit.ctaLabel)}
                 </a>
               </p>
             </div>
@@ -87,7 +89,7 @@ export default function ProgramsPage() {
           <div className="coach-grid">
             {coaches.people.map((p, i) => (
               <div key={i} className="coach">
-                <div className="coach-portrait"></div>
+                <CoachPortrait name={p.name} />
                 <p className="coach-name">{p.name}</p>
                 <p className="coach-role">{p.role}</p>
               </div>
@@ -96,7 +98,7 @@ export default function ProgramsPage() {
 
           <p style={{ marginTop: 32 }}>
             <a href={coaches.ctaHref} className="btn-primary">
-              {coaches.ctaLabel}
+              {noArrow(coaches.ctaLabel)}
             </a>
           </p>
         </div>
@@ -119,12 +121,12 @@ export default function ProgramsPage() {
           </p>
           <p style={{ marginTop: 8 }}>
             <a href={inquiry.ctaHref} className="btn-light">
-              {inquiry.ctaLabel}
+              {noArrow(inquiry.ctaLabel)}
             </a>
           </p>
           <p className="pathway-offramp" style={{ marginTop: 20 }}>
             {inquiry.guideLead}
-            <a href={inquiry.guideHref}>{inquiry.guideLinkText}</a>
+            <a href={inquiry.guideHref} className="link-more">{noArrow(inquiry.guideLinkText)}</a>
           </p>
         </div>
       </section>

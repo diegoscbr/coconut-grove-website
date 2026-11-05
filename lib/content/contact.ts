@@ -4,11 +4,11 @@ export const CONTACT_CONTENT = {
   hero: {
     breadcrumbHomeLabel: "Home",
     breadcrumbHomeHref: "/",
-    breadcrumbSep: "→",
+    breadcrumbSep: "/",
     breadcrumbCurrent: "Contact",
     headline: "Contact Us",
     subheadLead: "Coconut Grove Sailing Club Instructional Center.",
-    subheadEm: "Reach the team directly — by phone or email.",
+    subheadEm: "Reach the team directly by phone or email.",
     locationChip: "2990 S. Bayshore Drive · Miami, FL 33133",
   },
   // The "Send a note" inquiry section (form + direct-line column) was removed
@@ -42,14 +42,14 @@ export const CONTACT_CONTENT = {
     clubLinkHref: "https://cgsc.org/",
     footMid: ". ",
     donateLinkText: "Donate →",
-    donateLinkHref: "https://cgscic.org/donate/",
+    donateLinkHref: "/giving",
   },
   // The "Visit the dock" split section was removed as redundant on 2026-07-23;
   // its aerial bayview photo now serves as this page's hero image.
   map: {
     eyebrow: "Find us",
     headline: "Coconut Grove waterfront.",
-    sub: "We're on the water at 2990 S. Bayshore Drive — five minutes from downtown Coconut Grove.",
+    sub: "We're on the water at 2990 S. Bayshore Drive, five minutes from downtown Coconut Grove.",
     embedTitle: "Map to the CGSC Instructional Center, 2990 S. Bayshore Drive, Miami",
     embedSrc:
       "https://www.google.com/maps?q=Coconut+Grove+Sailing+Club,+2990+S+Bayshore+Dr,+Miami,+FL+33133&z=16&output=embed",

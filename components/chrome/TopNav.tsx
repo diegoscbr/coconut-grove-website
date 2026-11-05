@@ -3,10 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { GiveButton } from "@/lib/giveMiamiDay";
+import { noArrow } from "@/lib/label";
 
 // Canonical top nav, ported 1:1 from the hand-copied block in the prototype.
 // Active link is derived from the current path instead of a per-file .active.
-export function TopNav() {
+export function TopNav({ give }: { give: GiveButton }) {
   const pathname = usePathname();
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -53,6 +55,7 @@ export function TopNav() {
               <Link href="/programs/adult-sailing">Adult Sailing</Link>
               <Link href="/programs/race-team">Racing Teams</Link>
               <Link href="/programs/camps-coaching">Youth Sailing</Link>
+              <Link href="/programs/parent-guide">Parent Guide</Link>
             </div>
           </div>
           <Link
@@ -61,6 +64,14 @@ export function TopNav() {
           >
             Calendar
           </Link>
+          {/* The Give button follows the campaign date switch and can leave
+              the site; this link always reaches the giving page itself. */}
+          <Link
+            href="/giving"
+            className={isActive("/giving") ? "active" : undefined}
+          >
+            Giving
+          </Link>
           <Link
             href="/contact"
             className={isActive("/contact") ? "active" : undefined}
@@ -68,9 +79,9 @@ export function TopNav() {
             Contact
           </Link>
         </nav>
-        <Link href="/giving" className="topnav-cta">
-          Give →
-        </Link>
+        <a href={give.href} className="topnav-cta">
+          {noArrow(give.label)}
+        </a>
         <button
           className="topnav-burger"
           aria-label="Open menu"

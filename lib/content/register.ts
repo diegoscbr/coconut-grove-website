@@ -91,7 +91,7 @@ export const REGISTER_CONTENT = {
     eyebrow: "Not sure which?",
     headline: "Start with the comparison table.",
     prose:
-      "The parent guide puts every youth program side by side — ages, days per week and fees in one table — along with how we handle safety and who does the teaching.",
+      "The parent guide puts every youth program side by side (ages, days per week and fees in one table), along with how we handle safety and who does the teaching.",
     ctaLabel: "Read the parent guide →",
     ctaHref: "/programs/parent-guide",
     contactPre: "Still stuck? ",

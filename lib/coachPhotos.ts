@@ -1,6 +1,6 @@
 // Coach name → headshot. Keys must match the rendered `.coach-name` text in
-// lib/content/about.ts byte for byte — SiteScripts.tsx looks the photo up by
-// that string. Coaches without a photo keep the styled gradient placeholder.
+// lib/content/about.ts byte for byte — components/CoachPortrait.tsx looks the
+// photo up by that string. Coaches without a photo show their initials.
 // Order follows the org-chart roster in lib/content/about.ts.
 export const COACH_PHOTOS: Record<string, string> = {
   "Maru Urban": "/assets/coaches/maru.jpg",
@@ -15,7 +15,7 @@ export const COACH_PHOTOS: Record<string, string> = {
   "Oscar Sanchez Barreto": "/assets/coaches/oscar.jpg",
   "Norlem Garcia": "/assets/coaches/norlem.jpg",
   "Jonathan Rodriguez": "/assets/coaches/jonathan.jpg",
-  // No headshot yet — gradient placeholder until the client sends one:
+  // No headshot yet — initials until the client sends one:
   // Justin Louden, Halsey Richartz, Alastar Cook, Michelle Perera,
   // Alex Figueroa, Erick Demario.
 };

@@ -101,10 +101,19 @@ Combines D's territorial frame with C's heritage→now arc as a temporal layer.
 
 | Use | Spec |
 |---|---|
-| Display | Inter Tight 900 · uppercase · `letter-spacing: -0.035em` |
+| Display | Inter Tight 900 · sentence case · `letter-spacing: -0.035em` · line-height 1.0 |
 | Body | Inter 400 · sentence case |
-| UI labels / eyebrows | Inter 700 · uppercase · `letter-spacing: 0.18em` |
+| UI labels / eyebrows | Inter 500–600 · sentence case · 13–14px · `letter-spacing: 0.01em` |
+| Buttons | Inter 600 · sentence case · 15px · 6px radius · no arrow glyph |
+| Text links | Underline + drawn chevron (`.link-more`), never a typed "→" |
 | Accent beat (subhead italic) | Inter 500 italic · rust |
+
+*Revised 2026-10-18 (design audit, Tier 2, approved by Diego).* All-caps display
+and 0.18em-tracked labels were dropped in favour of sentence case, matching the
+youth-sports and fundraising benchmarks. Also retired: the orange corner
+bracket on photos, the dash rule before eyebrows, the rust top bar on cards
+(cards now use a 1px hairline), and em dashes in our own copy. Nothing renders
+smaller than 12px.
 
 References: Sperry Top-Sider (heritage navy lineage), Nautica (signal-accent thinking), but explicitly modernized — no Roman/serif throwbacks. American maritime, accessible, unstuffy.
 
