@@ -13,6 +13,7 @@ const ROUTES = [
   "/programs/race-team",
   "/programs/camps-coaching",
   "/programs/parent-guide",
+  "/camp-policies",
   "/winter-camp",
   "/register",
   "/calendar",

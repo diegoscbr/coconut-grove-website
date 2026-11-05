@@ -182,6 +182,11 @@ export default function WinterCampPage() {
         <div className="container">
           <h2 className="section-headline">{bring.headline}</h2>
           <p className="intro-prose">{bring.body}</p>
+          <p className="intro-prose">
+            <Link href={bring.policiesHref} className="link-more">
+              {bring.policiesLabel}
+            </Link>
+          </p>
         </div>
       </section>
 

@@ -98,6 +98,11 @@ export function FallYouth2026() {
                 {header.parentGuideLabel}
               </Link>
             </p>
+            <p className="camp-guide-link">
+              <Link href={header.campPoliciesHref} className="link-more">
+                {header.campPoliciesLabel}
+              </Link>
+            </p>
           </div>
 
           <div className="camp-block">

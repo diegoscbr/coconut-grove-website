@@ -76,6 +76,11 @@ export default function RegisterPage() {
             </Link>
           </p>
           <p className="pathway-offramp" style={{ marginTop: 20 }}>
+            {help.policiesPre}
+            <Link href={help.policiesHref} className="link-more">{help.policiesLinkText}</Link>
+            {help.policiesPost}
+          </p>
+          <p className="pathway-offramp" style={{ marginTop: 20 }}>
             {help.contactPre}
             <Link href={help.contactHref} className="link-more">{noArrow(help.contactLinkText)}</Link>
             {help.contactPost}

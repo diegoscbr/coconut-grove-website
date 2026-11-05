@@ -56,6 +56,7 @@ export function TopNav({ give }: { give: GiveButton }) {
               <Link href="/programs/race-team">Racing Teams</Link>
               <Link href="/programs/camps-coaching">Youth Sailing</Link>
               <Link href="/programs/parent-guide">Parent Guide</Link>
+              <Link href="/camp-policies">Camp Policies</Link>
             </div>
           </div>
           <Link
