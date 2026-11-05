@@ -48,6 +48,9 @@ export const FALL_YOUTH_CONTENT = {
     // the side-by-side comparison of every youth program.
     parentGuideLabel: "New to the club? Compare every youth program in the parent guide",
     parentGuideHref: "/programs/parent-guide",
+    // Ours: camp families want the day-to-day rules (drop-off, weather, refunds).
+    campPoliciesLabel: "Going to camp? Read the camp policies",
+    campPoliciesHref: "/camp-policies",
   },
   familyNote: {
     headline: "A Note to Our Families",

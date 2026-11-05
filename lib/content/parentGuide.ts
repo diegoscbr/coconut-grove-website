@@ -153,6 +153,7 @@ export const PARENT_GUIDE_CONTENT = {
       "Handing your child a boat is a big ask, and most families want the same two things settled before anything else: who is doing the teaching, and what happens on the water.",
       "As a **US Sailing Accredited School**, the CGSC Instructional Center holds every course to the highest national standards for safety, instruction and seamanship. Our instructors are **US Sailing certified**, and they teach with the patience and care of people who remember their own first day at the helm.",
       "**Every sailor wears a US Coast Guard approved life jacket whenever they are on the water.** That applies to every program on this page, every session, without exception.",
+      "Sending a child to camp? The [camp policies](/camp-policies) cover a typical day, what to pack, drop-off and pickup, weather and refunds.",
     ],
   },
   comparison: {
@@ -175,7 +176,7 @@ export const PARENT_GUIDE_CONTENT = {
       "If you know which program fits, registration is open now. If you are not sure, tell us your sailor's age and what they are curious about and we will point you at the right fit.",
     registerLabel: "Register for fall youth sailing →",
     contactName: "Rosa Lamela",
-    contactRole: "Director of Programs Development",
+    contactRole: "Director of Programs & Development",
     contactEmail: "icmanager@cgsc.org",
   },
 };

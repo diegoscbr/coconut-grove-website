@@ -187,11 +187,8 @@ export const WINTER_CAMP_CONTENT = {
   bring: {
     headline: "What to Bring",
     body: "Each day your camper needs a properly fitted US Coast Guard-approved life jacket, a labeled water bottle, lunch and snacks, closed-toe water shoes, sun protection, a towel and a dry change of clothes. Please label everything with your child’s name.",
-    // The specification's link "Please read the full camp policies here"
-    // points at /camp-policies, which does not exist yet (its own Open Items).
-    // Left out rather than shipped as a dead link. Add it when the page lands:
-    //   policiesLabel: "Please read the full camp policies here",
-    //   policiesHref: "/camp-policies",
+    policiesLabel: "Please read the full camp policies here",
+    policiesHref: "/camp-policies",
   },
   faq: {
     // The heading structure (Section 2) and mobile requirements both call

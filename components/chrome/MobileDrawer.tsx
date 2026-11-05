@@ -57,6 +57,9 @@ export function MobileDrawer({ give }: { give: GiveButton }) {
         <Link href="/programs/parent-guide" className="drawer-sub" data-drawer-link>
           Parent Guide
         </Link>
+        <Link href="/camp-policies" className="drawer-sub" data-drawer-link>
+          Camp Policies
+        </Link>
         <Link href="/calendar" data-drawer-link>
           Calendar
         </Link>

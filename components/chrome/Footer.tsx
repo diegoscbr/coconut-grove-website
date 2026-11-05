@@ -79,6 +79,9 @@ export function Footer({ give }: { give: GiveButton }) {
                 <li>
                   <Link href="/programs/parent-guide">Parent Guide</Link>
                 </li>
+                <li>
+                  <Link href="/camp-policies">Camp Policies</Link>
+                </li>
               </ul>
             </div>
             <div className="footer-col">
