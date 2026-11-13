@@ -140,7 +140,7 @@ export const GIVING_CONTENT = {
       "At $2,500 and above it changes the whole campaign. We can tell every donor their gift is being doubled, hold the match open through early giving, and come back on the day itself with a deadline that is real.",
     ],
     ctaLabel: "Talk to us about a match",
-    ctaHref: "mailto:icmanager@cgsc.org",
+    ctaHref: "mailto:manager@cgscic.org",
   },
   otherWays: {
     // Added by the specification's own developer note so the H3s below do not
@@ -161,7 +161,7 @@ export const GIVING_CONTENT = {
       body: "Interested in sponsoring a regatta, underwriting equipment, or making a planned gift? We would welcome the conversation.",
       name: "Rosa Lamela",
       role: "Director of Programs & Development",
-      email: "icmanager@cgsc.org",
+      email: "manager@cgscic.org",
       phoneText: "305.747.2600",
       phoneHref: "tel:+13057472600",
     },
@@ -189,7 +189,7 @@ export const GIVING_DISCLOSURE = {
   ],
   financialStatementLead:
     "A written financial statement for the preceding fiscal year is available on request from Rosa Lamela, Director of Programs & Development — 2990 South Bayshore Drive, Miami, FL 33133 · ",
-  email: "icmanager@cgsc.org",
+  email: "manager@cgscic.org",
   phoneText: "305.747.2600",
   phoneHref: "tel:+13057472600",
   organization:

@@ -177,7 +177,7 @@ export const PARENT_GUIDE_CONTENT = {
     registerLabel: "Register for fall youth sailing →",
     contactName: "Rosa Lamela",
     contactRole: "Director of Programs & Development",
-    contactEmail: "icmanager@cgsc.org",
+    contactEmail: "manager@cgscic.org",
   },
 };
 

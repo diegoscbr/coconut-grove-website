@@ -135,7 +135,7 @@ export const CAMP_POLICIES_CONTENT = {
     tocLabel: "Refund policy",
     headline: "Refund Policy",
     paragraphs: [
-      "Cancellation requests must be emailed to Rosa Lamela, Director of Programs & Development, at icmanager@cgsc.org before the session begins. Refunds are issued minus the registration platform fees.",
+      "Cancellation requests must be emailed to Rosa Lamela, Director of Programs & Development, at manager@cgscic.org before the session begins. Refunds are issued minus the registration platform fees.",
       "Once a session has started, no refunds are given. The one exception is withdrawal for a medical reason: submit a doctor's note and we'll refund the unused portion of the session, prorated by day, minus the platform fees.",
     ],
   },
@@ -174,7 +174,7 @@ export const CAMP_POLICIES_CONTENT = {
     headline: "Questions?",
     name: "Rosa Lamela",
     role: "Director of Programs & Development",
-    email: "icmanager@cgsc.org",
+    email: "manager@cgscic.org",
     phoneText: "305.747.2600",
     phoneHref: "tel:+13057472600",
   },

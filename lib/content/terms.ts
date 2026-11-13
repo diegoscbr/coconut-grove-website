@@ -94,7 +94,7 @@ export const TERMS_CONTENT: LegalDoc = {
   contact: {
     heading: "Questions about these terms",
     lead: "Write to us and a person will answer.",
-    email: "icdirector@cgsc.org",
+    email: "director@cgscic.org",
     address: [
       "Coconut Grove Sailing Club Instructional Center",
       "2990 S. Bayshore Drive",

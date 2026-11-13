@@ -56,7 +56,7 @@ function ngoSchema(live: boolean) {
     description:
       "A 501(c)(3) nonprofit sailing school on Biscayne Bay in Coconut Grove, Miami, teaching youth and adults to sail.",
     telephone: "+1-305-747-2600",
-    email: "icmanager@cgsc.org",
+    email: "manager@cgscic.org",
     address: {
       "@type": "PostalAddress",
       streetAddress: "2990 South Bayshore Drive",
