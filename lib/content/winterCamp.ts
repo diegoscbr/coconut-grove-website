@@ -95,7 +95,7 @@ const FAQ = [
   {
     question: "What is your refund policy?",
     answer:
-      "Cancellation requests must be emailed to icmanager@cgsc.org before the session begins; refunds are issued minus the registration platform fees. Once a session has started there are no refunds, except for withdrawal for a medical reason with a doctor’s note, which is refunded for the unused portion of the session, prorated by day and minus platform fees.",
+      "Cancellation requests must be emailed to manager@cgscic.org before the session begins; refunds are issued minus the registration platform fees. Once a session has started there are no refunds, except for withdrawal for a medical reason with a doctor’s note, which is refunded for the unused portion of the session, prorated by day and minus platform fees.",
   },
 ];
 
@@ -202,7 +202,7 @@ export const WINTER_CAMP_CONTENT = {
     body: "Not sure which group fits your child, or whether one session or both makes more sense? Get in touch before you register and we will help you decide.",
     name: "Rosa Lamela",
     role: "Director of Programs & Development",
-    email: "icmanager@cgsc.org",
+    email: "manager@cgscic.org",
     phoneText: "305.747.2600",
     phoneHref: "tel:+13057472600",
   },

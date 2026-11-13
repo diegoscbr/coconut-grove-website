@@ -8,7 +8,7 @@
 //   - No emojis anywhere.
 //   - Membership is required for boat use, stated plainly, not softened.
 //   - No claims that a certification alone makes someone ready to charter.
-//   - All clinic enquiries route to adultsailing@cgsc.org, not to instructors
+//   - All clinic enquiries route to adultsailing@cgscic.org, not to instructors
 //     personally. Named contacts stay only for keelboat (Ed) and Flying Scot
 //     (Bud), which the specification itself publishes.
 //   - Each instructor appears once, with every discipline they teach listed.
@@ -30,8 +30,8 @@ export const ADULT_PROGRAM_CONTENT = {
   contactBand: {
     questionLead: "Got questions, not sure where to start?",
     questionBody: "Send us an email at",
-    emailText: "adultsailing@cgsc.org",
-    emailHref: "mailto:adultsailing@cgsc.org",
+    emailText: "adultsailing@cgscic.org",
+    emailHref: "mailto:adultsailing@cgscic.org",
     registerLead: "Ready to register?",
     ctaLabel: "Register Here for Adult Classes",
   },
@@ -76,7 +76,7 @@ export const ADULT_PROGRAM_CONTENT = {
           { dt: "Schedule", dd: "Second and third weekend of every month (except August), 9 AM to 4 PM, Saturday and Sunday" },
           { dt: "Cost", dd: "$715 Members | $815 Non-Members" },
           { dt: "Leads to", dd: "US Sailing Basic Keelboat Certification" },
-          { dt: "Contact", dd: "Ed Benitez | adultsailing@cgsc.org | 305.962.3216" },
+          { dt: "Contact", dd: "Ed Benitez | adultsailing@cgscic.org | 305.962.3216" },
         ],
       },
       {
@@ -188,7 +188,7 @@ export const ADULT_PROGRAM_CONTENT = {
     ensign: {
       headline: "Start with Our Keelboat Program: The Ensign Fleet",
       body: "Our keelboat program runs on five Ensigns, a 23-foot keelboat that is stable, sturdy, and forgiving, and the same boat you learned on. We teach on all five, and four are available to the membership. Once an instructor has checked you out, you can reserve one for a morning or an afternoon and take it out for a casual sail on Biscayne Bay. It is the club's most popular boat usage program, and the natural gateway into cruising.",
-      contact: "Keelboat contact: Ed Benitez, Keelboat Instructor and Lead Coordinator | adultsailing@cgsc.org | 305.962.3216",
+      contact: "Keelboat contact: Ed Benitez, Keelboat Instructor and Lead Coordinator | adultsailing@cgscic.org | 305.962.3216",
     },
     racing: {
       headline: "Sailboat Racing and Regattas on Biscayne Bay",
@@ -197,7 +197,7 @@ export const ADULT_PROGRAM_CONTENT = {
       linkedPre: "New to Miami, or here for a season? Our regattas run year round across the Flying Scot, Laser/ILCA, Sunfish, and keelboat fleets, and the calendar is published well ahead, see ",
       linkedLabel: "upcoming regattas and race dates",
       linkedHref: "/calendar",
-      linkedPost: ". Write to adultsailing@cgsc.org and we will tell you what is coming up, which fleets are looking for crew, and how to enter.",
+      linkedPost: ". Write to adultsailing@cgscic.org and we will tell you what is coming up, which fleets are looking for crew, and how to enter.",
     },
   },
 
@@ -256,7 +256,7 @@ export const ADULT_PROGRAM_CONTENT = {
       "Every clinic has the same goal: sharpen your boat handling and tactical decision-making in a supportive group setting, with an eye toward getting race-course ready. Whatever you sail, you will come away a more capable sailor. Most of these build on skills you already have, and every one of them will make you a better sailor on any boat you step onto.",
     meta: [
       { dt: "Cost", dd: "$75 Members | $90 Non-Members. Sunfish clinics are priced separately. Register and pay on site before the session." },
-      { dt: "All clinic questions", dd: "adultsailing@cgsc.org | 305.747.2600" },
+      { dt: "All clinic questions", dd: "adultsailing@cgscic.org | 305.747.2600" },
       { dt: "Format", dd: "2.5 to 3 hour sessions: on-land instruction, on-the-water drills, short-course casual racing" },
       { dt: "Prerequisite", dd: "Prior sailing experience is required. Beginner sailors looking for additional time on the water are welcome to join." },
     ],
@@ -271,7 +271,7 @@ export const ADULT_PROGRAM_CONTENT = {
           { dt: "Cost", dd: "$60 Members | $75 Non-Members | $45 Members sailing their own boat" },
           { dt: "Fridays", dd: "Every Friday, 9 AM to Noon | Marika de Nie" },
           { dt: "Sundays", dd: "Every other Sunday, 1:30 PM to 4:30 PM | Manu Francia" },
-          { dt: "Contact", dd: "adultsailing@cgsc.org" },
+          { dt: "Contact", dd: "adultsailing@cgscic.org" },
         ],
       },
       {
@@ -282,7 +282,7 @@ export const ADULT_PROGRAM_CONTENT = {
         meta: [
           { dt: "Coach", dd: "Orlando Gonzalez" },
           { dt: "Schedule", dd: "Sets sail again May 2027 | Saturday, 9 AM to 11:30 AM" },
-          { dt: "Contact", dd: "adultsailing@cgsc.org" },
+          { dt: "Contact", dd: "adultsailing@cgscic.org" },
         ],
       },
       {
@@ -293,7 +293,7 @@ export const ADULT_PROGRAM_CONTENT = {
         meta: [
           { dt: "Coach", dd: "Norlem Garcia" },
           { dt: "Schedule", dd: "First and third Saturday of every month (except August), 9 AM to 11:30 AM" },
-          { dt: "Contact", dd: "adultsailing@cgsc.org" },
+          { dt: "Contact", dd: "adultsailing@cgscic.org" },
           { dt: "Note", dd: "Beginner lessons also available upon request." },
         ],
       },
@@ -385,8 +385,8 @@ export const ADULT_PROGRAM_CONTENT = {
     headline: "Ready to Start Sailing in Miami?",
     body: "Not sure where you fit on the pathway? Tell us where you have been and where you would like to go, and we will point you to the right course.",
     contactName: "Rosa Lamela",
-    emailText: "adultsailing@cgsc.org",
-    emailHref: "mailto:adultsailing@cgsc.org",
+    emailText: "adultsailing@cgscic.org",
+    emailHref: "mailto:adultsailing@cgscic.org",
     phoneText: "305.747.2600",
     phoneHref: "tel:+13057472600",
     ctaLabel: "Register Here for Adult Classes",

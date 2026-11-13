@@ -71,7 +71,7 @@ export const ACCESSIBILITY_CONTENT: LegalDoc = {
   contact: {
     heading: "Report a barrier",
     lead: "Email, or write to us at the Center.",
-    email: "icdirector@cgsc.org",
+    email: "director@cgscic.org",
     address: [
       "Coconut Grove Sailing Club Instructional Center",
       "2990 S. Bayshore Drive",

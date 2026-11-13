@@ -154,7 +154,7 @@ export function sportsActivityLocationSchema() {
     name: ORG_NAME,
     url: ORG_URL,
     telephone: "+1-305-747-2600",
-    email: "adultsailing@cgsc.org",
+    email: "adultsailing@cgscic.org",
     address: POSTAL_ADDRESS,
   };
 }
